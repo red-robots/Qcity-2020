@@ -1,0 +1,86 @@
+<?php
+/**
+ * Template part for displaying posts.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package ACStarter
+ */
+//$storyImage = get_field( 'story_image' );
+
+$mod = the_modified_date('M j, Y', '', '', false);
+// echo '<pre>';
+// print_r($mod);
+// echo $mod;
+// echo '</pre>';
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); 
+
+		if ( 'post' === get_post_type() ) : ?>
+		<div class="entry-meta">
+			<div class="category"><?php get_template_part('template-parts/primary-category'); ?></div><br>
+			By <?php the_author(); ?><br>
+			<?php echo get_the_date(); if($mod){echo' | Updated '.$mod;} ?>
+		</div><!-- .entry-meta -->
+		<?php
+		endif; ?>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<?php
+			the_content( sprintf(
+				/* translators: %s: Name of current post. */
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'acstarter' ), array( 'span' => array( 'class' => array() ) ) ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			) );
+
+			// wp_link_pages( array(
+			// 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'acstarter' ),
+			// 	'after'  => '</div>',
+			// ) );
+		?>
+	</div><!-- .entry-content -->
+
+	<div class="share">
+		<?php echo do_shortcode('[social_warfare]'); ?>
+	</div>
+
+	<footer class="entry-footer">
+		<div class="share"></div>
+		<div class="author">
+			<div class="left">
+			<?php 
+				$aName = get_the_author_meta('display_name');
+				$aDesc = get_the_author_meta('description');
+
+				$chooseAuthor = get_field( 'choose_author' );
+				$size         = 'thumbnail';
+				$authorPhoto  = null;
+				
+				// echo '<pre>';
+				// print_r($aName);
+				// echo '</pre>';
+			?>
+				<div class="photo">
+					<?php 
+					if ( $chooseAuthor != '' ):
+						$authorID   = $chooseAuthor['ID'];
+						$authorPhoto = get_field( 'custom_picture', 'user_' . $authorID );
+					else:
+						$authorPhoto = get_field('custom_picture','user_'.get_the_author_meta('ID'));
+					endif;
+					if ( $authorPhoto ):
+						echo wp_get_attachment_image( $authorPhoto, $size );
+					endif; //  if photo  ?>
+				</div>
+			</div>
+			<div class="info">
+				<h3><?php echo $aName; ?></h3>
+				<?php echo $aDesc; ?>
+			</div>
+		</div>
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
