@@ -18,6 +18,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
 
+
 <script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.js"></script>
 
 <?php wp_head(); ?>
@@ -29,7 +30,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		
-			<div class="wrapper">
+			<div class="wrapper-header">
 				<?php if(is_home()) { ?>
 		            <h1 class="logo">
 			            <a href="<?php bloginfo('url'); ?>">

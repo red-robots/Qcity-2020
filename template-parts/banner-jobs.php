@@ -1,7 +1,12 @@
-<?php
+<?php 
+// if( is_archive() ) {
+// 	$img = get_field('banner_image','48778'); // Page = Jobs
+// } else {
+// 	$img = get_field('banner_image');
+// }
 if( is_archive() ) {
-	$img = get_field('story_image','54'); // Page = Events
-	$imgMob = get_field('story_image_mobile','54');
+	$img = get_field('story_image','48778'); // Page = Jobs
+	$imgMob = get_field('story_image_mobile','48778');
 } else {
 	$img = get_field('story_image');
 	$imgMob = get_field('story_image_mobile');
@@ -34,18 +39,15 @@ if( is_archive() ) {
 		</div><!--.row-2-->
 		<div class="bottom">
 			<div class="btn">
-				<a class="popup" href="#submit-an-event">Post an Event</a>
+				<a class="pop" href="<?php bloginfo('url'); ?>/post-a-job">Post an Job</a>
 			</div>
 			<div class="btn">
-				<div class="banner-button find">Event Categories
+				<div class="banner-button find">Find a Job
 				<?php 
 				$terms = get_terms( array(
-				    'taxonomy' => 'event_cat',
+				    'taxonomy' => 'job_cat',
 				    'hide_empty' => false,
 				) );
-				// echo '<pre>';
-				// print_r($terms);
-				// echo '</pre>';
 					if(is_array($terms)&&!empty($terms)):?>
 	                        <ul>
 	                            <?php foreach($terms as $term):?>
@@ -58,7 +60,7 @@ if( is_archive() ) {
 				</div>
 			</div>
 			<div class="btn">
-				<a href="">Events This Weekend</a>
+				<a href="<?php bloginfo('url'); ?>/why-this-jobs-board-matters/">More Info</a>
 			</div>
 		</div>
 	</div>

@@ -145,7 +145,7 @@
 		@media screen and (min-width: $deskwidth) {
 			padding: 0% 30px;
 		}
-		&:hover {
+		&:hover, &.active {
 			background-color: rgba($color-yellow, 1);
 			color: #fff;
 		}

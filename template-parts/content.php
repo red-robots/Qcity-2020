@@ -21,8 +21,8 @@ $mod = the_modified_date('M j, Y', '', '', false);
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<div class="category"><?php get_template_part('template-parts/primary-category'); ?></div><br>
-			By <?php the_author(); ?><br>
+			<div class="category"><?php get_template_part('template-parts/primary-category'); ?></div>
+			By <?php the_author(); ?> 
 			<?php echo get_the_date(); if($mod){echo' | Updated '.$mod;} ?>
 		</div><!-- .entry-meta -->
 		<?php
@@ -47,40 +47,44 @@ $mod = the_modified_date('M j, Y', '', '', false);
 	<div class="share">
 		<?php echo do_shortcode('[social_warfare]'); ?>
 	</div>
+	<?php 
+		$aName = get_the_author_meta('display_name');
+		$aDesc = get_the_author_meta('description');
 
+		$chooseAuthor = get_field( 'choose_author' );
+		$size         = 'thumbnail';
+		$authorPhoto  = null;
+		
+		// echo '<pre>';
+		// print_r($aUrl);
+		// echo '</pre>';
+	?>
 	<footer class="entry-footer">
-		<div class="share"></div>
-		<div class="author">
-			<div class="left">
-			<?php 
-				$aName = get_the_author_meta('display_name');
-				$aDesc = get_the_author_meta('description');
-
-				$chooseAuthor = get_field( 'choose_author' );
-				$size         = 'thumbnail';
-				$authorPhoto  = null;
+		<!-- <div class="share"></div> -->
+		
+		<div class="author-block">
+			<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+				<div class="left">
 				
-				// echo '<pre>';
-				// print_r($aName);
-				// echo '</pre>';
-			?>
-				<div class="photo">
-					<?php 
-					if ( $chooseAuthor != '' ):
-						$authorID   = $chooseAuthor['ID'];
-						$authorPhoto = get_field( 'custom_picture', 'user_' . $authorID );
-					else:
-						$authorPhoto = get_field('custom_picture','user_'.get_the_author_meta('ID'));
-					endif;
-					if ( $authorPhoto ):
-						echo wp_get_attachment_image( $authorPhoto, $size );
-					endif; //  if photo  ?>
+					<div class="photo">
+						<?php 
+						if ( $chooseAuthor != '' ):
+							$authorID   = $chooseAuthor['ID'];
+							$authorPhoto = get_field( 'custom_picture', 'user_' . $authorID );
+						else:
+							$authorPhoto = get_field('custom_picture','user_'.get_the_author_meta('ID'));
+						endif;
+						if ( $authorPhoto ):
+							echo wp_get_attachment_image( $authorPhoto, $size );
+						endif; //  if photo  ?>
+					</div>
 				</div>
-			</div>
-			<div class="info">
-				<h3><?php echo $aName; ?></h3>
-				<?php echo $aDesc; ?>
-			</div>
+				<div class="info">
+					<h3><?php echo $aName; ?></h3>
+					<?php echo $aDesc; ?>
+				</div>
+			</a>
 		</div>
+
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

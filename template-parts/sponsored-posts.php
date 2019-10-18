@@ -77,19 +77,20 @@
 			?>
 				<div class="block">
 					<a href="<?php the_permalink(); ?>">
-						<div class="info">
-							<div class="date">
-								<?php echo $date->format('D | M j, Y'); ?>	
-							</div>
-							<h3><?php the_title(); ?></h3>
-						</div>
+						
 						<?php if( $img ) { ?>
-							<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
+							<img src="<?php echo $img['sizes']['medium']; ?>" alt="<?php echo $img['alt']; ?>">
 						<?php } elseif( has_post_thumbnail() ) {
 							the_post_thumbnail();
 						} else { ?>
 							<img src="<?php bloginfo('stylesheet_directory'); ?>/images/default.png">
 						<?php } ?>
+						<div class="info js-blocks">
+							<div class="date">
+								<?php echo $date->format('D | M j, Y'); ?>	
+							</div>
+							<h3><?php the_title(); ?></h3>
+						</div>
 					</a>
 				</div>
 			<?php endwhile; ?>

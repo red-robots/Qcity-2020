@@ -72,10 +72,10 @@ jQuery(document).ready(function ($) {
 	*	Colorbox
 	*
 	------------------------------------*/
-	$('a.gallery').colorbox({
-		rel:'gal',
+	$('a.popup').colorbox({
 		width: '80%', 
-		height: '80%'
+		inline: true
+		// height: '80%'
 	});
 	
 	/*

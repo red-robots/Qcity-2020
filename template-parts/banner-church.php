@@ -1,7 +1,7 @@
-<?php 
+<?php
 if( is_tax() ) {
-	$img = get_field('story_image','63060'); // Page = Qcity Biz
-	$imgMob = get_field('story_image_mobile','63060');
+	$img = get_field('story_image','19'); // Page = Church Directory
+	$imgMob = get_field('story_image_mobile','19');
 } else {
 	$img = get_field('story_image');
 	$imgMob = get_field('story_image_mobile');
@@ -17,13 +17,13 @@ if( is_tax() ) {
 	    <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 	</picture>
 	<div class="banner-info">
-		<h1 class="biz">Find a QCity local business.</h1>
+		<h1 class="biz">Find a QCity Church.</h1>
 		<div class="row-2">
 			
-			<div class="banner-button find">All Categories
+			<div class="banner-button find">All Denominations
 			<?php 
 			$terms = get_terms( array(
-			    'taxonomy' => 'business_category',
+			    'taxonomy' => 'denomination',
 			    'hide_empty' => false,
 			) );
 				if(is_array($terms)&&!empty($terms)):?>
@@ -43,6 +43,6 @@ if( is_tax() ) {
 				</form>
 			</div>	
 		</div><!--.row-1-->
-		<a href="">Add your Business To This Directory ></a>
+		<a href="<?php bloginfo('url'); ?>/church-directory/church-directory-sign-up/">Add your Church To This Directory ></a>
 	</div>
 </div>

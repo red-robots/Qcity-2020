@@ -9,6 +9,21 @@
 		max-width: 1150px;
 	}
 }
+.wrapper-header {
+	width: 100%;
+	margin: 0px auto;
+	padding: 0 20px;
+	position: relative;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 100%;
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		max-width: 1250px;
+		padding: 0;
+	}
+}
 .wrapper {
 	width: 100%;
 	margin: 0px auto;
@@ -17,10 +32,23 @@
 	
 	@media screen and (min-width: $tabwidth) {
 		width: 100%;
-		// padding: 0;
+		
 	}
 	@media screen and (min-width: $deskwidth) {
-		max-width: 1150px;
+		max-width: 1250px;
+		padding: 0;
+	}
+}
+body.single {
+	.wrapper {
+		@media screen and (min-width: $deskwidth) {
+			max-width: 1050px;
+		}
+	}
+	#content {
+		@media screen and (min-width: $tabwidth) {
+			margin-top: 60px;
+		}
 	}
 }
 #content {
@@ -35,6 +63,7 @@
 
 	}
 }
+
 .content-area {
 	width: 100%;
 	margin: 0px auto;
@@ -52,11 +81,12 @@
 .widget-area {
 	width: 100%;
 	margin: 0px auto;
-	
+	clear: both;
 	@media screen and (min-width: $tabwidth) {
 		width: 26%;
 		float: right;
 		margin: 0;
+		clear: none;
 	}
 	@media screen and (min-width: $deskwidth) {
 		/*width: 1200px;*/
@@ -95,6 +125,13 @@ section.red-band {
 	background-color: $color-red;
 	margin-bottom: 40px;
 	color: #fff;
+	h3 {
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+	form#category-select {
+		margin-bottom: 20px;
+	}
 }
 .next-stories {
 	width: 100%;
@@ -104,6 +141,7 @@ section.red-band {
 .btn {
 	width: auto;
 	display: inline-block;
+	text-transform: uppercase;
 	a {
 		display: block;
 		padding: 5px 25px;
@@ -120,6 +158,18 @@ section.red-band {
 		&.red {
 			background-color: $color-red;
 			color: #fff;
+			&:hover {
+				background-color: $color-yellow;
+				color: #fff;
+			}
+		}
+		&.yellow {
+			background-color: $color-yellow;
+			color: #fff;
+			&:hover {
+				background-color: $color-red;
+				color: #fff;
+			}
 		}
 	}
 }
@@ -360,7 +410,7 @@ header.section-title {
 		background-color: $color-dark-gray;
 		width: 100%;
 	}
-	h2 {
+	h1, h2 {
 		width: auto;
 		display: inline-block;
 		background-color: $color-dark-gray;
@@ -379,52 +429,12 @@ header.section-title {
 }
 .story-image {
 	width: 100%;
+	margin-bottom: 40px;
 	img {
 		width: 100%;
 	}
 }
-.author {
-	width: 100%;
-	padding: 20px;
-	background-color: $color-gray;
-	float: left;
-	.left {
-		display: flex;
-		flex-direction: row;
-		width: 100%;
-		@media screen and (min-width: $tabwidth) {
-			width: 15%;
-			float: left;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-	}
-	.photo {
-		width: 80px;
-		height: 80px;
-		border-radius: 50%;
-		overflow: hidden;
-		margin: 0 auto 20px auto;
-		@media screen and (min-width: $tabwidth) {
-			margin: auto;
-		}
-	}
-	.info {
-		width: 100%;
-		@media screen and (min-width: $tabwidth) {
-			width: 80%;
-			float: left;
-			padding: 0 0 0 1%;
-		}
-	}
-	h3 {
-		text-align: center;
-		@media screen and (min-width: $tabwidth) {
-			text-align: left;
-		}
-	}
-}
+
 header.biz {
 	width: 100%;
 	float: left;
@@ -521,20 +531,35 @@ header.biz {
 			margin: 0 20px 0 20px;
 			font-size: 14px;
 			a {
-				padding: 5px 25px;
+				padding: 10px 25px;
 				background-color: $color-yellow;
 				color: #fff;
 			}
 		}
 		.banner-button {
 			margin: 0 20px 0 20px;
+			padding: 10px 20px;
+			ul {
+				width: 300px;
+				padding: 10px 0;
+				background-color: $color-yellow;
+			}
+			li {
+				font-size: 14px;
+				a {
+					padding: 5px 20px;
+					&:hover {
+						background-color: rgba(#fff, .2);
+					}
+				}
+			}
 		}
 	}
 }
 .banner-button {
 	margin: 10px 5px 0 5px;
 	color: #fff;
-	padding: 5px 20px;
+	padding: 7px 20px;
 	// text-transform: uppercase;
 	font-size: 14px;
 	display: inline-block;
@@ -549,13 +574,14 @@ header.biz {
 			list-style-type: none;
 			display: block;
 			background-color: $color-yellow;
+			font-size: 14px;
 			a {
 				color: #803F26;
 				text-decoration: none;
 				display: block;
 				padding: 10px;
 				text-align: left;
-				font-size: 18px;
+				// font-size: 18px;
 			}
 		}
 	}
@@ -599,3 +625,64 @@ article.small {
 		font-size: 13px;
 	}
 }
+/*
+ *   Popups
+ */
+.newsletter {
+	max-width: 0px;
+	position: fixed;	
+	top: 190px;
+	right: 0;
+	background-color: rgba(0,0,0,.8);
+	overflow: hidden;
+}
+#mc_form_pop {
+	padding: 50px 20px 50px 20px;
+	
+	color: #fff;
+	text-align: center;
+}
+#mc_form_pop h2 {
+	width: 100%;
+	float: left;
+	display:inline-block;
+	font-size:20px;
+	text-transform:uppercase;
+	line-height: 1.2;
+	clear:both;
+	margin: 0 0 50px 0;
+	text-align: left;
+	color: #fff;
+}
+form.email-form {margin-bottom: 50px;}
+.close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: auto;
+	font-size: 24px;
+	cursor: pointer;
+}
+.nothanks {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	width: auto;
+	font-size: 12px;
+	cursor: pointer;
+}
+.popup-form {
+	padding: 5%;
+	background-color: #fff;
+	@media screen and (min-width: $tabwidth) {
+		width: 80%;
+		margin: 2% auto;
+	}
+	@media screen and (min-width: $deskwidth) {
+		margin-bottom: 30px;
+		width: 70%;
+	}
+}
+/*
+ *   / Popups
+ */

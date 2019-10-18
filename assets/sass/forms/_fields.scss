@@ -64,6 +64,7 @@ form.biz {
 		color: #fff;
 		border: 0;
 		@include innershadow();
+		padding-left: 5px;
 	}
 	input.searchicon {
 		background-color: rgba(#fff, 0);

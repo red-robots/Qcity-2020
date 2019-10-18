@@ -9,13 +9,14 @@
 
 get_header(); 
 
-if( has_post_thumbnail() ){
 ?>
-	<div class="story-image">
-		<?php the_post_thumbnail(); ?>
-	</div>
-<?php } ?>
+
 <div class="wrapper">
+	<?php if( has_post_thumbnail() ){ ?>
+		<div class="story-image">
+			<?php the_post_thumbnail(); ?>
+		</div>
+	<?php } ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="wrapper">
@@ -29,14 +30,7 @@ if( has_post_thumbnail() ){
 				?>
 			</div>
 
-		<?php get_template_part('template-parts/next-story');
-
-		// If comments are open or we have at least one comment, load up the comment template.
-		// if ( comments_open() || get_comments_number() ) :
-		// 	comments_template();
-		// endif;
-
-		?>
+		<?php get_template_part('template-parts/next-story'); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

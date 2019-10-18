@@ -56,6 +56,7 @@
 		float: left;
 		position: relative;
 		line-height: 0;
+		margin-bottom: 10px;
 		img {
 			width: 100%;
 			position: relative;
@@ -232,6 +233,7 @@ section.home-sponsored {
 			flex-wrap: nowrap;
 			flex-direction: row;
 			justify-content: space-between;
+			align-items: stretch;
 		}
 	}
 	.block {
@@ -258,9 +260,8 @@ section.home-sponsored {
 		.info {
 			color: #fff;
 			background-color: rgba(#000, .7);
-			position: absolute;
-			bottom: 0;
-			left: 0;
+			position: relative;
+			float: left;
 			width: 100%;
 			padding: 10px;
 			line-height: 1.1;
@@ -329,6 +330,9 @@ section.home-bottom {
 }
 .jobs {
 	margin-right: 30px;
+}
+.jobs, .jobs-page {
+	
 	.job {
 		width: 100%;
 		float: left;
@@ -426,9 +430,14 @@ article.post {
 		margin: 20px 0;
 		width: 100%;
 		font-size: 1rem;
+		padding-bottom: 30px;
+		border-bottom: 1px solid #000;
+		color: $color-med-gray;
 		.category {
 			width: auto;
 			display: inline-block;
+			margin-right: 20px;
+			font-weight: bold;
 			a {
 				text-decoration: none;
 				color: $color-black;
@@ -629,6 +638,222 @@ section.sponsored {
 	.story-block {
 		@media screen and (min-width: $tabwidth) {
 			flex-basis: 45%;
+		}
+	}
+}
+.author-profile {
+	width: 100%;
+	float: left;
+	background-color: $color-dark-gray;
+	padding: 20px;
+	color: #fff;
+	margin-bottom: 30px;
+	@media screen and (min-width: $tabwidth) {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: center;
+		align-items: center;
+		padding: 30px;
+	}
+	.info {
+		width: 100%;
+		// float: left;
+		@media screen and (min-width: $tabwidth) {
+			width: 40%;
+		}
+	}
+	.photo {
+		// float: left;
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		overflow: hidden;
+		margin: 0 auto 20px auto;
+		@media screen and (min-width: $tabwidth) {
+			width: 200px;
+			height: 200px;
+			margin: 0;
+		}
+		@media screen and (min-width: $deskwidth) {
+			width: 300px;
+			height: 300px;
+		}
+	}
+}
+.postby	 {
+	width: 100%;
+	padding: 20px 0;
+	text-transform: uppercase;
+	color: $color-dark-gray;
+	font-size: 12px;
+	font-weight: bold;
+}
+.author-block {
+	width: 100%;
+	
+	background-color: $color-gray;
+	float: left;
+	a {
+		display: block;
+		float: left;
+		width: 100%;
+		padding: 20px;
+		color: #000;
+		@include transition(all ease .2s);
+		&:hover {
+			@include shadow();
+		}
+	}
+	.left {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		@media screen and (min-width: $tabwidth) {
+			width: 15%;
+			float: left;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	.photo {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		overflow: hidden;
+		margin: 0 auto 20px auto;
+		@media screen and (min-width: $tabwidth) {
+			margin: auto;
+		}
+	}
+	.info {
+		width: 100%;
+		@media screen and (min-width: $tabwidth) {
+			width: 80%;
+			float: left;
+			padding: 0 0 0 1%;
+		}
+	}
+	h3 {
+		text-align: center;
+		@media screen and (min-width: $tabwidth) {
+			text-align: left;
+		}
+	}
+}
+.author-feed {
+
+	@media screen and (min-width: $tabwidth) {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.story-block {
+		@media screen and (min-width: $tabwidth) {
+			flex-basis: 45%;
+		}
+	}
+}
+/*
+*	Archive / Category
+*/
+.second-row {
+	@media screen and (min-width: $tabwidth) {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: stretch;
+	}
+	.story-block {
+		@media screen and (min-width: $tabwidth) {
+			flex-basis: 45%;
+		}
+	}
+}
+.church-directory-search-box {
+	background-color: $color-red;
+	width: 100%;
+	@media screen and (min-width: $tabwidth) {
+
+	}
+}
+section.church-list	{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+	.church {
+		width: auto;
+		position: relative;
+		flex-basis: 47%;
+		background-color: #fff;
+		color: $color-dark-gray;
+		padding: 20px 20px 60px 20px;
+		margin-bottom: 20px;
+		font-size: 14px;
+		@include shadow();
+		border: 3px solid $color-gray;
+		@media screen and (min-width: $tabwidth) {
+			flex-basis: 31%;
+
+		}
+		h2 {
+			line-height: 1.2;
+			font-size: 18px;
+			border-bottom: 1px solid $color-red;
+			padding-bottom: 5px;
+			margin-bottom: 10px;
+		}
+		.btn {
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+		}
+	}
+}
+.pricing-grid {
+	display: flex;
+	// max-width: 750px;
+	margin: 0 auto;
+  	// background-color: #eee;
+	.plan {
+		flex: 1;
+		background-color: rgba(255,255,255, 0.9);
+		@include shadow();
+		margin: 50px 10px;
+		padding: 10px;
+		text-align: center;
+		border-radius: 4px;
+		display: flex;
+		flex-wrap: wrap;
+		flex-basis: 30%;
+		border: 3px solid $color-gray;
+		h2 {
+			font-size: 20px;
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		li {
+			margin: 0 0 5px 0;
+			padding: 0;
+			border-bottom: 1px solid #ccc;
+		}
+
+		& a.cta {
+			align-self: flex-end;
+			background-color: rgba(0,0,0,.3);
+		}
+		& > * {
+			flex: 1;
+			flex-basis: 100%;
 		}
 	}
 }

@@ -1,0 +1,81 @@
+<?php
+/**
+ * Template Name: Membership
+ */
+
+get_header(); 
+$banner_image = get_field("banner_photo");
+$video = get_field("video");
+$description = get_field("description");
+$tier_1_desc = get_field("tier_1_desc");
+$tier_2_desc = get_field("tier_2_desc");
+$tier_3_desc = get_field("tier_3_desc");
+$tier_1_mail = get_field("tier_1_mail");
+$tier_2_mail = get_field("tier_2_mail");
+$tier_3_mail = get_field("tier_3_mail");
+$tier_1_btn = get_field("tier_1_btn");
+$tier_2_btn = get_field("tier_2_btn");
+$tier_3_btn = get_field("tier_3_btn");
+$tier_1_link = get_field("tier_1_btn_link");
+$tier_2_link = get_field("tier_2_btn_link");
+$tier_3_link = get_field("tier_3_btn_link");
+$mail = get_field("mailing_address");
+?>
+<div class="wrapper">
+	<div class="content-area">
+		<header class="section-title ">
+			<h1 class="dark-gray"><?php the_title(); ?></h1>
+		</header>
+	</div>
+</div>
+<div class="wrapper">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+			<?php
+			while ( have_posts() ) : the_post(); ?>
+				<div class="entry-content">
+					<?php echo $description; ?>
+				</div><!-- entry-content -->
+			<?php endwhile; // End of the loop.
+			?>
+
+			<section class="tiers membership-thirds pricing-grid">
+				<div class="third plan">
+					<?php echo $tier_1_desc; ?>
+					<div class="btn ">
+						<a class="yellow " href="<?php echo $tier_1_link; ?>">
+							<?php echo $tier_1_btn; ?>
+						</a>
+					</div>	
+					
+				</div>
+				<div class="third plan">
+					<?php echo $tier_2_desc; ?>
+					<div class="btn ">
+						<a class="red" href="<?php echo $tier_2_link; ?>">
+							<?php echo $tier_2_btn; ?>
+						</a>
+					</div>	
+					
+				</div>
+				<div class="third plan">
+					<?php echo $tier_3_desc; ?>
+					<div class="btn">
+						<a class="red" href="<?php echo $tier_3_link; ?>">
+							<?php echo $tier_3_btn; ?>
+						</a>
+					</div>	
+					
+				</div>
+			</section>
+			<section class="mailing-address entry-content" >
+					<?php echo $mail; ?>
+			</section>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
+</div>
+<?php get_footer();
