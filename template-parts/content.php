@@ -44,25 +44,40 @@ $mod = the_modified_date('M j, Y', '', '', false);
 		?>
 	</div><!-- .entry-content -->
 
+	<div class="tags">
+	<?php 
+		// $tags = get_the_tag_list();
+		// echo '<pre>';
+		// print_r($tags);
+		// echo '</pre>';
+	 ?>
+		 <?php echo get_the_tag_list(
+		 	'<span class="title">This Story is Tagged: </span> ',
+		 	', '
+		 ); ?>
+	</div>
+
 	<div class="share">
 		<?php echo do_shortcode('[social_warfare]'); ?>
 	</div>
-	<?php 
-		$aName = get_the_author_meta('display_name');
-		$aDesc = get_the_author_meta('description');
 
-		$chooseAuthor = get_field( 'choose_author' );
-		$size         = 'thumbnail';
-		$authorPhoto  = null;
-		
-		// echo '<pre>';
-		// print_r($aUrl);
-		// echo '</pre>';
-	?>
+	
 	<footer class="entry-footer">
 		<!-- <div class="share"></div> -->
 		
 		<div class="author-block">
+		<?php 
+			$aName = get_the_author_meta('display_name');
+			$aDesc = get_the_author_meta('description');
+
+			$chooseAuthor = get_field( 'choose_author' );
+			$size         = 'thumbnail';
+			$authorPhoto  = null;
+			
+			// echo '<pre>';
+			// print_r($aUrl);
+			// echo '</pre>';
+		?>
 			<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
 				<div class="left">
 				

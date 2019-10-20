@@ -13,7 +13,7 @@ get_header();
 get_template_part('template-parts/banner-biz');
 ?>
 <div class="wrapper">
-	<div class="content-area">
+	<div class="content-area-title">
 		<header class="section-title ">
 			<h2 class="dark-gray">Find a Business by Category</h2>
 		</header>

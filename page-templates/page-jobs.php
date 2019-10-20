@@ -13,7 +13,7 @@ get_header();
 get_template_part('template-parts/banner-jobs');
 ?>
 <div class="wrapper">
-	<div class="content-area">
+	<div class="content-area-title">
 		<header class="section-title ">
 			<h1 class="dark-gray"><?php the_title(); ?></h1>
 		</header>

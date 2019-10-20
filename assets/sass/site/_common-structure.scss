@@ -63,7 +63,20 @@ body.single {
 
 	}
 }
-
+.content-area-single {
+	width: 100%;
+	margin: 0px auto;
+	max-width: 700px;
+}
+.content-area-title {
+	width: 100%;
+	margin: 0px auto;
+	@media screen and (min-width: $tabwidth) {
+		width: 66%;
+		float: left;
+		margin: 0;
+	}
+}
 .content-area {
 	width: 100%;
 	margin: 0px auto;
@@ -72,12 +85,12 @@ body.single {
 		width: 66%;
 		float: left;
 		margin: 0;
+		padding-bottom: 50px;
 	}
 	@media screen and (min-width: $deskwidth) {
 		/*width: 1200px;*/
 	}
 }
-
 .widget-area {
 	width: 100%;
 	margin: 0px auto;
@@ -228,6 +241,22 @@ section.red-band {
 	}
 	@media screen and (min-width: $deskwidth) {
 		
+	}
+}
+.tags {
+	width: 100%;
+	float: left;
+	padding: 20px 0;
+	margin-bottom: 20px;
+	border-bottom: 3px solid rgba(#000,.2);
+	color: $color-med-gray;
+	.title {
+		text-transform: uppercase;
+		color: $color-dark-gray;
+	}
+	a {
+		color: $color-med-gray;
+		text-decoration: none;
 	}
 }
 .site-footer {

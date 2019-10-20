@@ -22,7 +22,7 @@ $tier_3_link = get_field("tier_3_btn_link");
 $mail = get_field("mailing_address");
 ?>
 <div class="wrapper">
-	<div class="content-area">
+	<div class="content-area-title">
 		<header class="section-title ">
 			<h1 class="dark-gray"><?php the_title(); ?></h1>
 		</header>

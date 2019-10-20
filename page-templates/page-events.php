@@ -13,7 +13,7 @@ get_header();
 get_template_part('template-parts/banner-events');
 ?>
 <div class="wrapper">
-	<div class="content-area">
+	<div class="content-area-title">
 		<header class="section-title ">
 			<h2 class="dark-gray">Sponsored</h2>
 		</header>

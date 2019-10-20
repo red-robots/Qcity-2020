@@ -1673,12 +1673,14 @@ button:active,button:focus,input[type="button"]:active,input[type="button"]:focu
 input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"],textarea{color:#666;border:1px solid #ccc;border-radius:3px}
 input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="number"]:focus,input[type="tel"]:focus,input[type="range"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="color"]:focus,textarea:focus{color:#111}
 select{border:1px solid #ccc}
-input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"]{padding:3px}
-textarea{padding-left:3px;width:100%}
+input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"]{padding:3px;background-color:#eee;border-radius:0}
+textarea{padding-left:3px;width:100%;background-color:#eee;border-radius:0}
 .search{width:auto;display:inline-block}
 form.biz{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
 form.biz input.searchfield{background-color:rgba(255,255,255,0.3);color:#fff;border:0;box-shadow:-1px 7px 23px -14px rgba(0,0,0,0.48) inset;-webkit-box-shadow:-1px 7px 23px -14px rgba(0,0,0,0.48) inset;-moz-box-shadow:-1px 7px 23px -14px rgba(0,0,0,0.48) inset;padding-left:5px}
 form.biz input.searchicon{background-color:rgba(255,255,255,0);width:25px;margin-left:10px}
+input[type="submit"]{box-shadow:none;border-radius:0;background-color:#000;color:#c4a92f;text-shadow:none;border:1px solid #000;text-transform:uppercase;font-weight:bold;-webkit-transition:all ease .2s;transition:all ease .2s}
+input[type="submit"]:hover{box-shadow:none;border:1px solid #000;background-color:#924020;color:#fff}
 a{color:#0999f3}
 a:hover,a:focus,a:active{color:midnightblue}
 a:focus{outline:thin dotted}
@@ -1869,8 +1871,11 @@ html[xmlns] .flexslider .slides{display:block}
 }@media screen and (min-width:600px){body.single #content{margin-top:60px}
 }#content{margin-top:5px;width:100%;float:left;clear:both}
 @media screen and (min-width:600px){#content{margin-top:25px}
+}.content-area-single{width:100%;margin:0 auto;max-width:700px}
+.content-area-title{width:100%;margin:0 auto}
+@media screen and (min-width:600px){.content-area-title{width:66%;float:left;margin:0}
 }.content-area{width:100%;margin:0 auto}
-@media screen and (min-width:600px){.content-area{width:66%;float:left;margin:0}
+@media screen and (min-width:600px){.content-area{width:66%;float:left;margin:0;padding-bottom:50px}
 }@media screen and (min-width:1250px){}
 .widget-area{width:100%;margin:0 auto;clear:both}
 @media screen and (min-width:600px){.widget-area{width:26%;float:right;margin:0;clear:none}
@@ -1901,6 +1906,9 @@ section.red-band a:hover{background-color:#fff;color:#924020}
 }@media screen and (min-width:1250px){}
 .logo img,h1.logo img{width:100%}
 .logo a,h1.logo a{width:100%;display:block}
+.tags{width:100%;float:left;padding:20px 0;margin-bottom:20px;border-bottom:3px solid rgba(0,0,0,0.2);color:#9f9f9f}
+.tags .title{text-transform:uppercase;color:#58595b}
+.tags a{color:#9f9f9f;text-decoration:none}
 .site-footer{width:100%;clear:both;background-color:#262425;color:rgba(255,255,255,0.5);padding:20px 0;overflow:hidden}
 .site-footer a{text-decoration:none;color:rgba(255,255,255,0.5)}
 .site-footer a:hover{color:#c4a92f}
