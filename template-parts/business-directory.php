@@ -31,7 +31,7 @@
 	    <?php endwhile; ?>	
 	    </div>
 	    <div class="more">
-	    	<a class="red" href="<?php bloginfo('url'); ?>/">See More</a>
+	    	<a class="red" href="<?php bloginfo('url'); ?>/qcity-biz">See More</a>
 	    </div>
 	<?php endif; ?>
 </div>

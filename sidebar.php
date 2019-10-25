@@ -6,7 +6,7 @@
  *
  * @package ACStarter
  */
-
+wp_reset_postdata();
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
@@ -23,13 +23,19 @@ if( get_post_type() == 'post' ) {
 	$title = 'This is a page and needs to change the query';
 	$qp = 'business_listing';
 }
+
+if( is_page('events') ) {
+	$text = 'Get our newsletter to keep up with events and ticket giveaways.';
+} else {
+	$text = 'Have you signed up to receive our daily news and events listings?';
+}
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
 	<div class="side-offer">
-		<p>Have you signed up to receive our daily news and events listings?</p>
+		<p><?php echo $text; ?></p>
 		<div class="btn">
-			<a class="white" href="#">Subscribe</a>
+			<a class="white" href="<?php bloginfo('url'); ?>/email-signup">Subscribe</a>
 		</div>
 	</div>
 	

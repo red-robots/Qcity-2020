@@ -40,7 +40,7 @@
 			    <?php endwhile; ?>	
 			    </div>
 			    <div class="more">
-			    	<a class="red" href="<?php bloginfo('url'); ?>/">See More</a>
+			    	<a class="red" href="<?php bloginfo('url'); ?>/job-board">See More</a>
 			    </div>
 			<?php endif; ?>
 	</div>

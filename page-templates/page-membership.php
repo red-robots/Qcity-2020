@@ -22,14 +22,14 @@ $tier_3_link = get_field("tier_3_btn_link");
 $mail = get_field("mailing_address");
 ?>
 <div class="wrapper">
-	<div class="content-area-title">
+	<div class="content-area-single">
 		<header class="section-title ">
 			<h1 class="dark-gray"><?php the_title(); ?></h1>
 		</header>
 	</div>
 </div>
 <div class="wrapper">
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area-single">
 		<main id="main" class="site-main" role="main">
 
 			<?php
@@ -76,6 +76,6 @@ $mail = get_field("mailing_address");
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 </div>
 <?php get_footer();

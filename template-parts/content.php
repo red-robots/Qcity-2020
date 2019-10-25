@@ -101,5 +101,9 @@ $mod = the_modified_date('M j, Y', '', '', false);
 			</a>
 		</div>
 
+		<section class="comments">
+			<?php echo do_shortcode( '[Fancy_Facebook_Comments]' ); ?>
+		</section>
+
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

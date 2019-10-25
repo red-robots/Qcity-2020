@@ -32,34 +32,6 @@ if( is_archive() ) {
 			</div>	
 
 		</div><!--.row-2-->
-		<div class="bottom">
-			<div class="btn">
-				<a class="popup" href="#submit-an-event">Post an Event</a>
-			</div>
-			<div class="btn">
-				<div class="banner-button find">Event Categories
-				<?php 
-				$terms = get_terms( array(
-				    'taxonomy' => 'event_cat',
-				    'hide_empty' => false,
-				) );
-				// echo '<pre>';
-				// print_r($terms);
-				// echo '</pre>';
-					if(is_array($terms)&&!empty($terms)):?>
-	                        <ul>
-	                            <?php foreach($terms as $term):?>
-	                                <li>
-	                                    <a href="<?php echo get_term_link($term->term_id);?>"><?php echo $term->name;?></a> 
-	                                </li>
-	                            <?php endforeach;?>
-	                        </ul>
-	                    <?php endif;?>
-				</div>
-			</div>
-			<div class="btn">
-				<a href="">Events This Weekend</a>
-			</div>
-		</div>
+		<?php get_template_part('template-parts/event-btn'); ?>
 	</div>
 </div>

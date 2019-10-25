@@ -16,45 +16,50 @@ add_image_size('thirds',400,278,array('center','top'));
 add_image_size('small',250,9999 );
 
 
-function insert_ad_block( $text ) {
-  $postType = get_post_type();
-  $on = get_field('automatic_ads', 'option');
-    if ( is_single() ) :
-      if( $postType == 'post' && $on[0] == 'On' ) {
-      // echo $on[0];
-        $ads_text = "<div class='googleadswrap'>
-<div id='div-gpt-ad-1565127901858-0'>
-  <script>
-    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1565127901858-0'); });
-  </script>
-</div><div class='promote insert '>Sponsored</div></div>";
+/*-------------------------------------
+  
+  Automatically insert add after paragraph # ...
 
-        $split_by = "\n";
-        $insert_after = 6; //number of paragraphs
+---------------------------------------*/
+// function insert_ad_block( $text ) {
+//   $postType = get_post_type();
+//   $on = get_field('automatic_ads', 'option');
+//     if ( is_single() ) :
+//       if( $postType == 'post' && $on[0] == 'On' ) {
+//       // echo $on[0];
+//         $ads_text = "<div class='googleadswrap'>
+// <div id='div-gpt-ad-1565127901858-0'>
+//   <script>
+//     googletag.cmd.push(function() { googletag.display('div-gpt-ad-1565127901858-0'); });
+//   </script>
+// </div><div class='promote insert '>Sponsored</div></div>";
 
-        // make array of paragraphs
-        $paragraphs = explode( $split_by, $text);
+//         $split_by = "\n";
+//         $insert_after = 6; //number of paragraphs
 
-        // if array elements are less than $insert_after set the insert point at the end
-        $len = count( $paragraphs );
-        if (  $len < $insert_after ) $insert_after = $len;
+//         // make array of paragraphs
+//         $paragraphs = explode( $split_by, $text);
 
-        // insert $ads_text into the array at the specified point
-        array_splice( $paragraphs, $insert_after, 0, $ads_text );
+//         // if array elements are less than $insert_after set the insert point at the end
+//         $len = count( $paragraphs );
+//         if (  $len < $insert_after ) $insert_after = $len;
 
-        // loop through array and build string for output
-        foreach( $paragraphs as $paragraph ) {
-            $new_text .= $paragraph; 
-        }
+//         // insert $ads_text into the array at the specified point
+//         array_splice( $paragraphs, $insert_after, 0, $ads_text );
 
-        return $new_text;
-    }
-    endif;
+//         // loop through array and build string for output
+//         foreach( $paragraphs as $paragraph ) {
+//             $new_text .= $paragraph; 
+//         }
 
-    return $text;
+//         return $new_text;
+//     }
+//     endif;
 
-}
-add_filter('the_content', 'insert_ad_block');
+//     return $text;
+
+// }
+// add_filter('the_content', 'insert_ad_block');
 
 
 /*-------------------------------------
@@ -131,6 +136,27 @@ function acc_gut_ad_block_acf_600() {
       'category'      => 'formatting',
       'icon'        => 'welcome-widgets-menus',
       'keywords'      => array( 'googlead' ),
+      'mode'              => 'preview',
+    ));
+  }
+}
+
+
+add_action('acf/init', 'acc_gut_newsletter_block');
+function acc_gut_newsletter_block() {
+  
+  // check function exists
+  if( function_exists('acf_register_block') ) {
+    
+    // register a testimonial block
+    acf_register_block(array(
+      'name'        => 'newsletter',
+      'title'       => __('Newsletter Signup'),
+      'description'   => __('Newletter Signup Block.'),
+      'render_callback' => 'acf_gut_callback',
+      'category'      => 'formatting',
+      'icon'        => 'welcome-widgets-menus',
+      'keywords'      => array( 'newsletter' ),
       'mode'              => 'preview',
     ));
   }

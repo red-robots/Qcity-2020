@@ -14,7 +14,7 @@ get_header();
 <div class="wrapper">
 	<?php if( has_post_thumbnail() ){ ?>
 		<div class="story-image">
-			<?php the_post_thumbnail(); ?>
+			<?php the_post_thumbnail('full'); ?>
 		</div>
 	<?php } ?>
 	<div id="primary" class="content-area">

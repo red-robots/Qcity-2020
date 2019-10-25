@@ -42,6 +42,13 @@ get_template_part('template-parts/banner-events');
 				        'value'		=> $today,
 				    ),
 			    ),
+			    'tax_query' => array(
+					array(
+						'taxonomy' => 'event_category', // your custom taxonomy
+						'field' => 'slug',
+						'terms' => array( 'premium' ) // the terms (categories) you created
+					)
+				)
 			));
 				if ($wp_query->have_posts()) : ?>
 					<section class="sponsored">
@@ -57,16 +64,50 @@ get_template_part('template-parts/banner-events');
 						endwhile; ?>
 					</section>
 				<?php endif; ?>
-
+		<header class="section-title ">
+			<h2 class="dark-gray">More Happenings</h2>
+		</header>
 			<?php
-			while ( have_posts() ) : the_post();
+			/*
+				The Rest of the Events 
 
-				
 
-				
+			*/
+				$i = 0;
+				$today = date('Ymd');
+				$wp_query = new WP_Query();
+				$wp_query->query(array(
+				'post_type'=>'event',
+				'posts_per_page' => 5,
+				'meta_query' => array(
+					array(
+				        'key'		=> 'event_date',
+				        'compare'	=> '<=',
+				        'value'		=> $today,
+				    ),
+			    ),
+			    'tax_query' => array(
+					array(
+						'taxonomy' => 'event_category', // your custom taxonomy
+						'field' => 'slug',
+						'terms' => array( 'standard' ) // the terms (categories) you created
+					)
+				)
+			));
+				if ($wp_query->have_posts()) : ?>
+					<section class="sponsored">
+					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
+						$img = get_field('event_image');
+						$date = get_field("event_date", false, false);
+						$date = new DateTime($date);
+						$enddate = get_field("end_date", false, false);
+						$enddate = new DateTime($enddate);
+						
+							include( locate_template('template-parts/sponsored-block.php') );
 
-			endwhile; // End of the loop.
-			?>
+						endwhile; ?>
+					</section>
+				<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

@@ -19,6 +19,7 @@
 	display: block;
 	text-align: center;
 	width: 100%;
+  font-family: $font__main;
 	
 	@media screen and (min-width: $tabwidth) {
 		clear: none;
@@ -111,9 +112,6 @@
 		display: inline-block;
 		hyphens: none;
 		padding: 0 ;
-		// text-transform: uppercase;
-		font-family: $font-heading;
-		font-weight: 300;
 		width: 100%;
 		@media screen and (min-width: $tabwidth) {
 			// border-left: 1px solid #000;
@@ -455,6 +453,7 @@ body {
 nav.mobilemenu {
   background-color: rgba($color-black, 1);
   position: fixed;
+  font-family: $font__main;
   z-index: 9;
   top: 0;
   right: 0;
