@@ -99,6 +99,7 @@ body.single {
 		float: left;
 		margin: 0;
 		padding-bottom: 50px;
+		min-height: 800px;
 	}
 	@media screen and (min-width: $deskwidth) {
 		/*width: 1200px;*/
@@ -113,6 +114,7 @@ body.single {
 		float: right;
 		margin: 0;
 		clear: none;
+		padding-bottom: 40px;
 	}
 	@media screen and (min-width: $deskwidth) {
 		/*width: 1200px;*/
@@ -744,7 +746,9 @@ form.email-form {margin-bottom: 50px;}
 /*
  *   / Popups
  */
-.wp-block-image figcaption {
+.wp-block-image figcaption,
+figure figcaption,
+figcaption {
 	font-size: 12px;
 }
 .googleadswrap {

@@ -6,9 +6,12 @@
 get_header(); ?>
 <div class="wrapper">
 	<div class="content-area-single">
-		<header class="section-title ">
+	<header class="entry-header toppage">
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	</header>
+		<!-- <header class="section-title ">
 			<h1 class="dark-gray"><?php the_title(); ?></h1>
-		</header>
+		</header> -->
 	</div>
 </div>
 <div class="wrapper">

@@ -5,15 +5,21 @@
 
 get_header(); 
 
-$rightCol = get_field('right_content'):
-
+$rightCol = get_field('right_content');
+$pClass = '';
+if( is_page('contact-us') ) {
+	$pClass = 'contact';
+}
 ?>
 <div class="wrapper">
-	<div class="content-area-title">
+	<header class="entry-header toppage">
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	</header>
+	<!-- <div class="content-area-title">
 		<header class="section-title ">
 			<h1 class="dark-gray"><?php the_title(); ?></h1>
 		</header>
-	</div>
+	</div> -->
 </div>
 <div class="wrapper">
 	
@@ -22,7 +28,7 @@ $rightCol = get_field('right_content'):
 
 			<?php
 			while ( have_posts() ) : the_post(); ?>
-				<div class="entry-content">
+				<div class="entry-content ">
 					<?php the_content(); ?>
 				</div>
 			<?php endwhile; // End of the loop.
@@ -31,7 +37,7 @@ $rightCol = get_field('right_content'):
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	<div class="right">
-		<div class="entry-content">
+		<div class="entry-content <?php echo $pClass; ?>">
 			<?php echo $rightCol; ?>
 		</div>
 	</div>

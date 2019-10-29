@@ -99,7 +99,7 @@
 					More Events
 				</div>
 				<div class="overlayz">
-					<a href="<?php bloginfo('url'); ?>/more"></a>
+					<a href="<?php bloginfo('url'); ?>/events"></a>
 				</div>
 				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/city.jpg">
 			</div>

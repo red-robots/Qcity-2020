@@ -1651,7 +1651,9 @@ h1,h2,h3,h4,h5,h6{clear:both;font-family:"UniversLTPro-65Bold";line-height:1.1}
 h1.entry-title{font-size:2rem;line-height:1.1;margin-bottom:20px}
 header.entry-header .date{color:#58595b;font-size:20px}
 header.entry-header.event{padding-bottom:20px;border-bottom:1px solid #000}
+header.entry-header.toppage{padding-top:30px}
 .entry-content{font-size:1rem;line-height:1.6}
+.entry-content.contact{font-size:1.5rem;margin-top:20px}
 p{margin-bottom:1.5em}
 dfn,cite,em,i{font-style:italic}
 blockquote{margin:0 1.5em}
@@ -1892,10 +1894,10 @@ html[xmlns] .flexslider .slides{display:block}
 .content-area-title{width:100%;margin:0 auto}
 @media screen and (min-width:600px){.content-area-title{width:66%;float:left;margin:0}
 }.content-area{width:100%;margin:0 auto}
-@media screen and (min-width:600px){.content-area{width:66%;float:left;margin:0;padding-bottom:50px}
+@media screen and (min-width:600px){.content-area{width:66%;float:left;margin:0;padding-bottom:50px;min-height:800px}
 }@media screen and (min-width:1250px){}
 .widget-area{width:100%;margin:0 auto;clear:both}
-@media screen and (min-width:600px){.widget-area{width:26%;float:right;margin:0;clear:none}
+@media screen and (min-width:600px){.widget-area{width:26%;float:right;margin:0;clear:none;padding-bottom:40px}
 }@media screen and (min-width:1250px){}
 section.red-band{width:100%;float:left;position:relative;margin:20px 0 4px 0;background-color:#924020;padding:2px 0;text-align:right;color:#fff;font-size:13px;display:none}
 @media screen and (min-width:600px){section.red-band{display:block}
@@ -2014,7 +2016,7 @@ form.email-form{margin-bottom:50px}
 .popup-form{padding:5%;background-color:#fff}
 @media screen and (min-width:600px){.popup-form{width:80%;margin:2% auto}
 }@media screen and (min-width:1250px){.popup-form{margin-bottom:30px;width:70%}
-}.wp-block-image figcaption{font-size:12px}
+}.wp-block-image figcaption,figure figcaption,figcaption{font-size:12px}
 .googleadswrap{background-color:#eee;padding:30px 10px;text-align:left;margin:20px 0;width:100%;float:left}
 .googleadswrap .promote{font-size:12px;width:100%;text-align:center;padding:10px 0 0 0}
 .sticky{display:block}

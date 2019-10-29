@@ -89,7 +89,8 @@ window.googletag = window.googletag || {cmd: []};
 
 	        <section class="red-band">
 	        	<div class="wrapper">
-	        		Join our community to receive email updates from QCityMetro > <a href="#">Subscribe</a>
+	        		Join our community to receive email updates from QCityMetro > 
+	        		<a href="<?php bloginfo('url'); ?>/email-signup">Subscribe</a>
 	        	</div>
 	        </section>
 
