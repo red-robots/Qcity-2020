@@ -94,14 +94,14 @@
 					</a>
 				</div>
 			<?php endwhile; ?>
-			<div class="block last-block">
+			<div class="block last-block" style="background-image: url('<?php bloginfo('stylesheet_directory'); ?>/images/city.jpg');">
 				<div class="more">
 					More Events
 				</div>
 				<div class="overlayz">
 					<a href="<?php bloginfo('url'); ?>/events"></a>
 				</div>
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/city.jpg">
+				<!-- <img src=""> -->
 			</div>
 		</div>
 	</section>

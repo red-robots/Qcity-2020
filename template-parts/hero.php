@@ -31,7 +31,7 @@ if ($wp_query->have_posts()) : ?>
 	
 		<article class="big-post">
 			<?php if( $img ) { ?>
-				<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
+				<img src="<?php echo $img['sizes']['thirds']; ?>" alt="<?php echo $img['alt']; ?>">
 			<?php } else {
 				if( has_post_thumbnail() ) {  the_post_thumbnail();  }
 				} ?>

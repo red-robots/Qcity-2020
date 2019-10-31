@@ -12,12 +12,13 @@ get_header();
 ?>
 
 <div class="wrapper">
-	<?php if( has_post_thumbnail() ){ ?>
-		<div class="story-image">
-			<?php the_post_thumbnail('full'); ?>
-		</div>
-	<?php } ?>
+	
 	<div id="primary" class="content-area">
+		<?php if( has_post_thumbnail() ){ ?>
+			<div class="story-image">
+				<?php the_post_thumbnail('full'); ?>
+			</div>
+		<?php } ?>
 		<main id="main" class="site-main" role="main">
 			<div class="wrapper">
 				<?php

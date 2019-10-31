@@ -29,6 +29,8 @@ get_template_part('template-parts/banner-church');
 				$wp_query->query(array(
 				'post_type'=>'church_listing',
 				'posts_per_page' => 15,
+				'order' => 'ASC',
+				'orderby' => 'title'
 			));
 				if ($wp_query->have_posts()) : ?>
 				<section class="church-list">
