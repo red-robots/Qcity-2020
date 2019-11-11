@@ -11,7 +11,7 @@ get_header();
 
 ?>
 
-<div class="wrapper">
+<!-- <div class="wrapper">
 	<div class="content-area">
 		<header class="section-title ">
 			<h1 class="dark-gray">
@@ -22,7 +22,7 @@ get_header();
 			</h1>
 		</header>
 	</div>
-</div>
+</div> -->
 <div class="wrapper">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -44,14 +44,15 @@ get_header();
 					<?php if (function_exists('wpp_get_views')):?>
 						<div class="data"> 
 							<header>
-								<h2>
-									<?php echo $company_name;?>
-								</h2>
+								<h2><?php echo $company_name;?></h2>
 							</header>
-							<div class="date"><?php echo get_the_date(); ?></div><!--.date-->
-							<div class="views">
-								Views:&nbsp;<?php echo wpp_get_views( get_the_ID() );?>
-							</div><!--.views-->
+							<div class="extras">
+								<div class="date">Posted:&nbsp;<?php echo get_the_date(); ?></div><!--.date-->
+								<div class="views">
+									Views:&nbsp;<?php echo wpp_get_views( get_the_ID() );?>
+								</div><!--.views-->
+							</div>
+							
 						</div><!--.data-->
 					<?php endif;?>
 

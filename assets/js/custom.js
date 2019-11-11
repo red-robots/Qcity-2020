@@ -17,6 +17,56 @@ jQuery(document).ready(function ($) {
         $(this).addClass("active");
         }
 	});
+
+	/*
+	*
+	*	Navigation Jobs Count
+
+		local = 58030
+		site = 58030
+	*
+	------------------------------------*/
+	(function(){
+        $.post(
+            bellaajaxurl.url,
+            {
+                'action': 'bella_get_jobs_count',
+            },
+            function (response) {
+				var $response = $(response);
+				if ($response.find("response_data").length > 0) {
+                    $text = $response.find("response_data").eq(0).text();
+					$('.menu-item-58030').append('<span class="splat">'+$text+'</span>');
+                }
+            }
+        );
+	})();
+
+	/*
+	*
+	*	Navigation Events Count
+
+		local = 63042
+		site = 67367
+	*
+	------------------------------------*/
+
+	(function(){
+        $.post(
+            bellaajaxurl.url,
+            {
+                'action': 'bella_get_events_count',
+            },
+            function (response) {
+				var $response = $(response);
+				if ($response.find("response_data").length > 0) {
+                    $text = $response.find("response_data").eq(0).text();
+					$('.menu-item-67367').append('<span class="splat">'+$text+'</span>');
+                }
+            }
+        );
+	})();
+
 	/*
 	*
 	*   Mobile Nav
@@ -113,6 +163,154 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	$('.js-blocks').matchHeight();
+
+
+	/*
+	*
+	*	Video
+	*
+	------------------------------------*/
+	var $video_wrapper = $('.template-video .video-holder .video-wrapper');
+    if($video_wrapper.length>0){
+        var $window = $(window);
+        var $video_holder = $('.template-video .video-holder');
+        var $site_nav = $('#site-navigation');
+        function video_check(){
+            var anchor = $video_holder.offset().top;
+            var offset_y = 10;
+            var offset_x = 10;
+            if($site_nav.length>0){
+                offset_y = offset_y + $site_nav.height();
+            }
+            if($window.scrollTop()>anchor && window.innerWidth > 600){
+                $video_wrapper.css({
+                    position:'fixed',
+                    top: offset_y + "px",
+                    right: offset_x+"px",
+                    width: '350px',
+                    height: '196px'
+                });
+            } else {
+                $video_wrapper.css({
+                    position:'',
+                    top: '',
+                    right: '',
+                    width: '',
+                    height: ''
+                });
+            }
+        }
+        video_check();
+        $window.on("scroll",video_check);
+        $window.on("resize",video_check);
+    }
+
+	/*
+	*
+	*	Popular Posts
+	*
+	------------------------------------*/
+	(function(){
+		//this is for wp most popular posts compatability since they don't run title through appropriate filters
+		$('.small-post .small-post-content h2').each(function(i,el){
+			var $el = $(el);
+			var regex = new RegExp('<i\\sclass="fa\\sfa-play-circle-o"></i>');
+			if(regex.test($el.text())){
+				$el.text($el.text().replace(regex,""));
+				$el.append($('<i class="fa fa-play-circle-o"></i>'));
+			}
+		});
+	})();
+
+	// not working below...
+
+	/*
+	*
+	*	JObs Banner
+	*
+	------------------------------------*/
+	$('.jobs-banner >.row-2 .find').click(function(){
+		$('.jobs-banner >.row-3 form >.row-1 input').eq(0).focus();
+	});
+
+	//ajaxLock is just a flag to prevent double clicks and spamming
+	var ajaxLock = false;
+
+	var postOffset = parseInt(jQuery( '#offset' ).text());
+	//Change that to your right site url unless you've already set global ajaxURL
+	var ajaxURL = bellaajaxurl.url;
+	function ajax_next_event() {
+		if( ! ajaxLock && postOffset != NaN) {
+			ajaxLock = true;
+			
+			//Parameters you want to pass to query
+			ajaxData = {};
+			ajaxData.post_offset= postOffset;
+			ajaxData.action = 'bella_ajax_next_event';
+			if(bellaajaxurl.date!=null){
+				ajaxData.date = bellaajaxurl.date;
+			}
+			if(bellaajaxurl.category!=null){
+				ajaxData.category =bellaajaxurl.category;
+			}
+			if(bellaajaxurl.search!=null){
+				ajaxData.search = bellaajaxurl.search;
+			}
+			if(bellaajaxurl.tax!=null){
+				ajaxData.tax = bellaajaxurl.tax;
+			}
+			if(bellaajaxurl.term!=null){
+				ajaxData.term = bellaajaxurl.term;
+			}
+
+			//Ajax call itself
+			jQuery.ajax({
+				type: 'post',
+				url:  ajaxURL,
+				data: ajaxData,
+				dataType: 'json',
+
+				//Ajax call is successful
+				success: function ( response ) {
+					if(parseInt(response[1])!==0){
+						$els = $(response[0]).filter('.tile');
+						$els.css("opacity","0");
+						$tracking.append($els);
+						setTimeout(function(){
+							$('.bottom-blocks').matchHeight();
+							$('.blocks').matchHeight();
+							$els.css("opacity","");
+						},200);
+						postOffset+=parseInt(response[1]);
+						ajaxLock = false;
+					}
+				},
+
+				//Ajax call is not successful, still remove lock in order to try again
+				error: function (err) {
+					ajaxLock = false;
+				}
+			});
+		}
+	}
+
+	var $window = $(window);
+	var $document = $(document);
+	var $tracking = $('.tracking');
+	
+	if($tracking.length>0){
+
+		$window.scroll(function(){
+			var top = $tracking.offset().top;
+			var height = $tracking.height();
+			var w_height = $window.height();
+			var d_scroll = $document.scrollTop();
+			if(w_height+d_scroll+500>height+top){
+				ajax_next_event();
+			}
+		});
+	}
+
 
 	/*
 	*

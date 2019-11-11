@@ -32,6 +32,29 @@ function acstarter_scripts() {
 		true 
 	);
 
+	$vars = array(
+			'url' => admin_url( 'admin-ajax.php' ),
+			'postid'=>get_the_ID()
+		);
+		$tax = get_query_var( 'taxonomy' );
+		$term = get_query_var( 'term' );
+		if(!empty($tax)){
+			$vars['tax']=$tax;
+		} 
+		if(!empty($term)){
+			$vars['term']=$term;
+		} 
+		if(isset($_GET['date'])&&!empty($_GET['date'])){
+			$vars['date']=$_GET['date'];
+		} 
+		if(isset($_GET['category'])&&!empty($_GET['category'])){
+			$vars['category']=$_GET['category'];
+		} 
+		if(isset($_GET['search'])&&!empty($_GET['search'])){
+			$vars['search']=$_GET['search'];
+		} 
+		wp_localize_script( 'custom', 'bellaajaxurl', $vars);
+
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

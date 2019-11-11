@@ -1,6 +1,11 @@
 <?php 
 if(have_posts()): the_post();
 	$sponsors = get_field('sponsors');
+	$logo = get_field("logo");
+	$description = get_field("description");
+	$logo_link = get_field("logo_hyperlink");
+	$link = get_field("sponsorship_policy_link",39809);
+	$link_text = get_field("sponsorship_policy_text",39809);
 endif;
 
 $display_to_public = get_field("display_to_public");
@@ -13,6 +18,7 @@ if(strcmp($display_to_public,"no")===0):
 endif;
 get_header(); 
 //get_template_part('ads/sponsor-header');
+
 ?>
 
 <div class="wrapper">
@@ -27,11 +33,77 @@ get_header();
 				<?php
 				while ( have_posts() ) : the_post();
 
-					get_template_part( 'template-parts/content', get_post_format() );
+					//get_template_part( 'template-parts/content', get_post_format() );
 
 				endwhile; // End of the loop.
 
 				?>
+				<div class="sponsored-row">
+					<?php 
+					$i=0;
+					$today = date('Ymd');
+					$args = array(
+						'post_type'=> 'post',
+						'posts_per_page'=> 7,
+						'orderby'=>'date',
+						'order'=>'DESC',
+						'paged'=>$paged,
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'category', // your custom taxonomy
+								'field' => 'slug',
+								'terms' => 'offers-invites'
+							)
+						),
+						'meta_query' => array(
+							'relation' => 'AND',
+								array(
+								'relation' => 'OR',
+									array(
+										'key' => 'post_expire',
+										'value' => $today,
+										'compare' => '>'
+									),
+									array(
+										'key' => 'post_expire',
+										'value' => '',
+										'compare' => '='
+									),
+									array(
+										'key' => 'post_expire',
+										'compare' => 'NOT EXISTS'
+									),
+								),
+							array(
+								'key'=>'sponsors',
+								'value'=>'"'.get_the_ID().'"',
+								'compare'=>"LIKE"
+							)
+						)
+					);
+					$most_recent_id = null;
+					$query = new WP_Query($args);
+					if($query->have_posts()):
+						$query->the_post();
+						$most_recent_id = get_the_ID();
+						while($query->have_posts()) : $query->the_post(); $i++;
+
+						if( $i == 1 ) {
+
+							get_template_part('template-parts/story-block'); ?>
+
+							<section class="twocol">
+						<?php } else { ?>
+							
+								<?php get_template_part('template-parts/story-block'); ?>
+							
+						<?php } ?>
+					<?php 
+					endwhile;
+					wp_reset_postdata(); wp_reset_query(); ?>
+					</section>
+				<?php endif;?>
+				</div><!--.sponsored-row-->
 			</div>
 
 		<?php get_template_part('template-parts/next-story'); ?>
@@ -44,13 +116,9 @@ get_header();
 <?php //if($sponsors):
 		// $post = get_post($sponsors[0]->ID);
 		// setup_postdata( $post );
-		$logo = get_field("logo");
-		$description = get_field("description");
-		$logo_link = get_field("logo_hyperlink");
-		$link = get_field("sponsorship_policy_link",39809);
-		$link_text = get_field("sponsorship_policy_text",39809);?>
+		?>
 			<div class="sponsor-sidebar">
-				<div class="side-offer">
+				<div class="sponsored-by">
 				<h2>Sponsored By:</h2>
 				<?php if($logo):?>
 					<?php if($logo_link):?>
@@ -67,7 +135,7 @@ get_header();
 					</div><!--.description-->
 				<?php endif;
 				if($link && $link_text):?>
-				<div class="btn">
+				<div class="btn-red">
 					<a class="white" href="<?php echo $link;?>" target="_blank"><?php echo $link_text;?></a>
 					</div>
 				<?php endif;?>
