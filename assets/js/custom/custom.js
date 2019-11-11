@@ -18,54 +18,7 @@ jQuery(document).ready(function ($) {
         }
 	});
 
-	/*
-	*
-	*	Navigation Jobs Count
-
-		local = 58030
-		site = 58030
-	*
-	------------------------------------*/
-	(function(){
-        $.post(
-            bellaajaxurl.url,
-            {
-                'action': 'bella_get_jobs_count',
-            },
-            function (response) {
-				var $response = $(response);
-				if ($response.find("response_data").length > 0) {
-                    $text = $response.find("response_data").eq(0).text();
-					$('.menu-item-58030').append('<span class="splat">'+$text+'</span>');
-                }
-            }
-        );
-	})();
-
-	/*
-	*
-	*	Navigation Events Count
-
-		local = 63042
-		site = 67367
-	*
-	------------------------------------*/
-
-	(function(){
-        $.post(
-            bellaajaxurl.url,
-            {
-                'action': 'bella_get_events_count',
-            },
-            function (response) {
-				var $response = $(response);
-				if ($response.find("response_data").length > 0) {
-                    $text = $response.find("response_data").eq(0).text();
-					$('.menu-item-67367').append('<span class="splat">'+$text+'</span>');
-                }
-            }
-        );
-	})();
+	
 
 	/*
 	*
@@ -164,7 +117,54 @@ jQuery(document).ready(function ($) {
 	------------------------------------*/
 	$('.js-blocks').matchHeight();
 
+	/*
+	*
+	*	Navigation Jobs Count
 
+		local = 58030
+		site = 58030
+	*
+	------------------------------------*/
+	(function(){
+        $.post(
+            bellaajaxurl.url,
+            {
+                'action': 'bella_get_jobs_count',
+            },
+            function (response) {
+				var $response = $(response);
+				if ($response.find("response_data").length > 0) {
+                    $text = $response.find("response_data").eq(0).text();
+					$('.menu-item-58030').append('<span class="splat">'+$text+'</span>');
+                }
+            }
+        );
+	})();
+
+	/*
+	*
+	*	Navigation Events Count
+
+		local = 63042
+		site = 67367
+	*
+	------------------------------------*/
+
+	(function(){
+        $.post(
+            bellaajaxurl.url,
+            {
+                'action': 'bella_get_events_count',
+            },
+            function (response) {
+				var $response = $(response);
+				if ($response.find("response_data").length > 0) {
+                    $text = $response.find("response_data").eq(0).text();
+					$('.menu-item-67367').append('<span class="splat">'+$text+'</span>');
+                }
+            }
+        );
+	})();
 	/*
 	*
 	*	Video

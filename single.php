@@ -8,15 +8,15 @@
  */
 
 get_header(); 
-
+$img = get_field('story_image');
 ?>
 
 <div class="wrapper">
 	
 	<div id="primary" class="content-area">
-		<?php if( has_post_thumbnail() ){ ?>
+		<?php if( $img ) { ?>
 			<div class="story-image">
-				<?php the_post_thumbnail('full'); ?>
+				<img src="<?php echo $img['sizes']['full']; ?>" alt="<?php echo $img['alt']; ?>">
 			</div>
 		<?php } ?>
 		<main id="main" class="site-main" role="main">
