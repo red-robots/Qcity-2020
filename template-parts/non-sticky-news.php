@@ -16,7 +16,7 @@
 		<header class="section-title ">
 			<h2 class="dark-gray">News</h2>
 		</header>
-		<section class="twocol">
+		<section class="twocol qcity-news-container">
 		    <?php while ($wp_query->have_posts()) :  $wp_query->the_post();
 
 		    	include( locate_template('template-parts/story-block.php', false, false) );
@@ -26,9 +26,13 @@
 		 <section class="ads-home">
 		 	Ad goes here.
 		 </section>
+
 		 <div class="more">
-		 	<a class="red" href="<?php  ?>">Load More</a>
+		 	<a class="red qcity-load-more" data-page="1" data-url="<?php echo admin_url('admin-ajax.php') ?>" >		<span class="load-text">Load More</span>
+				 <span class="load-icon"><i class="fa fa-reload"></i></span>
+		 	</a>
 		 </div>
+
 	 </section>
 <?php 
 endif;

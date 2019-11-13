@@ -311,6 +311,42 @@ jQuery(document).ready(function ($) {
 		});
 	}
 
+    $(document).on('click', '.qcity-load-more:not(.loading)', function(){
+
+        var that    = $(this);
+        var page    = that.data('page');
+        var newPage = page + 1;
+        var ajaxUrl = that.data('url');
+
+        that.addClass('loading').find('.load-text').hide();        
+        that.find('.load-icon').show().addClass('spin');
+
+        $.ajax({
+            url: ajaxUrl,
+            type: 'post',
+            data: {
+                page: page,
+                action: 'qcity_load_more'
+            },
+            success: function(response){
+                
+                that.data('page', newPage);
+                $('.qcity-news-container').append(response);
+
+                setTimeout(function(){
+                    that.removeClass('loading');
+                    that.find('.load-text').show();
+                    that.find('.load-icon').hide();
+                }, 1000);
+                
+            }, 
+            error: function(response){
+                console.log(response);
+            }
+        });
+
+    });
+
 
 	/*
 	*

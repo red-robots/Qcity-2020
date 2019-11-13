@@ -77,3 +77,8 @@ box-shadow: 5px 8px 16px -7px rgba(0,0,0,0.43);
 -webkit-box-shadow: -1px 7px 23px -14px rgba(0,0,0,0.48) inset;
 -moz-box-shadow: -1px 7px 23px -14px rgba(0,0,0,0.48) inset;
 }
+
+@keyframes spin{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

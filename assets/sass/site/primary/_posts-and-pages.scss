@@ -928,3 +928,35 @@ section.comments {
 		}
 	}
 }
+
+
+/*
+Load More Button
+*/
+
+.qcity-load-more{
+	cursor: pointer;
+
+	&:hover {
+			background-color: $color-yellow;
+	}
+
+	&.loading{
+		cursor: default;
+	}
+}
+
+span.load-icon{
+	display: none;
+}
+
+span.load-text{
+	display: block;
+}
+
+.spin {
+	animation-name: spin;
+	animation-duration: 1000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
