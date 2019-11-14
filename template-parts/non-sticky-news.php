@@ -35,7 +35,8 @@ wp_reset_postdata();
 ?>
 
 <div class="more">
- 	<a class="red qcity-load-more" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>" >		<span class="load-text">Load More</span>
-		 <span class="load-icon spin"><i class="fas fa-sync-alt"></i></span>
+ 	<a class="red qcity-load-more" data-page="1">		
+ 		<span class="load-text">Load More</span>
+		<span class="load-icon spin"><i class="fas fa-sync-alt"></i></span>
  	</a>
 </div>

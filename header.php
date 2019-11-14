@@ -59,9 +59,12 @@ window.googletag = window.googletag || {cmd: []};
     googletag.enableServices();
   });
 </script>
-
+<script>
+    var ajaxURL = "<?php echo admin_url('admin-ajax.php'); ?>";
+</script>
+<!--
 <script type="text/javascript"async src="https://launch.newsinc.com/js/embed.js" id="_nw2e-js"></script>
-
+-->
 <?php wp_head(); ?>
 </head>
 
@@ -112,6 +115,20 @@ window.googletag = window.googletag || {cmd: []};
 				</div>
 				<?php wp_nav_menu(array('theme_location'=>'burger','menu_class'=>'main','container'=>'ul')); ?>
 			</nav>
+
+            <script>
+                //$('a:contains("Jobs")').append('<span class="menu-badge">'+ <?php echo get_category_counter('job'); ?> +'</span>');
+
+                $('a').filter(function(){
+                    return $(this).text() === "Jobs";
+                }).append('<span class="menu-badge">'+ <?php echo get_category_counter('job'); ?> +'</span>');
+
+                //$('a:contains("Events")').append('<span class="menu-badge">'+ <?php echo get_category_counter('event'); ?> +'</span>');
+
+                $('a').filter(function(){
+                    return $(this).text() === "Events";
+                }).append('<span class="menu-badge">'+ <?php echo get_category_counter('event'); ?> +'</span>');
+            </script>
 	
 	</header><!-- #masthead -->
 

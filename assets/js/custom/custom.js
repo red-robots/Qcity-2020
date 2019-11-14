@@ -125,6 +125,11 @@ jQuery(document).ready(function ($) {
 		site = 58030
 	*
 	------------------------------------*/
+
+    
+
+    
+    
 	/*(function(){
         $.post(
             bellaajaxurl.url,
@@ -313,17 +318,18 @@ jQuery(document).ready(function ($) {
 		});
 	}
 
-    var mainMenu = $('.menu-main-navigation-container');
-    var jobs = mainMenu.find('Jobs');    
-    jobs.closest('a').append('<span class"menu-badge">New</span>');
-    console.log('Loading Jobs...');
+    /*
+    *   Category Counter Jobs
+    */
+
+    
 
     $(document).on('click', '.qcity-load-more:not(.loading)', function(){
 
         var that    = $(this);
         var page    = that.data('page');
         var newPage = page + 1;
-        var ajaxUrl = that.data('url');
+        //var ajaxUrl = that.data('url');
 
         that.addClass('loading').find('.load-text').hide();        
         that.find('.load-icon').show();
@@ -331,7 +337,7 @@ jQuery(document).ready(function ($) {
         console.log('Page: ' + newPage);
 
         $.ajax({
-            url: ajaxUrl,
+            url: ajaxURL,
             type: 'post',
             data: {
                 page: page,
@@ -365,6 +371,8 @@ jQuery(document).ready(function ($) {
         });
 
     });
+
+
 
 
 	/*
