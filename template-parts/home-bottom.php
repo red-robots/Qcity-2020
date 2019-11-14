@@ -1,13 +1,61 @@
 <section class="home-bottom">
+	<!-- Sponsors -->
+		<div class="gallery-area-home-left">
+			<header class="section-title ">
+				<h2 class="dark-gray">Sponsors</h2>
+			</header>
+			<?php
+				$sponsor_query = new WP_Query();
+				$sponsor_query->query(array(
+					'post_type'			=>'sponsor',
+					'posts_per_page' 	=> 6,
+					'orderby'          	=> 'rand',
+					'post_status'      	=> 'publish',
+				));
+
+				if( $sponsor_query->have_posts() ):
+
+					$i = 0;
+					
+
+					while ( $sponsor_query->have_posts() ) : $sponsor_query->the_post();
+
+						$class = " spon-tier-two ";
+						$class .= ( ($i % 2) == 0) ? " spon-first " : " spon-last "; 
+
+						$logo_hyperlink = get_field('logo_hyperlink');
+						$logo 			= get_field('logo');
+
+						 ?>
+
+						<div class="<?php echo $class; ?>">
+							<a href="<?php echo ($logo_hyperlink) ? $logo_hyperlink : '';  ?>" target="_blank">
+								<?php if($logo): ?>
+									<img src="<?php echo $logo['url'];   ?>" alt="">
+								<?php endif; ?>
+							</a>
+						</div>
+
+					<?php	$i++;
+
+					endwhile;
+
+				endif;
+				wp_reset_postdata();
+			?>
+		</div>
+
+
 	<div class="jobs">
 		<header class="section-title ">
 			<h2 class="dark-gray">Jobs</h2>
 		</header>
+
+		
+
 		<?php
 		/*
 			Jobs.
-
-
 		*/
 			$wp_query = new WP_Query();
 			$wp_query->query(array(
@@ -42,10 +90,42 @@
 			    <div class="more">
 			    	<a class="red" href="<?php bloginfo('url'); ?>/job-board">See More</a>
 			    </div>
-			<?php endif; ?>
+			<?php endif; wp_reset_postdata(); ?>
+
 	</div>
 	<?php get_template_part('template-parts/business-directory'); ?>
+	
+	<!--- Advertisements -->
 	<div class="ad">
-		ad goes here.
+		<?php  
+		 		$post_type = 'ad';
+                $args = array(
+                    'posts_per_page'   => 1,
+                    'orderby'          => 'rand',
+                    //'order'            => 'DESC',
+                    'post_type'        => $post_type,
+                    'post_status'      => 'publish',
+                    //'paged'            => $paged
+                );
+                $ad_posts = new WP_Query($args);
+
+                if ( $ad_posts->have_posts() ):
+                	while ( $ad_posts->have_posts() ) : $ad_posts->the_post();
+
+                		$header_script = get_field('header_script');
+                		if( $header_script ){
+                			echo $header_script;
+                		}
+
+                		$ad_script = get_field('ad_script');
+                		if($ad_script){
+                			echo $ad_script;
+                		}
+
+                	endwhile;
+                endif;
+                wp_reset_postdata();
+		 	?>
 	</div>
+
 </section>

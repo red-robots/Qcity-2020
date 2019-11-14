@@ -338,7 +338,7 @@ section.home-bottom {
 	width: 100%;
 	float: left;
 	@media screen and (min-width: $tabwidth) {
-		width: 35%;
+		width: 25%;
 		float: left;
 
 	}
@@ -961,6 +961,10 @@ span.load-text{
 	animation-timing-function: linear;
 }
 
+/*
+*		Header Menu Counter
+*/
+
 .menu-badge {
 	font-size: 9px;
 	margin-left: 4px;
@@ -971,4 +975,58 @@ span.load-text{
 	background-color: #FF0000;
 	padding: 3px 4px;
 	border-radius: 3px;
+}
+
+/*
+*	Sponsors Section
+*/
+
+.gallery-area-home-left {
+    float: left;
+    width: 25%;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.spon-tier-one {
+    width: 100%;
+    margin: 90px auto 40px auto;
+}
+
+.spon-first {
+    margin: 0 10% 30px 0;
+}
+
+.spon-last {
+    margin: 0 0 30px 0;
+}
+
+.spon-tier-two {
+    width: 45%;
+    float: left;
+}
+
+section.home-bottom .ad {
+    width: 25%;
+    float: right;
+}
+
+.jobs {
+    margin-right: 10px;
+}
+
+section.home-bottom {
+    width: 100%;
+    clear: both;
+    margin: 30px 0;
+    /*float: left;*/
+}
+
+.view{
+	width: 25%;
+}
+
+.viewlink {
+    width: 100%;
+    font-size: 11px;
 }

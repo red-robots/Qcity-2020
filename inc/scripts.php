@@ -32,6 +32,8 @@ function acstarter_scripts() {
 		true 
 	);
 
+	wp_enqueue_script( 'broadstreetads', '//cdn.broadstreetads.com/init-2.min.js', array( '' ), false, false );
+
 	$vars = array(
 			'url' => admin_url( 'admin-ajax.php' ),
 			'postid'=>get_the_ID()

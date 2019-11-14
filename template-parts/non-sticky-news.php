@@ -26,7 +26,35 @@
 			 	endwhile; ?>
 		 </section>
 		 <section class="ads-home">
-		 	Ad goes here.
+		 	<?php  
+		 		$post_type = 'ad';
+                $args = array(
+                    'posts_per_page'   => 1,
+                    'orderby'          => 'rand',
+                    //'order'            => 'DESC',
+                    'post_type'        => $post_type,
+                    'post_status'      => 'publish',
+                    //'paged'            => $paged
+                );
+                $ad_posts = new WP_Query($args);
+
+                if ( $ad_posts->have_posts() ):
+                	while ( $ad_posts->have_posts() ) : $ad_posts->the_post();
+
+                		$header_script = get_field('header_script');
+                		if( $header_script ){
+                			echo $header_script;
+                		}
+
+                		$ad_script = get_field('ad_script');
+                		if($ad_script){
+                			echo $ad_script;
+                		}
+
+                	endwhile;
+                endif;
+                wp_reset_postdata();
+		 	?>
 		 </section>
 
 	 </section>
