@@ -13,20 +13,21 @@ function qcity_load_more(){
     $paged = $_POST['page'] + 1;
 
    
-    $query = new WP_Query();
-    $query->query( array(
+    $query = new WP_Query( array(
         'post_type'     => 'post',
         'post_status'   => 'publish',
         'paged'         => $paged,
         'post__not_in'  => $postIDs
-    ) );
+    ));
 
-    if( $query->has_posts() ):
+    //echo var_dump($query);
+   
+    if( $query->have_posts() ):
 
-        while( $query->has_posts() ): $query->the_post();
+        while( $query->have_posts() ): $query->the_post();
 
-            //include( locate_template('template-parts/story-block.php', false, false) );
-            get_template_part( 'template-parts/story-block');
+            include( locate_template('template-parts/story-block.php', false, false) );
+            //get_template_part( 'template-parts/story-block');
 
         endwhile;
 
@@ -41,14 +42,9 @@ function qcity_load_more(){
     die();
 }
 
-function get_category_counter($category){
-    //$cat_ID     = get_cat_ID( $_POST['category'] );
-   // $cat_ID     = get_cat_ID( 'Job' );
-    //$category   = get_category($cat_ID);
+function get_category_counter($category){   
     $count      = wp_count_posts( $category );
     $total      = $count->publish;
    return $total;
-    //echo var_dump($count);
-
 }
 

@@ -334,7 +334,7 @@ jQuery(document).ready(function ($) {
         that.addClass('loading').find('.load-text').hide();        
         that.find('.load-icon').show();
 
-        console.log('Page: ' + newPage);
+        //console.log('Page: ' + newPage);
 
         $.ajax({
             url: ajaxURL,
@@ -345,7 +345,7 @@ jQuery(document).ready(function ($) {
             },
             success: function(response){
 
-                console.log('Response: ' + response);
+                //console.log('Response: ' + response);
 
                 if( response == 0){
                     $('.qcity-news-container').append('<p>No more post to load!</p>');
@@ -353,7 +353,7 @@ jQuery(document).ready(function ($) {
                 } else {
 
                     that.data('page', newPage);
-                    $('.qcity-news-container').append(response);
+                    $('section.qcity-news-container').append(response);
 
                     setTimeout(function(){
                         that.removeClass('loading');

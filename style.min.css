@@ -32,10 +32,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .bg-med-gray{background-color:#9f9f9f}
 .bg-dark-gray{background-color:#58595b}
 .bg-black{background-color:#262425}
-@-webkit-keyframes spin{from{-webkit-transform:rotate(0);transform:rotate(0)}
-to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}
-}@keyframes spin{from{-webkit-transform:rotate(0);transform:rotate(0)}
-to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}
+@-webkit-keyframes spin{from{transform:rotate(0);-webkit-transform:rotate(0);-moz-transform:rotate(0);-o-transform:rotate(0)}
+to{transform:rotate(360deg);-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg)}
+}@keyframes spin{from{transform:rotate(0);-webkit-transform:rotate(0);-moz-transform:rotate(0);-o-transform:rotate(0)}
+to{transform:rotate(360deg);-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg)}
 }/*!
  * animate.css -http://daneden.me/animate
  * Version - 3.5.0

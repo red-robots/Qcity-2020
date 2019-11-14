@@ -9,15 +9,16 @@
 	$wp_query->query(array(
 		'post_type'		=>'post',
 		'post_status' 	=> 'publish',
-		//'post__not_in' 	=> $postIDs
+		'paged'         => 1,
+		'post__not_in' 	=> $postIDs
 	));
-	if ( have_posts() ) : ?>
+	if ( $wp_query->have_posts() ) : ?>
 	<section class="news-home">
 		<header class="section-title ">
 			<h2 class="dark-gray">News</h2>
 		</header>
 		<section class="twocol qcity-news-container">			
-				<?php while ( have_posts() ) :  the_post();
+				<?php while ( $wp_query->have_posts() ) :  $wp_query->the_post();
 
 		    		//include( locate_template('template-parts/story-block.php', false, false) );
 		    		get_template_part( 'template-parts/story-block');
@@ -34,9 +35,9 @@ endif;
 wp_reset_postdata();
 ?>
 
-<div class="more">
+<div class="more">	
  	<a class="red qcity-load-more" data-page="1">		
  		<span class="load-text">Load More</span>
-		<span class="load-icon spin"><i class="fas fa-sync-alt"></i></span>
+		<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
  	</a>
 </div>
