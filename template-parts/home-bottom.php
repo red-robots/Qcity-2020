@@ -2,7 +2,7 @@
 	<!-- Sponsors -->
 		<div class="gallery-area-home-left">
 			<header class="section-title ">
-				<h2 class="dark-gray">Sponsors</h2>
+				<h2 class="dark-gray">Our Partners</h2>
 			</header>
 			<?php
 				$sponsor_query = new WP_Query();
