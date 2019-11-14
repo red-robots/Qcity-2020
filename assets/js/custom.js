@@ -327,14 +327,14 @@ jQuery(document).ready(function ($) {
     $(document).on('click', '.qcity-load-more:not(.loading)', function(){
 
         var that    = $(this);
-        var page    = that.data('page');
+        var page    = $(this).data('page');
         var newPage = page + 1;
         //var ajaxUrl = that.data('url');
 
         that.addClass('loading').find('.load-text').hide();        
         that.find('.load-icon').show();
 
-        //console.log('Page: ' + newPage);
+        console.log('Page: ' + newPage);
 
         $.ajax({
             url: ajaxURL,
