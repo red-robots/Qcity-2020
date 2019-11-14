@@ -2204,6 +2204,7 @@ section.comments{width:100%;padding:50px 0 30px 0;clear:both}
 span.load-icon{display:none}
 span.load-text{display:block}
 .spin{-webkit-animation-name:spin;animation-name:spin;-webkit-animation-duration:1000ms;animation-duration:1000ms;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-timing-function:linear;animation-timing-function:linear}
+.menu-badge{font-size:9px;margin-left:4px;position:relative;top:-10px;margin-bottom:13px;color:#fff;background-color:red;padding:3px 4px;border-radius:3px}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

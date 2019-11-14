@@ -1,12 +1,5 @@
-<?php 
-$i++;
-$img = get_field('story_image');
-
-?>
 <article class="story-block">
-	<div class="photo">
-		<?php //if( $img ) { ?>
-			<!-- <img src="<?php echo $img['sizes']['thirds']; ?>" alt="<?php echo $img['alt']; ?>"> -->
+	<div class="photo">		
 		<?php if( has_post_thumbnail() ) {
 				the_post_thumbnail('thirds');
 			} else { ?>

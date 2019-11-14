@@ -101,12 +101,12 @@ jQuery(document).ready(function ($) {
 	*	Smooth Scroll to Anchor
 	*
 	------------------------------------*/
-	 $('a').click(function(){
+	 /*$('a').click(function(){
 	    $('html, body').animate({
 	        scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
 	    }, 500);
 	    return false;
-	});
+	});*/
 
 	
 	
@@ -125,7 +125,7 @@ jQuery(document).ready(function ($) {
 		site = 58030
 	*
 	------------------------------------*/
-	(function(){
+	/*(function(){
         $.post(
             bellaajaxurl.url,
             {
@@ -139,7 +139,7 @@ jQuery(document).ready(function ($) {
                 }
             }
         );
-	})();
+	})();*/
 
 	/*
 	*
@@ -150,7 +150,7 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 
-	(function(){
+	/*(function(){
         $.post(
             bellaajaxurl.url,
             {
@@ -164,7 +164,7 @@ jQuery(document).ready(function ($) {
                 }
             }
         );
-	})();
+	})(); */
 	/*
 	*
 	*	Video
@@ -233,7 +233,8 @@ jQuery(document).ready(function ($) {
 		$('.jobs-banner >.row-3 form >.row-1 input').eq(0).focus();
 	});
 
-	//ajaxLock is just a flag to prevent double clicks and spamming
+	//ajaxLock is just a flag to prevent double clicks and spamming.
+    /*
 	var ajaxLock = false;
 
 	var postOffset = parseInt(jQuery( '#offset' ).text());
@@ -293,6 +294,7 @@ jQuery(document).ready(function ($) {
 			});
 		}
 	}
+    */
 
 	var $window = $(window);
 	var $document = $(document);
@@ -311,6 +313,11 @@ jQuery(document).ready(function ($) {
 		});
 	}
 
+    var mainMenu = $('.menu-main-navigation-container');
+    var jobs = mainMenu.find('Jobs');    
+    jobs.closest('a').append('<span class"menu-badge">New</span>');
+    console.log('Loading Jobs...');
+
     $(document).on('click', '.qcity-load-more:not(.loading)', function(){
 
         var that    = $(this);
@@ -319,7 +326,9 @@ jQuery(document).ready(function ($) {
         var ajaxUrl = that.data('url');
 
         that.addClass('loading').find('.load-text').hide();        
-        that.find('.load-icon').show().addClass('spin');
+        that.find('.load-icon').show();
+
+        console.log('Page: ' + newPage);
 
         $.ajax({
             url: ajaxUrl,
@@ -330,8 +339,11 @@ jQuery(document).ready(function ($) {
             },
             success: function(response){
 
+                console.log('Response: ' + response);
+
                 if( response == 0){
                     $('.qcity-news-container').append('<p>No more post to load!</p>');
+                    that.hide();
                 } else {
 
                     that.data('page', newPage);
@@ -341,12 +353,13 @@ jQuery(document).ready(function ($) {
                         that.removeClass('loading');
                         that.find('.load-text').show();
                         that.find('.load-icon').hide();
-                    }, 1000);
+                    }, 500);
 
                 }
                 
             }, 
             error: function(response){
+                console.log('Error: ');
                 console.log(response);
             }
         });

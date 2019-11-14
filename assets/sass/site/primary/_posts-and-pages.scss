@@ -960,3 +960,15 @@ span.load-text{
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 }
+
+.menu-badge {
+	font-size: 9px;
+	margin-left: 4px;
+	position: relative;
+	top: -10px;
+	margin-bottom: 13px;
+	color: #ffffff;
+	background-color: #FF0000;
+	padding: 3px 4px;
+	border-radius: 3px;
+}
