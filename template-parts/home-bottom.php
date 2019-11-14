@@ -8,7 +8,7 @@
 				$sponsor_query = new WP_Query();
 				$sponsor_query->query(array(
 					'post_type'			=>'sponsor',
-					'posts_per_page' 	=> 6,
+					'posts_per_page' 	=> 8,
 					'orderby'          	=> 'rand',
 					'post_status'      	=> 'publish',
 				));
@@ -16,32 +16,57 @@
 				if( $sponsor_query->have_posts() ):
 
 					$i = 0;
+
+					$sponsor_arr = array();
 					
 
 					while ( $sponsor_query->have_posts() ) : $sponsor_query->the_post();
 
-						$class = " spon-tier-two ";
-						$class .= ( ($i % 2) == 0) ? " spon-first " : " spon-last "; 
-
 						$logo_hyperlink = get_field('logo_hyperlink');
 						$logo 			= get_field('logo');
+						$position 		= get_field('position');
 
-						 ?>
+						$class = ($position) ? $position : "spon-tier-two";
 
-						<div class="<?php echo $class; ?>">
-							<a href="<?php echo ($logo_hyperlink) ? $logo_hyperlink : '';  ?>" target="_blank">
-								<?php if($logo): ?>
-									<img src="<?php echo $logo['url'];   ?>" alt="">
-								<?php endif; ?>
-							</a>
-						</div>
+						$sponsor_arr[] = array(
+							'order' 	=> (trim($class) == 'spon-tier-one') ? 1 : 2,
+							'class' 	=> $class,
+							'link' 		=> $logo_hyperlink,
+							'img' 		=> $logo['url']
+						);
 
-					<?php	$i++;
-
+						
 					endwhile;
 
 				endif;
 				wp_reset_postdata();
+
+				if($sponsor_arr):
+					asort($sponsor_arr);		
+					$i = 0;
+					foreach( $sponsor_arr as $key => $value):
+
+						//var_dump($value);
+						$class 			= $value['class'];
+						$logo_hyperlink = $value['link'];
+						$logo 			= $value['img'];
+
+						if( trim($class) == 'spon-tier-two' ){
+							$class .= ( ($i % 2) == 0) ? " spon-first " : " spon-last "; 
+							$i++;
+						} ?>
+
+						<div class="<?php echo $class; ?>">
+							<a href="<?php echo ($logo_hyperlink) ? $logo_hyperlink : '';  ?>" target="_blank">
+								<?php if($logo): ?>
+									<img src="<?php echo $logo;   ?>" alt="">
+								<?php endif; ?>
+							</a>
+						</div>
+
+			<?php		
+					endforeach;
+				endif;
 			?>
 		</div>
 
