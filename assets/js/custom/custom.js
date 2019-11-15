@@ -353,7 +353,7 @@ jQuery(document).ready(function ($) {
                 } else {
 
                     that.data('page', newPage);
-                    $('section.qcity-news-container').append(response);
+                    $('section.qcity-news-container').slideDown(2000).append(response);
 
                     setTimeout(function(){
                         that.removeClass('loading');

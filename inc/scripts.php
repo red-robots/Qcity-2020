@@ -6,7 +6,7 @@ function acstarter_scripts() {
 	wp_enqueue_style( 'acstarter-style', get_template_directory_uri() . '/style.css' );
 
 	wp_deregister_script('jquery');
-		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2', true);
+		wp_register_script('jquery', get_template_directory_uri() .'/js/jquery-3.4.1.min.js', false, '3.4.1', true);
 		wp_enqueue_script('jquery');
 
 	

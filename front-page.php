@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file.
+ * Template Name: Front Page 
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -18,6 +18,10 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php 
+
+		$subscribe_text         = get_field('subscribe_text');
+		$subscribe_link         = get_field('subscribe_link');
+    	$subscribe_button_name  = get_field('subscribe_button_name');
 
 		include( locate_template('template-parts/hero.php') ); 
 		include( locate_template('template-parts/sponsored-posts.php') );

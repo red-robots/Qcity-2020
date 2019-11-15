@@ -1030,3 +1030,26 @@ section.home-bottom {
     width: 100%;
     font-size: 11px;
 }
+
+.more{
+	margin: 20px 0;
+}
+
+.more a {
+    padding: 10px 0;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    -webkit-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+}
+
+.subscribe {
+    width: 100%;
+    clear: both;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #924020;
+    color: #fff;
+    text-align: center;
+}
