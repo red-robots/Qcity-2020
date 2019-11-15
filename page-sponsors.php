@@ -66,7 +66,7 @@ get_header(); ?>
 							?>
 							  
 							  <div class="cat">
-								<a href="<?php echo ($sponsor_site) ? $sponsor_site : $link; ?>" target="_blank">
+								<a href="<?php echo ($sponsor_site) ? $sponsor_site : '#'; ?>" target="_blank">
 									<div class="icon">
 										<img src="<?php echo $url; ?>" alt="">
 									</div>
