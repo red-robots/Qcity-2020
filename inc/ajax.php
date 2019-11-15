@@ -58,18 +58,18 @@ function posts_have_sponsors($post_id, $sponsor_id)
     $sponsor_arr    = array();
 
     $args = array(     
-        'category_name'    => 'Offers & Invites',        
-        'post_type'        => 'post',        
-        'post__not_in'     => array( $post_id ),
-        'post_status'      => 'publish',
+        'category_name'     => 'Offers & Invites',        
+        'post_type'         => 'post',        
+        'post__not_in'      => array( $post_id ),
+        'post_status'       => 'publish',
         'posts_per_page'    => 1,
-        'meta_query' => array(
-                            array(
-                                'key' => 'sponsors', 
-                                'value' => '"' . $sponsor_id . '"', 
-                                'compare' => 'LIKE'
+        'meta_query'        => array(
+                                array(
+                                    'key' => 'sponsors', 
+                                    'value' => '"' . $sponsor_id . '"', 
+                                    'compare' => 'LIKE'
+                                )
                             )
-                        )
     );
 
     $posts_array = get_posts( $args );
