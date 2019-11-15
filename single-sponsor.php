@@ -21,7 +21,7 @@ get_header();
 
 ?>
 
-<div class="wrapper">
+<div class="wrapper">	
 	<?php if( has_post_thumbnail() ){ ?>
 		<div class="story-image">
 			<?php the_post_thumbnail(); ?>

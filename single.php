@@ -7,8 +7,8 @@
  * @package ACStarter
  */
 
-get_header(); 
-$img = get_field('story_image');
+	get_header(); 
+	$img = get_field('story_image');
 ?>
 
 <div class="wrapper">

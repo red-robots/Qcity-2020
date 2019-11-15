@@ -37,9 +37,44 @@ function qcity_load_more(){
     die();
 }
 
+/*
+*   Counter of Main Menu for Jobs and Events
+*/
+
 function get_category_counter($category){   
     $count      = wp_count_posts( $category );
     $total      = $count->publish;
    return $total;
+}
+
+/*
+*   Checking the post have sponsor
+*/
+
+function posts_have_sponsors($post_id, $sponsor_id)
+{
+    $next_id        = 0;
+    $post_arr       = array();
+    $sponsor_arr    = array();
+
+    $args = array(     
+        'category_name'    => 'Offers & Invites',        
+        'post_type'        => 'post',        
+        'post__not_in'     => array( $post_id ),
+        'post_status'      => 'publish',
+        'posts_per_page'    => 1,
+        'meta_query' => array(
+                            array(
+                                'key' => 'sponsors', 
+                                'value' => '"' . $sponsor_id . '"', 
+                                'compare' => 'LIKE'
+                            )
+                        )
+    );
+
+    $posts_array = get_posts( $args );
+
+    return ($posts_array) ? $posts_array[0] : 0;
+    
 }
 
