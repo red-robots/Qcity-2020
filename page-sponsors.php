@@ -62,7 +62,7 @@ get_header(); ?>
 							if($logo):
 								$url 	= $logo['url'];
 								$link 	= $logo['link'];
-								$title 	= $logo['title'];
+								//$title 	= $query->get_the_title();
 							?>
 							  
 							  <div class="cat">
@@ -70,7 +70,7 @@ get_header(); ?>
 									<div class="icon">
 										<img src="<?php echo $url; ?>" alt="">
 									</div>
-									<h2><?php echo $title;  ?></h2>
+									<h2><?php the_title();  ?></h2>
 								</a>
 							</div>
 							    
