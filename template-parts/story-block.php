@@ -16,7 +16,7 @@
 		
 	</div>
 	<div class="by">
-		by: <?php the_author(); ?>
+		by: <?php the_author(); ?> | <?php the_date(); ?>
 	</div>
 	<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
 </article>

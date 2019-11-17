@@ -47,7 +47,7 @@ if ($wp_query->have_posts()) : ?>
 					<?php the_excerpt(); ?>
 				</div>
 				<div class="by">
-					by: <?php the_author();?> | <?php echo get_the_date('F j, Y'); ?>
+					by: <?php the_author();?> | <?php the_date(); ?>
 				</div>
 			</div>
 		</article>		
@@ -62,7 +62,7 @@ if ($wp_query->have_posts()) : ?>
 			<article class="story-block">
 				<div class="photo">
 					<?php if( $img ) { ?>
-						<img src="<?php echo $img['sizes']['thirds']; ?>" alt="<?php echo $img['alt']; ?>">
+						<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 					<?php } elseif( has_post_thumbnail() ) {
 							the_post_thumbnail();
 						} else { ?>
@@ -79,7 +79,7 @@ if ($wp_query->have_posts()) : ?>
 					
 				</div>
 				<div class="by">
-					by: <?php the_author(); ?>
+					by: <?php the_author(); ?> | <?php the_date(); ?>
 				</div>
 				<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
 			</article>

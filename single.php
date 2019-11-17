@@ -8,7 +8,8 @@
  */
 
 	get_header(); 
-	$img = get_field('story_image');
+	$img 	= get_field('story_image');
+	$video 	= get_field('video_single_post');
 ?>
 
 <div class="wrapper">
@@ -16,11 +17,12 @@
 	<div id="primary" class="content-area">
 		<?php if( $img ) { ?>
 			<div class="story-image">
-				<img src="<?php echo $img['sizes']['full']; ?>" alt="<?php echo $img['alt']; ?>">
+				<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 			</div>
 		<?php } ?>
 		<main id="main" class="site-main" role="main">
 			<div class="wrapper">
+
 				<?php
 				while ( have_posts() ) : the_post();
 
