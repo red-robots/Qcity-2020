@@ -8295,7 +8295,7 @@ section.home-bottom {
   float: left; }
   @media screen and (min-width: 600px) {
     .biz-dir, .jobs {
-      width: 25%;
+      width: 33%;
       float: left; } }
   .biz-dir .biz-job-wrap, .jobs .biz-job-wrap {
     width: 100%;
@@ -9049,7 +9049,7 @@ span.load-text {
   float: left; }
 
 section.home-bottom .ad {
-  width: 25%;
+  width: 33%;
   float: right; }
 
 .jobs {
@@ -9062,7 +9062,7 @@ section.home-bottom {
   /*float: left;*/ }
 
 .view {
-  width: 25%; }
+  width: 33%; }
 
 .viewlink {
   width: 100%;

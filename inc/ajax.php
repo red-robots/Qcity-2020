@@ -15,7 +15,7 @@ function qcity_load_more(){
         'post_type'     => 'post',
         'post_status'   => 'publish',
         'paged'         => $paged,
-        //'post__not_in'  => $postIDs
+        'post__not_in'  => $postIDs
     ));    
    
     if( $query->have_posts() ):

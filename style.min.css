@@ -2096,7 +2096,7 @@ section.home-bottom{width:100%;clear:both;margin:20px 0;float:left}
 section.home-bottom .ad{width:100%;float:left}
 @media screen and (min-width:600px){section.home-bottom .ad{width:28%;float:right}
 }.biz-dir,.jobs{width:100%;float:left}
-@media screen and (min-width:600px){.biz-dir,.jobs{width:25%;float:left}
+@media screen and (min-width:600px){.biz-dir,.jobs{width:33%;float:left}
 }.biz-dir .biz-job-wrap,.jobs .biz-job-wrap{width:100%;margin-bottom:20px;float:left}
 .jobs{margin-right:30px}
 .jobs .job,.jobs-page .job{width:100%;float:left;border-bottom:1px solid #262425;padding:10px 0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
@@ -2210,10 +2210,10 @@ span.load-text{display:block}
 .spon-first{margin:0 10% 30px 0}
 .spon-last{margin:0 0 30px 0}
 .spon-tier-two{width:45%;float:left}
-section.home-bottom .ad{width:25%;float:right}
+section.home-bottom .ad{width:33%;float:right}
 .jobs{margin-right:10px}
 section.home-bottom{width:100%;clear:both;margin:30px 0}
-.view{width:25%}
+.view{width:33%}
 .viewlink{width:100%;font-size:11px}
 .more{margin:20px 0}
 .more a{padding:10px 0;color:#fff;display:block;text-decoration:none;-webkit-transition:all ease .2s;transition:all ease .2s}

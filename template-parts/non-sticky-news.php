@@ -9,7 +9,7 @@
 		'post_type'		=>'post',
 		'post_status' 	=> 'publish',
 		//'paged'         => 1,
-		//'post__not_in' 	=> $postIDs
+		'post__not_in' 	=> $postIDs
 	));
 	//$wp_query->query(); ?>
 	
@@ -66,7 +66,7 @@
 
 
 <div class="more">	
- 	<a class="red qcity-load-more" data-page="1">		
+ 	<a class="red qcity-load-more" data-page="2">		
  		<span class="load-text">Load More</span>
 		<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
  	</a>
