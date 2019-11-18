@@ -43,6 +43,6 @@ if( is_tax() ) {
 				</form>
 			</div>	
 		</div><!--.row-1-->
-		<a href="">Add your Business To This Directory ></a>
+		<a href="">Add your Business To This Directory</a>
 	</div>
 </div>

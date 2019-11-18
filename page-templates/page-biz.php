@@ -24,19 +24,35 @@ get_template_part('template-parts/banner-biz');
 		<main id="main" class="site-main" role="main">
 
 			<section class="biz-cats">
-				
-				<?php get_template_part('template-parts/biz-icons'); ?>
-			</section>
 
 			<?php
 			while ( have_posts() ) : the_post();
 
-				
+				$category_name = get_field('category_name');
+				$category_icon = get_field('category_icon');
+				$category_link = get_field('category_link');
 
-				
+				$business_category = get_field('business_category');
+	
+				asort($business_category);
+
+				foreach($business_category as $category):   ?>
+
+					<div class="cat">
+						<a href="<?php echo $category['category_link']; ?>">
+							<div class="icon">
+								<?php echo $category['category_icon']; ?>
+							</div>
+							<h2><?php echo $category['category_name']; ?></h2>
+						</a>
+					</div>
+
+				<?php endforeach;
 
 			endwhile; // End of the loop.
 			?>
+
+			</section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

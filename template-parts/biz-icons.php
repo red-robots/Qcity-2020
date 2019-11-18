@@ -4,9 +4,11 @@
 	$bizTerms = array();
 	$terms = get_terms('business_category');
 	$accountingLink = get_term_link(15);
-	// echo '<pre>';
-	// print_r($terms);
-	// echo '</pre>';
+	
+	
+
+
+
  ?>
 <!-- 
 
@@ -14,7 +16,7 @@
 
   -->
 <div class="cat">
-	<a href="<?php  ?>">
+	<a href="">
 		<div class="icon">
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="206px"
 				 height="85.46px" viewBox="0 0 206 85.46" style="enable-background:new 0 0 206 85.46;" xml:space="preserve">
