@@ -65,29 +65,29 @@ get_template_part('template-parts/banner-events');
 				<?php endif; ?>
 			</div>
 
-			<div class="more">	
-			 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more">		
-			 		<span class="load-text">Load More</span>
-					<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
-			 	</a>
-			</div>
+		<div class="more ">	
+		 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more">		
+		 		<span class="load-text">Load More</span>
+				<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
+		 	</a>
+		</div>
 
+		<div class="mt-4 pt-5">
 
-		<header class="section-title ">
-			<h2 class="dark-gray">More Happenings</h2>
-		</header>
+			<header class="section-title ">
+				<h2 class="dark-gray">More Happenings</h2>
+			</header>
+
 			<?php
 			/*
 				The Rest of the Events 
-
-
 			*/
 				$i = 0;
 				$today = date('Ymd');
 				$wp_query = new WP_Query();
 				$wp_query->query(array(
 				'post_type'=>'event',
-				'posts_per_page' => 5,
+				'posts_per_page' => 4,
 				'meta_query' => array(
 					array(
 				        'key'		=> 'event_date',
@@ -117,7 +117,9 @@ get_template_part('template-parts/banner-events');
 						endwhile; ?>
 					</section>
 				<?php endif; ?>
-
+		</div>
+		
+			
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
