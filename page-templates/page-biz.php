@@ -26,30 +26,27 @@ get_template_part('template-parts/banner-biz');
 			<section class="biz-cats">
 
 			<?php
-			while ( have_posts() ) : the_post();
+				/*$args = array(
+						'post_type' 	=> 'business_listing', 
+						'post_status'	=> 'publish',
+						//'taxonomy' 		=> 'business_category', 
+						//'term' 			=> 'php', 
+						'posts_per_page' => -1
+				);
 
-				$category_name = get_field('category_name');
-				$category_icon = get_field('category_icon');
-				$category_link = get_field('category_link');
+				$business = new WP_Query($args);*/
 
-				$business_category = get_field('business_category');
-	
-				asort($business_category);
+				if( have_posts() ):
 
-				foreach($business_category as $category):   ?>
+					while ( have_posts() ) : the_post();
 
-					<div class="cat">
-						<a href="<?php echo $category['category_link']; ?>">
-							<div class="icon">
-								<?php echo $category['category_icon']; ?>
-							</div>
-							<h2><?php echo $category['category_name']; ?></h2>
-						</a>
-					</div>
+						$business_category = get_business_category_items();						
+						include( locate_template('template-parts/business-categories.php'));
 
-				<?php endforeach;
+					endwhile; // End of the loop.
 
-			endwhile; // End of the loop.
+				endif;
+				wp_reset_postdata();
 			?>
 
 			</section>

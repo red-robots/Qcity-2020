@@ -13,7 +13,7 @@
 	$wp_query->query(array(
 		'post_type'=>'business_listing',
 		'posts_per_page' => 5,
-		'paged' => $paged,
+		//'paged' => $paged,
 	));
 	if ($wp_query->have_posts()) : ?>
 	<div class="biz-job-wrap">

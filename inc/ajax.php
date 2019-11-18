@@ -78,3 +78,18 @@ function posts_have_sponsors($post_id, $sponsor_id)
     
 }
 
+
+/*
+*   Getting All Categories
+*/
+
+function get_business_category_items(){
+    //$args = array('number' => '-1',);
+    $terms = get_terms('business_category');
+   //asort($terms);
+    $name = array_column($terms, 'name');
+
+    array_multisort($name, SORT_ASC, $terms);
+    return $terms;
+}
+
