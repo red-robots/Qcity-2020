@@ -329,19 +329,20 @@ jQuery(document).ready(function ($) {
         var that    = $(this);
         var page    = $(this).data('page');
         var newPage = page + 1;
+        var action  = $(this).data('action');
         //var ajaxUrl = that.data('url');
 
         that.addClass('loading').find('.load-text').hide();        
         that.find('.load-icon').show();
 
-        console.log('Page: ' + newPage);
+        //console.log('Page: ' + newPage);
 
         $.ajax({
             url: ajaxURL,
             type: 'post',
             data: {
                 page: page,
-                action: 'qcity_load_more'
+                action: action
             },
             success: function(response){
 
@@ -353,7 +354,7 @@ jQuery(document).ready(function ($) {
                 } else {
 
                     that.data('page', newPage);
-                    $('section.qcity-news-container').slideDown(2000).append(response);
+                    $('.qcity-news-container').slideDown(2000).append(response);
 
                     setTimeout(function(){
                         that.removeClass('loading');

@@ -38,6 +38,67 @@ function qcity_load_more(){
 }
 
 /*
+*   AJAX Call for Events Load more
+*/
+
+add_action('wp_ajax_nopriv_qcity_events_load_more', 'qcity_events_load_more');
+add_action('wp_ajax_qcity_events_load_more', 'qcity_events_load_more');
+
+function qcity_events_load_more(){
+
+    $paged = $_POST['page'] + 1;
+    $today = date('Ymd');
+
+    $query = new WP_Query( array(
+        'post_type'     => 'event',
+        'post_status'   => 'publish',
+        'paged'         => $paged,
+        //'post__not_in'  => $postIDs
+        'meta_query' => array(
+                            array(
+                                'key'       => 'event_date',
+                                'compare'   => '<=',
+                                'value'     => $today,
+                            ),
+        ),
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'event_category', // your custom taxonomy
+                'field' => 'slug',
+                'terms' => array( 'premium' ) // the terms (categories) you created
+            )
+        )
+    ));    
+   
+    if( $query->have_posts() ):
+        echo '<section class="sponsored">';
+        while( $query->have_posts() ): $query->the_post();
+
+            $img    = get_field('event_image');
+            $date   = get_field("event_date", false, false);
+            $date   = new DateTime($date);
+            $enddate = get_field("end_date", false, false);
+            $enddate = new DateTime($enddate);
+
+            include( locate_template('template-parts/sponsored-block.php') );            
+
+        endwhile;
+        echo '</section>';
+    else:    
+
+        echo 0;
+
+    endif;
+
+    wp_reset_postdata();
+
+    die();
+}
+
+
+
+
+/*
 *   Counter of Main Menu for Jobs and Events
 */
 

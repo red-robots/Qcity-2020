@@ -21,35 +21,34 @@ get_template_part('template-parts/banner-events');
 </div>
 <div class="wrapper">
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main " role="main">
 
-			<?php
-			/*
-				Sponsored 
-
-
-			*/
-				$i = 0;
-				$today = date('Ymd');
-				$wp_query = new WP_Query();
-				$wp_query->query(array(
-				'post_type'=>'event',
-				'posts_per_page' => 5,
-				'meta_query' => array(
-					array(
-				        'key'		=> 'event_date',
-				        'compare'	=> '<=',
-				        'value'		=> $today,
+			<div class="qcity-news-container">
+				<?php
+				/*
+					Sponsored 
+				*/
+					$i = 0;
+					$today = date('Ymd');
+					$wp_query = new WP_Query();
+					$wp_query->query(array(
+					'post_type'=>'event',
+					//'posts_per_page' => 5,
+					'meta_query' => array(
+						array(
+					        'key'		=> 'event_date',
+					        'compare'	=> '<=',
+					        'value'		=> $today,
+					    ),
 				    ),
-			    ),
-			    'tax_query' => array(
-					array(
-						'taxonomy' => 'event_category', // your custom taxonomy
-						'field' => 'slug',
-						'terms' => array( 'premium' ) // the terms (categories) you created
+				    'tax_query' => array(
+						array(
+							'taxonomy' => 'event_category', // your custom taxonomy
+							'field' => 'slug',
+							'terms' => array( 'premium' ) // the terms (categories) you created
+						)
 					)
-				)
-			));
+				));
 				if ($wp_query->have_posts()) : ?>
 					<section class="sponsored">
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
@@ -64,6 +63,16 @@ get_template_part('template-parts/banner-events');
 						endwhile; ?>
 					</section>
 				<?php endif; ?>
+			</div>
+
+			<div class="more">	
+			 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more">		
+			 		<span class="load-text">Load More</span>
+					<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
+			 	</a>
+			</div>
+
+
 		<header class="section-title ">
 			<h2 class="dark-gray">More Happenings</h2>
 		</header>
