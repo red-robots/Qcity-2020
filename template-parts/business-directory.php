@@ -1,4 +1,4 @@
-<div class="biz-dir">
+<div class="biz-dir" style="">
 	<header class="section-title ">
 		<h2 class="dark-gray">Business Directory</h2>
 	</header>
@@ -31,7 +31,7 @@
 	    <?php endwhile; ?>	
 	    </div>
 	    <div class="more">
-	    	<a class="red" href="<?php bloginfo('url'); ?>/qcity-biz">See More</a>
+	    	<a class="red" href="<?php bloginfo('url'); ?>/business-directory">See More</a>
 	    </div>
-	<?php endif; ?>
+	<?php endif; wp_reset_postdata(); ?>
 </div>

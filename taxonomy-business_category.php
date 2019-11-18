@@ -8,27 +8,24 @@
  */
 
 get_header(); 
-get_template_part('template-parts/banner-biz');
+//get_template_part('template-parts/banner-biz');
 $ob = get_queried_object();
-// echo '<pre>';
-// print_r($ob);
-// echo '</pre>';
 
 ?>
 
 <div class="wrapper">
-	<header class="page-header biz">
+	<header class="page-header biz">		
 		<h1><?php echo $ob->name; ?></h1>
 		<?php
 			//the_archive_title( '<h1 class="page-title">', '</h1>' );
 			the_archive_description( '<div class="taxonomy-description">', '</div>' );
 		?>
 	</header><!-- .page-header -->
-	<div class="content-area">
+	<div class="featured_business">
 		<header class="section-title ">
 			<h2 class="dark-gray">Featured Businesses</h2>
 			<div class="biz-submit">
-				<a href="#">Submit your business. ></a>
+				<a href="#">Submit your business</a>
 			</div>
 		</header>
 	</div>
@@ -39,9 +36,7 @@ $ob = get_queried_object();
 		<?php
 		if ( have_posts() ) : ?>
 
-			
-
-			<section class="biz-wrap">
+			<section class="">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -50,11 +45,14 @@ $ob = get_queried_object();
 
 			endwhile;
 
-			the_posts_navigation(); ?>
+			the_posts_navigation(); wp_reset_postdata(); ?>
 			
 			</section>
 
-			<?php get_template_part('template-parts/business-directory'); ?>
+			<div class="mt-5">
+				<?php get_template_part('template-parts/business-directory'); ?>
+			</div>		
+			
 
 		<?php endif; ?>
 

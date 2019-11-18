@@ -52,9 +52,9 @@ get_template_part('template-parts/banner-jobs');
 						// $date = new DateTime($date);
 						// $enddate = get_field("end_date", false, false);
 						// $enddate = new DateTime($enddate);
-					 $img = get_field('image');
-			    $jobTitle = get_field("job_title");
-				$companyName = get_field("company_name");
+					 	$img 			= get_field('image');
+			    		$jobTitle 		= get_field("job_title");
+						$companyName 	= get_field("company_name");
 						?>
 						
 							<div class="job">
