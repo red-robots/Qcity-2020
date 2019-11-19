@@ -1110,19 +1110,20 @@ section.home-bottom {
 	section.home-sponsored .last-block{
 		display: block;
 		position: relative;
+		margin-top: 90px;
+    	height: 300px;
 	}
 
 	section.home-sponsored .last-block .more {
 	    width: 100%;
 	    padding: 10px;
-	    color: #333;
+	    color: #fff;
 	    position: relative;
 	    bottom: 0px;
 	    left: 0px;
 	    font-size: 36px;
 	    font-weight: bold;
-	    line-height: 1;
-	    text-align: left;
+	    line-height: 1;	    
 	    z-index: 11;
 	    text-align: center;
 	}
