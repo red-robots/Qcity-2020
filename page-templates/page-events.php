@@ -33,6 +33,7 @@ get_template_part('template-parts/banner-events');
 					$wp_query = new WP_Query();
 					$wp_query->query(array(
 						'post_type'=>'event',
+						'post_status'=>'publish',
 						//'posts_per_page' => 5,
 						'meta_query' => array(
 							array(
@@ -52,13 +53,20 @@ get_template_part('template-parts/banner-events');
 				if ($wp_query->have_posts()) : ?>
 					<section class="sponsored">
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
-						$img = get_field('event_image');
-						$date = get_field("event_date", false, false);
-						$date = new DateTime($date);
-						$enddate = get_field("end_date", false, false);
-						$enddate = new DateTime($enddate);
 						
-							include( locate_template('template-parts/sponsored-block.php') );
+							$img = get_field('event_image');
+							$date = get_field("event_date", false, false);
+							$date = new DateTime($date);
+							$enddate = get_field("end_date", false, false);
+							$enddate = ( !empty($enddate) ) ? new DateTime($enddate) : $date;
+
+							$date_start 	= strtotime($date->format('Y-m-d'));
+							$date_stop 		= strtotime($enddate->format('Y-m-d'));
+							$now 			= strtotime(date('Y-m-d'));
+
+							//if( ($date_start <= $now) && ($date_stop >=  $now) || ($date_start >= $now) ) {
+								include( locate_template('template-parts/sponsored-block.php') );
+							//} 
 
 						endwhile; ?>
 					</section>
@@ -84,6 +92,7 @@ get_template_part('template-parts/banner-events');
 				$wp_query = new WP_Query();
 				$wp_query->query(array(
 					'post_type'=>'event',
+					'post_status'=>'publish',
 					//'posts_per_page' => 4,
 					'meta_query' => array(
 						array(
@@ -92,22 +101,35 @@ get_template_part('template-parts/banner-events');
 					        'value'		=> $today,
 					    ),
 				    ),
-				    'tax_query' => array(
+				    /*'tax_query' => array(
 						array(
 							'taxonomy' => 'event_category', // your custom taxonomy
 							'field' => 'slug',
-							'terms' => array( 'standard' ) // the terms (categories) you created
+							'terms' => array( '' ) // the terms (categories) you created
 						)
-					)
+					)*/
 			));
 				if ($wp_query->have_posts()) : ?>
 					<section class="sponsored">
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
+
 						$img = get_field('event_image');
 						$date = get_field("event_date", false, false);
+						//echo $today . " | " . $date;
+						
+
 						$date = new DateTime($date);
 						$enddate = get_field("end_date", false, false);
-						$enddate = new DateTime($enddate);
+						$enddate = ( !empty($enddate) ) ? new DateTime($enddate) : $date;
+
+						$date_start 	= strtotime($date->format('Y-m-d'));
+						$date_stop 		= strtotime($enddate->format('Y-m-d'));
+						$now 			= strtotime(date('Y-m-d'));
+
+						//if( ($date_start <= $now) && ($date_stop >=  $now) ) {
+							//the_title();
+							//echo " |  Date: " . $date->format('D | M j, Y') . " | ";
+						//}
 						
 							include( locate_template('template-parts/sponsored-block.php') );
 

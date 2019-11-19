@@ -1072,3 +1072,18 @@ section.home-bottom {
 	height: 80px;
 	width: auto;
 }
+
+@media screen and (max-width: 768px) {
+	.logo, h1.logo {
+	    width: 100px;
+	    margin: 0;
+	    top: 10px;
+	    left: 0;
+	}
+
+	article.small .xtitle {
+	    width: 63%;
+	    float: right;
+	    font-size: 12px;
+	}
+}
