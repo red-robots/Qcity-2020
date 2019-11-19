@@ -1099,4 +1099,31 @@ section.home-bottom {
 	section.home-sponsored .block .info {	   
 	    margin-bottom: 20px;
 	}
+
+	section.home-sponsored .block {
+	    width: auto;
+	    position: relative;	    
+	    text-align: center;
+	    line-height: 0;
+	}
+
+	section.home-sponsored .last-block{
+		display: block;
+		position: relative;
+	}
+
+	section.home-sponsored .last-block .more {
+	    width: 100%;
+	    padding: 10px;
+	    color: #333;
+	    position: relative;
+	    bottom: 0px;
+	    left: 0px;
+	    font-size: 36px;
+	    font-weight: bold;
+	    line-height: 1;
+	    text-align: left;
+	    z-index: 11;
+	    text-align: center;
+	}
 }
