@@ -46,19 +46,20 @@
 
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
-	'post_type'=>'event',
-	'posts_per_page' => 5,
-	'meta_query' => array(
-		array(
-	        'key'		=> 'event_date',
-	        'compare'	=> '<=',
-	        'value'		=> $today,
-	    ),
-	    //  array(
-	    //     'key'		=> 'end_date',
-	    //     'compare'	=> '>=',
-	    //     'value'		=> $today,
-	    // )
+		'post_type'			=>'event',
+		'post_status'		=>'publish',
+		'posts_per_page' 	=> 5,
+		'meta_query' 		=> array(
+								array(
+							        'key'		=> 'event_date',
+							        'compare'	=> '<=',
+							        'value'		=> $today,
+							    ),
+							    //  array(
+							    //     'key'		=> 'end_date',
+							    //     'compare'	=> '>=',
+							    //     'value'		=> $today,
+							    // )
     ),
 ));
 	if ($wp_query->have_posts()) : ?>
@@ -75,7 +76,7 @@
 				$enddate 	= new DateTime($enddate);
 				
 			?>
-				<div class="block">
+				<div class="block sponsored_post_block">
 					<a href="<?php the_permalink(); ?>">
 						
 						<?php if( $img ) { ?>
@@ -101,7 +102,7 @@
 				<div class="overlayz">
 					<a href="<?php bloginfo('url'); ?>/events"></a>
 				</div>
-				<!-- <img src=""> -->
+				
 			</div>
 		</div>
 	</section>

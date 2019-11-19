@@ -38,15 +38,15 @@ get_template_part('template-parts/banner-events');
 						'meta_query' => array(
 							array(
 						        'key'		=> 'event_date',
-						        'compare'	=> '<=',
+						        'compare'	=> '>=',
 						        'value'		=> $today,
 						    ),
 					    ),
 					    'tax_query' => array(
 							array(
-								'taxonomy' => 'event_category', // your custom taxonomy
-								'field' => 'slug',
-								'terms' => array( 'premium' ) // the terms (categories) you created
+								'taxonomy' 	=> 'event_category', // your custom taxonomy
+								'field' 	=> 'slug',
+								'terms' 	=> array( 'premium' ) // the terms (categories) you created
 							)
 						)
 				));

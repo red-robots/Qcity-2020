@@ -254,6 +254,7 @@ section.home-sponsored {
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: stretch;
+			margin-bottom: 10px;
 		}
 	}
 	.block {
@@ -316,7 +317,11 @@ section.home-sponsored {
 			text-align: left;
 			z-index: 11;
 		}
+
+
 	}
+
+	
 }
 section.home-bottom {
 	width: 100%;
@@ -1085,5 +1090,13 @@ section.home-bottom {
 	    width: 63%;
 	    float: right;
 	    font-size: 12px;
+	}
+
+	.sponsored_post_block{
+		margin-bottom: 10px;
+	}
+
+	section.home-sponsored .block .info {	   
+	    margin-bottom: 20px;
 	}
 }
