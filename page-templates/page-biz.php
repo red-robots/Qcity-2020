@@ -29,7 +29,7 @@ get_template_part('template-parts/banner-biz');
 				/*$args = array(
 						'post_type' 	=> 'business_listing', 
 						'post_status'	=> 'publish',
-						//'taxonomy' 		=> 'business_category', 
+						'taxonomy' 		=> 'business_category', 
 						//'term' 			=> 'php', 
 						'posts_per_page' => -1
 				);
@@ -40,7 +40,24 @@ get_template_part('template-parts/banner-biz');
 
 					while ( have_posts() ) : the_post();
 
-						$business_category = get_business_category_items();						
+						$business_category = array();
+						$terms = get_terms('business_category');
+
+					    foreach ($terms as $category) {
+					    	if( $category->count > 0 ):
+
+					    		$icon = get_field('icon', $category);
+
+						    	$business_category[] = array(
+						    				'name' 	=> $category->name,
+						    				'url' 	=> get_term_link($category->term_id),
+						    				'icon'	=> $icon['url']
+						    	);
+					    	endif;
+					    }
+
+					    array_multisort($business_category, SORT_ASC, $terms);
+											
 						include( locate_template('template-parts/business-categories.php'));
 
 					endwhile; // End of the loop.

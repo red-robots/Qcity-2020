@@ -64,22 +64,22 @@
 	if ($wp_query->have_posts()) : ?>
 	<section class="home-sponsored">
 		<header class="section-title ">
-			<h2 class="dark-gray">Sponsored Content</h2>
+			<h2 class="dark-gray">Sponsor Events</h2>
 		</header>
 		<div class="flexwrap">
 			<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
-				$img = get_field('event_image');
-				$date = get_field("event_date", false, false);
-				$date = new DateTime($date);
-				$enddate = get_field("end_date", false, false);
-				$enddate = new DateTime($enddate);
+				$img 		= get_field('event_image');
+				$date 		= get_field("event_date", false, false);
+				$date 		= new DateTime($date);
+				$enddate 	= get_field("end_date", false, false);
+				$enddate 	= new DateTime($enddate);
 				
 			?>
 				<div class="block">
 					<a href="<?php the_permalink(); ?>">
 						
 						<?php if( $img ) { ?>
-							<img src="<?php echo $img['sizes']['thumbnail']; ?>" alt="<?php echo $img['alt']; ?>">
+							<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 						<?php } elseif( has_post_thumbnail() ) {
 							the_post_thumbnail('thumbnail');
 						} else { ?>

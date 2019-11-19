@@ -5,17 +5,17 @@
 */           
 
     foreach($business_category as $category):  
-        if( $category->count > 0 ):
+
      ?>
         
         <div class="cat">
-            <a href="<?php echo get_term_link($category->term_id); ?>">
+            <a href="<?php echo $category['url']; ?>">
                 <div class="icon">
-                    <?php //echo $category['category_icon']; ?>
+                    <img src="<?php echo $category['icon']; ?>" alt="<?php echo $category['name']; ?>">
                 </div>
-                <h2><?php echo $category->name; ?></h2>
+                <h2><?php echo $category['name']; ?></h2>
             </a>
         </div>
     <?php 
-        endif;
+        //endif;
     endforeach;

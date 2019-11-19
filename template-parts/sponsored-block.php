@@ -6,7 +6,7 @@ $img = get_field('story_image');
 <article class="story-block">
 	<div class="photo">
 		<?php if( $img ) { ?>
-			<img src="<?php echo $img['sizes']['thirds']; ?>" alt="<?php echo $img['alt']; ?>">
+			<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 		<?php } elseif( has_post_thumbnail() ) {
 				the_post_thumbnail('thirds');
 			} else { ?>

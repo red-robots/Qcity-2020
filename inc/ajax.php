@@ -47,7 +47,7 @@ add_action('wp_ajax_qcity_events_load_more', 'qcity_events_load_more');
 function qcity_events_load_more(){
 
     $paged = $_POST['page'] + 1;
-    $today = date('Ymd');
+    $today = date('M/d/Y');
 
     $query = new WP_Query( array(
         'post_type'     => 'event',
@@ -57,7 +57,7 @@ function qcity_events_load_more(){
         'meta_query' => array(
                             array(
                                 'key'       => 'event_date',
-                                'compare'   => '<=',
+                                'compare'   => '>=',
                                 'value'     => $today,
                             ),
         ),
@@ -65,7 +65,7 @@ function qcity_events_load_more(){
             array(
                 'taxonomy' => 'event_category', // your custom taxonomy
                 'field' => 'slug',
-                'terms' => array( 'premium' ) // the terms (categories) you created
+                'terms' => array( 'standard' ) // the terms (categories) you created
             )
         )
     ));    
