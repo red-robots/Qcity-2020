@@ -179,4 +179,3 @@ function get_business_category_items(){
     array_multisort($name, SORT_ASC, $terms);
     return $terms;
 }
-

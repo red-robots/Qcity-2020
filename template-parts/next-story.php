@@ -1,12 +1,17 @@
 <?php
-
+	$post_id = get_the_ID();
 	$sponsors = get_field('sponsors');	
 	if($sponsors):
 		$sponsor = get_post($sponsors[0]->ID);
 		$sponsor_id = $sponsor->ID;		
 	endif;	
 
-	$next = posts_have_sponsors(get_the_ID(), $sponsor_id);
+	$next = posts_have_sponsors($post_id, $sponsor_id);
+
+	$tags = get_the_tags();	
+	$tag = ($tags) ? $tags[0]->term_id : null;	
+
+	//echo "Tag ID: " . $tag . " | Post ID: {$post_id}";
 
 	
 ?>
@@ -35,8 +40,11 @@
 				$args = array(				  	       
         			'post_type'        	=> 'post',        
         			'post_status'      	=> 'publish',
+        			'post__not_in'      => array( $post_id ),
         			'posts_per_page' 	=> 1,
 					'orderby'          	=> 'rand',
+					'tag_id' 			=> $tag, 
+					
 				);
 			}
 
