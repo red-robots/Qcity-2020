@@ -179,3 +179,17 @@ function get_business_category_items(){
     array_multisort($name, SORT_ASC, $terms);
     return $terms;
 }
+
+function get_sponsor_paid(){
+        $args = array(     
+            'category_name'     => 'Offers & Invites',        
+            'post_type'         => 'post',        
+            'post_status'       => 'publish',
+            'posts_per_page'    => 1,
+            'orderby'           => 'rand', 
+        );
+
+        $wp_query = new WP_Query($args);
+
+        return $wp_query;
+}

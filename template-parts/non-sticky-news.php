@@ -17,18 +17,31 @@
 		<header class="section-title ">
 			<h2 class="dark-gray">News</h2>
 		</header>
-		<section class="twocol qcity-news-container">	
-		<?php if ( $wp_query->have_posts() ) : ?>		
-				<?php while ( $wp_query->have_posts() ) :  $wp_query->the_post();
 
-		    		//include( locate_template('template-parts/story-block.php', false, false) );
-		    		get_template_part( 'template-parts/story-block');
-		    	
-			 	endwhile;  ?>
-		<?php 
-			endif;
-			wp_reset_postdata();
-		?>	 	
+      
+
+
+		<section class="twocol qcity-news-container">	
+
+              <?php //get_template_part( 'template-parts/sponsored-paid'); ?>
+
+    		<?php 
+            $i = 0;
+                if ( $wp_query->have_posts() ) : 		
+    				 while ( $wp_query->have_posts() ) :  $wp_query->the_post();
+
+                        if($i == 2){
+                            get_template_part( 'template-parts/sponsored-paid');
+                        }
+
+    		    		//include( locate_template('template-parts/story-block.php', false, false) );
+    		    		get_template_part( 'template-parts/story-block');
+                        $i++;
+    		    	
+    			 	endwhile; 
+    			endif;
+    			wp_reset_postdata();
+    		?>	 	
 		 </section>
 		 <section class="ads-home">
 		 	<?php  
