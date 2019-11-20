@@ -47,7 +47,7 @@ if ($wp_query->have_posts()) : ?>
 					<?php the_excerpt(); ?>
 				</div>
 				<div class="by">
-					by: <?php the_author();?> | <?php echo get_the_date(); ?>
+					By: <?php the_author();?> | <?php echo get_the_date(); ?>
 				</div>
 			</div>
 		</article>		
@@ -79,7 +79,7 @@ if ($wp_query->have_posts()) : ?>
 					
 				</div>
 				<div class="by">
-					by: <?php the_author(); ?> | <?php the_date(); ?>
+					By: <?php the_author(); ?> | <?php the_date(); ?>
 				</div>
 				<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
 			</article>

@@ -15,7 +15,7 @@
 		<span><?php echo get_the_excerpt(); ?></span>
 	</div>
 	<div class="by">
-		by: <?php the_author(); ?> | <?php echo get_the_date(); ?>
+		By: <?php the_author(); ?> | <?php echo get_the_date(); ?>
 	</div>
 	<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
 </article>
