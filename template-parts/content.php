@@ -22,8 +22,8 @@ $mod = the_modified_date('M j, Y', '', '', false);
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<div class="category"><?php get_template_part('template-parts/primary-category'); ?></div>
-			By <?php the_author(); ?> 
-			<?php echo get_the_date(); if($mod){echo' | Updated '.$mod;} ?>
+			<div>By <?php the_author(); ?> 
+			<?php echo get_the_date(); if($mod){echo' | Updated '.$mod;} ?></div>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
