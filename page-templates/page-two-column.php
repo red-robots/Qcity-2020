@@ -25,7 +25,7 @@ if( is_page('contact-us') ) {
 	
 	<div id="primary" class="left">
 		<main id="main" class="site-main" role="main">
-
+			
 			<?php
 			while ( have_posts() ) : the_post(); ?>
 				<div class="entry-content ">
