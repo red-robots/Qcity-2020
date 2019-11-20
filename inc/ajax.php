@@ -102,17 +102,35 @@ function qcity_events_load_more(){
 *   Counter of Main Menu for Jobs and Events
 */
 
-function get_category_counter($category){  
-    /*$args = array(
-                'post_type' => $category,
-                'post_status' => 'publish'
-    ); 
+function get_category_counter( $category ){  
+    
+    if( $category == 'event' ) {
 
-    $loop = new WP_Query( $args );*/
+        $today = date('Ymd');
+        $args = array(
+                'post_type'   => $category,
+                'post_status' => 'publish',
+                'meta_query' => array(
+                        array(
+                            'key'       => 'event_date',
+                            'compare'   => '>=',
+                            'value'     => $today,
+                        ),
+                ),
+        ); 
+
+        $loop = new WP_Query( $args );        
+
+        $total = $loop->found_posts;
    
 
-    $count      = wp_count_posts( $category );
-    $total      = $count->publish;
+    } else {
+
+        $count      = wp_count_posts( $category );
+        $total      = $count->publish;
+
+    }
+
    return $total;
 }
 
