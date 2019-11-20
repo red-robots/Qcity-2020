@@ -165,8 +165,8 @@ article.big-post {
 		z-index: 1;
 		line-height: 1.1;
 		margin-bottom: 10px;
-		@media screen and (min-width: $tabwidth) {
-			font-size: 22px;
+		@media screen and (max-width: $tabwidth) {
+			font-size: 20px;
 		}
 		@media screen and (min-width: $deskwidth) {
 			font-size: 28px;
@@ -1127,4 +1127,13 @@ section.home-bottom {
 	    z-index: 11;
 	    text-align: center;
 	}
+
+	article.big-post h3 {
+	    font-size: 20px;
+	    z-index: 1;
+	    line-height: 1.1;
+	    margin-bottom: 10px;
+	}
+
+
 }
