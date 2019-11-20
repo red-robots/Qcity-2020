@@ -32,7 +32,7 @@
 	}
 	.menu {
 		@include transition(all ease 1s);
-		overflow: hidden;
+		/*overflow: none;*/
 		display: block;
 	}
 	&.toggled .menu {
@@ -58,19 +58,27 @@
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
-			top: 1.5em;
+			top: 3.2em;
 			left: -999em;
 			z-index: 99999;
 
-			ul {
+			ul.sub-menu {
 				left: -999em;
 				top: 0;
 			}
 
 			li {
+        display: block;
+        background-color: #333;
+
+        a{
+          font-size: 0.8rem;
+        }
+
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
+          background-color: #c4a92f;
 				}
 				@media screen and (min-width: $tabwidth) {
 		
@@ -179,9 +187,12 @@
 .main-navigation.toggled ul {
 	display: block;
 	// background-color: $color-red;
-	ul.sub-menu {
-		background-color: rgba(255,255,255,.1);
-	}
+  	ul.sub-menu {
+  		background-color: rgba(255,255,255,.1);
+      z-index:999999;
+      left:0;
+
+  	}
 	
 }
 

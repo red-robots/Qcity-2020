@@ -270,6 +270,7 @@ section.home-sponsored {
 		}
 		img {
 			width: 100%;
+			height: 200px;
 		}
 		.date {
 			margin-bottom: 10px;
@@ -1257,5 +1258,26 @@ section.home-bottom {
 	margin-top: 10px;
 }
 
+
+@media (max-width: 768px){
+	aside.c-sponsor-block {
+	    grid-template-areas: 'text image-wrap';
+	    grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+	    padding-top: .92rem;
+	    margin-bottom: 20px;
+	}
+}
+
+/*.main-navigation .menu {
+    -webkit-transition: all ease 1s;
+    transition: all ease 1s;
+    overflow: none; 
+    display: block;
+}*/
+
+section.home-sponsored .block img {
+    width: 100%;
+    height: 200px;
+}
 
 
