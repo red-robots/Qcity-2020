@@ -149,11 +149,11 @@ get_header();
         	</div>
         <?php } ?>
         <div class="clear"></div>
-        <?php if( $weblink != '' ) { ?>
+        <?php /*if( $weblink != '' ) { ?>
         	<div class="fe-website btn">
         		<a class="red" target="_blank" href="<?php echo $weblink; ?>">Visit Website</a>
         	</div>
-        <?php } ?>
+        <?php }  */ ?>
 	</div>
 </div>
 <?php 
