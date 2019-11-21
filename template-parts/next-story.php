@@ -36,7 +36,7 @@
         			'posts_per_page' 	=> 1,
 					'orderby'          	=> 'rand',
 				);
-			} else {
+			} elseif($tag) {
 				$args = array(				  	       
         			'post_type'        	=> 'post',        
         			'post_status'      	=> 'publish',
@@ -46,11 +46,23 @@
 					'tag_id' 			=> $tag, 
 					
 				);
+			} else {
+				$args = array(				  	       
+        			'post_type'        	=> 'post',        
+        			'post_status'      	=> 'publish',
+        			'post__not_in'      => array( $post_id ),
+        			'posts_per_page' 	=> 1,
+					'orderby'          	=> 'rand',
+					//'tag_id' 			=> $tag, 
+					
+				);
 			}
 
 		
 
 		$wp_query = new WP_Query($args);
+
+		var_dump($wp_query);
 		
 		if ($wp_query->have_posts()) : 
 			while ($wp_query->have_posts()) : $wp_query->the_post(); 

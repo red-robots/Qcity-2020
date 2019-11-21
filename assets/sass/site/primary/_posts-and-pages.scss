@@ -1268,6 +1268,18 @@ section.home-bottom {
 	}
 }
 
+@media screen and (max-width: 1250px){
+	.content-area {
+	    width: 66%;
+	    float: left;
+	    margin: 0;
+	    padding-bottom: 50px;
+	    min-height: 800px;
+	    margin-top: 25px;
+	}
+}
+
+
 /*.main-navigation .menu {
     -webkit-transition: all ease 1s;
     transition: all ease 1s;
