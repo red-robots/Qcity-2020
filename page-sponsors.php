@@ -58,11 +58,14 @@ get_header(); ?>
 							
 							$logo 			= get_field('logo');
 							$sponsor_site 	= get_field('logo_hyperlink');
+							$displays		= get_field('display_to_public');
 
-							if($logo):
-								$url 	= $logo['url'];
-								$link 	= $logo['link'];
-								//$title 	= $query->get_the_title();
+							if( $displays == 'yes' ):
+
+								if($logo):
+									$url 	= $logo['url'];
+									$link 	= $logo['link'];
+									//$title 	= $query->get_the_title();
 							?>
 							  
 							  <div class="cat">
@@ -76,7 +79,8 @@ get_header(); ?>
 							    
 							
 						<?php 
-							endif; // logo
+								endif; // logo
+							endif; // display
 
 						endwhile;
 
