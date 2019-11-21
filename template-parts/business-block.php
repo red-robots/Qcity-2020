@@ -13,9 +13,9 @@ $email  = antispambot($email);
                     <img src="<?php echo $img['url']; ?>"  alt="<?php echo $img['alt']; ?>">
                 </div>
                 <div class="info">
-                    <h3><?php the_title(); ?></h3>
-                    <h4>Phone: <?php echo $phone; ?> | Email: <?php echo $email; ?></h4>
-                    <div class="date"><?php echo get_the_date(); ?></div>
+                    <h3 class="featured_business_header"><?php the_title(); ?></h3>
+                    <h4>Phone: <?php echo $phone; ?></h4>
+                    <h4>Email: <?php echo $email; ?></h4>                    
                 </div>
                 <div class="view">
                     <div class="viewlink">
