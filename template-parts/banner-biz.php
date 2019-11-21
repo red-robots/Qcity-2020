@@ -6,6 +6,9 @@ if( is_tax() ) {
 	$img = get_field('story_image');
 	$imgMob = get_field('story_image_mobile');
 }
+
+$add_business = get_field('add_your_business');
+$add_business_link = get_field('add_business_link');
 ?>
 
 <div class="banner">
@@ -43,6 +46,6 @@ if( is_tax() ) {
 				</form>
 			</div>	
 		</div><!--.row-1-->
-		<a href="">Add your Business To This Directory</a>
+		<a href="<?php echo ($add_business_link) ? $add_business_link : '';  ?>"><?php echo ($add_business) ? $add_business : ''; ?></a>
 	</div>
 </div>
