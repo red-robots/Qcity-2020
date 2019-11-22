@@ -84,6 +84,7 @@ if( is_page('events') ) {
 	<?php endif; ?>
 
 
+	<?php /*
 	
 	<div class="side-offer">
 		<p><?php echo $text; ?></p>
@@ -126,3 +127,5 @@ if( is_page('events') ) {
 			</div>
 	<?php //dynamic_sidebar( 'sidebar-1' ); ?>
 </div><!-- #secondary -->
+
+*/  ?>

@@ -10,18 +10,25 @@
 	get_header(); 
 	$img 	= get_field('story_image');
 	$video 	= get_field('video_single_post');
+
+	$sponsors = get_field('sponsors');	
+	//var_dump($sponsors);
 ?>
 
 <div class="wrapper">
 	
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area" style="<?php echo ($sponsors) ? '': ' margin: 0 auto; float:none; width: 80%; '; ?>">
 		<?php if( $img ) { ?>
 			<div class="story-image">
 				<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 			</div>
+		<?php } elseif( has_post_thumbnail() ){ ?>
+			<div class="story-image">
+				<?php the_post_thumbnail(); ?>
+			</div>
 		<?php } ?>
 		<main id="main" class="site-main" role="main">
-			<div class="wrapper">
+			<div class="wrapper" >
 
 				<?php
 				while ( have_posts() ) : the_post();
@@ -38,7 +45,7 @@
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar();?>
+<?php ($sponsors) ? get_sidebar() : ''; ?>
 </div>
 <?php 
 get_footer();
