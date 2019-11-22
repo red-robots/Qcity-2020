@@ -43,6 +43,6 @@ if( is_tax() ) {
 				</form>
 			</div>	
 		</div><!--.row-1-->
-		<a href="<?php bloginfo('url'); ?>/church-directory/church-directory-sign-up/">Add your Church To This Directory ></a>
+		<a href="<?php bloginfo('url'); ?>/church-directory/church-directory-sign-up/">Add your Church To This Directory</a>
 	</div>
 </div>

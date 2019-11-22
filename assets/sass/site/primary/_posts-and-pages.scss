@@ -1079,6 +1079,18 @@ section.home-bottom {
 	width: auto;
 }
 
+@media screen and (max-width: 1250px){
+	.content-area {
+	    width: 66%;
+	    float: left;
+	    margin: 0;
+	    padding-bottom: 50px;
+	    min-height: 800px;
+	    margin-top: 25px;
+	}
+}
+
+
 @media screen and (max-width: 768px) {
 	.logo, h1.logo {
 	    width: 100px;
@@ -1258,6 +1270,17 @@ section.home-bottom {
 	margin-top: 10px;
 }
 
+/*
+*	Single Event
+*/
+
+.event_website{
+	margin-top: 10px;
+	width:280px;
+	text-align: center;
+}
+
+
 
 @media (max-width: 768px){
 	aside.c-sponsor-block {
@@ -1266,18 +1289,45 @@ section.home-bottom {
 	    padding-top: .92rem;
 	    margin-bottom: 20px;
 	}
-}
 
-@media screen and (max-width: 1250px){
+	img{
+		width: 100%;
+		height: auto;
+	}
+
+	.event_website{
+		margin-top: 10px;
+		width:100%;
+		text-align: center;
+	}
+
 	.content-area {
-	    width: 66%;
-	    float: left;
+	    width: 100%;
+	    float: none;
 	    margin: 0;
-	    padding-bottom: 50px;
-	    min-height: 800px;
+	    padding-bottom: 30px;
+	    /*min-height: 800px;*/
 	    margin-top: 25px;
 	}
+
+	section.church-list .church {
+	    width: auto;
+	    position: relative;
+	    -webkit-flex-basis: 47%;
+	    -ms-flex-preferred-size: 47%;
+	    flex-basis: 100%;
+	    background-color: #fff;
+	    color: #58595b;
+	    padding: 20px 20px 60px 20px;
+	    margin-bottom: 20px;
+	    font-size: 14px;
+	    -webkit-box-shadow: 5px 8px 16px -7px rgba(0, 0, 0, 0.43);
+	    box-shadow: 5px 8px 16px -7px rgba(0, 0, 0, 0.43);
+	    border: 3px solid #eeeeee;
+	}
 }
+
+
 
 
 /*.main-navigation .menu {
@@ -1304,5 +1354,9 @@ section.home-sponsored .block img {
 	margin-top: 10px;
 	width:280px;
 	text-align: center;
+}
+
+.section.church-list {
+	margin-top: 20px;
 }
 

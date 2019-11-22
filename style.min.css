@@ -2223,7 +2223,8 @@ section.home-bottom{width:100%;clear:both;margin:30px 0}
 .subscribe_btn{border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;margin-left:10px}
 .featured_business{margin-bottom:10px;padding-bottom:10px}
 .business_category_icon{height:80px;width:auto}
-@media screen and (max-width:768px){.logo,h1.logo{width:100px;margin:0;top:10px;left:0}
+@media screen and (max-width:1250px){.content-area{width:66%;float:left;margin:0;padding-bottom:50px;min-height:800px;margin-top:25px}
+}@media screen and (max-width:768px){.logo,h1.logo{width:100px;margin:0;top:10px;left:0}
 article.small .xtitle{width:63%;float:right;font-size:12px}
 .sponsored_post_block{margin-bottom:10px}
 section.home-sponsored .block .info{margin-bottom:20px}
@@ -2251,11 +2252,16 @@ article.big-post h3{font-size:20px;z-index:1;line-height:1.1;margin-bottom:10px}
 .has-text-sponsor{color:#36c}
 @media(min-width:40.625em){.c-sponsor-block__sponsor{font-size:.85rem;margin-top:35px}
 }.c-sponsor-block__desc{margin-top:10px}
+.event_website{margin-top:10px;width:280px;text-align:center}
 @media(max-width:768px){aside.c-sponsor-block{grid-template-areas:'text image-wrap';grid-template-columns:repeat(auto-fit,minmax(200px,auto));padding-top:.92rem;margin-bottom:20px}
-}@media screen and (max-width:1250px){.content-area{width:66%;float:left;margin:0;padding-bottom:50px;min-height:800px;margin-top:25px}
+img{width:100%;height:auto}
+.event_website{margin-top:10px;width:100%;text-align:center}
+.content-area{width:100%;float:none;margin:0;padding-bottom:30px;margin-top:25px}
+section.church-list .church{width:auto;position:relative;-webkit-flex-basis:47%;-ms-flex-preferred-size:47%;flex-basis:100%;background-color:#fff;color:#58595b;padding:20px 20px 60px 20px;margin-bottom:20px;font-size:14px;-webkit-box-shadow:5px 8px 16px -7px rgba(0,0,0,0.43);box-shadow:5px 8px 16px -7px rgba(0,0,0,0.43);border:3px solid #eee}
 }section.home-sponsored .block img{width:100%;height:200px}
 .featured_business_header{margin:5px 0 7px}
 .event_website{margin-top:10px;width:280px;text-align:center}
+.section.church-list{margin-top:20px}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

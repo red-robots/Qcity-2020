@@ -11,13 +11,13 @@ $obj=get_queried_object();
 // echo '</pre>';
 ?>
 <div class="wrapper">
-	<div class="content-area">
+	<div class="">
 		<header class="section-title ">
 			<h2 class="dark-gray"><?php echo $obj->name; ?></h2>
 		</header>
 	</div>
 </div>
-<div class="wrapper">
+<div class="wrapper" style="margin-top:20px">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
