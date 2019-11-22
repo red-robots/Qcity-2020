@@ -84,7 +84,7 @@ if( is_page('events') ) {
 	<?php endif; ?>
 
 
-	<?php /*
+	<?php  if( (get_post_type() != 'post') ||  is_category() ): ?>
 	
 	<div class="side-offer">
 		<p><?php echo $text; ?></p>
@@ -128,4 +128,4 @@ if( is_page('events') ) {
 	<?php //dynamic_sidebar( 'sidebar-1' ); ?>
 </div><!-- #secondary -->
 
-*/  ?>
+<?php endif; ?>
