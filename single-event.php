@@ -144,16 +144,16 @@ get_header();
         </div>
         <?php } ?>
         <?php if( $tickets != '' ) { ?>
-        	<div class="fe-website btn">
+        	<div class="fe-website btn event_website">
         		<a class="red" target="_blank" href="<?php echo $tickets; ?>">Tickets/Registration</a>
         	</div>
         <?php } ?>
         <div class="clear"></div>
-        <?php /*if( $weblink != '' ) { ?>
-        	<div class="fe-website btn">
+        <?php if( $weblink != '' ) { ?>
+        	<div class="fe-website btn event_website">
         		<a class="red" target="_blank" href="<?php echo $weblink; ?>">Visit Website</a>
         	</div>
-        <?php }  */ ?>
+        <?php }   ?>
 	</div>
 </div>
 <?php 
