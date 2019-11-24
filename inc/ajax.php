@@ -96,6 +96,96 @@ function qcity_events_load_more(){
 }
 
 /*
+*       Business Directory Main page
+*/
+
+add_action('wp_ajax_nopriv_qcity_business_load_more', 'qcity_business_load_more');
+add_action('wp_ajax_qcity_qcity_business_load_more', 'qcity_business_load_more');
+
+function qcity_business_load_more(){
+    $paged = $_POST['page'] + 1;
+
+    $query = new WP_Query( array(        
+        'post_type'         => 'business_listing',
+        'post_status'       => 'publish',
+        'paged'             => $paged,
+        //'posts_per_page'    => 6,
+    ));
+
+    if( $query->have_posts() ):
+        echo '<section class="sponsored">';
+        while ( $query->have_posts()): $query->the_post(); 
+
+            get_template_part( 'template-parts/business-block' );
+
+        endwhile;
+        echo '</section>';
+    else:    
+
+        echo 0;
+
+    endif;
+
+    wp_reset_postdata();
+
+    die();
+
+}
+
+/*
+*   Business Diretory Load More footer
+*/
+
+add_action('wp_ajax_nopriv_qcity_business_directory_load_more', 'qcity_business_directory_load_more');
+add_action('wp_ajax_qcity_business_directory_load_more', 'qcity_business_directory_load_more');
+
+function qcity_business_directory_load_more()
+{
+    $paged = $_POST['page'] + 1;
+
+    $query = new WP_Query( array(        
+        'post_type'         => 'business_listing',
+        'post_status'       => 'publish',
+        'paged'             => $paged,
+        'posts_per_page'    => 6,
+    ));
+
+    if( $query->have_posts() ):
+
+        while ( $query->have_posts()): $query->the_post(); $i++; 
+            
+            if( $i == 2 ) {
+                $cl = 'even';
+                $i = 0;
+            } else {
+                $cl = 'odd';
+            }
+
+            $phone      = get_field('phone');
+            $website    = get_field('website');
+
+            echo '<tr class="row ' . $cl.'">
+                        <td>'. get_the_title() .'</td>
+                        <td>'. $phone .'</td>
+                        <td>
+                            <a href="'. $website.'" target="_blank">View Website</a>
+                        </td>
+                    </tr>';
+
+        endwhile;
+
+    else:    
+
+        echo 0;
+
+    endif;
+
+    wp_reset_postdata();
+
+    die();
+}
+
+/*
 *   Sidebar Load More
 */
 

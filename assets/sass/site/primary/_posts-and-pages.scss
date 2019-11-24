@@ -967,6 +967,21 @@ Load More Button
 	}
 }
 
+
+.qcity-business-directory-load-more{
+	cursor: pointer;
+
+	&:hover {
+			background-color: $color-yellow;
+	}
+
+	&.loading{
+		cursor: default;
+	}
+}
+
+
+
 span.load-icon{
 	display: none;
 }
@@ -1378,4 +1393,32 @@ section.home-sponsored .block img {
 .section.church-list {
 	margin-top: 20px;
 }
+
+.business-directory-table {
+	font-size: 14px;
+	margin: 0;
+	tr.odd{
+		background-color: #f5f5f5;
+	}
+
+	td{
+		padding: 5px 10px;
+	}
+}
+
+.desc .bold{
+	font-weight: bold;
+}
+
+header.biz {
+    width: 100%;
+    float: left;
+    background-color: #924020;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0 7px;
+    margin: 60px 0;
+    letter-spacing: 2px;
+}
+
 

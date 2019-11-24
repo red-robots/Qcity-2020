@@ -11,27 +11,41 @@
 	$i = 0;
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
-		'post_type'=>'business_listing',
-		'posts_per_page' => 5,
+		'post_type'			=>'business_listing',
+		'posts_per_page' 	=> 6,
+		'post_status'   	=> 'publish',
 		//'paged' => $paged,
 	));
 	if ($wp_query->have_posts()) : ?>
-	<div class="biz-job-wrap">
+	<div class="">
+		<table class="business-directory-table">
 	    <?php while ($wp_query->have_posts()) : $wp_query->the_post(); $i++; 
-	    	if( $i == 2 ) {
-	    		$cl = 'even';
-	    		$i = 0;
-	    	} else {
-	    		$cl = 'odd';
-	    	}
+		    	if( $i == 2 ) {
+		    		$cl = 'even';
+		    		$i = 0;
+		    	} else {
+		    		$cl = 'odd';
+		    	}
+
+		    	$phone 		= get_field('phone');
+		    	$website 	= get_field('website');
 	    ?>
-	    <div class="listing <?php echo $cl; ?>">
-	    	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-	    </div>
+			    <tr class="row <?php echo $cl; ?>">
+			    	<td><?php the_title(); ?></td>
+			    	<td><?php echo $phone; ?></td>
+			    	<td>
+			    		<a href="<?php echo $website ?>" target="_blank">View Website</a>
+			    	</td>
+			    </tr>
+			    
 	    <?php endwhile; ?>	
-	    </div>
-	    <div class="more">
-	    	<a class="red" href="<?php bloginfo('url'); ?>/business-directory">See More</a>
-	    </div>
+	    </table>
+	</div>
+    <div class="more">
+    	<a class="red qcity-business-directory-load-more" data-page="1" data-action="qcity_business_directory_load_more" >
+    		<span class="load-text">Load More</span>
+			<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
+    	</a>
+    </div>
 	<?php endif; wp_reset_postdata(); ?>
 </div>

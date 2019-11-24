@@ -140,7 +140,7 @@ get_template_part('template-parts/banner-events');
 				</div>
 
 				<div class="more ">	
-				 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more">		
+				 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" >		
 				 		<span class="load-text">Load More</span>
 						<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
 				 	</a>

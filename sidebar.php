@@ -30,11 +30,14 @@ if( (get_post_type() == 'post') && !(is_page('events')) ) {
 			'posts_per_page' => 6	
 	);
 } elseif( is_tax() ) {
-	$title = 'Latest Business Articles';
-	$qp = 'business_listing';
-	$args = array(
-			'post_type'=> $qp,
-			'posts_per_page' => 6	
+	$title = 'Black Business';
+	$qp = 'black-business';
+	$args = array(     
+		        'category_name'     => 'black-business',        
+		        'post_type'         => 'post',        
+		        'post__not_in'      => array( $post_id ),
+		        'post_status'       => 'publish',
+		        'posts_per_page'    => 5,		       
 	);
 } elseif( (get_post_type() == 'page') && !( is_page('events') ) && !( is_page('business-directory') ) ) {
 	$title = 'Latest Stories';
@@ -104,7 +107,7 @@ if( is_page('events') ) {
 				<?php if($logo_link):?>
 					<a href="<?php echo $logo_link;?>">
 				<?php endif;?>
-					<img src="<?php echo $logo['sizes']['large'];?>" alt="<?php echo $logo['alt'];?>">
+					<img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['alt'];?>">
 				<?php if($logo_link):?>
 					</a>
 				<?php endif;

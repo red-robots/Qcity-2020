@@ -79,7 +79,7 @@
 
 
 <div class="more">	
- 	<a class="red qcity-load-more" data-page="2" data-action="qcity_load_more">		
+ 	<a class="red qcity-load-more" data-page="2" data-action="qcity_load_more" >		
  		<span class="load-text">Load More</span>
 		<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
  	</a>

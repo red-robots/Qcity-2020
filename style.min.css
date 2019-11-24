@@ -2206,6 +2206,9 @@ section.comments{width:100%;padding:50px 0 30px 0;clear:both}
 .qcity-load-more{cursor:pointer}
 .qcity-load-more:hover{background-color:#c4a92f}
 .qcity-load-more.loading{cursor:default}
+.qcity-business-directory-load-more{cursor:pointer}
+.qcity-business-directory-load-more:hover{background-color:#c4a92f}
+.qcity-business-directory-load-more.loading{cursor:default}
 span.load-icon{display:none}
 span.load-text{display:block}
 .spin{-webkit-animation-name:spin;animation-name:spin;-webkit-animation-duration:1000ms;animation-duration:1000ms;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-timing-function:linear;animation-timing-function:linear}
@@ -2266,6 +2269,11 @@ section.church-list .church{width:auto;position:relative;-webkit-flex-basis:47%;
 .featured_business_header{margin:5px 0 7px}
 .event_website{margin-top:10px;width:280px;text-align:center}
 .section.church-list{margin-top:20px}
+.business-directory-table{font-size:14px;margin:0}
+.business-directory-table tr.odd{background-color:#f5f5f5}
+.business-directory-table td{padding:5px 10px}
+.desc .bold{font-weight:bold}
+header.biz{width:100%;float:left;background-color:#924020;color:#fff;text-align:center;padding:5px 0 7px;margin:60px 0;letter-spacing:2px}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

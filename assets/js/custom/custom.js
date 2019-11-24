@@ -330,6 +330,7 @@ jQuery(document).ready(function ($) {
         var page    = $(this).data('page');
         var newPage = page + 1;
         var action  = $(this).data('action');
+        //var container = $(this).data('')
         //var ajaxUrl = that.data('url');
 
         that.addClass('loading').find('.load-text').hide();        
@@ -431,6 +432,59 @@ jQuery(document).ready(function ($) {
 
     });
 
+    /*
+    *   Business Directory load more footer section
+    */
+
+       $(document).on('click', '.qcity-business-directory-load-more:not(.loading)', function(){
+
+        var that    = $(this);
+        var page    = $(this).data('page');
+        var newPage = page + 1;
+        var action  = $(this).data('action');
+        //var container = $(this).data('')
+        //var ajaxUrl = that.data('url');
+
+        that.addClass('loading').find('.load-text').hide();        
+        that.find('.load-icon').show();
+
+        //console.log('Page: ' + newPage);
+
+        $.ajax({
+            url: ajaxURL,
+            type: 'post',
+            data: {
+                page: page,
+                action: action
+            },
+            success: function(response){
+
+                //console.log('Response: ' + response);
+
+                if( response == 0){
+                    $('.business-directory-table').append('<p>No more post to load!</p>');
+                    that.hide();
+                } else {
+
+                    that.data('page', newPage);
+                    $('.business-directory-table').slideDown(2000).append(response);
+
+                    setTimeout(function(){
+                        that.removeClass('loading');
+                        that.find('.load-text').show();
+                        that.find('.load-icon').hide();
+                    }, 500);
+
+                }
+                
+            }, 
+            error: function(response){
+                console.log('Error: ');
+                console.log(response);
+            }
+        });
+
+    });
 
 
 
