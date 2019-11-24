@@ -36,5 +36,5 @@ if($location != '') {
             </div>
 		<?php } ?>
     </div><!-- featured event content -->
-    <div class="btn"><a class="yellow" href="<?php the_permalink(); ?>">DETAILS</a></div>
+    <div class="btn"><a class="yellow full" target="_blank" href="<?php echo ($website) ? $website : ''; ?>">Visit Website</a></div>
 </div><!-- featured event -->

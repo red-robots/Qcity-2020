@@ -840,7 +840,7 @@ section.church-list	{
 		flex-basis: 47%;
 		background-color: #fff;
 		color: $color-dark-gray;
-		padding: 20px 20px 60px 20px;
+		padding: 20px 20px 30px 20px;
 		margin-bottom: 20px;
 		font-size: 14px;
 		@include shadow();
@@ -857,9 +857,12 @@ section.church-list	{
 			margin-bottom: 10px;
 		}
 		.btn {
-			position: absolute;
+			/*position: absolute; */
 			bottom: 20px;
 			right: 20px;
+			margin-top: 20px;
+			width: 100%;
+			text-align: center;
 		}
 	}
 }
@@ -1280,6 +1283,10 @@ section.home-bottom {
 	text-align: center;
 }
 
+.full{
+	width: 100%;
+}
+
 
 
 @media (max-width: 768px){
@@ -1318,7 +1325,7 @@ section.home-bottom {
 	    flex-basis: 100%;
 	    background-color: #fff;
 	    color: #58595b;
-	    padding: 20px 20px 60px 20px;
+	    padding: 20px 20px 30px 20px;
 	    margin-bottom: 20px;
 	    font-size: 14px;
 	    -webkit-box-shadow: 5px 8px 16px -7px rgba(0, 0, 0, 0.43);
