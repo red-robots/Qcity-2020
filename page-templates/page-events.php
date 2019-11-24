@@ -70,7 +70,7 @@ get_template_part('template-parts/banner-events');
 
 						endwhile; ?>
 					</section>
-				<?php endif; ?>
+				<?php endif; wp_reset_postdata(); ?>
 			
 
 		
@@ -135,7 +135,7 @@ get_template_part('template-parts/banner-events');
 
 						endwhile; ?>
 					</section>
-				<?php endif; ?>
+				<?php endif; wp_reset_postdata(); ?>
 
 				</div>
 

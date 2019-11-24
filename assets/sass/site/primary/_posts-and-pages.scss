@@ -942,6 +942,18 @@ section.comments {
 /*
 Load More Button
 */
+.qcity-sidebar-load-more {
+	cursor: pointer;
+
+	&:hover {
+			background-color: $color-yellow;
+	}
+
+	&.loading{
+		cursor: default;
+	}
+}
+
 
 .qcity-load-more{
 	cursor: pointer;

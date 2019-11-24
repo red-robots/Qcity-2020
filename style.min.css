@@ -2200,6 +2200,9 @@ section.comments{width:100%;padding:50px 0 30px 0;clear:both}
 .event-details .detail-info{margin-bottom:15px}
 .event-details .detail-info a{text-decoration:none;color:#58595b;-webkit-transition:all ease .2s;transition:all ease .2s}
 .event-details .detail-info a:hover{color:#924020}
+.qcity-sidebar-load-more{cursor:pointer}
+.qcity-sidebar-load-more:hover{background-color:#c4a92f}
+.qcity-sidebar-load-more.loading{cursor:default}
 .qcity-load-more{cursor:pointer}
 .qcity-load-more:hover{background-color:#c4a92f}
 .qcity-load-more.loading{cursor:default}

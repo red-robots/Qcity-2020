@@ -10,22 +10,50 @@
 wp_reset_postdata();
 wp_reset_query();
 
+$post_id = get_the_ID();
+
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
-if( get_post_type() == 'post' ) {
+if( (get_post_type() == 'post') && !(is_page('events')) ) {
 	$title = 'Trending';
 	$qp = 'post';
+	$args = array(
+			'post_type'=> $qp,
+			'posts_per_page' => 6	
+	);
 } elseif( is_page('qcity-biz') ) {
 	$title = 'Latest Business Articles';
 	$qp = 'business_listing';
+	$args = array(
+			'post_type'=> $qp,
+			'posts_per_page' => 6	
+	);
 } elseif( is_tax() ) {
 	$title = 'Latest Business Articles';
 	$qp = 'business_listing';
-} elseif( get_post_type() == 'page' ) {
+	$args = array(
+			'post_type'=> $qp,
+			'posts_per_page' => 6	
+	);
+} elseif( (get_post_type() == 'page') && !(is_page('events')) ) {
 	$title = 'Latest Stories';
 	$qp = 'business_listing';
-}
+	$args = array(
+			'post_type'=> $qp,
+			'posts_per_page' => 6	
+	);
+} elseif( is_page('events') ) {
+	$title = 'Entertainment';
+	$qp = 'entertainment';
+	$args = array(     
+		        'category_name'     => 'Entertainment',        
+		        'post_type'         => 'post',        
+		        'post__not_in'      => array( $post_id ),
+		        'post_status'       => 'publish',
+		        'posts_per_page'    => 5,		       
+		    );
+} 
 
 if( is_page('events') ) {
 	$text = 'Get our newsletter to keep up with events and ticket giveaways.';
@@ -93,39 +121,37 @@ if( is_page('events') ) {
 		</div>
 	</div>
 
-	
-	
 		<?php
-		$wp_query = new WP_Query();
+		$wp_query = new WP_Query( $args );
 		
 		// might do an if / then for offers and invites category here..
 
-		$wp_query->query(array(
+		/*$wp_query->query(array(
 			'post_type'=> $qp,
 			'posts_per_page' => 6
-		));
+		));*/
+
 		if ($wp_query->have_posts()) : ?>
 			<div class="next-stories">
 				<h3><?php echo $title; ?></h3>
-					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-						<article class="small">
-							<a href="<?php the_permalink(); ?>">
-								<div class="img">
-									<?php the_post_thumbnail('thumbnail'); ?>
-								</div>
-								<div class="xtitle">
-									<?php the_title(); ?>
-								</div>
-							</a>
-						</article>
+				<div class="sidebar-container">
+					<?php while ($wp_query->have_posts()) : $wp_query->the_post();
+
+						get_template_part( 'template-parts/sidebar-block');
 						
-					<?php endwhile; ?>
-					<div class="more">
-						<a class="gray" href="">Load More</a>
-					</div>	
-				<?php endif; ?>
+					endwhile; ?>
+
+				</div>
+				<div class="more">
+					<a class="gray qcity-sidebar-load-more" data-page="1" data-action="qcity_sidebar_load_more" data-qp="<?php echo $qp; ?>" data-postid="<?php echo $post_id; ?>">
+						<span class="load-text">Load More</span>
+						<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
+					</a>
+				</div>	
+			<?php endif; wp_reset_postdata(); ?>
 			</div>
+
 	<?php //dynamic_sidebar( 'sidebar-1' ); ?>
 </div><!-- #secondary -->
 
-<?php endif; ?>
+<?php endif;  //if( (get_post_type() != 'post') ||  is_category() ) ?>
