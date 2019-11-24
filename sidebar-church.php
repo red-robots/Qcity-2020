@@ -27,7 +27,7 @@ if( get_post_type() == 'post' ) {
 
 <aside id="secondary" class="widget-area" role="complementary">
 
-
+	<!--
 	<div class="side-offer">
 	    <h3>Search Denominations</h3>
 	    <form id="category-select" class="category-select replace"  action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
@@ -35,12 +35,12 @@ if( get_post_type() == 'post' ) {
 	            'show_option_none'  => 'Select Denomination',
 	            'show_count'        => 1,
 	            'hide_empty'        => 0,
-	            'orderby'       => 'name',
+	            'orderby'       	=> 'name',
 	            'hierarchical'      => 1,
-	            'echo'          => 0,
-	            'value_field' => 'slug',
-	            'taxonomy'           => 'denomination',
-	            'name' => 'denomination'
+	            'echo'          	=> 0,
+	            'value_field' 		=> 'slug',
+	            'taxonomy'          => 'denomination',
+	            'name' 				=> 'denomination'
 	        ); ?>
 	        <?php $select  = wp_dropdown_categories( $args );
 	        ?>
@@ -51,7 +51,7 @@ if( get_post_type() == 'post' ) {
 	            <input type="submit" value="View" />
 	        </noscript>
 	    </form>
-	    <!-- <h3>Most Viewed Church Listings</h3> -->
+	    
 
 	    <?php
 	    // $args = array(
@@ -66,8 +66,8 @@ if( get_post_type() == 'post' ) {
 	    ?>
 	    <div class="btn">
 	        <a class="white" href="<?php bloginfo('url'); ?>/church-directory/church-directory-sign-up">Add your church to this directory</a>
-	    </div><!-- button -->
-	</div><!--.business-directory-search-box-->
+	    </div>
+	-->
 
 
 	<div class="side-offer">
