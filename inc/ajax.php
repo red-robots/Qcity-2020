@@ -114,8 +114,20 @@ function qcity_sidebar_load_more()
                 'post_type'         => 'post',        
                 'post__not_in'      => array( $post_id ),
                 'post_status'       => 'publish',
-                'posts_per_page'    => 5,              
+                'posts_per_page'    => 5,    
+                'paged'             => $paged          
             );
+    } elseif ( $qp == 'black-business' ){
+
+        $args = array(     
+                    'category_name'     => 'black-business',        
+                    'post_type'         => 'post',        
+                    'post__not_in'      => array( $post_id ),
+                    'post_status'       => 'publish',
+                    'posts_per_page'    => 5,    
+                    'paged'             => $paged          
+                );
+
     } else {
         $args = array(
             'post_type'         => $qp,

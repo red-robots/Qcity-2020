@@ -36,7 +36,7 @@ if( (get_post_type() == 'post') && !(is_page('events')) ) {
 			'post_type'=> $qp,
 			'posts_per_page' => 6	
 	);
-} elseif( (get_post_type() == 'page') && !(is_page('events')) ) {
+} elseif( (get_post_type() == 'page') && !( is_page('events') ) && !( is_page('business-directory') ) ) {
 	$title = 'Latest Stories';
 	$qp = 'business_listing';
 	$args = array(
@@ -53,7 +53,17 @@ if( (get_post_type() == 'post') && !(is_page('events')) ) {
 		        'post_status'       => 'publish',
 		        'posts_per_page'    => 5,		       
 		    );
-} 
+} elseif( is_page('business-directory') ){
+	$title = 'Black Business';
+	$qp = 'black-business';
+	$args = array(     
+		        'category_name'     => 'black-business',        
+		        'post_type'         => 'post',        
+		        'post__not_in'      => array( $post_id ),
+		        'post_status'       => 'publish',
+		        'posts_per_page'    => 5,		       
+	);
+}
 
 if( is_page('events') ) {
 	$text = 'Get our newsletter to keep up with events and ticket giveaways.';
@@ -122,6 +132,9 @@ if( is_page('events') ) {
 	</div>
 
 		<?php
+
+		//var_dump( $args );
+
 		$wp_query = new WP_Query( $args );
 		
 		// might do an if / then for offers and invites category here..
