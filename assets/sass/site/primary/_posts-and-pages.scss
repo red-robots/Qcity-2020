@@ -791,6 +791,8 @@ section.events {
 		justify-content: space-between;
 	}
 	.story-block {
+		padding-bottom: 0;
+		
 		@media screen and (min-width: $tabwidth) {
 			flex-basis: 33%;
 		}
