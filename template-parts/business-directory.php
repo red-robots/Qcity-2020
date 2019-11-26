@@ -5,9 +5,10 @@
 	<?php
 	/*
 		Biz Directory.
-
-
 	*/
+
+		var_dump( is_front_page() );
+
 	$i = 0;
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
@@ -32,7 +33,9 @@
 	    ?>
 			    <tr class="row <?php echo $cl; ?>">
 			    	<td><?php the_title(); ?></td>
+			    	<?php if( !(is_front_page())  ): ?>
 			    	<td><?php echo $phone; ?></td>
+			    	<?php endif; ?>
 			    	<td>
 			    		<a href="<?php echo $website ?>" target="_blank">View Website</a>
 			    	</td>
@@ -40,12 +43,16 @@
 			    
 	    <?php endwhile; ?>	
 	    </table>
-	</div>
-    <div class="more">
-    	<a class="red qcity-business-directory-load-more" data-page="1" data-action="qcity_business_directory_load_more" >
-    		<span class="load-text">Load More</span>
-			<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
-    	</a>
-    </div>
+	</div>    
 	<?php endif; wp_reset_postdata(); ?>
+	<div class="more">
+    	<?php if( is_front_page() && is_home() ): ?>
+			<a href="/business-directory/" class="red">See More</a>
+		<?php else: ?>		    		
+	    	<a class="red qcity-business-directory-load-more" data-page="1" data-action="qcity_business_directory_load_more" >
+	    		<span class="load-text">Load More</span>
+				<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
+	    	</a>
+    	<?php endif; ?>
+    </div>
 </div>

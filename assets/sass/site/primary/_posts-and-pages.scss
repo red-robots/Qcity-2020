@@ -241,6 +241,8 @@ article.big-post {
 		@include shadow();
 	}
 }
+
+
 section.home-sponsored {
 	width: 100%;
 	float: left;
@@ -324,6 +326,93 @@ section.home-sponsored {
 
 	
 }
+
+
+section.home-events {
+	width: 100%;
+	float: left;
+	clear: both;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #000;
+	.flexwrap {
+		@media screen and (min-width: $tabwidth) {
+			display: flex;
+			flex-wrap: nowrap;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: stretch;
+			margin-bottom: 10px;
+		}
+	}
+	.block {
+		width: auto;
+		position: relative;
+		flex-basis: 15%;
+		text-align: center;
+		line-height: 0;
+		&:hover {
+			.info {
+				padding: 10px 10px 20px 10px;
+			}
+		}
+		img {
+			width: 100%;
+			height: 200px;
+		}
+		.date {
+			margin-bottom: 10px;
+		}
+		h3 {
+			font-weight: normal;
+			font-size: 14px;
+		}
+		.info {
+			color: #fff;
+			background-color: rgba(#000, .7);
+			position: relative;
+			float: left;
+			width: 100%;
+			padding: 10px;
+			line-height: 1.1;
+			@include transition(all ease .2s);
+		}
+	}
+	.last-block {
+		.overlayz {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba($color-yellow, .8);
+			z-index: 9;
+			a {
+				display: block;
+				height: 100%;
+				width: 100%;
+			}
+		}
+		.more {
+			width: 100%;
+			padding: 10px;
+			color: #fff;
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			font-size: 36px;
+			font-weight: bold;
+			line-height: 1;
+			text-align: left;
+			z-index: 11;
+		}
+
+
+	}
+
+	
+}
+
+
 section.home-bottom {
 	width: 100%;
 	clear: both;
@@ -672,6 +761,7 @@ article.biz {
 		}
 	}
 }
+
 section.sponsored {
 	width: 100%;
 	float: left;
@@ -688,6 +778,56 @@ section.sponsored {
 		}
 	}
 }
+
+
+section.events {
+	width: 100%;
+	float: left;
+	@media screen and (min-width: $tabwidth) {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: stretch;
+		justify-content: space-between;
+	}
+	.story-block {
+		@media screen and (min-width: $tabwidth) {
+			flex-basis: 33%;
+		}
+
+		.description{
+			background-color: #dedede;
+			padding: 5px 10px;
+			border-bottom: 3px solid #555;
+			margin-top: 10px;
+			font-size: 13px;
+			display: block;
+			overflow: auto;
+
+			.date{
+				float: left;
+				margin-right:5px;
+			}
+			
+			.location{
+				float: right;
+				text-align: right;
+				width: 110px;
+				border-left: 1px solid #ccc;
+				padding-left: 5px;
+			}
+			
+		}
+
+		h3{
+			font-size: 15px;
+
+		}
+	}
+}
+
+
+
 .author-profile {
 	width: 100%;
 	float: left;

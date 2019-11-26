@@ -51,7 +51,7 @@ get_template_part('template-parts/banner-events');
 						)
 				));
 				if ($wp_query->have_posts()) : ?>
-					<section class="sponsored">
+					<section class="events">
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
 						
 							$img = get_field('event_image');
@@ -91,15 +91,15 @@ get_template_part('template-parts/banner-events');
 				$today = date('Ymd');
 				$wp_query = new WP_Query();
 				$wp_query->query(array(
-					'post_type'=>'event',
-					'post_status'=>'publish',
-					//'posts_per_page' => 4,
-					'meta_query' => array(
-						array(
-					        'key'		=> 'event_date',
-					        'compare'	=> '>=',
-					        'value'		=> $today,
-					    ),
+					'post_type'			=>'event',
+					'post_status'		=>'publish',
+					'posts_per_page' 	=> 6,
+					'meta_query' 		=> array(
+											array(
+										        'key'		=> 'event_date',
+										        'compare'	=> '>=',
+										        'value'		=> $today,
+										    ),
 				    ),
 				    /*'tax_query' => array(
 						array(
@@ -110,7 +110,7 @@ get_template_part('template-parts/banner-events');
 					)*/
 			));
 				if ($wp_query->have_posts()) : ?>
-					<section class="sponsored">
+					<section class="events">
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
 
 						$img = get_field('event_image');

@@ -50,16 +50,17 @@ function qcity_events_load_more(){
     $today = date('Ymd');
 
     $query = new WP_Query( array(
-        'post_type'     => 'event',
-        'post_status'   => 'publish',
-        'paged'         => $paged,
+        'post_type'         => 'event',
+        'post_status'       => 'publish',
+        'paged'             => $paged,
+        'posts_per_page'    => 6,
         //'post__not_in'  => $postIDs
-        'meta_query' => array(
-                            array(
-                                'key'       => 'event_date',
-                                'compare'   => '>=',
-                                'value'     => $today,
-                            ),
+        'meta_query'        => array(
+                                array(
+                                    'key'       => 'event_date',
+                                    'compare'   => '>=',
+                                    'value'     => $today,
+                                ),
         ),
         /*'tax_query' => array(
             array(
@@ -71,7 +72,7 @@ function qcity_events_load_more(){
     ));    
    
     if( $query->have_posts() ):
-        echo '<section class="sponsored">';
+        echo '<section class="events">';
         while( $query->have_posts() ): $query->the_post();
 
             $img    = get_field('event_image');
@@ -165,9 +166,9 @@ function qcity_business_directory_load_more()
             $website    = get_field('website');
 
             echo '<tr class="row ' . $cl.'">
-                        <td>'. get_the_title() .'</td>
-                        <td>'. $phone .'</td>
-                        <td>
+                        <td>'. get_the_title() .'</td>';
+                   echo '<td>'. $phone .'</td>';
+                   echo '<td>
                             <a href="'. $website.'" target="_blank">View Website</a>
                         </td>
                     </tr>';
