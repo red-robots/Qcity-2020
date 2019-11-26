@@ -487,6 +487,51 @@ jQuery(document).ready(function ($) {
     });
 
 
+   /*
+   *    Church Listing Search
+   */
+
+   var searchRequest = null;
+
+    /*$(function () {
+        var minlength = 3;
+
+        $("#form_church").submit(function ( event ) {
+            event.preventDefault();
+            var that    = $('.searchfield'),
+            value       = $('.searchfield').val();
+            var action  = 'qcity_church_search';
+
+            $('.church_listing_initial').hide();
+            $('.church_listing_search').show();
+            $('.church_listing_search_result').html('<a class="red"><span class="load-icon"><i class="fas fa-sync-alt spin"></i></span></a>');
+            
+
+            if (value.length >= minlength ) {
+                if (searchRequest != null) 
+                    searchRequest.abort();
+                searchRequest = $.ajax({
+                    type: "GET",
+                    url: ajaxURL,
+                    data: {
+                        'search_keyword' : value,
+                        'action': action
+                    },                    
+                    success: function( response ){                       
+                        if (value==$(that).val()) {  
+                            $('.church_listing_search_result span.load-icon').hide();
+                            $('.church_listing_search_result').html(response);
+                        }
+                    },
+                    error: function( response ) {
+                        console.log( response );
+                    }
+                });
+            }
+        });
+    });*/
+
+
 
 	/*
 	*

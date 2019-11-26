@@ -1,38 +1,110 @@
 <?php
 /**
- * The template for displaying search results pages.
+ * Template Name: Custom Search
+ * 
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @package ACStarter
  */
 
-get_header(); ?>
+get_header(); 
+$value = '';
 
-	<section id="primary" class="content-area">
+if( $_GET['search_text'] && !empty($_GET['search_text']) ){
+	$value = __($_GET['search_text']);
+}
+
+if( $_GET['type'] && !empty($_GET['type']) ){
+	$type = $_GET['type'];
+}
+
+if( $type == 'business_listing' ) {
+	$title = 'Featured Businesses';
+} elseif(  $type == 'church_listing' ) {
+	$title = 'All Churches';
+} else {
+	$title = 'All Posts';
+}
+
+
+?>
+
+<div class="wrapper" style="margin-top: 25px;">
+	<div class="content-area-title">
+		<header class="section-title ">
+			<h2 class="dark-gray"><?php echo $title; ?></h2>
+		</header>
+	</div>
+</div>
+<div class="wrapper">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'acstarter' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			$args = array(
+					'post_type'         => $type, 
+        			'post_status'       => 'publish',
+			        'order'             => 'ASC',
+        			'orderby'           => 'title',
+        			'posts_per_page'    => 15,
+			        's'                 => $value
+			);
+
+			$query = new WP_Query( $args );
+
+			//var_dump($query);
+
+		if ( $query->have_posts() ) : ?>
+
+			<header class="page-header" style="margin-bottom: 10px">
+				<h3 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'acstarter' ), '<span>' . $value . '</span>' ); ?></h3>
 			</header><!-- .page-header -->
 
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+				if( $type == 'business_listing' ) {
+					echo '<div class="qcity-news-container">
+								<section class="sponsored">';
+				} elseif( $type == 'church_listing' ) {
+					echo '<section class="church-list">';
+				} else {
+					echo '<section class="qcity-news-container">';
+				}
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+			?>
+
+			<?php
+			/* Start the Loop */
+			while ( $query->have_posts() ) : $query->the_post();
+
+				if( $type == 'business_listing' ) {
+
+					include(locate_template('template-parts/business-block.php')) ;
+
+				} elseif( $type == 'church_listing' ) {
+
+					include(locate_template('template-parts/church.php')) ;
+
+				} else {
+					get_template_part( 'template-parts/content', 'search' );
+				}
+				
 
 			endwhile;
 
-			the_posts_navigation();
+			pagi_posts_nav();
+
+
+			if( $type == 'business_listing' ) {
+				echo '</section></div>';
+			} elseif( $type == 'church_listing' ) {
+				echo '</section>';
+			} else {
+				echo '</section>';
+			}
+
+			
 
 		else :
 
@@ -41,8 +113,8 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
-	</section><!-- #primary -->
-
+	</div><!-- #primary -->
+</div>
 <?php
 get_sidebar();
-get_footer();
+get_footer(); 

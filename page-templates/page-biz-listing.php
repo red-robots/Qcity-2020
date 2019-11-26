@@ -79,18 +79,10 @@ get_template_part('template-parts/banner-biz');
 
 						<?php endwhile; ?>
 					</div>
-					</div>
+				</div>
 				<?php endif; ?>
 
-			<?php
-			while ( have_posts() ) : the_post();
-
-				
-
-				
-
-			endwhile; // End of the loop.
-			?>
+			
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

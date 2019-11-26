@@ -17,6 +17,8 @@ get_template_part('template-parts/banner-church');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<div class="church_listing_initial">
+
 			<?php
 			/*
 				Jobs 
@@ -27,13 +29,14 @@ get_template_part('template-parts/banner-church');
 				$today = date('Ymd');
 				$wp_query = new WP_Query();
 				$wp_query->query(array(
-				'post_type'=>'church_listing',
-				'posts_per_page' => 15,
-				'order' => 'ASC',
-				'orderby' => 'title'
-			));
+									'post_type'			=> 'church_listing',
+									'post_status'       => 'publish',
+									'posts_per_page' 	=> 15,
+									'order' 			=> 'ASC',
+									'orderby' 			=> 'title'
+				));
 				if ($wp_query->have_posts()) : ?>
-				<section class="church-list">
+					<section class="church-list">
 					<?php while ( $wp_query->have_posts() ) : ?>
 						<?php $wp_query->the_post();
 
@@ -47,11 +50,15 @@ get_template_part('template-parts/banner-church');
 					</section>
 				<?php endif; ?>
 
+			</div>
+
+			<div class="church_listing_search">
+				<div class="church_listing_search_result">				
+				</div>				
+			</div>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-
-
 
 <?php get_sidebar('church'); ?>
 </div>

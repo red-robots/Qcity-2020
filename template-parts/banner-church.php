@@ -37,8 +37,9 @@ if( is_tax() ) {
                     <?php endif;?>
 			</div>
 			<div class="search">
-				<form action="/" method="get" class="biz">
-				    <input class="searchfield" type="text" name="s" id="search"  onfocus="if(this.value=='<?php _e( 'search' ); ?>'){this.value='';}" onblur="if(this.value==''){this.value='<?php _e( 'search' ); ?>';}" value="<?php _e( 'search' ); ?>"/>
+				<form action="/search" method="get" class="biz" role="search" id="form_church">
+				    <input class="searchfield" type="text" name="search_text" id="search_church" />
+				    <input type="hidden" name="type" value="church_listing">				    
 				    <input class="searchicon" type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/images/search.png" />
 				</form>
 			</div>	

@@ -7,8 +7,6 @@
 		Biz Directory.
 	*/
 
-		var_dump( is_front_page() );
-
 	$i = 0;
 	$wp_query = new WP_Query();
 	$wp_query->query(array(

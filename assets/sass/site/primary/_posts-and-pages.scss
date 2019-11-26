@@ -792,7 +792,7 @@ section.events {
 	}
 	.story-block {
 		padding-bottom: 0;
-		
+
 		@media screen and (min-width: $tabwidth) {
 			flex-basis: 33%;
 		}
@@ -1563,4 +1563,20 @@ header.biz {
     letter-spacing: 2px;
 }
 
+.church_listing_search{
+	display: none;
+	text-align: center;
 
+	span.load-icon{
+		color: #924020;
+		display: block;
+	}
+}
+
+.church-list{
+	.church{
+		.info{
+			text-align: left;
+		}
+	}
+}

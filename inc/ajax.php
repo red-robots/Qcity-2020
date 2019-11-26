@@ -247,6 +247,58 @@ function qcity_sidebar_load_more()
 }
 
 
+/*
+*   Search for Church
+*/
+
+//add_action('wp_ajax_nopriv_qcity_church_search', 'qcity_church_search');
+//add_action('wp_ajax_qcity_qcity_church_search', 'qcity_church_search');
+
+/*function qcity_church_search()
+{
+    $value = $_GET['search_keyword'];
+
+    if( empty($value) ){
+        return;
+    }
+
+    $args = array(
+        'post_type'         => 'church_listing', 
+        'post_status'       => 'publish',
+        'order'             => 'ASC',
+        'orderby'           => 'title',
+        'posts_per_page'    => 15,
+        's'                 => $value        
+    );
+
+    $query = new WP_Query($args);
+
+    $churchlist     = array();
+    $search_result  = '';
+
+    if( $query->have_posts() ):
+        echo '<section class="church-list">';
+        while( $query->have_posts() ): $query->the_post();
+
+            include(locate_template('template-parts/church.php')) ;
+
+        endwhile;
+        pagi_posts_nav();
+        echo '</section>';      
+
+    else:
+
+        echo 0;
+
+    endif;
+
+    wp_reset_postdata();
+
+    die();
+
+    //return var_dump($churchlist);
+}*/
+
 
 /*
 *   Counter of Main Menu for Jobs and Events

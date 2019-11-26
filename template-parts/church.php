@@ -6,6 +6,9 @@ $website           = get_field( 'website' );
 $category          = get_field( 'category' );
 $termsDenomination = wp_get_post_terms( $post->ID, 'denomination' );
 $termsSize         = wp_get_post_terms( $post->ID, 'size' );
+
+$denomination      = get_field('denomination');
+$membership        = get_field('membership');
 /*echo '<pre>';
 print_r($termsDenomination);
 echo '<pre>';*/
@@ -27,12 +30,12 @@ if($location != '') {
 		<?php if ( $phone != '' ) { ?>
             <div class="fe-start"><?php echo $phone; ?></div>
 		<?php } ?>
-		<?php if ( $termsDenomination != '' ) { ?>
+		<?php if ( $denomination != '' ) { ?>
             <div class="fe-start">
-                <strong>Denomination:</strong> <?php echo $termsDenomination[0]->name; ?></div>
+                <strong>Denomination:</strong> <?php echo $denomination[0]->name; ?></div>
 		<?php } ?>
-		<?php if ( $termsSize != '' ) { ?>
-            <div class="fe-start"><strong>Size:</strong> <?php echo $termsSize[0]->name; ?>
+		<?php if ( $membership != '' ) { ?>
+            <div class="fe-start"><strong>Size:</strong> <?php echo $membership->name; ?>
             </div>
 		<?php } ?>
     </div><!-- featured event content -->
