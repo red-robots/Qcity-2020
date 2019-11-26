@@ -251,10 +251,10 @@ function qcity_sidebar_load_more()
 *   Search for Church
 */
 
-//add_action('wp_ajax_nopriv_qcity_church_search', 'qcity_church_search');
-//add_action('wp_ajax_qcity_qcity_church_search', 'qcity_church_search');
+add_action('wp_ajax_nopriv_qcity_church_search', 'qcity_church_search');
+add_action('wp_ajax_qcity_qcity_church_search', 'qcity_church_search');
 
-/*function qcity_church_search()
+function qcity_church_search()
 {
     $value = $_GET['search_keyword'];
 
@@ -267,7 +267,7 @@ function qcity_sidebar_load_more()
         'post_status'       => 'publish',
         'order'             => 'ASC',
         'orderby'           => 'title',
-        'posts_per_page'    => 15,
+        'posts_per_page'    => -1,
         's'                 => $value        
     );
 
@@ -297,7 +297,7 @@ function qcity_sidebar_load_more()
     die();
 
     //return var_dump($churchlist);
-}*/
+}
 
 
 /*

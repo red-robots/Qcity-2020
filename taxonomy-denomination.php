@@ -11,7 +11,7 @@ $obj=get_queried_object();
 // echo '</pre>';
 ?>
 <div class="wrapper">
-	<div class="">
+	<div class="content-area-title">
 		<header class="section-title ">
 			<h2 class="dark-gray"><?php echo $obj->name; ?></h2>
 		</header>
@@ -21,11 +21,11 @@ $obj=get_queried_object();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<div class="church_listing_initial">
+
 			<?php
 			/*
-				Jobs 
-
-
+				Denomination 
 			*/
 				if ( have_posts() ) : ?>
 				<section class="church-list">
@@ -41,7 +41,14 @@ $obj=get_queried_object();
 
 					 	?>
 					</section>
-				<?php endif; ?>
+				<?php endif; wp_reset_postdata(); ?>
+
+			</div>
+
+			<div class="church_listing_search">
+				<div class="church_listing_search_result">				
+				</div>				
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

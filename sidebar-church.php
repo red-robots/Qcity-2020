@@ -80,8 +80,9 @@ if( get_post_type() == 'post' ) {
 		<?php
 		$wp_query = new WP_Query();
 		$wp_query->query(array(
-			'post_type'=> $qp,
-			'posts_per_page' => 6
+			'post_type'			=> 'post',
+			'post_status'		=> 'publish',
+			'posts_per_page' 	=> 6
 		));
 		if ($wp_query->have_posts()) : ?>
 			<div class="next-stories">

@@ -12,7 +12,7 @@ get_header();
 $value = '';
 
 if( $_GET['search_text'] && !empty($_GET['search_text']) ){
-	$value = __($_GET['search_text']);
+	$value = trim($_GET['search_text']);
 }
 
 if( $_GET['type'] && !empty($_GET['type']) ){
@@ -33,7 +33,7 @@ if( $type == 'business_listing' ) {
 <div class="wrapper" style="margin-top: 25px;">
 	<div class="content-area-title">
 		<header class="section-title ">
-			<h2 class="dark-gray"><?php echo $title; ?></h2>
+			<h2 class="dark-gray"><?php echo $title; ?> | Searching: <?php echo $value; ?></h2>
 		</header>
 	</div>
 </div>
@@ -44,23 +44,23 @@ if( $type == 'business_listing' ) {
 		<?php
 
 			$args = array(
-					'post_type'         => $type, 
-        			'post_status'       => 'publish',
-			        'order'             => 'ASC',
-        			'orderby'           => 'title',
-        			'posts_per_page'    => 15,
-			        's'                 => $value
-			);
+		        'post_type'         => $type, 
+		        //'post_status'       => 'publish',
+		        //'order'             => 'ASC',
+		        //'orderby'           => 'title',
+		        'posts_per_page'    => 15,
+		        's'                 => $value        
+		    );
 
 			$query = new WP_Query( $args );
 
-			//var_dump($query);
+			var_dump($query);
 
-		if ( $query->have_posts() ) : ?>
+		/*if ( $query->have_posts() ) : ?>
 
 			<header class="page-header" style="margin-bottom: 10px">
 				<h3 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'acstarter' ), '<span>' . $value . '</span>' ); ?></h3>
-			</header><!-- .page-header -->
+			</header>
 
 			<?php
 				if( $type == 'business_listing' ) {
@@ -75,7 +75,7 @@ if( $type == 'business_listing' ) {
 			?>
 
 			<?php
-			/* Start the Loop */
+			
 			while ( $query->have_posts() ) : $query->the_post();
 
 				if( $type == 'business_listing' ) {
@@ -110,10 +110,10 @@ if( $type == 'business_listing' ) {
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+		endif; wp_reset_query();  */ ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+	</div>
 </div>
 <?php
 get_sidebar();

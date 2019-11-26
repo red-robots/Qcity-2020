@@ -493,7 +493,7 @@ jQuery(document).ready(function ($) {
 
    var searchRequest = null;
 
-    /*$(function () {
+    $(function () {
         var minlength = 3;
 
         $("#form_church").submit(function ( event ) {
@@ -517,10 +517,13 @@ jQuery(document).ready(function ($) {
                         'search_keyword' : value,
                         'action': action
                     },                    
-                    success: function( response ){                       
-                        if (value==$(that).val()) {  
-                            $('.church_listing_search_result span.load-icon').hide();
+                    success: function( response ){         
+                        $('.church_listing_search_result span.load-icon').hide();              
+                        if ( response != 0 ) {
                             $('.church_listing_search_result').html(response);
+                        } else {
+                            message = '<h4>'+ value + ' not found! </h4>';
+                            $('.church_listing_search_result').html(message);
                         }
                     },
                     error: function( response ) {
@@ -529,7 +532,7 @@ jQuery(document).ready(function ($) {
                 });
             }
         });
-    });*/
+    });
 
 
 

@@ -27,3 +27,22 @@ function acstarter_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'acstarter_body_classes' );
+
+
+function search_filter_church($query) {
+    if ( ! is_admin() && $query->is_main_query() ) {
+        if ( $query->is_search ) {
+            $query->set( 'post_type', 'church_listing' );
+        }
+    }
+}
+add_action( 'pre_get_posts', 'search_filter_church' );
+
+function search_filter_business($query) {
+    if ( ! is_admin() && $query->is_main_query() ) {
+        if ( $query->is_search ) {
+            $query->set( 'post_type', 'business_listing' );
+        }
+    }
+}
+add_action( 'pre_get_posts', 'search_filter_business' );
