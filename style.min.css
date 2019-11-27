@@ -2304,7 +2304,8 @@ section.qcity-news-container .story-block .photo img{height:278px;width:100%}
 .second-row .story-block .photo img{height:275px;width:100%}
 @media screen and (min-width:600px){.logo,h1.logo{width:100px;margin:0;top:10px;left:20px}
 .content-area-full{padding:0 20px}
-}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+}.subscribe p{margin-bottom:0}
+.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}
