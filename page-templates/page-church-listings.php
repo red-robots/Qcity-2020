@@ -48,7 +48,7 @@ get_template_part('template-parts/banner-church');
 
 						?>
 					</section>
-				<?php endif; ?>
+				<?php endif; wp_reset_postdata(); ?>
 
 			</div>
 

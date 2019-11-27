@@ -284,22 +284,39 @@ function qcity_church_search()
             echo '<section class="events">';
         } elseif( $type == 'business_listing' ){
             echo '<section class="sponsored">';
+        } elseif( $type == 'job' ){
+            echo '<div class="jobs-page">
+                        <div class="biz-job-wrap">';
         }
         
         while( $query->have_posts() ): $query->the_post();
 
-            if( $type == 'church_listing' ){
-                include(locate_template('template-parts/church.php')) ;
-            } elseif( $type == 'event' ){
-                include( locate_template('template-parts/sponsored-block.php') );
-            } elseif( $type == 'business_listing' ) {
-                get_template_part( 'template-parts/business-block' );
+            switch ($type) {
+                case "church_listing":
+                    include(locate_template('template-parts/church.php')) ;
+                    break;
+                case "event":
+                    include( locate_template('template-parts/sponsored-block.php') );
+                    break;
+                case "business_listing":
+                    get_template_part( 'template-parts/business-block' );
+                    break;
+                case "job":
+                    include(locate_template('template-parts/jobs-block.php')) ;
+                    break;    
+                default:
+                    get_template_part( 'template-parts/story-block');
             }
-            
 
         endwhile;
         pagi_posts_nav();
-        echo '</section>';      
+
+        if( $type == 'job' ){
+            echo '</div></div>';
+        } else {
+            echo '</section>';  
+        }
+            
 
     else:
 
