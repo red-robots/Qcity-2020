@@ -2296,6 +2296,8 @@ header.biz{width:100%;float:left;background-color:#924020;color:#fff;text-align:
 .listing_search{display:none;text-align:center}
 .listing_search span.load-icon{color:#924020;display:block}
 .church-list .church .info{text-align:left}
+section.events .story-block .photo{width:100%;float:left;position:relative;line-height:0;margin-bottom:10px;overflow:none}
+section.events .story-block .photo img{height:275px;width:100%}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

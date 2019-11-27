@@ -1580,3 +1580,19 @@ header.biz {
 		}
 	}
 }
+
+section.events {
+	.story-block .photo {
+	    width: 100%;
+	    float: left;
+	    position: relative;
+	    line-height: 0;
+	    margin-bottom: 10px;
+	    overflow: none;
+
+	    img{
+	    	height: 275px;
+	    	width: 100%;
+	    }
+	}
+}
