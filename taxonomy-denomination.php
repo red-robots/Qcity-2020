@@ -21,7 +21,7 @@ $obj=get_queried_object();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div class="church_listing_initial">
+			<div class="listing_initial">
 
 			<?php
 			/*
@@ -31,9 +31,7 @@ $obj=get_queried_object();
 				<section class="church-list">
 					<?php while ( have_posts() ) : the_post();
 
-	
 							include(locate_template('template-parts/church.php')) ;
-
 
 					 	endwhile; 
 
@@ -45,8 +43,8 @@ $obj=get_queried_object();
 
 			</div>
 
-			<div class="church_listing_search">
-				<div class="church_listing_search_result">				
+			<div class="listing_search">
+				<div class="listing_search_result">				
 				</div>				
 			</div>
 

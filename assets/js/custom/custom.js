@@ -496,15 +496,18 @@ jQuery(document).ready(function ($) {
     $(function () {
         var minlength = 3;
 
-        $("#form_church").submit(function ( event ) {
+        $("#form_search").submit(function ( event ) {
             event.preventDefault();
             var that    = $('.searchfield'),
             value       = $('.searchfield').val();
             var action  = 'qcity_church_search';
+            var post_type = $('.post_type').val();
 
-            $('.church_listing_initial').hide();
-            $('.church_listing_search').show();
-            $('.church_listing_search_result').html('<a class="red"><span class="load-icon"><i class="fas fa-sync-alt spin"></i></span></a>');
+            //console.log('Action: ' + action);
+
+            $('.listing_initial').hide();
+            $('.listing_search').show();
+            $('.listing_search_result').html('<a class="red"><span class="load-icon"><i class="fas fa-sync-alt spin"></i></span></a>');
             
 
             if (value.length >= minlength ) {
@@ -515,18 +518,22 @@ jQuery(document).ready(function ($) {
                     url: ajaxURL,
                     data: {
                         'search_keyword' : value,
-                        'action': action
+                        'action': action,
+                        'post_type': post_type
                     },                    
                     success: function( response ){         
-                        $('.church_listing_search_result span.load-icon').hide();              
+                        $('.listing_search_result span.load-icon').hide();              
                         if ( response != 0 ) {
-                            $('.church_listing_search_result').html(response);
+                            $('.listing_search_result').html(response);
                         } else {
                             message = '<h4>'+ value + ' not found! </h4>';
-                            $('.church_listing_search_result').html(message);
+                            $('.listing_search_result').html(message);
                         }
                     },
                     error: function( response ) {
+                        $('.listing_search_result span.load-icon').hide();
+                        message = '<h4>Oops! Something went wrong. Please try again later. </h4>';
+                        $('.listing_search_result').html(message);
                         console.log( response );
                     }
                 });

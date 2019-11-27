@@ -17,7 +17,7 @@ get_template_part('template-parts/banner-church');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div class="church_listing_initial">
+			<div class="listing_initial">
 
 			<?php
 			/*
@@ -52,8 +52,8 @@ get_template_part('template-parts/banner-church');
 
 			</div>
 
-			<div class="church_listing_search">
-				<div class="church_listing_search_result">				
+			<div class="listing_search">
+				<div class="listing_search_result">				
 				</div>				
 			</div>
 

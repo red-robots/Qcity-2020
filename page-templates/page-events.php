@@ -23,6 +23,8 @@ get_template_part('template-parts/banner-events');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main " role="main">
 
+			<div class="listing_initial">
+
 			
 				<?php
 				/*
@@ -53,16 +55,6 @@ get_template_part('template-parts/banner-events');
 				if ($wp_query->have_posts()) : ?>
 					<section class="events">
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
-						
-							$img = get_field('event_image');
-							$date = get_field("event_date", false, false);
-							$date = new DateTime($date);
-							$enddate = get_field("end_date", false, false);
-							$enddate = ( !empty($enddate) ) ? new DateTime($enddate) : $date;
-
-							$date_start 	= strtotime($date->format('Y-m-d'));
-							$date_stop 		= strtotime($enddate->format('Y-m-d'));
-							$now 			= strtotime(date('Y-m-d'));
 
 							//if( ($date_start <= $now) && ($date_stop >=  $now) || ($date_start >= $now) ) {
 								include( locate_template('template-parts/sponsored-block.php') );
@@ -145,6 +137,13 @@ get_template_part('template-parts/banner-events');
 						<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
 				 	</a>
 				</div>
+		</div>
+
+		</div>	
+
+		<div class="listing_search">
+				<div class="listing_search_result">				
+				</div>				
 		</div>
 		
 			

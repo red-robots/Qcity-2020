@@ -23,7 +23,9 @@ if( $type == 'business_listing' ) {
 	$title = 'Featured Businesses';
 } elseif(  $type == 'church_listing' ) {
 	$title = 'All Churches';
-} else {
+} elseif( $type == 'event' ) {
+	$title = 'All Events';
+}else {
 	$title = 'All Posts';
 }
 
@@ -54,9 +56,9 @@ if( $type == 'business_listing' ) {
 
 			$query = new WP_Query( $args );
 
-			var_dump($query);
+			//var_dump($query);
 
-		/*if ( $query->have_posts() ) : ?>
+		if ( $query->have_posts() ) : ?>
 
 			<header class="page-header" style="margin-bottom: 10px">
 				<h3 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'acstarter' ), '<span>' . $value . '</span>' ); ?></h3>
@@ -68,6 +70,8 @@ if( $type == 'business_listing' ) {
 								<section class="sponsored">';
 				} elseif( $type == 'church_listing' ) {
 					echo '<section class="church-list">';
+				} elseif( $type == 'event' ) {
+					echo '<section class="events">';
 				} else {
 					echo '<section class="qcity-news-container">';
 				}
@@ -86,6 +90,8 @@ if( $type == 'business_listing' ) {
 
 					include(locate_template('template-parts/church.php')) ;
 
+				} elseif( $type == 'event' ) {
+					include( locate_template('template-parts/sponsored-block.php') );
 				} else {
 					get_template_part( 'template-parts/content', 'search' );
 				}
@@ -100,6 +106,8 @@ if( $type == 'business_listing' ) {
 				echo '</section></div>';
 			} elseif( $type == 'church_listing' ) {
 				echo '</section>';
+			} elseif( $type == 'event' ) {
+				echo '</section>';
 			} else {
 				echo '</section>';
 			}
@@ -110,7 +118,7 @@ if( $type == 'business_listing' ) {
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif; wp_reset_query();  */ ?>
+		endif; wp_reset_query();  ?>
 
 		</main>
 	</div>

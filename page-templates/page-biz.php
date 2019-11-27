@@ -23,6 +23,8 @@ get_template_part('template-parts/banner-biz');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<div class="listing_initial">
+
 			<section class="biz-cats">
 
 			<?php
@@ -67,6 +69,13 @@ get_template_part('template-parts/banner-biz');
 			?>
 
 			</section>
+
+			</div>
+
+			<div class="listing_search">
+				<div class="listing_search_result">				
+				</div>				
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

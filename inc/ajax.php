@@ -256,14 +256,15 @@ add_action('wp_ajax_qcity_qcity_church_search', 'qcity_church_search');
 
 function qcity_church_search()
 {
-    $value = $_GET['search_keyword'];
+    $value  = $_GET['search_keyword'];
+    $type   = $_GET['post_type'];
 
     if( empty($value) ){
         return;
     }
 
     $args = array(
-        'post_type'         => 'church_listing', 
+        'post_type'         => $type, 
         'post_status'       => 'publish',
         'order'             => 'ASC',
         'orderby'           => 'title',
@@ -277,10 +278,24 @@ function qcity_church_search()
     $search_result  = '';
 
     if( $query->have_posts() ):
-        echo '<section class="church-list">';
+        if( $type == 'church_listing' ){
+            echo '<section class="church-list">';
+        } elseif( $type == 'event' ){
+            echo '<section class="events">';
+        } elseif( $type == 'business_listing' ){
+            echo '<section class="sponsored">';
+        }
+        
         while( $query->have_posts() ): $query->the_post();
 
-            include(locate_template('template-parts/church.php')) ;
+            if( $type == 'church_listing' ){
+                include(locate_template('template-parts/church.php')) ;
+            } elseif( $type == 'event' ){
+                include( locate_template('template-parts/sponsored-block.php') );
+            } elseif( $type == 'business_listing' ) {
+                get_template_part( 'template-parts/business-block' );
+            }
+            
 
         endwhile;
         pagi_posts_nav();
@@ -296,8 +311,11 @@ function qcity_church_search()
 
     die();
 
-    //return var_dump($churchlist);
+    
 }
+
+
+
 
 
 /*

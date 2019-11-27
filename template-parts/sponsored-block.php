@@ -4,6 +4,16 @@ $img 		= get_field('story_image');
 $category 	= get_field('choose_categories');
 $venue 		= get_field('name_of_venue');
 
+$img 		= get_field('event_image');
+$date 		= get_field("event_date", false, false);
+$date 		= new DateTime($date);
+$enddate 	= get_field("end_date", false, false);
+$enddate 	= ( !empty($enddate) ) ? new DateTime($enddate) : $date;
+
+$date_start 	= strtotime($date->format('Y-m-d'));
+$date_stop 		= strtotime($enddate->format('Y-m-d'));
+$now 			= strtotime(date('Y-m-d'));
+
 //var_dump($venue);
 ?>
 <article class="story-block">

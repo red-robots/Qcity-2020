@@ -2293,8 +2293,8 @@ section.church-list .church{width:auto;position:relative;-webkit-flex-basis:47%;
 .business-directory-table td{padding:5px 10px}
 .desc .bold{font-weight:bold}
 header.biz{width:100%;float:left;background-color:#924020;color:#fff;text-align:center;padding:5px 0 7px;margin:60px 0;letter-spacing:2px}
-.church_listing_search{display:none;text-align:center}
-.church_listing_search span.load-icon{color:#924020;display:block}
+.listing_search{display:none;text-align:center}
+.listing_search span.load-icon{color:#924020;display:block}
 .church-list .church .info{text-align:left}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}

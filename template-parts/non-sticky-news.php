@@ -73,6 +73,8 @@
                 endif;
                 wp_reset_postdata();
 		 	?>
+
+            <script async src="https://modules.wearehearken.com/wndr/embed/868.js"></script>
 		 </section>
 
 	 </section>
