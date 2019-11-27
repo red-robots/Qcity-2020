@@ -1,8 +1,6 @@
 <?php
 /*
 	Hero's - Only sticky posts here.
-
-
 */
 $i = 0;
 $postIDs = array();
@@ -18,24 +16,25 @@ if ($wp_query->have_posts()) : ?>
 	<div class="left ">
 
 	<?php while ($wp_query->have_posts()) :  $wp_query->the_post(); $i++;
-	// collect id's to not repeat below
-	$postIDs[] = get_the_ID();
-	$date = get_the_date();
-	$img = get_field('story_image');
-	// echo '<pre>';
-	// print_r($postIDs);
-	// echo '</pre>';
-	
-	// First Post
-	if( $i == 1 ) {
+		// collect id's to not repeat below
+		$postIDs[] = get_the_ID();
+		$date = get_the_date();
+		$img = get_field('story_image');
+		
+		//var_dump($img);
+		
+		// First Post
+		if( $i == 1 ) {
 	?>
 	
 		<article class="big-post">
-			<?php if( $img ) { ?>
-				<img src="<?php echo $img['sizes']['photo']; ?>" alt="<?php echo $img['alt']; ?>">
-			<?php //} else {
-				//if( has_post_thumbnail() ) {  the_post_thumbnail();  }
-				} ?>
+			<?php if( has_post_thumbnail() ) { 
+					the_post_thumbnail(); 
+			 } elseif( $img ) { ?>					 
+					<img src="<?php echo $img['sizes']['photo']; ?>" alt="<?php echo $img['alt']; ?>">
+			<?php } else { ?>
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/images/default.png">
+			<?php } ?>
 			
 			<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
 			<div class="info">
@@ -56,17 +55,17 @@ if ($wp_query->have_posts()) : ?>
 		<?php } else { ?>
 		<?php 
 			$i++;
-			$img = get_field('story_image');
+			//$img = get_field('story_image');
 
 			?>
 			<article class="story-block">
 				<div class="photo">
-					<?php if( $img ) { ?>
-						<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
-					<?php } elseif( has_post_thumbnail() ) {
-							the_post_thumbnail();
-						} else { ?>
-							<img src="<?php bloginfo('stylesheet_directory'); ?>/images/default.png">
+					<?php if( has_post_thumbnail() ) { 
+							the_post_thumbnail(); 
+						 } elseif( $img ) { ?>					 
+								<img src="<?php echo $img['sizes']['thirds']; ?>" alt="<?php echo $img['alt']; ?>">
+						<?php } else { ?>
+								<img src="<?php bloginfo('stylesheet_directory'); ?>/images/default.png">
 						<?php } ?>
 					<div class="category">
 						<?php include( locate_template('template-parts/primary-category.php', false, false) ); ?>

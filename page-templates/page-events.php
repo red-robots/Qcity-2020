@@ -46,9 +46,9 @@ get_template_part('template-parts/banner-events');
 					    ),
 					    'tax_query' => array(
 							array(
-								'taxonomy' 	=> 'event_category', // your custom taxonomy
+								'taxonomy' 	=> 'event_category', 
 								'field' 	=> 'slug',
-								'terms' 	=> array( 'premium' ) // the terms (categories) you created
+								'terms' 	=> array( 'premium' ) 
 							)
 						)
 				));
