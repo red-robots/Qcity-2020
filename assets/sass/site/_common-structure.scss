@@ -431,14 +431,14 @@ section.red-band {
 	width: 100%;
 	clear: both;
 	margin: 0;
-	padding: 10px 0;
+	padding: 10px;
 	background-color: $color-red;
 	color: #fff;
 	text-align: center;
 	a {
 		padding: 3px 5px;
-		background-color: #fff;
-		color: $color-red;
+		background-color: none;
+		color: #fff;
 		display: inline-block;
 		text-decoration: none;
 	}

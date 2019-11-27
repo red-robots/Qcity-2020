@@ -1226,7 +1226,7 @@ section.home-bottom {
     width: 100%;
     clear: both;
     margin: 0;
-    padding: 20px 0;
+    padding: 20px 10px;
     background-color: #924020;
     color: #fff;
     text-align: center;
@@ -1264,6 +1264,11 @@ section.home-bottom {
 
 
 @media screen and (max-width: 768px) {
+
+	.c-sponsor-block__main{
+		margin-top: 30px;
+	}
+	
 	.logo, h1.logo {
 	    width: 100px;
 	    margin: 0;
@@ -1642,11 +1647,34 @@ section.qcity-news-container{
 	.content-area-full{
 		padding: 0 20px;
 	}
+
+	/*section.stickies{
+		padding: 0 40px;
+	}
+
+	section.home-sponsored, section.news-home, section.home-bottom{
+		padding: 0 40px;
+	}*/
 }
 
 .subscribe{
 
 	p{
 		margin-bottom: 0;
+		font-size: 20px;
+    	line-height: 24px;
+	}
+
+	a{
+		padding: 3px 5px;
+	    background-color: none;
+	    color: #c5a92e;
+	    display: inline-block;
+	    text-decoration: none;
+	}
+
+	a:hover {
+		color: #f2f2f2;
 	}
 }
+

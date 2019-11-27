@@ -11,7 +11,7 @@
 	$wp_query = new WP_Query();
 	$wp_query->query(array(
 		'post_type'			=>'business_listing',
-		'posts_per_page' 	=> 6,
+		'posts_per_page' 	=> 7,
 		'post_status'   	=> 'publish',
 		'orderby' 			=> 'rand',
 		'tax_query' => array(
