@@ -1268,7 +1268,7 @@ section.home-bottom {
 	    width: 100px;
 	    margin: 0;
 	    top: 10px;
-	    left: 0;
+	    left: 20px;
 	}
 
 	article.small .xtitle {
@@ -1594,5 +1594,52 @@ section.events {
 	    	height: 275px;
 	    	width: 100%;
 	    }
+	}
+}
+
+section.qcity-news-container{
+	.story-block .photo {
+	    width: 100%;
+	    float: left;
+	    position: relative;
+	    line-height: 0;
+	    margin-bottom: 10px;
+	    overflow: none;
+
+	    img{
+	    	height: 278px;
+	    	width: 100%;
+	    }
+	}
+}
+
+
+.second-row {
+	.story-block .photo {
+	    width: 100%;
+	    float: left;
+	    position: relative;
+	    line-height: 0;
+	    margin-bottom: 10px;
+	    overflow: none;
+
+	    img{
+	    	height: 275px;
+	    	width: 100%;
+	    }
+	}
+}
+
+
+@media screen and (min-width: 600px) {
+	.logo, h1.logo {
+	    width: 100px;
+	    margin: 0;
+	    top: 10px;
+	    left: 20px;
+	}
+
+	.content-area-full{
+		padding: 0 20px;
 	}
 }
