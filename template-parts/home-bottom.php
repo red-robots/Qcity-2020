@@ -50,7 +50,7 @@
 			<?php endif; wp_reset_postdata(); ?>
 
 	</div>
-	<?php get_template_part('template-parts/business-directory'); ?>
+	<?php get_template_part('template-parts/business-directory-footer'); ?>
 	
 	<!--- Advertisements -->
 	<div class="ad">

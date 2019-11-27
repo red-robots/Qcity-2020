@@ -154,6 +154,14 @@ function ii_custom_taxonomies() {
                 'slug'      => array('slug' => 'business-category', 'with_front' => false)
             ),
             array(
+                'post_type' => 'business_listing',
+                'menu_name' => 'Classifications',
+                'plural'    => 'Classifications',
+                'single'    => 'Classification',
+                'taxonomy'  => 'business_classification',
+                'slug'      => array('slug' => 'business-classification', 'with_front' => false)
+            ),
+            array(
                 'post_type' => 'church_listing',
                 'menu_name' => 'Denomination',
                 'plural'    => 'Denomination',
