@@ -50,6 +50,6 @@
 	</div>    
 	<?php endif; wp_reset_postdata(); ?>
 	<div class="more">    	
-			<a href="/business-directory/" class="red">See More</a>
+			<a href="<?php bloginfo('url'); ?>/business-directory/" class="red">See More</a>
     </div>
 </div>
