@@ -11,41 +11,47 @@ $obj=get_queried_object();
 // echo '</pre>';
 ?>
 <div class="wrapper">
-	<div class="content-area-title">
-		<header class="section-title ">
-			<h2 class="dark-gray"><?php echo $obj->name; ?></h2>
-		</header>
+	<div class="listing-header">
+		<div class="content-area-title">
+			<header class="section-title ">
+				<h2 class="dark-gray"><?php echo $obj->name; ?></h2>
+			</header>
+		</div>
 	</div>
 </div>
 <div class="wrapper" style="margin-top:20px">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div class="listing_initial">
+			<div class="church-listing-page">
 
-			<?php
-			/*
-				Denomination 
-			*/
-				if ( have_posts() ) : ?>
-				<section class="church-list">
-					<?php while ( have_posts() ) : the_post();
+				<div class="listing_initial">
 
-							include(locate_template('template-parts/church.php')) ;
+				<?php
+				/*
+					Denomination 
+				*/
+					if ( have_posts() ) : ?>
+					<section class="church-list">
+						<?php while ( have_posts() ) : the_post();
 
-					 	endwhile; 
+								include(locate_template('template-parts/church.php')) ;
 
-					 	pagi_posts_nav();
+						 	endwhile; 
 
-					 	?>
-					</section>
-				<?php endif; wp_reset_postdata(); ?>
+						 	pagi_posts_nav();
 
-			</div>
+						 	?>
+						</section>
+					<?php endif; wp_reset_postdata(); ?>
 
-			<div class="listing_search">
-				<div class="listing_search_result">				
-				</div>				
+				</div>
+
+				<div class="listing_search">
+					<div class="listing_search_result">				
+					</div>				
+				</div>
+
 			</div>
 
 		</main><!-- #main -->
