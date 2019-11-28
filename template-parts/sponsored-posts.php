@@ -76,16 +76,16 @@
 				$enddate 	= new DateTime($enddate);
 				
 			?>
-				<div class="block sponsored_post_block">
+				<div class="block sponsored_post_block" style="background-image: url(<?php echo $img['url']; ?>);">
 					<a href="<?php the_permalink(); ?>">
 						
-						<?php if( $img ) { ?>
+						<?php /*if( $img ) { ?>
 							<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 						<?php } elseif( has_post_thumbnail() ) {
 							the_post_thumbnail('thumbnail');
 						} else { ?>
 							<img src="<?php bloginfo('stylesheet_directory'); ?>/images/default.png">
-						<?php } ?>
+						<?php } */ ?>
 						<div class="info js-blocks">
 							<div class="date">
 								<?php echo $date->format('D | M j, Y'); ?>	

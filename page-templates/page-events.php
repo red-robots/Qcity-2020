@@ -26,9 +26,6 @@ get_template_part('template-parts/banner-events');
 		<main id="main" class="site-main " role="main">
 
 			<div class="events_page">
-				
-			
-
 				<div class="listing_initial">
 
 			

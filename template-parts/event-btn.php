@@ -3,7 +3,7 @@
 		<a class="popup" href="#submit-an-event">Post an Event</a>
 	</div>
 	<div class="btn">
-		<div class="banner-button find">Event Categories
+		<div class="banner-button find"><span class="banner-button-text">Event Categories</span>
 		<?php 
 		$terms = get_terms( array(
 		    'taxonomy' => 'event_cat',

@@ -249,6 +249,9 @@ section.home-sponsored {
 	clear: both;
 	padding-bottom: 20px;
 	border-bottom: 1px solid #000;
+
+
+
 	.flexwrap {
 		@media screen and (min-width: $tabwidth) {
 			display: flex;
@@ -258,6 +261,16 @@ section.home-sponsored {
 			align-items: stretch;
 			margin-bottom: 10px;
 		}
+
+		.sponsored_post_block{
+			overflow: none;			
+		    height: 250px;	    
+		    position: relative;
+		    background-size:     cover;                      
+    		background-repeat:   no-repeat;
+    		background-position: center center;     
+		}
+
 	}
 	.block {
 		width: auto;
@@ -265,14 +278,18 @@ section.home-sponsored {
 		flex-basis: 15%;
 		text-align: center;
 		line-height: 0;
+		overflow: none;
 		&:hover {
 			.info {
 				padding: 10px 10px 20px 10px;
 			}
 		}
 		img {
-			width: 100%;
-			height: 200px;
+			display: block;
+		   	width: 100%;
+		   	max-width: 500px; /*actual image width*/
+		   	height: auto; /* maintain aspect ratio*/
+		   
 		}
 		.date {
 			margin-bottom: 10px;
@@ -284,8 +301,9 @@ section.home-sponsored {
 		.info {
 			color: #fff;
 			background-color: rgba(#000, .7);
-			position: relative;
-			float: left;
+			position: absolute;
+			/*float: left;*/
+			bottom: 0;
 			width: 100%;
 			padding: 10px;
 			line-height: 1.1;
@@ -1637,7 +1655,7 @@ section.qcity-news-container{
 }
 
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
 	.logo, h1.logo {
 	    width: 100px;
 	    margin: 0;
@@ -1696,3 +1714,62 @@ section.qcity-news-container{
 	}
 }
 
+.wrapper{
+	padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+	.business-category-page, .featured_business, .business-category-header, .archive-content-page, .single-page{
+		padding: 0 20px;
+	}
+
+	.listing-header{
+		padding: 0 20px;
+	}
+
+	.jobs-page,  .events_page, .two-column-page, .church-listing-page{
+		padding: 0 20px;
+	}
+
+	section.stickies,   section.news-home, section.home-bottom{
+		padding: 0 20px;
+	}
+
+	section.home-sponsored{
+		padding: 0 20px;
+		border-bottom: none;
+	}
+
+	.widget-area{
+		margin-right: 0;
+	}
+
+	.event-butts .bottom .btn {
+	    margin: 0; 
+	    position: relative;
+	}
+
+	.bottom .banner-button, .event-butts .bottom .banner-button {
+	    /*margin: 0;
+	    padding: 0;*/
+	    height: 83px;
+
+	}
+
+	.banner-button-text{
+		padding-top: 10px;
+	}
+
+	.banner-button{
+		margin: 0 5px;
+	}
+
+	.event-butts{
+		.btn{
+			height: 85px;
+			text-align: center;
+			vertical-align: middle;
+		}
+	}
+
+}

@@ -26,6 +26,9 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="wrapper">
+
+				<div class="single-page">
+
 				<?php
 				while ( have_posts() ) : the_post(); 
 					$startDate = DateTime::createFromFormat('Ymd', get_field('event_date'));
@@ -105,6 +108,8 @@ get_header();
 				</article><!-- #post-## -->
 
 				<?php endwhile; // End of the loop. ?>
+			</div>
+
 			</div>
 
 

@@ -18,13 +18,19 @@ get_header(); ?>
 	<div id="primary" class="content-area-single">
 		<main id="main" class="site-main" role="main">
 
-			<?php
-			while ( have_posts() ) : the_post(); ?>
-				<div class="entry-content">
-					<?php the_content(); ?>
-				</div>
-			<?php endwhile; // End of the loop.
-			?>
+			<div class="single-page">
+
+				<?php
+				if( have_posts() ):
+					while ( have_posts() ) : the_post(); ?>
+						<div class="entry-content">
+							<?php the_content(); ?>
+						</div>
+					<?php endwhile; // End of the loop.
+				endif; wp_reset_postdata();
+				?>
+
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

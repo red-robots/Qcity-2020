@@ -30,14 +30,18 @@
 		<main id="main" class="site-main" role="main">
 			<div class="wrapper" >
 
-				<?php
-				while ( have_posts() ) : the_post();
+				<div class="single-page">
+					
+					<?php
+					while ( have_posts() ) : the_post();
 
-					get_template_part( 'template-parts/content', get_post_format() );
+						get_template_part( 'template-parts/content', get_post_format() );
 
-				endwhile; // End of the loop.
+					endwhile; // End of the loop.
 
-				?>
+					?>
+
+				</div>
 			</div>
 
 		<?php get_template_part('template-parts/next-story'); ?>
