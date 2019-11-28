@@ -1888,7 +1888,7 @@ html[xmlns] .flexslider .slides{display:block}
 }@media screen and (min-width:1250px){.wrapper-header{max-width:1250px;padding:0}
 }.wrapper,body.single .site-footer .wrapper{width:100%;margin:0 auto;padding:0 20px;position:relative}
 @media screen and (min-width:600px){.wrapper,body.single .site-footer .wrapper{width:100%}
-}@media screen and (min-width:1250px){.wrapper,body.single .site-footer .wrapper{max-width:1250px;padding:0}
+}@media screen and (min-width:1250px){.wrapper,body.single .site-footer .wrapper{padding:0}
 }.wrapper .right,.wrapper .left,body.single .site-footer .wrapper .right,body.single .site-footer .wrapper .left{width:100%;margin-bottom:30px}
 @media screen and (min-width:600px){.wrapper .right,.wrapper .left,body.single .site-footer .wrapper .right,body.single .site-footer .wrapper .left{width:46%}
 }.wrapper .right,body.single .site-footer .wrapper .right{float:right}
@@ -2258,7 +2258,7 @@ section.home-sponsored .block{width:auto;position:relative;text-align:center;lin
 section.home-sponsored .last-block{display:block;position:relative;margin-top:90px;height:300px}
 section.home-sponsored .last-block .more{width:100%;padding:10px;color:#fff;position:relative;bottom:0;left:0;font-size:36px;font-weight:bold;line-height:1;z-index:11;text-align:center}
 article.big-post h3{font-size:20px;z-index:1;line-height:1.1;margin-bottom:10px}
-}@media(min-width:40.625em){aside.c-sponsor-block{grid-template-areas:'text image-wrap';grid-template-columns:repeat(auto-fit,minmax(200px,auto));padding-top:.92rem;margin-bottom:30px}
+}@media(min-width:40.625em){aside.c-sponsor-block{grid-template-areas:'text image-wrap';grid-template-columns:repeat(auto-fit,minmax(200px,auto));padding-top:.92rem;margin-bottom:30px;width:100%}
 }.c-sponsor-block--filled{background-color:#f3f3f3;border-top:5px solid #36c;border-bottom:2px solid #36c}
 .c-sponsor-block{grid-gap:.92rem;gap:.92rem;display:-ms-grid;display:grid;-ms-grid-rows:auto .92rem auto;grid-template-areas:'image-wrap' 'text';-ms-grid-columns:1fr;grid-template-columns:1fr;padding:2.5rem .92rem .92rem;position:relative}
 .c-sponsor-block__text{display:-ms-grid;display:grid}
@@ -2304,7 +2304,12 @@ section.qcity-news-container .story-block .photo img{height:278px;width:100%}
 .second-row .story-block .photo{width:100%;float:left;position:relative;line-height:0;margin-bottom:10px;overflow:none}
 .second-row .story-block .photo img{height:275px;width:100%}
 @media screen and (min-width:600px){.logo,h1.logo{width:100px;margin:0;top:10px;left:20px}
-.content-area-full{padding:0 20px}
+.business-category-page,.featured_business,.business-category-header{padding:0 40px}
+.listing-header{padding:0 20px 0 40px}
+.jobs-page,.events_page,.two-column-page,.church-listing-page{padding:0 0 0 40px}
+section.stickies,section.news-home,section.home-bottom{padding:0 40px}
+section.home-sponsored{padding:0 40px;border-bottom:0}
+.widget-area{margin-right:40px}
 }.subscribe p{margin-bottom:0;font-size:20px;line-height:24px}
 .subscribe a{padding:3px 5px;background-color:none;color:#c5a92e;display:inline-block;text-decoration:none}
 .subscribe a:hover{color:#f2f2f2}

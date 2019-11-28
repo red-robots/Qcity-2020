@@ -67,3 +67,18 @@ function email_obfuscator($string) {
     }
     return $output;
 }
+
+
+add_filter( 'taxonomy_archive ', 'slug_tax_event_category' );
+function slug_tax_event_category( $template ) {
+    if ( is_tax( 'event_cat' ) ) {
+         global $wp_query;
+         $page = $wp_query->query_vars['paged'];
+        if ( $page = 0 ) {
+            $template = get_stylesheet_directory(). '/taxonomy-event-category.php';
+        }
+    }
+
+    return $template;
+
+}

@@ -19,13 +19,15 @@ $add_business_link = get_field('add_business_link');
 ?>
 
 <div class="wrapper">
-	<header class="page-header biz">		
-		<h1><?php echo $ob->name; ?></h1>
-		<?php
-			//the_archive_title( '<h1 class="page-title">', '</h1>' );
-			the_archive_description( '<div class="taxonomy-description">', '</div>' );
-		?>
-	</header><!-- .page-header -->
+	<div class="business-category-header">
+		<header class="page-header biz">		
+			<h1><?php echo $ob->name; ?></h1>
+			<?php
+				//the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="taxonomy-description">', '</div>' );
+			?>
+		</header><!-- .page-header -->
+	</div>
 	<div class="featured_business">
 		<header class="section-title ">
 			<h2 class="dark-gray">Featured Businesses</h2>
@@ -38,36 +40,42 @@ $add_business_link = get_field('add_business_link');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) : ?>
-			<div class="qcity-news-container">
-				<section class="sponsored">
-					<?php
-					/* Start the Loop */
-					while ( have_posts() ) : the_post();
-
-						get_template_part( 'template-parts/business-block' );
-
-					endwhile;
-
-					wp_reset_postdata(); ?>
+			<div class="business-category-page">
 				
-				</section>
-
-			</div>
-			<div class="more ">	
-				 	<a class="red qcity-load-more" data-page="1" data-action="qcity_business_load_more" >		
-				 		<span class="load-text">Load More</span>
-						<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
-				 	</a>
-			</div>
-
-			<div class="mt-5">
-				<?php get_template_part('template-parts/business-directory'); ?>
-			</div>		
 			
 
-		<?php endif; ?>
+				<?php
+					if ( have_posts() ) : ?>
+					<div class="qcity-news-container">
+						<section class="sponsored">
+							<?php
+							/* Start the Loop */
+							while ( have_posts() ) : the_post();
+
+								get_template_part( 'template-parts/business-block' );
+
+							endwhile;
+
+							wp_reset_postdata(); ?>
+						
+						</section>
+
+					</div>
+					<div class="more ">	
+						 	<a class="red qcity-load-more" data-page="1" data-action="qcity_business_load_more" >		
+						 		<span class="load-text">Load More</span>
+								<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
+						 	</a>
+					</div>
+
+					<div class="mt-5">
+						<?php get_template_part('template-parts/business-directory'); ?>
+					</div>		
+					
+
+				<?php endif; ?>
+
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

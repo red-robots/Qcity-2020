@@ -1339,6 +1339,7 @@ section.home-bottom {
 	    grid-template-columns: repeat(auto-fit,minmax(200px,auto));
 	    padding-top: .92rem;
 	    margin-bottom: 30px;
+	    width: 100%;
 	}
 }
 
@@ -1645,16 +1646,33 @@ section.qcity-news-container{
 	}
 
 	.content-area-full{
-		padding: 0 20px;
+		/*padding: 0 20px;*/
 	}
 
-	/*section.stickies{
+	.business-category-page, .featured_business, .business-category-header{
 		padding: 0 40px;
 	}
 
-	section.home-sponsored, section.news-home, section.home-bottom{
+	.listing-header{
+		padding: 0 20px 0 40px;
+	}
+
+	.jobs-page,  .events_page, .two-column-page, .church-listing-page{
+		padding: 0 0 0 40px;
+	}
+
+	section.stickies,   section.news-home, section.home-bottom{
 		padding: 0 40px;
-	}*/
+	}
+
+	section.home-sponsored{
+		padding: 0 40px;
+		border-bottom: none;
+	}
+
+	.widget-area{
+		margin-right: 40px;
+	}
 }
 
 .subscribe{

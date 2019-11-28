@@ -28,7 +28,6 @@ if( is_archive() ) {
 		</div>
 		<div class="row-2">
 			
-			
 			<div class="search">
 				<form  method="get" class="biz" id="form_search">
 				    <input class="searchfield" type="text" name="search_text" id="search"  />

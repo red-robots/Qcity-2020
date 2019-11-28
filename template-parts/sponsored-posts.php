@@ -48,7 +48,7 @@
 	$wp_query->query(array(
 		'post_type'			=>'event',
 		'post_status'		=>'publish',
-		'posts_per_page' 	=> 5,
+		'posts_per_page' 	=> 4,
 		'meta_query' 		=> array(
 								array(
 							        'key'		=> 'event_date',

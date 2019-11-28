@@ -26,7 +26,9 @@ $now 			= strtotime(date('Y-m-d'));
 				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/default.png">
 			<?php } ?>
 		<div class="category">
-			<a href="<?php echo get_category_link( $category[0]->term_id ); ?>"><?php echo $category[0]->name; ?></a>
+			<!--
+			<a href="<?php //echo get_category_link( $category[0]->term_id ); ?>"><?php //echo $category[0]->name; ?></a> -->
+			<?php echo qcity_get_terms($post->ID, 'event_cat'); ?>
 		</div>
 	</div>
 	<h3><?php the_title(); ?></h3>

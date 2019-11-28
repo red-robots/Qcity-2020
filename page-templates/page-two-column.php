@@ -12,27 +12,28 @@ if( is_page('contact-us') ) {
 }
 ?>
 <div class="wrapper">
-	<header class="entry-header toppage">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header>
-	<!-- <div class="content-area-title">
-		<header class="section-title ">
-			<h1 class="dark-gray"><?php the_title(); ?></h1>
+	<div class="two-column-page">
+		<header class="entry-header toppage">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header>
-	</div> -->
+	</div>	
 </div>
 <div class="wrapper">
 	
 	<div id="primary" class="left">
 		<main id="main" class="site-main" role="main">
+
+			<div class="two-column-page">
 			
-			<?php
-			while ( have_posts() ) : the_post(); ?>
-				<div class="entry-content ">
-					<?php the_content(); ?>
-				</div>
-			<?php endwhile; // End of the loop.
-			?>
+				<?php
+				while ( have_posts() ) : the_post(); ?>
+					<div class="entry-content ">
+						<?php the_content(); ?>
+					</div>
+				<?php endwhile; // End of the loop.
+				?>
+
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

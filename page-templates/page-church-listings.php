@@ -7,54 +7,60 @@ get_header();
 get_template_part('template-parts/banner-church');
 ?>
 <div class="wrapper">
-	<div class="content-area-title">
-		<header class="section-title ">
-			<h2 class="dark-gray">All Churches</h2>
-		</header>
+	<div class="listing-header">
+		<div class="content-area-title">
+			<header class="section-title ">
+				<h2 class="dark-gray">All Churches</h2>
+			</header>
+		</div>
 	</div>
 </div>
 <div class="wrapper">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div class="listing_initial">
+			<div class="church-listing-page">
+				<div class="listing_initial">
 
-			<?php
-			/*
-				Jobs 
+				<?php
+				/*
+					Jobs 
 
 
-			*/
-				$i = 0;
-				$today = date('Ymd');
-				$wp_query = new WP_Query();
-				$wp_query->query(array(
-									'post_type'			=> 'church_listing',
-									'post_status'       => 'publish',
-									'posts_per_page' 	=> 15,
-									'order' 			=> 'ASC',
-									'orderby' 			=> 'title'
-				));
-				if ($wp_query->have_posts()) : ?>
-					<section class="church-list">
-					<?php while ( $wp_query->have_posts() ) : ?>
-						<?php $wp_query->the_post();
+				*/
+					$i = 0;
+					$today = date('Ymd');
+					$wp_query = new WP_Query();
+					$wp_query->query(array(
+										'post_type'			=> 'church_listing',
+										'post_status'       => 'publish',
+										'posts_per_page' 	=> 15,
+										'order' 			=> 'ASC',
+										'orderby' 			=> 'title'
+					));
+					if ($wp_query->have_posts()) : ?>
+						<section class="church-list">
+						<?php while ( $wp_query->have_posts() ) : ?>
+							<?php $wp_query->the_post();
 
-							include(locate_template('template-parts/church.php')) ;
+								include(locate_template('template-parts/church.php')) ;
 
-						endwhile; 
+							endwhile; 
 
-						pagi_posts_nav();
+							pagi_posts_nav();
 
-						?>
-					</section>
-				<?php endif; wp_reset_postdata(); ?>
+							?>
+						</section>
+					<?php endif; wp_reset_postdata(); ?>
 
-			</div>
+				</div>
 
-			<div class="listing_search">
-				<div class="listing_search_result">				
-				</div>				
+				<div class="listing_search">
+					<div class="listing_search_result">				
+					</div>				
+				</div>
+
+
 			</div>
 
 		</main><!-- #main -->

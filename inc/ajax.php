@@ -444,3 +444,22 @@ add_filter( 'get_the_archive_title', function ($title) {
         }    
     return $title;    
 });
+
+
+function qcity_get_terms($postID, $term){
+
+    $terms_list = wp_get_post_terms($postID, $term);
+    $output = '';
+
+    $i = 0;
+    foreach( $terms_list as $term){ 
+        $i++;
+        if( $i == 1){
+            $output .= '<a href="'. get_term_link($term) .'">'. $term->name .'</a>';
+        }
+        //$output .= '<a href="'. get_term_link($term) .'">'. $term->name .'</a>';
+    }
+
+    return $output;
+
+}

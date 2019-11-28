@@ -21,7 +21,7 @@ get_template_part('template-parts/banner-category');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			
+			<h3>Hello World 2</h3>
 			
 		<?php if ( have_posts() ) : ?>
 			<!-- <header class="page-header">
@@ -35,20 +35,8 @@ get_template_part('template-parts/banner-category');
 			$i=0;
 			/* Start the Loop */
 			while ( have_posts() ) : the_post(); 
-				if( !is_paged() ) : $i++;
-					if( $i == 1 ) {
-						get_template_part( 'template-parts/story-block' );
-						echo '<div class="second-row ">';
-						
-					} else {
-						get_template_part( 'template-parts/story-block' );
-					}
-				else : $i++;
-					if( $i == 1 ) {
-						echo '<div class="second-row ">';
-					}
-					get_template_part( 'template-parts/story-block' );
-				endif;
+				
+				include( locate_template('template-parts/sponsored-block.php') );
 
 			endwhile;
 
