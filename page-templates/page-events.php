@@ -88,7 +88,7 @@ get_template_part('template-parts/banner-events');
 					$wp_query->query(array(
 						'post_type'			=>'event',
 						'post_status'		=>'publish',
-						'posts_per_page' 	=> 6,
+						'posts_per_page' 	=> 18,
 						'meta_query' 		=> array(
 												array(
 											        'key'		=> 'event_date',
