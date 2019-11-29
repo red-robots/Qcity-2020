@@ -23,24 +23,26 @@ get_template_part('template-parts/banner-category');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<h3>Hello World 2</h3>
-			
-		<?php if ( have_posts() ) : ?>
-			
-			<section class="events">
-			<?php
-			$i=0;
-			/* Start the Loop */
+			<div class="events_page">
+					
+				<?php if ( have_posts() ) : ?>
+					
+					<section class="events">
+					<?php
+					
+					while ( have_posts() ) : the_post(); 
+						
+						include( locate_template('template-parts/sponsored-block.php') );
 
-			while ( have_posts() ) : the_post(); 
-				
-				include( locate_template('template-parts/sponsored-block.php') );
+					endwhile;
 
-			endwhile;
+					echo '</section>';
 
-			echo '</section>';
+					pagi_posts_nav();
 
-		endif; ?>
+				endif; ?>
+
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
