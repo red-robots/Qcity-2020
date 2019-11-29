@@ -11,42 +11,34 @@ get_header();
 get_template_part('template-parts/banner-category');
 ?>
 <div class="wrapper">
-	<div class="content-area-title">
-		<header class="section-title ">
-			<h1 class="dark-gray"><?php the_archive_title(); ?></h1>
-		</header>
+	<div class="listing-header">
+		<div class="content-area-title">
+			<header class="section-title ">
+				<h1 class="dark-gray"><?php the_archive_title(); ?></h1>
+			</header>
+		</div>
 	</div>
 </div>
 <div class="wrapper">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<h3>Hello World 2</h3>
+		<h3>Hello World 2</h3>
 			
 		<?php if ( have_posts() ) : ?>
-			<!-- <header class="page-header">
-				<?php
-					//the_archive_title( '<h1 class="page-title">', '</h1>' );
-					//the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header>.page-header -->
-
+			
+			<section class="events">
 			<?php
 			$i=0;
 			/* Start the Loop */
+
 			while ( have_posts() ) : the_post(); 
 				
 				include( locate_template('template-parts/sponsored-block.php') );
 
 			endwhile;
 
-			echo '</div>';
-
-			pagi_posts_nav();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
+			echo '</section>';
 
 		endif; ?>
 
