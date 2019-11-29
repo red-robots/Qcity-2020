@@ -2304,9 +2304,9 @@ section.qcity-news-container .story-block .photo img{height:278px;width:100%}
 .second-row .story-block .photo{width:100%;float:left;position:relative;line-height:0;margin-bottom:10px;overflow:none}
 .second-row .story-block .photo img{height:275px;width:100%}
 @media screen and (min-width:768px){.logo,h1.logo{width:100px;margin:0;top:10px;left:20px}
-.business-category-page,.featured_business,.business-category-header,.archive-content-page{padding:0 40px}
+.business-category-page,.featured_business,.business-category-header{padding:0 40px}
 .listing-header{padding:0 20px 0 40px}
-.jobs-page,.events_page,.two-column-page,.church-listing-page,.error-404-page{padding:0 0 0 40px}
+.jobs-page,.events_page,.two-column-page,.church-listing-page,.error-404-page,.archive-content-page{padding:0 0 0 40px}
 section.stickies,section.news-home,section.home-bottom{padding:0 40px}
 section.home-sponsored{padding:0 40px;border-bottom:0}
 .widget-area{margin-right:40px}
