@@ -1760,7 +1760,16 @@ section.events .story-block {
 		padding: 0 20px;
 	}
 
-	.listing-header{
+	.bottom .banner-button, .event-butts .bottom .banner-button {
+	    margin: 0;
+	    padding: 10px 20px;
+	}
+
+	.banner .bottom .btn {
+	    margin: 0 5px;
+	}
+
+	.listing-header, .single-page-event{
 		padding: 0 20px;
 	}
 
