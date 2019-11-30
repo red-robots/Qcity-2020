@@ -1,11 +1,11 @@
 <?php
 
     $args = array(     
-            'category_name'     => 'Offers & Invites',        
+            'category_name'     => 'offers-invites+sponsored-post',        
             'post_type'         => 'post',        
             'post_status'       => 'publish',
             'posts_per_page'    => 1,
-            'orderby'           => 'rand', 
+            'orderby'           => 'rand',
         );
 
     $sponsored = new WP_Query($args);

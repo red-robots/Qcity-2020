@@ -47,9 +47,15 @@
 			    
 	    <?php endwhile; ?>	
 	    </table>
-	</div>    
-	<?php endif; wp_reset_postdata(); ?>
+	</div>
+
 	<div class="more">    	
 			<a href="<?php bloginfo('url'); ?>/business-directory/" class="red">See More</a>
     </div>
+
+	<?php else: ?>   
+	
+	<div>No Posts available</div>
+	
+    <?php endif; wp_reset_postdata(); ?>
 </div>
