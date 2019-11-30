@@ -61,14 +61,7 @@ function qcity_events_load_more(){
                                     'compare'   => '>=',
                                     'value'     => $today,
                                 ),
-        ),
-        /*'tax_query' => array(
-            array(
-                'taxonomy' => 'event_category', // your custom taxonomy
-                'field' => 'slug',
-                'terms' => array( 'standard' ) // the terms (categories) you created
-            )
-        )*/
+        ),        
     ));    
    
     if( $query->have_posts() ):

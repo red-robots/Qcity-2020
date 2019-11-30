@@ -11,7 +11,7 @@ get_header();
 get_template_part('template-parts/banner-category');
 ?>
 <div class="wrapper">
-	<div class="listing-header">
+	<div class="">
 		<div class="content-area-title">
 			<header class="section-title ">
 				<h1 class="dark-gray"><?php the_archive_title(); ?></h1>
@@ -23,7 +23,7 @@ get_template_part('template-parts/banner-category');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div class="archive-content-page">
+			<div class="">
 				
 			
 			

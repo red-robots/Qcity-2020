@@ -2304,13 +2304,20 @@ section.qcity-news-container .story-block .photo img{height:278px;width:100%}
 .second-row .story-block .photo{width:100%;float:left;position:relative;line-height:0;margin-bottom:10px;overflow:none}
 .second-row .story-block .photo img{height:275px;width:100%}
 @media screen and (min-width:768px){.logo,h1.logo{width:100px;margin:0;top:10px;left:20px}
-.business-category-page,.featured_business,.business-category-header{padding:0 40px}
+.content-area-event{margin:0 auto;max-width:950px}
+.business-category-page,.featured_business,.business-category-header,.events_page{padding:0 40px}
 .listing-header{padding:0 20px 0 40px}
-.jobs-page,.events_page,.two-column-page,.church-listing-page,.error-404-page,.archive-content-page{padding:0 0 0 40px}
+.jobs-page,.two-column-page,.church-listing-page,.error-404-page,.archive-content-page{padding:0 0 0 40px}
 section.stickies,section.news-home,section.home-bottom{padding:0 40px}
 section.home-sponsored{padding:0 40px;border-bottom:0}
 .widget-area{margin-right:40px}
-}.subscribe p{margin-bottom:0;font-size:20px;line-height:24px}
+.single-page-event{margin:0 auto;max-width:950px}
+}.event-photo{position:relative;overflow:none;height:300px;background-position:center center;background-repeat:no-repeat;background-size:cover}
+section.events .story-block{border:1px solid #ccc}
+.page-event-list{margin-bottom:20px}
+.event-desc{padding:5px 10px}
+.event-desc-text{font-size:14px}
+.subscribe p{margin-bottom:0;font-size:20px;line-height:24px}
 .subscribe a{padding:3px 5px;background-color:none;color:#c5a92e;display:inline-block;text-decoration:none}
 .subscribe a:hover{color:#f2f2f2}
 .wrapper{padding:0}
