@@ -22,6 +22,7 @@ if ($wp_query->have_posts()) : ?>
 		$date = get_the_date();
 		$img = get_field('story_image');
 		
+		
 		//var_dump($img);
 		
 		// First Post
@@ -56,51 +57,55 @@ if ($wp_query->have_posts()) : ?>
 
 	endif;  wp_reset_postdata(); ?>
 
-	<?php
-		//$category = get_term_by( 'slug', 'offers-invites');
-
-		$slug = 'offers-invites';
-		$cat = get_category_by_slug($slug); 
-		$catID = $cat->term_id;
-
-		//var_dump($catID);
-
-		$args = array(
-			'post_type'			=>'post',
-			'posts_per_page' 	=> 2,
-			'post_status'  		=> 'publish',
-			'post__not_in' 		=> $postIDs,
-			'category__not_in' 	=> $catID ,
-		);
-
-		$recent_query = new WP_Query( $args ); 
-
-		if( $recent_query->have_posts() ):
-	?>
+	
 
 	<div class="right">
+		<?php
+			
+			$slug 	= 'offers-invites';
+			$cat 	= get_category_by_slug($slug); 
+			$catID 	= $cat->term_id;
+
+			$args = array(
+				'post_type'			=>'post',
+				'posts_per_page' 	=> 2,
+				'post_status'  		=> 'publish',
+				'post__not_in' 		=> $postIDs,
+				'category__not_in' 	=> $catID ,
+			);
+
+			$recent_query = new WP_Query( $args ); 
+
+			if( $recent_query->have_posts() ):
 		
-		<?php 
-			$i++;
-			while ($recent_query->have_posts()) :  $recent_query->the_post();
-				$img = get_field('story_image');
+				while ($recent_query->have_posts()) :  $recent_query->the_post();
+					$img 	= get_field('story_image');
+					$video 	= get_field('video_single_post');
+
+					$embed = youtube_setup($video);
 
 			?>
 			<article class="story-block">
 				<div class="photo">
-					<?php if( has_post_thumbnail() ) { 
+					<?php if( $video ): ?>	
+						<iframe class="video-homepage"  src="<?php echo $embed; ?>"></iframe>
+					<?php elseif( has_post_thumbnail() ): ?>	
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+					<?php endif; ?>
+
+					<?php /*if( has_post_thumbnail() ) { 
 							the_post_thumbnail(); 
 						 } elseif( $img ) { ?>					 
 								<img src="<?php echo $img['sizes']['thirds']; ?>" alt="<?php echo $img['alt']; ?>">
 						<?php } else { ?>
 								<img src="<?php bloginfo('stylesheet_directory'); ?>/images/default.png">
-						<?php } ?>
+						<?php }  */?>
 					<div class="category">
 						<?php include( locate_template('template-parts/primary-category.php', false, false) ); ?>
 					</div>
 					
 				</div>
-				<h3><?php the_title(); ?></h3>
+				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 				<span class="mobile-toggle"><?php echo get_the_excerpt(); ?></span>
 				<div class="desc">
 					
@@ -108,7 +113,9 @@ if ($wp_query->have_posts()) : ?>
 				<div class="by">
 					By: <?php the_author(); ?> | <?php echo get_the_date(); ?>
 				</div>
+				<!--
 				<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
+				-->
 			</article>
 		<?php endwhile; ?>
 	</div>

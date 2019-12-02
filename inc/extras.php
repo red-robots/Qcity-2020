@@ -148,3 +148,17 @@ function qcity_related_posts() {
     wp_reset_postdata();
  
 }
+
+
+/*
+*   Youtube iframe setup
+*/
+
+function youtube_setup( $src ){
+
+    parse_str( parse_url( $src, PHP_URL_QUERY), $query);
+    $id = $query['v'];
+    $url = "https://www.youtube.com/embed/" . $id;
+    
+    return $url;
+}
