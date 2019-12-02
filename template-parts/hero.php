@@ -37,8 +37,6 @@ if ($wp_query->have_posts()) : ?>
 			<?php } else { ?>
 					<img src="<?php bloginfo('stylesheet_directory'); ?>/images/default.png">
 			<?php } ?>
-			
-			<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
 			<div class="info">
 				<div class="category">
 					<?php include( locate_template('template-parts/primary-category.php', false, false) ); ?>
@@ -51,6 +49,7 @@ if ($wp_query->have_posts()) : ?>
 					By: <?php the_author();?> | <?php echo get_the_date(); ?>
 				</div>
 			</div>
+			<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
 		</article>		
 	</div>
 	<?php endwhile;
