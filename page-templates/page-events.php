@@ -17,7 +17,46 @@ get_template_part('template-parts/banner-events');
 
 	<div class="single-page-event">
 
-		<header class="section-title ">
+			<div class="qcity-sponsored-container">
+
+				<header class="section-title ">
+					<h1 class="dark-gray">Sponsored</h1>
+				</header>
+				<?php				
+					$i = 0;
+					$postID = array();
+					$today = date('Ymd');
+					$wp_query = new WP_Query();
+					$wp_query->query(array(
+						'post_type'=>'event',
+						'post_status'=>'publish',
+						//'posts_per_page' => 5,
+						'meta_query' => array(
+							array(
+						        'key'		=> 'event_date',
+						        'compare'	=> '>=',
+						        'value'		=> $today,
+						    ),
+					    ),
+					    'tax_query' => array(
+							array(
+								'taxonomy' 	=> 'event_category', 
+								'field' 	=> 'slug',
+								'terms' 	=> array( 'premium' ) 
+							)
+						)
+				));
+				if ($wp_query->have_posts()) : ?>
+					<section class="events">
+					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
+								$postID[] = get_the_ID();
+								include( locate_template('template-parts/sponsored-block.php') );
+						endwhile; ?>
+					</section>
+				<?php endif; wp_reset_postdata();  ?>
+			</div>
+
+		<header class="section-title qcity-more-happen">
 			<h1 class="dark-gray">More Happenings</h1>
 		</header>
 
@@ -40,6 +79,7 @@ get_template_part('template-parts/banner-events');
 									'post_type'			=>'event',
 									'post_status'		=>'publish',
 									'posts_per_page' 	=> 18,
+									'post__not_in' 		=> $postID,
 									'meta_query' 		=> array(
 															array(
 														        'key'		=> 'event_date',

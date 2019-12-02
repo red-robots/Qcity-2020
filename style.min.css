@@ -2321,6 +2321,8 @@ section.events .story-block{border:1px solid #ccc}
 .subscribe a{padding:3px 5px;background-color:none;color:#c5a92e;display:inline-block;text-decoration:none}
 .subscribe a:hover{color:#f2f2f2}
 .wrapper{padding:0}
+.qcity-sponsored-container{margin-bottom:20px}
+.qcity-more-happen{margin-top:20px}
 @media screen and (max-width:767px){.business-category-page,.featured_business,.business-category-header,.archive-content-page,.single-page{padding:0 20px}
 .bottom .banner-button,.event-butts .bottom .banner-button{margin:0;padding:10px 20px}
 .banner .bottom .btn{margin:0 5px}

@@ -1755,6 +1755,14 @@ section.events .story-block {
 	padding: 0;
 }
 
+.qcity-sponsored-container{
+	margin-bottom: 20px;
+}
+
+.qcity-more-happen{
+	margin-top: 20px;
+}
+
 @media screen and (max-width: 767px) {
 	.business-category-page, .featured_business, .business-category-header, .archive-content-page, .single-page{
 		padding: 0 20px;
@@ -1779,6 +1787,10 @@ section.events .story-block {
 
 	section.stickies,   section.news-home, section.home-bottom{
 		padding: 0 20px;
+	}
+
+	.qcity-sponsored-container{		
+		
 	}
 
 	section.home-sponsored{
