@@ -41,7 +41,7 @@
 			    <tr class="row <?php echo $cl; ?>">
 			    	<td><?php the_title(); ?></td>			    	
 			    	<td>
-			    		<a href="<?php echo $website; ?>"  target="_blank" >View Website</a>
+			    		<a href="<?php echo get_the_permalink() ?>" >More Info</a>
 			    	</td>
 			    </tr>
 			    

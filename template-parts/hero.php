@@ -83,6 +83,8 @@ if ($wp_query->have_posts()) : ?>
 
 					$embed = youtube_setup($video);
 
+					$postIDs[] = get_the_ID();
+
 			?>
 			<article class="story-block">
 				<div class="photo">
