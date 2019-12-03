@@ -3,13 +3,14 @@
 	Non Sticky News.
 
 
-*/
+*/  
+    $cat_id = get_category_by_slug( 'sponsored-post' );    
 	
 	$wp_query = new WP_Query( array(
-		'post_type'		=>'post',
-		'post_status' 	=> 'publish',
-		//'paged'         => 1,
-		'post__not_in' 	=> $postIDs
+		'post_type'		     =>'post',
+		'post_status' 	       => 'publish',		
+		'post__not_in' 	      => $postIDs,
+        'category__not_in'    => array( $cat_id->term_id ),
 	));
 	//$wp_query->query(); ?>
 	
