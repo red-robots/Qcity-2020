@@ -8802,9 +8802,9 @@ section.events {
     padding-bottom: 0; }
     @media screen and (min-width: 600px) {
       section.events .story-block {
-        -webkit-flex-basis: 33%;
-            -ms-flex-preferred-size: 33%;
-                flex-basis: 33%; } }
+        -webkit-flex-basis: 32%;
+            -ms-flex-preferred-size: 32%;
+                flex-basis: 32%; } }
     section.events .story-block .description {
       background-color: #dedede;
       padding: 5px 10px;
