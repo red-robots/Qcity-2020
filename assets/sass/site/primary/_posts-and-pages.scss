@@ -1749,6 +1749,17 @@ section.events .story-block {
 	a:hover {
 		color: #f2f2f2;
 	}
+
+	
+}
+
+
+.story-image{
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		height: 300px;
+		width: 100%;
 }
 
 .wrapper{
@@ -1790,7 +1801,7 @@ section.red-band {
 		padding: 0 20px;
 	}
 
-	.jobs-page,  .events_page, .two-column-page, .church-listing-page{
+	.jobs-page,  .events_page, .two-column-page, .church-listing-page, .category-post{
 		padding: 0 20px;
 	}
 

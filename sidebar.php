@@ -75,7 +75,7 @@ if( is_page('events') ) {
 }
 ?>
 
-<div class="widget-area">
+<div class="widget-area category-post">
 
 <?php 
 	// If is Sponsored Post

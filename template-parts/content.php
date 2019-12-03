@@ -21,13 +21,12 @@ $mod = the_modified_date('M j, Y', '', '', false);
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); 
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<div class="category"><?php get_template_part('template-parts/primary-category'); ?></div>
-			<div>By <?php the_author(); ?> </div>
-			<div><?php echo get_the_date(); if($mod){echo' | Updated '.$mod;} ?></div>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
+			<div class="entry-meta">
+				<div class="category"><?php get_template_part('template-parts/primary-category'); ?></div>
+				<div>By <?php the_author(); ?> </div>
+				<div><?php echo get_the_date(); if($mod){echo' | Updated '.$mod;} ?></div>
+			</div><!-- .entry-meta -->
+		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

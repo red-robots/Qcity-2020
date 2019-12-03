@@ -22,60 +22,92 @@
 	</header>
 	<div class="wrapper">
 		<?php 
+
+			if( get_post_type() == 'business_listing'):
+
+				$terms = wp_get_post_terms( get_the_ID(), 'business_category' );
+				//var_dump($terms);
+
+				$args = array(
+						'post_type' 		=> 'business_listing',
+						'post_status'		=> 'publish',
+						'posts_per_page' 	=> 1,
+						'orderby'          	=> 'rand',
+						//'category__in' 		=> array( $terms->term_id ),
+						'tax_query' 		=> array(
+												array(
+											        'taxonomy' 			=> 'business_category',
+											        'field' 			=> 'slug',
+											        'terms' 			=> array( $terms[0]->slug ),
+											        'include_children' 	=> false,
+											        'operator' 			=> 'IN'
+											    )
+		 				)
+				);
+
+				$wp_query = new WP_Query($args);
+
+				if( $wp_query->have_posts() ): 
+
+					while( $wp_query->have_posts() ): $wp_query->the_post();
+						get_template_part( 'template-parts/business-block' );
+					endwhile;
+
+				endif;
+
+			else:
 			
-			if( is_object($next)) {
-				$args = array(
-				  'p'         => $next->ID, 
-				  'post_type' => 'post'
-				);
-			} elseif($sponsors) {
-				$args = array(
-				  	'category_name'    	=> 'Offers & Invites',        
-        			'post_type'        	=> 'post',        
-        			'post_status'      	=> 'publish',
-        			'posts_per_page' 	=> 1,
-					'orderby'          	=> 'rand',
-				);
-			} elseif($tag) {
-				$args = array(				  	       
-        			'post_type'        	=> 'post',        
-        			'post_status'      	=> 'publish',
-        			'post__not_in'      => array( $post_id ),
-        			'posts_per_page' 	=> 1,
-					'orderby'          	=> 'rand',
-					'tag_id' 			=> $tag, 
-					
-				);
-			} else {
-				$args = array(				  	       
-        			'post_type'        	=> 'post',        
-        			'post_status'      	=> 'publish',
-        			'post__not_in'      => array( $post_id ),
-        			'posts_per_page' 	=> 1,
-					'orderby'          	=> 'rand',
-					//'tag_id' 			=> $tag, 
-					
-				);
-			}
+				if( is_object($next)) {
+					$args = array(
+					  'p'         => $next->ID, 
+					  'post_type' => 'post'
+					);
+				} elseif($sponsors) {
+					$args = array(
+					  	'category_name'    	=> 'Offers & Invites',        
+	        			'post_type'        	=> 'post',        
+	        			'post_status'      	=> 'publish',
+	        			'posts_per_page' 	=> 1,
+						'orderby'          	=> 'rand',
+					);
+				} elseif($tag) {
+					$args = array(				  	       
+	        			'post_type'        	=> 'post',        
+	        			'post_status'      	=> 'publish',
+	        			'post__not_in'      => array( $post_id ),
+	        			'posts_per_page' 	=> 1,
+						'orderby'          	=> 'rand',
+						'tag_id' 			=> $tag, 
+						
+					);
+				} else {
+					$args = array(				  	       
+	        			'post_type'        	=> 'post',        
+	        			'post_status'      	=> 'publish',
+	        			'post__not_in'      => array( $post_id ),
+	        			'posts_per_page' 	=> 1,
+						'orderby'          	=> 'rand',
+						//'tag_id' 			=> $tag, 
+						
+					);
+				}
 
-		
+				$wp_query = new WP_Query($args);
+			
+				if ($wp_query->have_posts()) : 
+					while ($wp_query->have_posts()) : $wp_query->the_post(); 
+						include( locate_template('template-parts/story-block.php', false, false) );
+					endwhile;
+				endif;
+				wp_reset_postdata();
 
-		$wp_query = new WP_Query($args);
+			endif; // get_post_type == 'business_listing'
 
-		//var_dump($wp_query);
-		
-		if ($wp_query->have_posts()) : 
-			while ($wp_query->have_posts()) : $wp_query->the_post(); 
-				include( locate_template('template-parts/story-block.php', false, false) );
-			endwhile;
-		endif;
-		wp_reset_postdata();
+
+
+
 		?>
 		
-		<!--
-		<div class="more">
-			<a href="#">Load More</a>
-		</div>
-		-->
+		
 	</div>	
 </section>

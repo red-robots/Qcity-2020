@@ -1,10 +1,23 @@
+<?php
+	$image = "";
+	if( has_post_thumbnail() ) {
+		$image = get_the_post_thumbnail_url();
+	} else { 
+		$image = get_template_directory_uri() . '/images/default.png';
+	}
+
+	//var_dump($image);
+?>
+
 <article class="story-block">
-	<div class="photo">		
-		<?php if( has_post_thumbnail() ) {
+	<div class="photo story-image" style="background-image: url('<?php echo $image; ?>');">		
+		<?php /*if( has_post_thumbnail() ) {
 				the_post_thumbnail('thirds');
-			} else { ?>
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/default.png">
-			<?php } ?>
+			} else { 
+				$image = get_template_directory_uri() . '/images/default.png';
+				?>
+				<img src="<?php echo $image; ?>">
+			<?php }  */?>
 		<div class="category">
 			<?php include( locate_template('template-parts/primary-category.php', false, false) ); ?>
 		</div>

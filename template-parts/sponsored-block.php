@@ -18,9 +18,9 @@ if( $img ){
 	$image = $img['url'];
 } elseif ( has_post_thumbnail() ) {
 	$image = get_the_post_thumbnail('thirds');
-	var_dump($image);
+	//var_dump($image);
 } else {
-	$image = bloginfo('stylesheet_directory') . '/images/default.png';
+	$image = get_template_directory_uri() . '/images/default.png';
 }
 
 //var_dump($venue);
