@@ -2114,11 +2114,11 @@ section.home-bottom .ad{width:100%;float:left}
 }.biz-dir .biz-job-wrap,.jobs .biz-job-wrap{width:100%;margin-bottom:20px;float:left}
 .jobs{margin-right:30px}
 .jobs .job,.jobs-page .job{width:100%;float:left;border-bottom:1px solid #262425;padding:10px 0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
-.jobs .job .img,.jobs-page .job .img{width:15%;float:left}
-.jobs .job .img img,.jobs-page .job .img img{width:100%}
+.jobs .job .img,.jobs-page .job .img{width:15%;float:left;height:80px}
+.jobs .job .img img,.jobs-page .job .img img{width:auto;height:80px}
 .jobs .job .info,.jobs-page .job .info{width:50%;float:left;text-align:center}
-.jobs .job .info h3,.jobs-page .job .info h3{font-size:16px}
-.jobs .job .info h4,.jobs-page .job .info h4{font-weight:normal;font-size:14px}
+.jobs .job .info h3,.jobs-page .job .info h3{font-size:16px;padding:2px 0}
+.jobs .job .info h4,.jobs-page .job .info h4{font-weight:normal;font-size:14px;padding:2px 0}
 .jobs .job .info .date,.jobs-page .job .info .date{font-size:12px}
 .jobs .job .view,.jobs-page .job .view{width:15%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
 .jobs .job .view .viewlink,.jobs-page .job .view .viewlink{width:100%;font-size:13px}
@@ -2335,7 +2335,10 @@ iframe.video-homepage{height:250px;width:auto}
 .qcity-sponsored-container{margin-bottom:20px}
 section.red-band{padding-right:30px}
 .qcity-more-happen{margin-top:20px}
-@media screen and (max-width:767px){.c-sponsor-block__image-wrap{display:grid;grid-area:image-wrap}
+@media screen and (max-width:767px){.jobs-page .job .img{display:none}
+.jobs-page .job .info{width:70%}
+.jobs-page .job .view{width:20%}
+.c-sponsor-block__image-wrap{display:grid;grid-area:image-wrap}
 .biz-submit{display:none}
 .menu-counter{z-index:-12}
 .business_category .photo{height:200px;width:100%;position:relative;overflow:none;background-repeat:no-repeat;background-position:center center;background-size:cover}

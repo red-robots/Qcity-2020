@@ -479,8 +479,10 @@ section.home-bottom {
 		.img {
 			width: 15%;
 			float: left;
+			height: 80px;
 			img {
-				width: 100%;
+				width: auto;
+				height: 80px;
 			}
 		}
 		.info {
@@ -489,10 +491,12 @@ section.home-bottom {
 			text-align: center;
 			h3 {
 				font-size: 16px;
+				padding: 2px 0;
 			}
 			h4 {
 				font-weight: normal;
 				font-size: 14px;
+				padding: 2px 0;
 			}
 			.date {
 				font-size: 12px;
@@ -1857,6 +1861,22 @@ section.red-band {
 }
 
 @media screen and (max-width: 767px) {
+
+	.jobs-page {
+		.job {
+			.img{
+				display: none;
+			}
+
+			.info{
+				width: 70%;
+			}
+
+			.view{
+				width: 20%;
+			}
+		}
+	}
 
 	.c-sponsor-block__image-wrap {
 	    display: grid;
