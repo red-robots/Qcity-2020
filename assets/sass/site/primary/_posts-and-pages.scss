@@ -1484,10 +1484,14 @@ section.home-bottom {
 
 @media (max-width: 768px){
 	aside.c-sponsor-block {
-	    grid-template-areas: 'text image-wrap';
-	    grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+	    /*grid-template-areas: 'text image-wrap';
+	    grid-template-columns: repeat(auto-fit,minmax(200px,auto));*/
 	    padding-top: .92rem;
 	    margin-bottom: 20px;
+
+	    .sponsored-title{
+	    	margin-top: 215px;
+	    }
 	}
 
 	img{
@@ -1544,6 +1548,11 @@ section.home-sponsored .block img {
 
 .featured_business_header{
 	margin: 5px 0 7px;
+}
+
+.brown{
+	font-size: 16px;
+	color: #924020;
 }
 
 /*
@@ -1848,6 +1857,11 @@ section.red-band {
 }
 
 @media screen and (max-width: 767px) {
+
+	.c-sponsor-block__image-wrap {
+	    display: grid;
+	    grid-area: image-wrap;
+	}
 
 	.biz-submit{
 		display: none;

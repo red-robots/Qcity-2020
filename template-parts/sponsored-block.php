@@ -33,7 +33,7 @@ if( $img ){
 	</div>
 	<div class="event-desc">
 		<h3><?php the_title(); ?></h3>
-		<div class="event-desc-text"><?php echo $date->format('l'); ?>, <?php echo $date->format('F j, Y'); ?></div>
+		<div class="event-desc-text brown"><?php echo $date->format('l'); ?>, <?php echo $date->format('F j, Y'); ?></div>
 		<div class="event-desc-text"><?php echo $venue; ?></div>
 	</div>
 	

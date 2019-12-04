@@ -22,7 +22,7 @@
 
 <aside class="c-sponsor-block c-sponsor-block--filled">
     <div class="c-sponsor-block__text">
-        <span class="c-sponsor-block__label t-uppercase t-lsp-b has-text-gray-dark t-size-xs has-xxs-btm-marg"><strong>Sponsored Content</strong></span>
+        <span class="c-sponsor-block__label t-uppercase t-lsp-b has-text-gray-dark t-size-xs has-xxs-btm-marg sponsored-title"><strong>Sponsored Content</strong></span>
         <div class="c-sponsor-block__main">
             <p class="c-sponsor-block__sponsor has-text-sponsor t-uppercase t-lsp-m t-size-xs has-xxs-btm-marg"><strong><?php echo ($sponsors) ? $sponsors[0]->post_title: '' ?></strong></p>
             <h3 class="c-sponsor-block__headline c-sponsor-block__static-text t-lh-s has-xxxs-btm-marg"><a target="_parent" href="<?php echo get_the_permalink();  ?>" class="has-text-black-off has-text-hover-black"><?php echo get_the_title(); ?></a></h3>

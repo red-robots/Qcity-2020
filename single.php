@@ -15,25 +15,31 @@
 	//var_dump($sponsors);
 ?>
 
-<div class="wrapper">
+<div class="wrapper" style="background-color: white">
 	
 	<div id="primary" class="content-area" style="<?php echo ($sponsors) ? '': ' margin: 0 auto; float:none; width: 80%; '; ?>">
 		
-		<div style="margin-bottom: 20px">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			<div class="category"><?php get_template_part('template-parts/primary-category'); ?></div>
-		</div>
-		
+		<div class="single-page">
+			
+			<div  style="margin-bottom: 20px;">
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				<div class="category"><?php get_template_part('template-parts/primary-category'); ?></div>
+			</div>
+			
 
-		<?php if( $img ) { ?>
-			<div class="story-image">
-				<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
-			</div>
-		<?php } elseif( has_post_thumbnail() ){ ?>
-			<div class="story-image">
-				<?php the_post_thumbnail(); ?>
-			</div>
-		<?php } ?>
+			<?php if( $img ) { ?>
+				<div class="story-image">
+					<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
+				</div>
+			<?php } elseif( has_post_thumbnail() ){ ?>
+				<div class="story-image">
+					<?php the_post_thumbnail(); ?>
+				</div>
+			<?php } ?>
+
+		</div>
+
+
 		<main id="main" class="site-main" role="main">
 			<div class="wrapper" >
 
