@@ -18,12 +18,14 @@
 
 <section class="next-story">
 	<header class="section-title ">
-		<h2 class="dark-gray">Next Story</h2>
+		<h2 class="dark-gray">Related Articles</h2>
 	</header>
 	<div class="wrapper">
 		<?php 
 
 			if( get_post_type() == 'business_listing'):
+
+				// business_listing posts
 
 				$terms = wp_get_post_terms( get_the_ID(), 'business_category' );
 				//var_dump($terms);
@@ -56,28 +58,47 @@
 				endif;
 
 			else:
+
+				// regular posts
+
+				$post_id 	= get_the_ID();
+			    $cat_ids 	= array();
+			    $categories = get_the_category( $post_id );
+			 
+			    if ( $categories && !is_wp_error( $categories ) ) {			 
+			        foreach ( $categories as $category ) {			 
+			            array_push( $cat_ids, $category->term_id );			 
+			        }			 
+			    }
+
+
 			
 				if( is_object($next)) {
 					$args = array(
-					  'p'         => $next->ID, 
-					  'post_type' => 'post'
+					  	'p'         		=> $next->ID, 
+					  	'post_type' 		=> 'post',
+					  	'post_status'      	=> 'publish',
+        				'posts_per_page' 	=> 3,
+						'orderby'          	=> 'rand',
 					);
 				} elseif($sponsors) {
 					$args = array(
-					  	'category_name'    	=> 'Offers & Invites',        
+					  	'category_name'    	=> 'offers-invites',        
 	        			'post_type'        	=> 'post',        
 	        			'post_status'      	=> 'publish',
-	        			'posts_per_page' 	=> 1,
+	        			'posts_per_page' 	=> 3,
 						'orderby'          	=> 'rand',
+						'post__not_in'      => array( $post_id ),
 					);
 				} elseif($tag) {
 					$args = array(				  	       
 	        			'post_type'        	=> 'post',        
 	        			'post_status'      	=> 'publish',
 	        			'post__not_in'      => array( $post_id ),
-	        			'posts_per_page' 	=> 1,
+	        			'posts_per_page' 	=> 3,
 						'orderby'          	=> 'rand',
 						'tag_id' 			=> $tag, 
+						'category__in'      => $cat_ids,
 						
 					);
 				} else {
@@ -85,9 +106,9 @@
 	        			'post_type'        	=> 'post',        
 	        			'post_status'      	=> 'publish',
 	        			'post__not_in'      => array( $post_id ),
-	        			'posts_per_page' 	=> 1,
+	        			'posts_per_page' 	=> 3,
 						'orderby'          	=> 'rand',
-						//'tag_id' 			=> $tag, 
+						'category__in'      => $cat_ids,
 						
 					);
 				}
@@ -96,7 +117,7 @@
 			
 				if ($wp_query->have_posts()) : 
 					while ($wp_query->have_posts()) : $wp_query->the_post(); 
-						include( locate_template('template-parts/story-block.php', false, false) );
+						include( locate_template('template-parts/next-story-block.php', false, false) );
 					endwhile;
 				endif;
 				wp_reset_postdata();

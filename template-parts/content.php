@@ -18,11 +18,11 @@ $mod = the_modified_date('M j, Y', '', '', false);
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); 
+		
+		<?php
 
 		if ( 'post' === get_post_type() ) : ?>
-			<div class="entry-meta">
-				<div class="category"><?php get_template_part('template-parts/primary-category'); ?></div>
+			<div class="entry-meta">				
 				<div>By <?php the_author(); ?> </div>
 				<div><?php echo get_the_date(); if($mod){echo' | Updated '.$mod;} ?></div>
 			</div><!-- .entry-meta -->

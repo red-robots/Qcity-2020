@@ -581,7 +581,7 @@ body.archive {
 }
 article.post {
 	.entry-meta {
-		margin: 20px 0;
+		margin: 10px 0 20px 0;
 		width: 100%;
 		font-size: 1rem;
 		padding-bottom: 30px;
@@ -1702,6 +1702,37 @@ section.qcity-news-container{
 		max-width: 950px;
 	}
 
+	.next-story-block{
+
+		margin-bottom: 10px;
+		display: block;
+
+		.photo{
+			width: 30%;
+		}
+
+		.photo a img{
+			width: 200px;
+			height: auto;
+			float: left;
+			display: inline-block;
+			margin-right: 20px;
+			margin-bottom: 10px;
+			padding: 5px 0;
+		}
+
+		.desc{
+			width: 65%;
+			display: inline-block;
+			float: left;
+			padding: 5px 0;
+
+			.desc-text{
+				font-size: 14px;
+			}
+		}
+	}
+
 
 }
 
@@ -1771,6 +1802,17 @@ section.events .story-block {
 	}
 }*/
 
+
+h1.entry-title {
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.story-image {
+    width: 100%;
+    margin-bottom: 20px;
+}
 
 
 .wrapper{
