@@ -10,14 +10,14 @@
 ?>
 
 <article class="story-block">
-	<div class="photo story-image" style="background-image: url('<?php echo $image; ?>');">		
-		<?php /*if( has_post_thumbnail() ) {
+	<div class="photo story-image" >		
+		<?php if( has_post_thumbnail() ) {
 				the_post_thumbnail('thirds');
 			} else { 
 				$image = get_template_directory_uri() . '/images/default.png';
 				?>
 				<img src="<?php echo $image; ?>">
-			<?php }  */?>
+			<?php }  ?>
 		<div class="category">
 			<?php include( locate_template('template-parts/primary-category.php', false, false) ); ?>
 		</div>
