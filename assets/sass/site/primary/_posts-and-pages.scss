@@ -1733,7 +1733,18 @@ section.qcity-news-container{
 		}
 	}
 
+	.business_category {
 
+		.photo{
+			height: 200px;
+			width: 100%;
+			position: relative;
+			overflow: none;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+		}
+	}
 }
 
 .event-photo{
@@ -1837,6 +1848,27 @@ section.red-band {
 }
 
 @media screen and (max-width: 767px) {
+
+	.biz-submit{
+		display: none;
+	}
+
+	.menu-counter{
+		z-index: -12;
+	}
+
+	.business_category {
+
+		.photo{
+			height: 200px;
+			width: 100%;
+			position: relative;
+			overflow: none;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+		}
+	}
 
 	.mainnav-wrap {
 	    width: 100%;

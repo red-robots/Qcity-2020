@@ -117,17 +117,13 @@ window.googletag = window.googletag || {cmd: []};
 			</nav>
 
             <script>
-                //$('a:contains("Jobs")').append('<span class="menu-badge">'+ <?php echo get_category_counter('job'); ?> +'</span>');
-
                 $('a').filter(function(){
                     return $(this).text() === "Jobs";
-                }).append('<span class="menu-badge">'+ <?php echo get_category_counter('job'); ?> +'</span>');
-
-                //$('a:contains("Events")').append('<span class="menu-badge">'+ <?php echo get_category_counter('event'); ?> +'</span>');
-
+                }).append('<span class="menu-counter menu-badge">'+ <?php echo get_category_counter('job'); ?> +'</span>');
+                
                 $('a').filter(function(){
                     return $(this).text() === "Events";
-                }).append('<span class="menu-badge">'+ <?php echo get_category_counter('event'); ?> +'</span>');
+                }).append('<span class="menu-counter menu-badge">'+ <?php echo get_category_counter('event'); ?> +'</span>');
             </script>
 	
 	</header><!-- #masthead -->

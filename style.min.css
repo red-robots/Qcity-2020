@@ -2317,6 +2317,7 @@ section.home-sponsored{padding:0 40px;border-bottom:0}
 .next-story-block .photo a img{width:200px;height:auto;float:left;display:inline-block;margin-right:20px;margin-bottom:10px;padding:5px 0}
 .next-story-block .desc{width:65%;display:inline-block;float:left;padding:5px 0}
 .next-story-block .desc .desc-text{font-size:14px}
+.business_category .photo{height:200px;width:100%;position:relative;overflow:none;background-repeat:no-repeat;background-position:center center;background-size:cover}
 }.event-photo{position:relative;overflow:none;height:300px;background-position:center center;background-repeat:no-repeat;background-size:cover}
 section.events .story-block{border:1px solid #ccc}
 .page-event-list{margin-bottom:20px}
@@ -2332,7 +2333,10 @@ iframe.video-homepage{height:250px;width:auto}
 .qcity-sponsored-container{margin-bottom:20px}
 section.red-band{padding-right:30px}
 .qcity-more-happen{margin-top:20px}
-@media screen and (max-width:767px){.mainnav-wrap{width:100%;float:left;background-color:#262425;padding:35px 0 12px 0}
+@media screen and (max-width:767px){.biz-submit{display:none}
+.menu-counter{z-index:-12}
+.business_category .photo{height:200px;width:100%;position:relative;overflow:none;background-repeat:no-repeat;background-position:center center;background-size:cover}
+.mainnav-wrap{width:100%;float:left;background-color:#262425;padding:35px 0 12px 0}
 .logo img,h1.logo img{width:auto;height:80px}
 .business-category-page,.featured_business,.business-category-header,.archive-content-page,.single-page{padding:0 20px}
 .bottom .banner-button,.event-butts .bottom .banner-button{margin:0;padding:10px 20px}

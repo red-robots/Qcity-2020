@@ -18,7 +18,7 @@ $add_business_link = get_field('add_business_link');
 
 ?>
 
-<div class="wrapper">
+<div class="wrapper" style="background-color: white">
 	<div class="business-category-header">
 		<header class="page-header biz">		
 			<h1><?php echo $ob->name; ?></h1>
@@ -41,9 +41,6 @@ $add_business_link = get_field('add_business_link');
 		<main id="main" class="site-main" role="main">
 
 			<div class="business-category-page">
-				
-			
-
 				<?php
 					if ( have_posts() ) : ?>
 					<div class="qcity-news-container">
