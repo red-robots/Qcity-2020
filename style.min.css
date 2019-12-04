@@ -2086,7 +2086,7 @@ article.big-post:hover{-webkit-box-shadow:5px 8px 16px -7px rgba(0,0,0,0.43);box
 section.home-sponsored{width:100%;float:left;clear:both;padding-bottom:20px;border-bottom:1px solid #000}
 @media screen and (min-width:600px){section.home-sponsored .flexwrap{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:stretch;-webkit-align-items:stretch;-ms-flex-align:stretch;align-items:stretch;margin-bottom:10px}
 }section.home-sponsored .flexwrap .sponsored_post_block{overflow:none;height:250px;position:relative;background-size:cover;background-repeat:no-repeat;background-position:center center}
-section.home-sponsored .block{width:auto;position:relative;-webkit-flex-basis:15%;-ms-flex-preferred-size:15%;flex-basis:15%;text-align:center;line-height:0;overflow:none}
+section.home-sponsored .block{width:auto;position:relative;-webkit-flex-basis:18%;-ms-flex-preferred-size:18%;flex-basis:18%;text-align:center;line-height:0;overflow:none}
 section.home-sponsored .block:hover .info{padding:10px 10px 20px 10px}
 section.home-sponsored .block img{display:block;width:100%;max-width:500px;height:auto}
 section.home-sponsored .block .date{margin-bottom:10px}

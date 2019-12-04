@@ -8244,9 +8244,9 @@ section.home-sponsored {
   section.home-sponsored .block {
     width: auto;
     position: relative;
-    -webkit-flex-basis: 15%;
-        -ms-flex-preferred-size: 15%;
-            flex-basis: 15%;
+    -webkit-flex-basis: 18%;
+        -ms-flex-preferred-size: 18%;
+            flex-basis: 18%;
     text-align: center;
     line-height: 0;
     overflow: none; }
