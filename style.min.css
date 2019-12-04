@@ -2325,7 +2325,9 @@ iframe.video-homepage{height:250px;width:auto}
 .qcity-sponsored-container{margin-bottom:20px}
 section.red-band{padding-right:30px}
 .qcity-more-happen{margin-top:20px}
-@media screen and (max-width:767px){.business-category-page,.featured_business,.business-category-header,.archive-content-page,.single-page{padding:0 20px}
+@media screen and (max-width:767px){.mainnav-wrap{width:100%;float:left;background-color:#262425;padding:35px 0 12px 0}
+.logo img,h1.logo img{width:auto;height:80px}
+.business-category-page,.featured_business,.business-category-header,.archive-content-page,.single-page{padding:0 20px}
 .bottom .banner-button,.event-butts .bottom .banner-button{margin:0;padding:10px 20px}
 .banner .bottom .btn{margin:0 5px}
 .listing-header,.single-page-event{padding:0 20px}

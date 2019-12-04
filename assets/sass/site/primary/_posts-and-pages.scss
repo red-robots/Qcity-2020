@@ -1795,6 +1795,19 @@ section.red-band {
 }
 
 @media screen and (max-width: 767px) {
+
+	.mainnav-wrap {
+	    width: 100%;
+	    float: left;
+	    background-color: #262425;
+	    padding: 35px 0 12px 0;
+	}
+
+	.logo img, h1.logo img {
+	    width: auto;
+	    height: 80px;
+	}
+
 	.business-category-page, .featured_business, .business-category-header, .archive-content-page, .single-page{
 		padding: 0 20px;
 	}
