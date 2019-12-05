@@ -2172,6 +2172,7 @@ section.sponsored{width:100%;float:left}
 }section.events{width:100%;float:left}
 @media screen and (min-width:600px){section.events{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:stretch;-webkit-align-items:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
 }section.events .story-block{padding-bottom:0}
+section.events .story-block .photo{height:200px;background-repeat:no-repeat;background-position:center center;background-size:cover;overflow:none;position:relative}
 @media screen and (min-width:600px){section.events .story-block{-webkit-flex-basis:32%;-ms-flex-preferred-size:32%;flex-basis:32%}
 }section.events .story-block .description{background-color:#dedede;padding:5px 10px;border-bottom:3px solid #555;margin-top:10px;font-size:13px;display:block;overflow:auto}
 section.events .story-block .description .date{float:left;margin-right:5px}

@@ -815,6 +815,15 @@ section.events {
 	.story-block {
 		padding-bottom: 0;
 
+		.photo{
+			height: 200px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			overflow: none;
+			position: relative;
+		}
+
 		@media screen and (min-width: $tabwidth) {
 			flex-basis: 32%;
 		}
