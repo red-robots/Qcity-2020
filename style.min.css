@@ -1951,8 +1951,12 @@ section.red-band a:hover{background-color:#fff;color:#924020}
 }.site-footer .logo-footer img{width:100%}
 .site-footer .footer-nav{width:100%;margin:0;padding:20px 0;float:left}
 @media screen and (min-width:600px){.site-footer .footer-nav{width:50%;padding:0 0 0 5%}
-}.site-footer .footer-nav ul{list-style:none;margin:0;padding:0}
-.site-footer .footer-nav li{width:33.33333%;float:left;font-size:13px}
+}.site-footer .footer-nav .footer-main-nav{display:block;text-align:center}
+.site-footer .footer-nav .footer-main-nav ul{list-style:none;margin:0;padding:0}
+.site-footer .footer-nav .footer-main-nav li{display:inline-block;font-size:20px;margin-right:30px}
+.site-footer .footer-nav .footer-submenu-nav{display:block;margin-top:8px;text-align:center}
+.site-footer .footer-nav .footer-submenu-nav ul{list-style:none;margin:0;padding:0;text-align:center}
+.site-footer .footer-nav .footer-submenu-nav li{display:inline-block;font-size:13px;margin-right:20px}
 .social,.footer-newsletter{width:100%;margin:30px auto;float:left}
 @media screen and (min-width:600px){.social,.footer-newsletter{width:15%;margin:0 0 0 5%}
 }.social h3,.footer-newsletter h3{font-size:15px;font-weight:normal;margin:0 0 5px 0;text-align:center;display:inline-block;width:100%}
@@ -2282,7 +2286,15 @@ article.big-post h3{font-size:20px;z-index:1;line-height:1.1;margin-bottom:10px}
 }.c-sponsor-block__desc{margin-top:10px}
 .event_website{margin-top:10px;width:280px;text-align:center}
 .full{width:100%}
-@media(max-width:768px){aside.c-sponsor-block{padding-top:.92rem;margin-bottom:20px}
+@media(max-width:768px){.site-footer{position:relative}
+.site-footer-overlay{background-image:url("images/logo-footer.png");background-repeat:no-repeat;background-position:center;opacity:.057;height:175px;margin-top:88px}
+.footer-main-nav ul li a{color:white}
+.footer-submenu-nav{display:block;margin-top:20px;text-align:center;border-top:1px solid #ccc;border-bottom:1px solid #ccc;width:80%;padding:20px 0;margin:20px auto 0;position:relative}
+.footer-submenu-nav ul{list-style:none;margin:0;padding:0;columns:2;-webkit-columns:2;-moz-columns:2}
+.footer-submenu-nav li{display:inline-block;font-size:13px;width:100%;color:white;margin-right:20px}
+.footer-submenu-nav li a{color:white}
+.footer-submenu-nav ul:after{content:"";display:table;clear:both}
+aside.c-sponsor-block{padding-top:.92rem;margin-bottom:20px}
 aside.c-sponsor-block .sponsored-title{margin-top:215px}
 img{width:100%;height:auto}
 .event_website{margin-top:10px;width:100%;text-align:center}
@@ -2322,6 +2334,8 @@ section.home-sponsored{padding:0 40px;border-bottom:0}
 .next-story-block .desc{width:65%;display:inline-block;float:left;padding:5px 0}
 .next-story-block .desc .desc-text{font-size:14px}
 .business_category .photo{height:200px;width:100%;position:relative;overflow:none;background-repeat:no-repeat;background-position:center center;background-size:cover}
+.desktop-version{display:block}
+.mobile-version{display:none}
 }.event-photo{position:relative;overflow:none;height:300px;background-position:center center;background-repeat:no-repeat;background-size:cover}
 section.events .story-block{border:1px solid #ccc}
 .page-event-list{margin-bottom:20px}
@@ -2332,14 +2346,19 @@ section.events .story-block{border:1px solid #ccc}
 .subscribe a:hover{color:#f2f2f2}
 h1.entry-title{font-size:1.8rem;line-height:1.1;margin-bottom:10px}
 .story-image{width:100%;margin-bottom:20px}
+.single-page .category{margin-bottom:15px;margin-top:20px}
+.single-page .category a{border-bottom:2px solid #ffc000}
 .wrapper{padding:0}
 iframe.video-homepage{height:250px;width:auto}
 .qcity-sponsored-container{margin-bottom:20px}
 section.red-band{padding-right:30px}
 .qcity-more-happen{margin-top:20px}
-@media screen and (max-width:767px){.jobs-page .job .img{display:none}
-.jobs-page .job .info{width:70%}
-.jobs-page .job .view{width:20%}
+@media screen and (max-width:767px){.desktop-version{display:none}
+.mobile-version{display:block}
+.jobs-page,.jobs{background-color:white}
+.jobs-page .job .img,.jobs .job .img{display:none}
+.jobs-page .job .info,.jobs .job .info{width:70%}
+.jobs-page .job .view,.jobs .job .view{width:20%}
 .c-sponsor-block__image-wrap{display:grid;grid-area:image-wrap}
 .biz-submit{display:none}
 .menu-counter{z-index:-12}
@@ -2359,6 +2378,8 @@ section.home-sponsored{padding:0 20px;border-bottom:0}
 .banner-button-text{padding-top:10px}
 .banner-button{margin:0 5px}
 .event-butts .btn{height:85px;text-align:center;vertical-align:middle}
+section.home-bottom{margin:10px 0}
+.biz-dir{background-color:white}
 }.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

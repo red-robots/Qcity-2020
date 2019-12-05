@@ -22,8 +22,9 @@
 		<div class="single-page">
 			
 			<div  style="margin-bottom: 20px;">
+				<div class="category "><?php get_template_part('template-parts/primary-category'); ?></div>
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				<div class="category"><?php get_template_part('template-parts/primary-category'); ?></div>
+				<?php the_excerpt(); ?>
 			</div>
 			
 

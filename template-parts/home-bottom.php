@@ -53,7 +53,7 @@
 	<?php get_template_part('template-parts/business-directory-footer'); ?>
 	
 	<!--- Advertisements -->
-	<div class="ad">
+	<div class="ad" style="display: block">
 		<?php  
 		 		$post_type = 'ad';
                 $args = array(
@@ -84,5 +84,9 @@
                 wp_reset_postdata();
 		 	?>
 	</div>
+
+    <div class="mobile-version">
+        <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
+    </div>
 
 </section>

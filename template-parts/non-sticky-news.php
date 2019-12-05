@@ -81,8 +81,10 @@
             <!--
             <script async src="https://modules.wearehearken.com/wndr/embed/868.js"></script>
             -->
-
-            <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
+            <div class="desktop-version">
+                <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
+            </div>
+            
 		 </section>
 
 

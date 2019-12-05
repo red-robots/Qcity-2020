@@ -1505,6 +1505,77 @@ section.home-bottom {
 
 
 @media (max-width: 768px){
+
+	.site-footer{
+		position: relative;
+	}
+
+	.site-footer-overlay{
+		/*content: "";*/
+		background-image: url('images/logo-footer.png');
+		background-repeat: no-repeat;	
+		/*background-attachment: fixed;*/
+  		background-position: center;
+		opacity: 0.057;
+		height: 175px;
+		margin-top: 88px;
+		/*top: 50%;
+		left: 50%;*/
+		
+		/*position: absolute;*/
+		
+	}
+
+	.footer-main-nav{
+		ul{
+			li{
+				a{
+					color: white;
+				}
+			}
+		}
+	}
+
+	.footer-submenu-nav{
+			display: block;
+			margin-top: 20px;
+			text-align: center;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			width: 80%;
+			padding: 20px 0;
+			margin: 20px auto 0;
+			position: relative;
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				/*text-align: center;*/
+				columns: 2;
+				-webkit-columns: 2;
+				-moz-columns: 2;
+			}
+			li {
+				display: inline-block;
+				/*float: left;*/
+				font-size: 13px;
+				width: 100%;
+				color: white;
+				margin-right: 20px;
+				a{
+					color: white;
+				}
+			}
+
+			ul:after {
+			  content: "";
+			  display: table;
+			  clear: both;
+			}
+	}
+
+
+
 	aside.c-sponsor-block {
 	    /*grid-template-areas: 'text image-wrap';
 	    grid-template-columns: repeat(auto-fit,minmax(200px,auto));*/
@@ -1776,6 +1847,13 @@ section.qcity-news-container{
 			background-size: cover;
 		}
 	}
+
+	.desktop-version{
+		display: block;
+	}
+	.mobile-version{
+		display: none;
+	}
 }
 
 .event-photo{
@@ -1856,6 +1934,18 @@ h1.entry-title {
     margin-bottom: 20px;
 }
 
+.single-page{
+	.category{
+		margin-bottom: 15px;
+		margin-top: 20px;
+
+		a{
+			border-bottom: 2px solid #ffc000;
+		}
+		
+	}
+}
+
 
 .wrapper{
 	padding: 0;
@@ -1880,7 +1970,16 @@ section.red-band {
 
 @media screen and (max-width: 767px) {
 
-	.jobs-page {
+	.desktop-version{
+		display: none;
+	}
+	.mobile-version{
+		display: block;
+	}
+
+	.jobs-page, .jobs {
+		background-color: white;
+
 		.job {
 			.img{
 				display: none;
@@ -1998,6 +2097,14 @@ section.red-band {
 			text-align: center;
 			vertical-align: middle;
 		}
+	}
+
+	section.home-bottom{
+		margin: 10px 0;
+	}
+
+	.biz-dir{
+		background-color: white;
 	}
 
 }
