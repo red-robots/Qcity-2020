@@ -45,6 +45,7 @@
     		?>	 	
 		 </section>
 		 <section class="ads-home">
+            
 		 	<?php  
 		 		$post_type = 'ad';
                 $args = array(
@@ -58,6 +59,7 @@
                 $ad_posts = new WP_Query($args);
 
                 if ( $ad_posts->have_posts() ):
+                    echo '<div class="ads-portion">';
                 	while ( $ad_posts->have_posts() ) : $ad_posts->the_post();
 
                 		$header_script = get_field('header_script');
@@ -71,6 +73,7 @@
                 		}
 
                 	endwhile;
+                    echo '</div>';
                 endif;
                 wp_reset_postdata();
 		 	?>
