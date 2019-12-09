@@ -1988,7 +1988,26 @@ section.red-band {
 
 }
 
+.story-block{
+		display: block;
+
+		.story-home-right{
+			display: block;
+			/*overflow: none;*/
+			background: none;
+			height: unset;
+			/*height: none;
+			background-position: none;
+			background-size: none;
+			background-repeat: none;*/
+
+		}
+
+}
+
 @media screen and (max-width: 767px) {
+
+	
 
 	.next-story-block{
 		display: block;
@@ -2180,6 +2199,23 @@ section.red-band {
 
 	.biz-dir{
 		background-color: white;
+	}
+
+	.story-block{
+		display: block;
+
+		.story-home-right{
+			display: block;
+			/*overflow: none;*/
+			background: none;
+			height: unset;
+			/*height: none;
+			background-position: none;
+			background-size: none;
+			background-repeat: none;*/
+
+		}
+
 	}
 
 }

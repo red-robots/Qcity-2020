@@ -2355,6 +2355,8 @@ section.red-band{padding-right:30px}
 .qcity-more-happen{margin-top:20px}
 .story-block .photo{position:relative;height:200px;background-repeat:no-repeat;background-position:center center;background-size:cover}
 .story-block .story-first-block{position:relative;height:350px;background-repeat:no-repeat;background-position:center center;background-size:cover}
+.story-block{display:block}
+.story-block .story-home-right{display:block;background:0;height:unset}
 @media screen and (max-width:767px){.next-story-block{display:block}
 .next-story-block .photo{width:30%;display:inline-block;vertical-align:top;margin-right:3px;margin-top:3px}
 .next-story-block .desc{display:inline-block;width:67%}
@@ -2391,6 +2393,8 @@ section.home-sponsored{padding:0 20px;border-bottom:0}
 .event-butts .btn{height:85px;text-align:center;vertical-align:middle}
 section.home-bottom{margin:10px 0}
 .biz-dir{background-color:white}
+.story-block{display:block}
+.story-block .story-home-right{display:block;background:0;height:unset}
 }.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

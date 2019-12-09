@@ -87,7 +87,7 @@ if ($wp_query->have_posts()) : ?>
 
 			?>
 			<article class="story-block">
-				<div class="photo">
+				<div class="photo story-home-right">
 					<?php if( $video ): ?>	
 						<iframe class="video-homepage"  src="<?php echo $embed; ?>"></iframe>
 					<?php elseif( has_post_thumbnail() ): ?>	
@@ -106,10 +106,9 @@ if ($wp_query->have_posts()) : ?>
 					</div>
 					
 				</div>
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<span class="mobile-toggle"><?php echo get_the_excerpt(); ?></span>
+				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>				
 				<div class="desc">
-					
+					<span class="mobile-toggle"><?php echo get_the_excerpt(); ?></span>
 				</div>
 				<div class="by">
 					By: <?php the_author(); ?> | <?php echo get_the_date(); ?>
