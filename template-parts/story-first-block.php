@@ -10,7 +10,7 @@
 ?>
 
 <article class="story-block">
-	<div class="photo story-image" style="background-image: url('<?php echo $image; ?>');" >		
+	<div class="photo story-image story-first-block" style="background-image: url('<?php echo $image; ?>');" >		
 		<?php /*if( has_post_thumbnail() ) {
 				the_post_thumbnail('thirds');
 			} else { 

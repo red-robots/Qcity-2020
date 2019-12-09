@@ -41,7 +41,7 @@ get_template_part('template-parts/banner-category');
 					while ( have_posts() ) : the_post(); 
 						if( !is_paged() ) : $i++;
 							if( $i == 1 ) {
-								get_template_part( 'template-parts/story-block' );
+								get_template_part( 'template-parts/story-first-block' );
 								echo '<div class="second-row ">';
 								
 							} else {

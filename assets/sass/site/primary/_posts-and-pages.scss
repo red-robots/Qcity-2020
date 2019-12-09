@@ -1970,7 +1970,33 @@ section.red-band {
 	margin-top: 20px;
 }
 
+.story-block .photo {
+	position: relative;
+	height: 200px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+
+}
+
+.story-block .story-first-block {
+	position: relative;
+	height: 350px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+
+}
+
 @media screen and (max-width: 767px) {
+
+	.story-block .story-first-block {
+		position: relative;
+		height: 200px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
 
 	.archive_post_title{
 		margin-top: 10px;
