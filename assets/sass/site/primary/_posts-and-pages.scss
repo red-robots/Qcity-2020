@@ -1506,6 +1506,8 @@ section.home-bottom {
 
 @media (max-width: 768px){
 
+
+
 	.site-footer{
 		position: relative;
 	}
@@ -1969,6 +1971,12 @@ section.red-band {
 }
 
 @media screen and (max-width: 767px) {
+
+	section.home-bottom .hearken {
+	    display: block;
+	    width: 100%;
+	    clear: both;
+	}
 
 	.desktop-version{
 		display: none;

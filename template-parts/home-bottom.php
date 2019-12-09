@@ -85,7 +85,7 @@
 		 	?>
 	</div>
 
-    <div class="mobile-version">
+    <div class="mobile-version hearken">
         <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
     </div>
 
