@@ -104,7 +104,7 @@ window.googletag = window.googletag || {cmd: []};
 							<div class="burger">
 							  <span></span>
 							</div>
-							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class'=>'desktop-version' ) ); ?>
 						</div>
 					</nav><!-- #site-navigation -->
 				</div>

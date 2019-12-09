@@ -2353,7 +2353,8 @@ iframe.video-homepage{height:250px;width:auto}
 .qcity-sponsored-container{margin-bottom:20px}
 section.red-band{padding-right:30px}
 .qcity-more-happen{margin-top:20px}
-@media screen and (max-width:767px){section.home-bottom .hearken{display:block;width:100%;clear:both}
+@media screen and (max-width:767px){.archive_post_title{margin-top:10px}
+section.home-bottom .hearken{display:block;width:100%;clear:both}
 .desktop-version{display:none}
 .mobile-version{display:block}
 .jobs-page,.jobs{background-color:white}
