@@ -2355,7 +2355,12 @@ section.red-band{padding-right:30px}
 .qcity-more-happen{margin-top:20px}
 .story-block .photo{position:relative;height:200px;background-repeat:no-repeat;background-position:center center;background-size:cover}
 .story-block .story-first-block{position:relative;height:350px;background-repeat:no-repeat;background-position:center center;background-size:cover}
-@media screen and (max-width:767px){.story-block .photo{position:relative;height:150px;background-repeat:no-repeat;background-position:center center;background-size:cover}
+@media screen and (max-width:767px){.next-story-block{display:block}
+.next-story-block .photo{width:30%;display:inline-block;vertical-align:top;margin-right:3px;margin-top:3px}
+.next-story-block .desc{display:inline-block;width:67%}
+.next-story-block .desc h3{font-size:15px}
+.next-story-block .desc .desc-text{font-size:13px;line-height:13px;margin-top:5px}
+.story-block .photo{position:relative;height:150px;background-repeat:no-repeat;background-position:center center;background-size:cover}
 .story-block .story-first-block{position:relative;height:150px;background-repeat:no-repeat;background-position:center center;background-size:cover}
 .archive_post_title{margin-top:10px}
 section.home-bottom .hearken{display:block;width:100%;clear:both}
@@ -2368,7 +2373,7 @@ section.home-bottom .hearken{display:block;width:100%;clear:both}
 .c-sponsor-block__image-wrap{display:grid;grid-area:image-wrap}
 .biz-submit{display:none}
 .menu-counter{z-index:-12}
-.business_category .photo{height:200px;width:100%;position:relative;overflow:none;background-repeat:no-repeat;background-position:center center;background-size:cover}
+.business_category .photo{height:150px;width:100%;position:relative;overflow:none;background-repeat:no-repeat;background-position:center center;background-size:cover}
 .mainnav-wrap{width:100%;float:left;background-color:#262425;padding:35px 0 12px 0}
 .logo img,h1.logo img{width:auto;height:80px}
 .business-category-page,.featured_business,.business-category-header,.archive-content-page,.single-page{padding:0 20px}

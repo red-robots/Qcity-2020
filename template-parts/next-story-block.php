@@ -30,7 +30,7 @@
 				<div>
 					By: <?php the_author(); ?>
 				</div>			
-				 <?php echo get_the_date(); ?>
+				 <span class="desktop-version"><?php echo get_the_date(); ?></span>
 			</div>			
 		</div>	
 

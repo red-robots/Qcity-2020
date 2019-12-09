@@ -1990,6 +1990,34 @@ section.red-band {
 
 @media screen and (max-width: 767px) {
 
+	.next-story-block{
+		display: block;
+
+		.photo{
+			width: 30%;
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 3px;
+			margin-top: 3px;
+		}
+
+		.desc{
+			display: inline-block;
+			width: 67%;
+
+			h3{
+				font-size:15px;
+			}
+
+			.desc-text{
+				font-size: 13px;
+				line-height: 13px;
+				margin-top: 5px;
+			}
+		}
+
+	}
+
 	.story-block .photo {
 		position: relative;
 		height: 150px;
@@ -2058,7 +2086,7 @@ section.red-band {
 	.business_category {
 
 		.photo{
-			height: 200px;
+			height: 150px;
 			width: 100%;
 			position: relative;
 			overflow: none;
