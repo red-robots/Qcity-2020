@@ -1990,9 +1990,18 @@ section.red-band {
 
 @media screen and (max-width: 767px) {
 
+	.story-block .photo {
+		position: relative;
+		height: 150px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+
+	}
+
 	.story-block .story-first-block {
 		position: relative;
-		height: 200px;
+		height: 150px;
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;

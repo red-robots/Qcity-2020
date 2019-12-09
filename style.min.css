@@ -2355,7 +2355,8 @@ section.red-band{padding-right:30px}
 .qcity-more-happen{margin-top:20px}
 .story-block .photo{position:relative;height:200px;background-repeat:no-repeat;background-position:center center;background-size:cover}
 .story-block .story-first-block{position:relative;height:350px;background-repeat:no-repeat;background-position:center center;background-size:cover}
-@media screen and (max-width:767px){.story-block .story-first-block{position:relative;height:200px;background-repeat:no-repeat;background-position:center center;background-size:cover}
+@media screen and (max-width:767px){.story-block .photo{position:relative;height:150px;background-repeat:no-repeat;background-position:center center;background-size:cover}
+.story-block .story-first-block{position:relative;height:150px;background-repeat:no-repeat;background-position:center center;background-size:cover}
 .archive_post_title{margin-top:10px}
 section.home-bottom .hearken{display:block;width:100%;clear:both}
 .desktop-version{display:none}
