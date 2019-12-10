@@ -2395,7 +2395,8 @@ section.home-bottom{margin:10px 0}
 .biz-dir{background-color:white}
 .story-block{display:block}
 .story-block .story-home-right{display:block;background:0;height:unset}
-}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+}.author-block .photo{border-radius:0}
+.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}

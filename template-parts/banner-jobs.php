@@ -11,6 +11,10 @@ if( is_archive() ) {
 	$img = get_field('story_image');
 	$imgMob = get_field('story_image_mobile');
 }
+
+$title      = get_field('banner_title_text');
+$subtitle   = get_field('banner_subtitle_text');
+//var_dump($img);
 ?>
 
 <div class="banner">
@@ -23,8 +27,8 @@ if( is_archive() ) {
 	</picture>
 	<div class="banner-info">
 		<div class="titles">
-			<h1>Whats Happening, Charlotte</h1>
-			<div class="sub">The Qcity's Going Out Guide</div>
+			<h1><?php echo $title; ?></h1>
+			<div class="sub"><?php echo $subtitle; ?></div>
 		</div>
 		<div class="row-2">
 			
