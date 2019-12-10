@@ -1305,6 +1305,15 @@ section.home-bottom {
 
 @media screen and (max-width: 767px) {
 
+	section.next-story{
+		margin-bottom: 20px;
+	}
+
+	.next-story-block{
+		padding: 0 20px;
+		margin-bottom: 20px;
+	}
+
 	.c-sponsor-block__main{
 		margin-top: 30px;
 	}

@@ -2256,7 +2256,9 @@ section.home-bottom{width:100%;clear:both;margin:30px 0}
 .business_category_icon{height:80px;width:auto}
 .ads-home .ads-portion{margin-bottom:20px}
 @media screen and (max-width:1250px){.content-area{width:66%;float:left;margin:0;padding-bottom:50px;min-height:800px;margin-top:25px}
-}@media screen and (max-width:767px){.c-sponsor-block__main{margin-top:30px}
+}@media screen and (max-width:767px){section.next-story{margin-bottom:20px}
+.next-story-block{padding:0 20px;margin-bottom:20px}
+.c-sponsor-block__main{margin-top:30px}
 .logo,h1.logo{width:100px;margin:0;top:10px;left:20px}
 article.small .xtitle{width:63%;float:right;font-size:12px}
 .sponsored_post_block{margin-bottom:10px}

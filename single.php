@@ -17,7 +17,7 @@
 
 <div class="wrapper" style="background-color: white">
 	
-	<div id="primary" class="content-area" style="<?php echo ($sponsors) ? '': ' margin: 0 auto; float:none; width: 80%; '; ?>">
+	<div id="primary" class="content-area" style="<?php echo ($sponsors) ? '': ' margin: 0 auto; float:none; '; ?>">
 		
 		<div class="single-page">
 			
