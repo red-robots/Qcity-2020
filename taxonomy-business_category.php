@@ -14,8 +14,7 @@ $ob = get_queried_object();
 $add_business = get_field('add_your_business');
 $add_business_link = get_field('add_business_link');
 
-//var_dump($add_business);
-
+//var_dump($ob);
 ?>
 
 <div class="wrapper" style="background-color: white">
@@ -42,35 +41,69 @@ $add_business_link = get_field('add_business_link');
 
 			<div class="business-category-page">
 				<?php
-					if ( have_posts() ) : ?>
-					<div class="qcity-news-container">
-						<section class="sponsored">
-							<?php
-							/* Start the Loop */
-							while ( have_posts() ) : the_post();
 
-								get_template_part( 'template-parts/business-block' );
+					$args = array(
+							'post_type' 	=> 'business_listing',
+							'post_status'	=> 'publish',
+							//'category_name' => $ob->slug,
+							'tax_query' => array( 
+											'relation' => 'AND',
+											array(
+										        'taxonomy' 			=> 'business_classification',
+										        'field' 			=> 'slug',
+										        'terms' 			=> array( 'featured' ),
+										        'include_children' 	=> true,
+										        'operator' 			=> 'IN'
+										      ),
+											array(
+										        'taxonomy' 			=> $ob->taxonomy,
+										        'field' 			=> 'id',
+										        'terms' 			=> array( $ob->term_id ),
+										        'include_children' 	=> true,
+										        'operator' 			=> 'IN'
+										      )
+							)
+					);
 
-							endwhile;
+					$query = new WP_Query( $args );
 
-							wp_reset_postdata(); ?>
-						
-						</section>
+					if ( $query->have_posts() ) : ?>
+						<div class="qcity-news-container">
+							<section class="sponsored">
+								<?php
+								/* Start the Loop */
+								while ( $query->have_posts() ) : $query->the_post();
 
-					</div>
-					<div class="more ">	
-						 	<a class="red qcity-load-more" data-page="1" data-action="qcity_business_load_more" >		
-						 		<span class="load-text">Load More</span>
-								<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
-						 	</a>
-					</div>
+									get_template_part( 'template-parts/business-block' );
 
-					<div class="mt-5">
+								endwhile;
+
+								wp_reset_postdata(); ?>
+							
+							</section>
+
+						</div>
+						<div class="more ">	
+							 	<a class="red qcity-load-more" data-page="1" data-action="qcity_business_load_more" >		
+							 		<span class="load-text">Load More</span>
+									<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
+							 	</a>
+						</div>
+
+					<?php else: ?>
+						<div class="qcity-news-container" style="padding-bottom: 20px;">
+							<section class="sponsored">
+								<h5>No record available.</h5>
+							</section>
+						</div>
+					<?php endif; ?>
+
+					<div class="mt-5" style="margin-top: 20px;">
 						<?php get_template_part('template-parts/business-directory'); ?>
 					</div>		
 					
 
-				<?php endif; ?>
+				
 
 			</div>
 

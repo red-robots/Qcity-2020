@@ -19,7 +19,7 @@ if($img){
 
 
 <article class="story-block business_category" style="text-align: left">
-    <a href="<?php the_permalink(); ?>">
+    <a href="<?php echo get_the_permalink(); ?>">
     <div class="photo" style="background-image: url('<?php echo $image; ?>');">
         
         <?php /*if( $img ) { ?>
@@ -33,11 +33,11 @@ if($img){
     </div> 
     </a>   
     <div class="desc" style="padding: 0 20px;">
-        <h3><?php the_title(); ?></h3>
+        <h3><?php echo get_the_title(); ?></h3>
         <div><span class="bold">Phone:</span> <?php echo $phone; ?></div>
         <div><span class="bold">Email:</span> <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></div>
         <div class="">
-            <a href="<?php the_permalink(); ?>" class="bold">More Info</a>
+            <a href="<?php echo get_the_permalink(); ?>" class="bold">More Info</a>
         </div>
     </div>
     
