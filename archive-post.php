@@ -45,13 +45,13 @@ get_template_part('template-parts/banner-category');
 								echo '<div class="second-row ">';
 								
 							} else {
-								get_template_part( 'template-parts/story-block' );
+								get_template_part( 'template-parts/story-block-category' );
 							}
 						else : $i++;
 							if( $i == 1 ) {
 								echo '<div class="second-row ">';
 							}
-							get_template_part( 'template-parts/story-block' );
+							get_template_part( 'template-parts/story-block-category' );
 						endif;
 
 					endwhile;
