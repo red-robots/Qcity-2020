@@ -88,6 +88,10 @@ window.googletag = window.googletag || {cmd: []};
 			            </a>
 		            </div>
 		        <?php } ?>
+
+                <div class="newsletter-link" >
+                    <a href="#" class="news-letter-btn">Newsletter</a>
+                </div>
 	        </div>
 
 	        <section class="red-band">
@@ -97,10 +101,14 @@ window.googletag = window.googletag || {cmd: []};
 	        	</div>
 	        </section>
 
+            
+
 	        <div class="mainnav-wrap">
 	        	<div class="wrapper-mnav">
 					<nav id="site-navigation" class="main-navigation " role="navigation">
-						<div class="wrapper">
+                        
+						<div class="wrapper" >
+                            
 							<div class="burger">
 							  <span></span>
 							</div>
