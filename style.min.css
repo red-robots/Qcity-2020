@@ -2410,7 +2410,8 @@ section.stickies-new .right .story-block .desc{display:inline-block;width:50%}
 section.stickies-new .right .story-block .desc h3{font-size:18px}
 section.stickies-new .right .story-block .desc .excerpt{font-size:14px}
 .newsletter-link{display:none}
-@media screen and (max-width:767px){.burger{margin-top:-12px}
+@media screen and (max-width:767px){article.big-post img{height:200px}
+.burger{margin-top:-12px}
 .newsletter-link{display:block;position:absolute;left:50%;top:35px;width:200px;margin:0 0 0 -35px}
 .newsletter-link .news-letter-btn{background-color:#924020;color:white;border-radius:16px;font-size:14px;padding:5px 15px 8px;text-transform:uppercase}
 .newsletter-link a{color:white;z-index:100;width:200px}
@@ -2421,9 +2422,10 @@ section.stickies-new .right .story-block .desc .excerpt{font-size:14px}
 section.stickies-new{display:block}
 section.stickies-new .left{display:block;width:100%}
 section.stickies-new .right{display:block;width:100%}
-section.stickies-new .right .story-block .story-home-right{display:block;width:100%;margin-bottom:10px}
+section.stickies-new .right .story-block .story-home-right{display:block;width:100%;margin-bottom:10px;height:200px}
 section.stickies-new .right .story-block .story-home-right .embed-container{position:static !important}
 section.stickies-new .right .story-block .desc{display:block;width:100%}
+section.stickies-new .right .story-block .story-home-right a img{height:200px}
 }.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
