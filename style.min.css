@@ -2410,7 +2410,8 @@ section.stickies-new .right .story-block .story-home-right a img{height:182px}
 section.stickies-new .right .story-block .desc{display:inline-block;width:50%}
 section.stickies-new .right .story-block .desc h3{font-size:18px}
 section.stickies-new .right .story-block .desc .excerpt{font-size:14px}
-@media screen and (max-width:767px){section.stickies-new{display:block}
+@media screen and (max-width:767px){.navigation li a,.navigation li a:hover,.navigation li.active a,.navigation li.disabled{background-color:#000;border-radius:3px;cursor:pointer;padding:12px;padding:.65rem;-webkit-transition:.3s ease all;transition:.3s ease all}
+section.stickies-new{display:block}
 section.stickies-new .left{display:block;width:100%}
 section.stickies-new .right{display:block;width:100%}
 section.stickies-new .right .story-block .story-home-right{display:block;width:100%;margin-bottom:10px}

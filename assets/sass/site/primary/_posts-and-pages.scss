@@ -2324,6 +2324,16 @@ section.stickies-new{
 
 @media screen and (max-width: 767px) {
 
+	.navigation li a, .navigation li a:hover, .navigation li.active a, .navigation li.disabled {
+	    background-color: #000;
+	    border-radius: 3px;
+	    cursor: pointer;
+	    padding: 12px;
+	    padding: 0.65rem;
+	    -webkit-transition: 0.3s ease all;
+	    transition: 0.3s ease all;
+	}
+
 	section.stickies-new{
 
 		display: block;
