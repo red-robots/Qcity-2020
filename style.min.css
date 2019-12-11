@@ -2073,7 +2073,7 @@ form.email-form{margin-bottom:50px}
 @media screen and (min-width:600px){section.stickies .right{width:50%;float:right;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
 section.stickies .right .story-block{margin-bottom:0}
 }article.big-post{width:100%;position:relative;line-height:0;overflow:hidden;border-radius:0 15px 0 0;-webkit-transition:all ease .3s;transition:all ease .3s}
-article.big-post img{width:100%;position:relative}
+article.big-post img{width:100%;position:relative;height:420px}
 article.big-post h3{font-size:16px;z-index:1;line-height:1.1;margin-bottom:10px}
 @media screen and (max-width:600px){article.big-post h3{font-size:20px}
 }@media screen and (min-width:1250px){article.big-post h3{font-size:28px}
