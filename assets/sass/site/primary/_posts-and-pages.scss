@@ -2328,6 +2328,11 @@ section.stickies-new{
 
 @media screen and (max-width: 767px) {
 
+	.burger{
+		margin-top: -12px;
+		/*margin-bottom: -12px;*/
+	}
+
 	.newsletter-link{
 		    display: block;
 		    position: absolute;
