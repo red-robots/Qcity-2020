@@ -18,37 +18,45 @@ $twitter = get_field('twitter_link', 'option');
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="wrapper">
 
-			<div class="logo-footer desktop-version" style="padding-left:20px">
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-footer.png">
-			</div>
-			<div class="footer-nav">
-				<div class="footer-main-nav">
-					<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
+			<section class="footer-section">
+
+				<div class="logo-footer desktop-version" style="padding-left:20px">
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-footer.png">
 				</div>
-				<div class="footer-submenu-nav">
-					<?php wp_nav_menu(array('theme_location'=>'burger','menu_class'=>'main','container'=>'ul')); ?>
-				</div>				
-			</div><!-- .site-info -->
-			<div class="social">
-				<div class="desktop-version">
-					<h3 >Follow Us</h3>
-				</div>				
-				<?php if($facebook){ ?>
-					<a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square fa-2x"></i></a>
-				<?php } ?>
-				<?php if($instagram){ ?>
-					<a href="<?php echo $instagram; ?>"><i class="fab fa-instagram fa-2x"></i></a>
-				<?php } ?>
-				<?php if($twitter){ ?>
-					<a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square fa-2x"></i></a>
-				<?php } ?>
-			</div>
-			<div class="footer-newsletter desktop-version">
-				<h3>Join our community to reveive email updates</h3>
-				<div class="">
-					<a class="btn" href="<?php bloginfo('url'); ?>/email-signup">Subscribe</a>
+				<div class="footer-nav">
+					<div class="footer-main-nav">
+						<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
+					</div>
+					<div class="footer-submenu-nav">
+						<?php wp_nav_menu(array('theme_location'=>'burger','menu_class'=>'main','container'=>'ul')); ?>
+					</div>				
+				</div><!-- .site-info -->
+				<div class="social">
+					<div class="desktop-version">
+						<h3 >Follow Us</h3>
+					</div>				
+					<?php if($facebook){ ?>
+						<a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square fa-2x"></i></a>
+					<?php } ?>
+					<?php if($instagram){ ?>
+						<a href="<?php echo $instagram; ?>"><i class="fab fa-instagram fa-2x"></i></a>
+					<?php } ?>
+					<?php if($twitter){ ?>
+						<a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square fa-2x"></i></a>
+					<?php } ?>
 				</div>
-			</div>
+				<div class="footer-newsletter desktop-version">
+					<h3>Join our community to reveive email updates</h3>
+					<div class="">
+						<a class="btn" href="<?php bloginfo('url'); ?>/email-signup">Subscribe</a>
+					</div>
+				</div>
+				
+			</section>
+
+			
+
+
 		</div><!-- wrapper -->
 		<div class="site-footer-overlay"></div>
 	</footer><!-- #colophon -->

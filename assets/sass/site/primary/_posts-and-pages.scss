@@ -128,16 +128,16 @@ section.stickies {
 		justify-content: space-between;
 	}
 	.left {
-		width: 100%;
+		width: 95%;
 		@media screen and (min-width: $tabwidth) {
-			width: 64%;
+			width: 50%;
 			float: left;
 		}
 	}
 	.right {
-		width: 100%;
+		width: 95%;
 		@media screen and (min-width: $tabwidth) {
-			width: 30%;
+			width: 50%;
 			float: right;
 			display: flex;
 			flex-direction: column;
@@ -245,7 +245,9 @@ article.big-post {
 
 section.home-sponsored {
 	width: 100%;
-	float: left;
+	max-width: 1350px;
+	margin: 0 auto;
+	/*float: left;*/
 	clear: both;
 	padding-bottom: 20px;
 	border-bottom: 1px solid #000;
@@ -1797,8 +1799,11 @@ section.qcity-news-container{
 		padding: 0 0 0 40px;
 	}
 
-	section.stickies,   section.news-home, section.home-bottom{
+	section.stickies,   section.news-home, section.home-bottom, section.footer-section{
 		padding: 0 40px;
+		max-width: 1350px;
+		margin: 0 auto;
+		float: none;
 	}
 
 	section.home-sponsored{
@@ -2248,4 +2253,107 @@ section.red-band {
 
 .author-block .photo {
     border-radius: 0;
+}
+
+section.news-home{
+	max-width: 1350px;
+	margin: 0 auto;
+	float: none;
+}
+
+section.stickies-new{
+	display: block;
+	position: relative;
+	padding: 0 20px;
+	max-width: 1350px;
+	margin: 0 auto;
+
+	.left{
+		display: inline-block;
+		width: 49%;
+		margin-right: 1%;
+
+		article.big-post{
+			border-radius: 0;
+		}
+	}
+
+	.right{
+		display: inline-block;
+		width: 49%;
+
+		.story-block{
+			display: block;
+
+			.story-home-right{
+				display: inline-block;
+				width: 45%;
+				margin-right: 10px;
+				height: 182px;
+				margin-bottom: 0;
+
+				a{
+	
+					img{
+						height: 182px;
+					}
+
+				}
+			}
+
+			.desc{
+				display: inline-block;
+				width: 50%;
+
+				h3{
+					font-size: 18px;
+				}
+
+				.excerpt{
+					font-size: 14px;
+				}
+
+				
+
+
+			}
+
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+
+	section.stickies-new{
+
+		display: block;
+
+		.left{
+			display: block;
+			width: 100%;
+		}
+
+		.right{
+			display: block;
+			width: 100%;
+
+			.story-block{
+				.story-home-right{
+					display: block;
+					width: 100%;
+					margin-bottom: 10px;
+
+					.embed-container{
+						position:static !important;
+					}
+				}
+
+				.desc{
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+
 }
