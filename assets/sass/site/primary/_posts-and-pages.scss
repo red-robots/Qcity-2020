@@ -2047,7 +2047,7 @@ section.red-band {
 }
 
 .mobile-stick{
-		position: relative;
+		position: static;
 		display: block;
 }
 
@@ -2089,16 +2089,23 @@ body.page-template-page-media{
 	.mobile-body{
 		display: block;
 		padding-top: 100px;
+		overflow: auto;
 	}
 
-	.mobile-stick{
-		position: fixed;
-		display: block;
-		width: 100%;
-    	z-index: 10009;
-    	top: 0;
-    	/*overflow: hidden;*/
+	.site{
+		.site-header{
+			.mobile-stick{
+				position: fixed !important;
+				display: block;
+				width: 100%;
+		    	z-index: 10009;
+		    	top: 0;
+		    	/*overflow: hidden;*/
+			}
+		}
+		
 	}
+	
 
 	.next-story-block{
 		display: block;
@@ -2499,4 +2506,26 @@ section.stickies-new{
 	    height: 200px;
 	}
 
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+@media screen and (min-width:320px) and (max-width:640px) {
+	.site{
+		.site-header{
+			
+				position: fixed !important;
+				display: block;
+				width: 100%;
+		    	z-index: 10009;
+		    	top: 0;
+		    	/*overflow: hidden;*/
+			
+		}
+		
+	}
 }
