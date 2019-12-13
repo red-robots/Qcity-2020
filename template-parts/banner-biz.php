@@ -39,7 +39,7 @@ $add_business_link = get_field('add_business_link');
                         </ul>
                     <?php endif;?>
 			</div>
-			<div class="search">
+			<div class="search mobile_hide">
 				<form  method="get" class="biz" id="form_search">
 				    <input class="searchfield" type="text" name="search_text" id="search"  />
 				    <input type="hidden" class="post_type" name="type" value="business_listing">

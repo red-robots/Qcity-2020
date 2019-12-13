@@ -2362,7 +2362,8 @@ section.red-band{padding-right:30px}
 .story-block .story-home-right{display:block;background:0;height:unset}
 .mobile-stick{position:relative;display:block}
 .mobile-body{display:block}
-@media screen and (max-width:767px){#mc_embed_signup{width:100% !important}
+@media screen and (max-width:767px){.mobile_hide{display:none}
+#mc_embed_signup{width:100% !important}
 .mobile-view{padding:0 20px}
 .mobile-body{display:block;padding-top:100px}
 .mobile-stick{position:fixed;display:block;width:100%;z-index:9;top:0}

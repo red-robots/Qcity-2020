@@ -2045,6 +2045,10 @@ section.red-band {
 
 @media screen and (max-width: 767px) {
 
+	.mobile_hide{
+		display: none;
+	}
+
 	#mc_embed_signup{
 		width: 100% !important;
 	}

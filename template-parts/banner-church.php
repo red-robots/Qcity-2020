@@ -36,7 +36,7 @@ if( is_tax() ) {
                         </ul>
                     <?php endif;?>
 			</div>
-			<div class="search">
+			<div class="search mobile_hide">
 				<form   method="get" class="biz form_search" role="search" id="form_search">
 				    <input class="searchfield" type="text" name="search_text" id="search_church" />
 				    <input type="hidden" class="post_type" name="type" value="church_listing">				    
