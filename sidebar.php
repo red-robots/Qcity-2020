@@ -39,9 +39,16 @@ if( (get_post_type() == 'post') && !(is_page('events')) ) {
 		        'post_status'       => 'publish',
 		        'posts_per_page'    => 5,		       
 	);
-} elseif( (get_post_type() == 'page') && !( is_page('events') ) && !( is_page('business-directory') ) ) {
+} elseif( (get_post_type() == 'page') && !( is_page('events') ) && !( is_page('business-directory') ) && !( is_page('media-gallery') ) ) {
 	$title = 'Latest Stories';
 	$qp = 'business_listing';
+	$args = array(
+			'post_type'=> $qp,
+			'posts_per_page' => 6	
+	);
+} elseif( (get_post_type() == 'page') && ( is_page('media-gallery') )  ) {
+	$title = 'Trending';
+	$qp = 'post';
 	$args = array(
 			'post_type'=> $qp,
 			'posts_per_page' => 6	
