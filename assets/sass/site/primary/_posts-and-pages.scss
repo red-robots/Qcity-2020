@@ -2034,9 +2034,38 @@ section.red-band {
 
 }
 
+.mobile-stick{
+		position: relative;
+		display: block;
+}
+
+.mobile-body{
+	display: block;
+}
+
 @media screen and (max-width: 767px) {
 
-	
+	#mc_embed_signup{
+		width: 100% !important;
+	}
+
+	.mobile-view{
+		padding: 0 20px;
+	}
+
+	.mobile-body{
+		display: block;
+		padding-top: 100px;
+	}
+
+	.mobile-stick{
+		position: fixed;
+		display: block;
+		width: 100%;
+    	z-index: 9;
+    	top: 0;
+    	/*overflow: hidden;*/
+	}
 
 	.next-story-block{
 		display: block;

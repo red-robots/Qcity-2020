@@ -2360,7 +2360,13 @@ section.red-band{padding-right:30px}
 .story-block .story-first-block{position:relative;height:350px;background-repeat:no-repeat;background-position:center center;background-size:cover}
 .story-block{display:block}
 .story-block .story-home-right{display:block;background:0;height:unset}
-@media screen and (max-width:767px){.next-story-block{display:block}
+.mobile-stick{position:relative;display:block}
+.mobile-body{display:block}
+@media screen and (max-width:767px){#mc_embed_signup{width:100% !important}
+.mobile-view{padding:0 20px}
+.mobile-body{display:block;padding-top:100px}
+.mobile-stick{position:fixed;display:block;width:100%;z-index:9;top:0}
+.next-story-block{display:block}
 .next-story-block .photo{width:30%;display:inline-block;vertical-align:top;margin-right:3px;margin-top:3px}
 .next-story-block .desc{display:inline-block;width:67%}
 .next-story-block .desc h3{font-size:15px}

@@ -72,9 +72,13 @@ window.googletag = window.googletag || {cmd: []};
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'acstarter' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header " role="banner">
+
+        <div class="mobile-stick">
+            
+        
 		
-			<div class="wrapper-header">
+			<div class="wrapper-header ">
 				<?php if(is_home()) { ?>
 		            <h1 class="logo">
 			            <a href="<?php bloginfo('url'); ?>">
@@ -90,7 +94,7 @@ window.googletag = window.googletag || {cmd: []};
 		        <?php } ?>
 
                 <div class="newsletter-link" >
-                    <a href="#" class="news-letter-btn">Newsletter</a>
+                    <a href="<?php bloginfo('url'); ?>/email-signup/" class="news-letter-btn">Newsletter</a>
                 </div>
 	        </div>
 
@@ -133,7 +137,9 @@ window.googletag = window.googletag || {cmd: []};
                     return $(this).text() === "Events";
                 }).append('<span class="menu-counter menu-badge">'+ <?php echo get_category_counter('event'); ?> +'</span>');
             </script>
+
+        </div>
 	
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content ">
+	<div id="content" class="site-content mobile-body" >
