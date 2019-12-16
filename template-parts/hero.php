@@ -46,7 +46,7 @@ if ($wp_query->have_posts()) : ?>
 					<?php the_excerpt(); ?>
 				</div>
 				<div class="by">
-					By <?php the_author();?> | <?php echo get_the_date(); ?> | <?php echo strlen($title); ?>
+					By <?php the_author();?> | <?php echo get_the_date(); ?> 
 				</div>
 			</div>
 			<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
