@@ -18,10 +18,13 @@ if ($wp_query->have_posts()) : ?>
 
 	<?php while ($wp_query->have_posts()) :  $wp_query->the_post(); $i++;
 		// collect id's to not repeat below
-		$postIDs[] = get_the_ID();
-		$date = get_the_date();
-		$img = get_field('story_image');
+		$postIDs[] 	= get_the_ID();
+		$date 		= get_the_date();
+		$img 		= get_field('story_image');
 		
+		$title 		= get_the_title();
+
+		$title 		= (strlen($title) > 94) ? substr($title, 0, 94) . ' ...' : $title;
 		
 		//var_dump($img);
 		
@@ -38,12 +41,12 @@ if ($wp_query->have_posts()) : ?>
 					<img src="<?php bloginfo('stylesheet_directory'); ?>/images/default.png">
 			<?php } ?>
 			<div class="info">				
-				<h3><?php the_title(); ?></h3>
+				<h3><?php echo $title; ?></h3>
 				<div class="desc">
 					<?php the_excerpt(); ?>
 				</div>
 				<div class="by">
-					By <?php the_author();?> | <?php echo get_the_date(); ?>
+					By <?php the_author();?> | <?php echo get_the_date(); ?> | <?php echo strlen($title); ?>
 				</div>
 			</div>
 			<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
