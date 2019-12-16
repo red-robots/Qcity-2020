@@ -32,7 +32,7 @@ get_header();
 				<?php 
 
 				$args = array(
-						'post_type' 		=> 'post',
+						'post_type' 		=> 'gallery',
 						'post_status' 	    => 'publish',
 						'posts_per_page' 	=> 10,
 				);
