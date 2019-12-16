@@ -187,6 +187,13 @@ article.big-post {
 		@media screen and (min-width: $tabwidth) {
 			// width: 66%;
 		}
+
+		.desc{
+			@media screen and (min-width: $deskwidth) {
+				margin-bottom: 1.5em;
+				height: 38px;
+			}
+		}
 	}
 	.photo {
 		width: 100%;
