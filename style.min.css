@@ -2363,8 +2363,8 @@ section.red-band{padding-right:30px}
 .story-block .story-first-block{position:relative;height:450px;background-repeat:no-repeat;background-position:center center;background-size:cover}
 .story-block{display:block}
 .story-block .story-home-right{display:block;background:0;height:unset}
-.mobile-stick{position:static;display:block}
-.mobile-body{display:block}
+.mobile-stick{position:fixed !important;display:block;width:100%;z-index:10009;top:0;background-color:white}
+.mobile-body{display:block;padding-top:100px}
 .single-page h1,.single-page h2{margin-bottom:20px}
 body.page-template-page-media .wrapper{max-width:1050px}
 body.page-template-page-media #content{margin-top:60px}

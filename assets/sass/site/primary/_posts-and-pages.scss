@@ -2055,12 +2055,17 @@ section.red-band {
 }
 
 .mobile-stick{
-		position: static;
+		position: fixed !important;
 		display: block;
+		width: 100%;
+    	z-index: 10009;
+    	top: 0;
+    	background-color: white;
 }
 
 .mobile-body{
 	display: block;
+	padding-top: 100px;
 }
 
 .single-page{

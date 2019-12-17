@@ -12,7 +12,7 @@
 ?>
 
 <article class="story-block">
-	<div class="photo story-image" style="background-image: url('<?php echo $image; ?>'); <?php echo $height; ?> " >
+	<div class="photo story-image" style="background-image: url('<?php echo $image; ?>'); height: 220px; " >
 		
 	</div>
 	<h3><?php the_title(); ?></h3>
