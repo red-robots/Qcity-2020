@@ -29,46 +29,15 @@
 			</div>
 			
 
-			<?php /*if( $img ) { ?>
-				<div class="story-image">
-					<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
-				</div>
-			<?php } elseif( has_post_thumbnail() ){ ?>
-				<div class="story-image">
-					<?php the_post_thumbnail(); ?>
-				</div>
-			<?php } */ ?>
-
-			<div class="slider">
-				<!-- Slideshow container -->
-				<div class="slideshow-container">
-
-				  <!-- Full-width images with number and caption text -->
-				  <?php if( $photos ): $i = 0; ?>
-				  	<?php foreach( $photos as $photo):  ?>
-						  <div class="mySlides fade">
-						    <div class="numbertext"><?php echo $i+1;  ?> / <?php echo count($photos);  ?></div>
-						    <img src="<?php echo $photo['photo']['url']; ?>" style="width:100%">
-						    
-						  </div>
-					<?php $i++; endforeach; ?>	  
-				<?php endif; ?>
-
-				  <!-- Next and previous buttons -->
-				  <a class="prev prev-btn" data-prev="-1">&#10094;</a>
-				  <a class="next next-btn" data-next="1">&#10095;</a>
-				</div>
-				<br>
-
-				<!-- The dots/circles -->
-				<div style="text-align:center">
-					<?php if( $photos ):  ?>
-						<?php for($j = 0; $j < count($photos); $j++): ?>
-				  		<span class="dot dot-btn" data-dot="<?php echo $j+1; ?>"></span>
-				  		<?php endfor; ?>
-					<?php endif; ?>				  
-				</div>
-			</div><!-- slider  -->
+			 <div class="flexslider">
+			  <ul class="slides">
+			  	<?php foreach( $photos as $photo):  ?>
+			    <li>
+			      <img src="<?php echo $photo['photo']['url']; ?>" />
+			    </li>
+			    <?php $i++; endforeach; ?>
+			  </ul>
+			</div>
 
 		</div>
 

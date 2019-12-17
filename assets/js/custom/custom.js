@@ -112,56 +112,6 @@ jQuery(document).ready(function ($) {
     *   Slider
     */
 
-   // $(function () {
-
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        $('.prev-btn').on('click', function(){
-            var n = $(this).data('prev');
-            plusSlides(n);
-        });
-
-        $('.next-btn').on('click', function(){
-            var n = $(this).data('next');
-            plusSlides(n);
-        });
-
-        $('.dot-btn').on('click', function(){
-            var n = $(this).data('dot');
-            currentSlide(n);
-        });
-
-        function plusSlides(n) {
-            console.log('Plus Slide hit.');
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            console.log('Current Slide hit.');
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            //console.log('Show slide.');
-            var i;
-            var slides = $(".mySlides");
-            var dots = $(".dot");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";            
-            dots[slideIndex-1].className += " active";             
-        }
-
-    //});
-
-	
 	
 	/*
 	*
