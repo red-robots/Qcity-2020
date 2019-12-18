@@ -76,19 +76,11 @@ window.googletag = window.googletag || {cmd: []};
 
         <div class="mobile-stick" id="fixed" >
 			<div class="wrapper-header ">
-				<?php if(is_home()) { ?>
-		            <h1 class="logo">
-			            <a href="<?php bloginfo('url'); ?>">
-			            	<img src="<?php bloginfo('template_url'); ?>/images/qc-logo.png" alt="<?php bloginfo('name'); ?>">
-			            </a>
-		            </h1>
-		        <?php } else { ?>
 		            <div class="logo">
-		            	<a href="<?php bloginfo('url'); ?>">
+		            	<a href="<?php bloginfo('url'); ?>" style="background: transparent;">
 			            	<img src="<?php bloginfo('template_url'); ?>/images/qc-logo.png" alt="<?php bloginfo('name'); ?>">
 			            </a>
 		            </div>
-		        <?php } ?>
 
                 <div class="newsletter-link" >
                     <a href="<?php bloginfo('url'); ?>/email-signup/" class="news-letter-btn">Newsletter</a>

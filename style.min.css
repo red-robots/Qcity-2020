@@ -2441,22 +2441,6 @@ section.stickies-new .right .story-block .desc{display:block;width:100%}
 section.stickies-new .right .story-block .story-home-right a img{height:200px}
 }.sticky{position:fixed;top:0;width:100%}
 @media screen and (min-width:320px) and (max-width:640px){.site .site-header{position:fixed !important;display:block;width:100%;z-index:10009;top:0}
-}*{-webkit-box-sizing:border-box;box-sizing:border-box}
-.slideshow-container{max-width:1000px;position:relative;margin:auto}
-.mySlides{display:none}
-.prev,.next{cursor:pointer;position:absolute;top:50%;width:auto;margin-top:-22px;padding:16px;color:white;font-weight:bold;font-size:18px;-webkit-transition:.6s ease;transition:.6s ease;border-radius:0 3px 3px 0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
-.next{right:0;border-radius:3px 0 0 3px}
-.prev:hover,.next:hover{background-color:rgba(0,0,0,0.8)}
-.text{color:#f2f2f2;font-size:15px;padding:8px 12px;position:absolute;bottom:8px;width:100%;text-align:center}
-.numbertext{color:#f2f2f2;font-size:12px;padding:8px 12px;position:absolute;top:0}
-.dot{cursor:pointer;height:15px;width:15px;margin:0 2px;background-color:#bbb;border-radius:50%;display:inline-block;-webkit-transition:background-color .6s ease;transition:background-color .6s ease}
-.active,.dot:hover{background-color:#717171}
-.fade{-webkit-animation-name:fade;-webkit-animation-duration:1.5s;animation-name:fade;animation-duration:1.5s}
-@-webkit-keyframes fade{from{opacity:.4}
-to{opacity:1}
-}@keyframes fade{from{opacity:.4}
-to{opacity:1}
-}@media only screen and (max-width:300px){.prev,.next,.text{font-size:11px}
 }.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
