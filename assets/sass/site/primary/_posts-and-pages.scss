@@ -1326,7 +1326,7 @@ section.home-bottom {
 	}
 
 	.c-sponsor-block__main{
-		margin-top: 30px;
+		margin-top: 10px;
 	}
 	
 	.logo, h1.logo {
@@ -1605,7 +1605,7 @@ section.home-bottom {
 	    margin-bottom: 20px;
 
 	    .sponsored-title{
-	    	margin-top: 215px;
+	    	margin-top: 0;
 	    }
 	}
 
@@ -2203,6 +2203,7 @@ body.page-template-page-media{
 	.c-sponsor-block__image-wrap {
 	    display: grid;
 	    grid-area: image-wrap;
+	    margin-top: 33px;
 	}
 
 	.biz-submit{

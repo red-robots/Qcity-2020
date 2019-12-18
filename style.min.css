@@ -2259,7 +2259,7 @@ section.home-bottom{width:100%;clear:both;margin:30px 0}
 @media screen and (max-width:1250px){.content-area{width:66%;float:left;margin:0;padding-bottom:50px;min-height:800px;margin-top:25px}
 }@media screen and (max-width:767px){section.next-story{margin-bottom:20px}
 .next-story-block{padding:0 20px;margin-bottom:20px}
-.c-sponsor-block__main{margin-top:30px}
+.c-sponsor-block__main{margin-top:10px}
 .logo,h1.logo{width:100px;margin:0;top:10px;left:20px}
 article.small .xtitle{width:63%;float:right;font-size:12px}
 .sponsored_post_block{margin-bottom:10px}
@@ -2298,7 +2298,7 @@ article.big-post h3{font-size:20px;z-index:1;line-height:1.1;margin-bottom:10px}
 .footer-submenu-nav li a{color:white}
 .footer-submenu-nav ul:after{content:"";display:table;clear:both}
 aside.c-sponsor-block{padding-top:.92rem;margin-bottom:20px}
-aside.c-sponsor-block .sponsored-title{margin-top:215px}
+aside.c-sponsor-block .sponsored-title{margin-top:0}
 img{width:100%;height:auto}
 .event_website{margin-top:10px;width:100%;text-align:center}
 .content-area{width:100%;float:none;margin:0;padding-bottom:30px;margin-top:25px}
@@ -2388,7 +2388,7 @@ section.home-bottom .hearken{display:block;width:100%;clear:both}
 .jobs-page .job .img,.jobs .job .img{display:none}
 .jobs-page .job .info,.jobs .job .info{width:70%}
 .jobs-page .job .view,.jobs .job .view{width:20%}
-.c-sponsor-block__image-wrap{display:grid;grid-area:image-wrap}
+.c-sponsor-block__image-wrap{display:grid;grid-area:image-wrap;margin-top:33px}
 .biz-submit{display:none}
 .menu-counter{z-index:-12}
 .business_category .photo{height:150px;width:100%;position:relative;overflow:none;background-repeat:no-repeat;background-position:center center;background-size:cover}
