@@ -85,6 +85,9 @@ if ($wp_query->have_posts()) : ?>
 
 					$postIDs[] = get_the_ID();
 
+					$text 		= get_the_excerpt();
+					$excerpt 	= ( strlen($text) > 180 ) ? substr($text, 0, 180) . ' ...' : $text;
+
 			?>
 			<article class="story-block">
 				<div class="photo story-home-right">
@@ -101,7 +104,7 @@ if ($wp_query->have_posts()) : ?>
 							
 				<div class="desc">
 					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>	
-					<div class="excerpt"><?php echo get_the_excerpt(); ?></div>
+					<div class="excerpt"><?php echo $excerpt; ?></div>
 					<div class="by">
 						By <?php the_author(); ?> | <?php echo get_the_date(); ?>
 					</div>
