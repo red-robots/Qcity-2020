@@ -12,19 +12,16 @@
 		'post__not_in' 	      => $postIDs,
         'category__not_in'    => array( $cat_id->term_id ),
 	));
-	//$wp_query->query(); ?>
+	?>
 	
 	<section class="news-home">
+        <!--
 		<header class="section-title ">
 			<h2 class="dark-gray">News</h2>
 		</header>
-
-      
-
+        -->
 
 		<section class="twocol qcity-news-container">	
-
-              <?php //get_template_part( 'template-parts/sponsored-paid'); ?>
 
     		<?php 
             $i = 0;
