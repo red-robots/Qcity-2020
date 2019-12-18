@@ -2368,7 +2368,9 @@ section.red-band{padding-right:30px}
 .single-page h1,.single-page h2{margin-bottom:20px}
 body.page-template-page-media .wrapper{max-width:1050px}
 body.page-template-page-media #content{margin-top:60px}
-@media screen and (max-width:767px){.mobile_hide{display:none}
+.mobile-separator{display:none}
+@media screen and (max-width:767px){.mobile-separator{border-bottom:1px solid #ccc;margin-bottom:20px;height:5px;display:block}
+.mobile_hide{display:none}
 #mc_embed_signup{width:100% !important}
 .mobile-view{padding:0 20px}
 .mobile-body{display:block;padding-top:100px;overflow:auto}

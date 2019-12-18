@@ -22,7 +22,9 @@ function qcity_load_more(){
 
         while( $query->have_posts() ): $query->the_post();
 
-            include( locate_template('template-parts/story-block.php', false, false) );            
+            include( locate_template('template-parts/story-block.php', false, false) );   
+
+            get_template_part( 'template-parts/separator');         
 
         endwhile;
 

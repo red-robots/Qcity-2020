@@ -2085,7 +2085,18 @@ body.page-template-page-media{
 	}
 }
 
+.mobile-separator{
+	display: none;
+}
+
 @media screen and (max-width: 767px) {
+
+	.mobile-separator{
+		border-bottom: 1px solid #ccc;
+		margin-bottom: 20px;
+		height: 5px;
+		display: block;
+	}
 
 	.mobile_hide{
 		display: none;

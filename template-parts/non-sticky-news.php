@@ -25,7 +25,8 @@
 
     		<?php 
             $i = 0;
-                if ( $wp_query->have_posts() ) : 		
+                if ( $wp_query->have_posts() ) : 	
+                    $total = $wp_query->found_posts;	
     				 while ( $wp_query->have_posts() ) :  $wp_query->the_post();
 
                         if($i == 2){
@@ -35,6 +36,10 @@
     		    		//include( locate_template('template-parts/story-block.php', false, false) );
     		    		get_template_part( 'template-parts/story-block');
                         $i++;
+
+                        if($i != 2){
+                            get_template_part( 'template-parts/separator');
+                        }
     		    	
     			 	endwhile; 
     			endif;
