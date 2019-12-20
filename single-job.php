@@ -24,9 +24,11 @@ get_header();
 	</div>
 </div> -->
 <div class="wrapper">
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area job-details-page">
 		<main id="main" class="site-main" role="main">
-			
+
+			<div class="single-job-page">
+
 				<?php
 				while ( have_posts() ) : the_post(); 
 					
@@ -76,17 +78,19 @@ get_header();
 							</a>
 						</div><!--.application-->
 					<?php elseif($application_email):?>
-						<div class="application button">
+						<div class="application button application-email">
 							<a class="button" href="mailto:<?php echo $application_email;?>">
 								Email Resume
 							</a>
 						</div><!--.application-->
 					<?php endif;
-					$mailto_subject = get_field("mailto_subject",48778);
-					$mailto_body = get_field("mailto_body",48778);
+
+					$mailto_subject 	= get_field("mailto_subject",48778);
+					$mailto_body 		= get_field("mailto_body",48778);
 					$mailto_button_text = get_field("mailto_button_text",48778);
-					if($mailto_body&&$mailto_button_text&&$mailto_subject):?>
-						<div class="mail button">
+
+					if( $mailto_body && $mailto_button_text && $mailto_subject ):?>
+						<div class="mail button email-friend">
 							<a class="button" href="mailto:?subject=<?php echo str_replace(" ","%20",$mailto_subject);?>&amp;body=<?php echo str_replace(" ","%20",$mailto_body);?>%20<?php echo get_permalink();?>"><?php echo $mailto_button_text;?></a>
 						</div>
 					<?php endif;?>
@@ -102,43 +106,46 @@ get_header();
 					if($index !== false && count($posts)>1):?>
 						<div class="clear"></div>
 						<nav class="nav-single">
-							<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentytwelve' ); ?></h3>
-							<h3 class="show">View Next Job</h3>
-							<?php if(count($posts) >2):?>
+							<!--<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentytwelve' ); ?></h3> -->
+							
+							<?php if(count($posts) >2):?>								
 								<?php $previous_index = $index > 0 ? $index -1 : count($posts) -1;?>
-								<span class="nav-previous">
-									<a href="<?php echo get_the_permalink($posts[$previous_index]);?>">
-									<span class="meta-nav">&larr;</span>
-									<?php echo $posts[$previous_index]->post_title;?>
+								<div class="nav-previous">
+									<h4 class="show">Previous Job</h4>
+									<a href="<?php echo get_the_permalink($posts[$previous_index]);?>">										
+										<?php echo $posts[$previous_index]->post_title;?>
 									</a>
-								</span>
+								</div>
 							<?php endif;?>
+
 							<?php $next_index = $index < (count($posts) -1) ? $index +1 : 0; ?>
-							<span class="nav-next">
-								<a href="<?php echo get_the_permalink($posts[$next_index]);?>"><?php echo $posts[$next_index]->post_title;?><span class="meta-nav">&rarr;</span></a>
-							</span>
+							<div class="nav-next">
+								<h4 class="show">Next Job</h4>
+								<a href="<?php echo get_the_permalink($posts[$next_index]);?>"><?php echo $posts[$next_index]->post_title;?>
+								</a>
+							</div>
+
 						</nav><!-- .nav-single -->
 					<?php endif;?>
-			<?php endwhile; // end of the loop.?>
+				<?php endwhile; // end of the loop.?>
 
-
-					<div class="share">
-						<?php echo do_shortcode('[social_warfare]'); ?>
+					<div >
+						<div class="share" style="padding-top: 20px">
+							<?php echo do_shortcode('[social_warfare]'); ?>
+						</div>
 					</div>
-
-					
 					
 				</article><!-- #post-## -->
 
 				
-			
+			</div>
 
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	
 
-	<div class="widget-area event-details">
+	<div class="widget-area job-details">
     	<?php //get_template_part('ads/right-small'); 
 		$popular_posts_title = get_field("popular_posts_title", 48778);
 		if($popular_posts_title):?>

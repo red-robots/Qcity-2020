@@ -2441,7 +2441,20 @@ section.stickies-new .right .story-block .desc h3{font-size:20px}
 section.stickies-new .right .story-block .desc h3 a{color:#424141}
 section.stickies-new .right .story-block .desc .excerpt{font-size:14px;margin-top:10px}
 .newsletter-link{display:none}
-@media screen and (max-width:767px){.subscribe-wrap{padding:0 0 20px}
+.nav-single{margin:20px;display:block;padding-bottom:20px;position:relative}
+.nav-single .nav-previous{display:inline-block;float:left;margin-left:10px}
+.nav-single .nav-previous:before{content:"\25c4";position:absolute;padding-right:.5em;margin-left:-30px;top:4px;font-size:1.3em}
+.nav-single .nav-next{display:inline-block;float:right;text-align:right;margin-right:10px}
+.nav-single .nav-next:after{content:"\25ba";position:absolute;padding-left:.5em;margin-right:30px;top:4px;font-size:1.3em}
+.application-email,.email-friend{font-size:1.1em}
+.job-details{background-color:white}
+.border-title{margin-bottom:30px}
+@media screen and (max-width:767px){.border-title{margin-bottom:30px}
+.job-details{background-color:white;padding:20px}
+.job-details-page{padding-bottom:0}
+.single-job-page{padding:20px}
+.nav-single{display:none}
+.subscribe-wrap{padding:0 0 20px}
 article.big-post img{height:200px}
 .burger{margin-top:-12px}
 .newsletter-link{display:block;position:absolute;left:50%;top:35px;width:200px;margin:0 0 0 -35px}

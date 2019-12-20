@@ -2510,7 +2510,81 @@ section.stickies-new{
 	display: none;
 }
 
+/*
+*	Jobs section
+*/
+
+.nav-single{
+	margin: 20px;
+	display: block;
+	padding-bottom: 20px;
+	position: relative;
+
+	.nav-previous{
+		display: inline-block;
+		float: left;
+		margin-left: 10px;		
+
+		&:before{
+			content: "\25c4";
+			position: absolute;
+			padding-right: 0.5em;
+			margin-left: -30px;
+			top: 4px;
+			font-size: 1.3em;
+		}
+	}
+	.nav-next{
+		display: inline-block;
+		float: right;
+		text-align: right;
+		margin-right: 10px;
+
+		&:after{
+			content: "\25ba";
+			position: absolute;
+			padding-left: 0.5em;
+			margin-right: 30px;
+			top: 4px;
+			font-size: 1.3em;
+		}
+	}
+}
+
+.application-email, .email-friend{
+	font-size: 1.1em;
+}
+
+
+.job-details{
+	background-color: white;
+}
+
+.border-title{
+		margin-bottom: 30px ;
+}
+
 @media screen and (max-width: 767px) {
+	.border-title{
+		margin-bottom: 30px ;
+	}
+
+	.job-details{
+		background-color: white;
+		padding: 20px;
+	}
+
+	.job-details-page{
+		padding-bottom: 0;
+	}
+
+	.single-job-page{
+		padding: 20px;
+	}
+
+	.nav-single{
+		display: none;
+	}
 
 	.subscribe-wrap{
 		padding: 0 0 20px;
