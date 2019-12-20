@@ -39,7 +39,14 @@
 
 				<div class="single-page">
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<div class="featured_image" style="background-image: url('<?php echo $photo['sizes']['photo']; ?>');">							
+						<div class="featured_image" >	
+							<img src="<?php echo $photo['sizes']['photo']; ?>" alt="">						
+						</div>
+
+						<div class="business-content">							
+							<div><span>Phone:</span> <?php echo $phone; ?></div>
+							<div><span>Email: </span> <a href="mailto:<?php echo antispambot(strtolower($email), 1); ?>"><?php echo strtolower($email); ?></a></div>
+							<div><span>Website:</span> <a href="<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a></div>
 						</div>
 
 						<div class="entry-content">
@@ -52,13 +59,7 @@
 							?>
 						</div><!-- .entry-content -->
 
-						<div class="business-content">
-							<div style="margin-bottom: 10px;"><span>Summary:</span> 
-								<div><?php echo $description; ?></div></div>
-							<div><span>Phone:</span> <?php echo $phone; ?></div>
-							<div><span>Email: </span> <a href="mailto:<?php echo antispambot($email, 1); ?>"><?php echo strtolower($email); ?></a></div>
-							<div><span>Website:</span> <a href="<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a></div>
-						</div>
+						
 
 						<div class="share">
 							<?php echo do_shortcode('[social_warfare]'); ?>

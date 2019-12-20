@@ -35,7 +35,7 @@ if($img){
     <div class="desc" style="padding: 0 20px;">
         <h3><?php echo get_the_title(); ?></h3>
         <div><span class="bold">Phone:</span> <?php echo esc_html($phone); ?></div>
-        <div><span class="bold">Email:</span> <a href="mailto:<?php echo antispambot($email, 1); ?>"><?php echo esc_html(strtolower($email)); ?></a></div>
+        <div><span class="bold">Email:</span> <a href="mailto:<?php echo antispambot(strtolower($email), 1); ?>"><?php echo esc_html(strtolower($email)); ?></a></div>
         <div class="">
             <a href="<?php echo get_the_permalink(); ?>" class="bold">More Info</a>
         </div>

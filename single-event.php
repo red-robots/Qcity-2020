@@ -11,25 +11,26 @@ get_header();
 
 ?>
 
-<div class="wrapper">
+<div class="wrapper" style="position: relative;">
 	<header class="section-title ">
 		<h1 class="dark-gray">Events</h1>
 	</header>
 	<div class="event-butts">
 		<?php get_template_part('template-parts/event-btn'); ?>
 	</div>
-	<?php if( has_post_thumbnail() ){ ?>
-		<div class="story-image">
-			<div class="event-image">
-				<?php the_post_thumbnail(); ?>
-			</div>			
-		</div>
-	<?php } ?>
-	<div id="primary" class="content-area">
+	
+	<div id="primary" class="content-area event-content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="wrapper">
 
 				<div class="single-page">
+					<?php if( has_post_thumbnail() ){ ?>
+						<div class="story-image">
+							<div class="event-image">
+								<?php the_post_thumbnail(); ?>
+							</div>			
+						</div>
+					<?php } ?>
 
 				<?php
 				while ( have_posts() ) : the_post(); 
@@ -117,51 +118,55 @@ get_header();
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<div class="widget-area event-details">
-    	<?php if( $venueName != '' ) { ?>
+	<div class="widget-area event-details" id="sidebar-event">
+		<div >
+			<?php if( $venueName != '' ) { ?>
 	        	<div class="detail-title">Venue</div>
 	        	<div class="detail-info"><?php echo $venueName; ?></div>
-        <?php } ?>
+	        <?php } ?>
 
-    	<?php if( $location != '' ) { ?>
-	    	<div class="detail-title">Address</div>
-	        <div class="detail-info"><?php echo $location; ?></div>
-        <?php } ?>
-        
-        <?php if( $start != '' ) { ?>
-	        <div class="detail-title">Start Time</div>
-	        <div class="detail-info">
-	        <?php echo $start; ?></div>
-        <?php } ?>
-        
-        <?php if( $end != '' ) { ?>
-	        <div class="detail-title">End Time</div>
-	        <div class="detail-info"><?php echo $end; ?></div>
-        <?php } ?>
-        
-        <?php if( $cost != '' ) { ?>
-	        <div class="detail-title">Cost</div>
-	        <div class="detail-info"><?php echo $cost; ?></div>
-        <?php } ?>
-        <?php if( $eventCat != '' ) { ?>
-	        <div class="detail-title">Event Category</div>
-	        <div class="detail-info">
-        	<!-- uses yoast primary category -->
-        	<?php get_template_part('inc/primary-category-event'); ?>
-        </div>
-        <?php } ?>
-        <?php if( $tickets != '' ) { ?>
-        	<div class="fe-website btn event_website">
-        		<a class="red" target="_blank" href="<?php echo $tickets; ?>">Tickets/Registration</a>
-        	</div>
-        <?php } ?>
-        <div class="clear"></div>
-        <?php if( $weblink != '' ) { ?>
-        	<div class="fe-website btn event_website">
-        		<a class="red" target="_blank" href="<?php echo $weblink; ?>">Visit Website</a>
-        	</div>
-        <?php }   ?>
+	    	<?php if( $location != '' ) { ?>
+		    	<div class="detail-title">Address</div>
+		        <div class="detail-info"><?php echo $location; ?></div>
+	        <?php } ?>
+	        
+	        <?php if( $start != '' ) { ?>
+		        <div class="detail-title">Start Time</div>
+		        <div class="detail-info">
+		        <?php echo $start; ?></div>
+	        <?php } ?>
+	        
+	        <?php if( $end != '' ) { ?>
+		        <div class="detail-title">End Time</div>
+		        <div class="detail-info"><?php echo $end; ?></div>
+	        <?php } ?>
+	        
+	        <?php if( $cost != '' ) { ?>
+		        <div class="detail-title">Cost</div>
+		        <div class="detail-info"><?php echo $cost; ?></div>
+	        <?php } ?>
+	        <?php if( $eventCat != '' ) { ?>
+		        <div class="detail-title">Event Category</div>
+		        <div class="detail-info">
+	        	<!-- uses yoast primary category -->
+	        	<?php get_template_part('inc/primary-category-event'); ?>
+	        </div>
+	        <?php } ?>
+	        <?php if( $tickets != '' ) { ?>
+	        	<div class="fe-website btn event_website">
+	        		<a class="red" target="_blank" href="<?php echo $tickets; ?>">Tickets/Registration</a>
+	        	</div>
+	        <?php } ?>
+	        
+	        <?php if( $weblink != '' ) { ?>
+	        	<div class="fe-website btn event_website">
+	        		<a class="red" target="_blank" href="<?php echo $weblink; ?>">Visit Website</a>
+	        	</div>
+	        <?php }   ?>
+		</div>
+    	
 	</div>
+
 </div>
 <?php 
 get_footer();
