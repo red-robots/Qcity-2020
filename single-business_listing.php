@@ -53,7 +53,8 @@
 						</div><!-- .entry-content -->
 
 						<div class="business-content">
-							<div><span>Summary:</span> <?php echo $description; ?></div>
+							<div style="margin-bottom: 10px;"><span>Summary:</span> 
+								<div><?php echo $description; ?></div></div>
 							<div><span>Phone:</span> <?php echo $phone; ?></div>
 							<div><span>Email: </span> <a href="mailto:<?php echo antispambot($email, 1); ?>"><?php echo strtolower($email); ?></a></div>
 							<div><span>Website:</span> <a href="<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a></div>
