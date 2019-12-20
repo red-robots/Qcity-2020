@@ -2141,6 +2141,14 @@ body.single{
 }
 
 
+article.story-block{
+
+	.desc{
+		margin-top: 10px;
+	}
+}
+
+
 @media screen and (max-width: 767px) {
 
 	.single-page{
@@ -2228,6 +2236,8 @@ body.single{
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;
+
+
 
 	}
 
@@ -2389,6 +2399,10 @@ body.single{
 
 	.story-block{
 		display: block;
+
+		.desc{
+			margin-top: 10px;
+		}
 
 		.story-home-right{
 			display: block;

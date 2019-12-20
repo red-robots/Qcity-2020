@@ -24,7 +24,7 @@
 		
 	</div>
 	<h3><?php the_title(); ?></h3>	
-	<div class="desc">
+	<div class="desc" >
 		<span><?php echo get_the_excerpt(); ?></span>
 	</div>
 	<div class="by">
