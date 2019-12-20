@@ -20,7 +20,9 @@ get_header();
 	</div>
 	<?php if( has_post_thumbnail() ){ ?>
 		<div class="story-image">
-			<?php the_post_thumbnail(); ?>
+			<div class="event-image">
+				<?php the_post_thumbnail(); ?>
+			</div>			
 		</div>
 	<?php } ?>
 	<div id="primary" class="content-area">

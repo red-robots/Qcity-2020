@@ -9,7 +9,11 @@
 
 	get_header(); 
 
-	$photo = get_field('business_photo');
+	$photo 			= get_field('business_photo');
+	$description 	= get_field('description');
+	$email 			= get_field('email');
+	$phone 			= get_field('phone');
+	$website 		= get_field('website');
 	
 	//var_dump($photo);
 ?>
@@ -35,8 +39,7 @@
 
 				<div class="single-page">
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<div class="featured_image">
-							<img src="<?php echo $photo['sizes']['photo']; ?>" alt="">
+						<div class="featured_image" style="background-image: url('<?php echo $photo['sizes']['photo']; ?>');">							
 						</div>
 
 						<div class="entry-content">
@@ -48,6 +51,13 @@
 								) );
 							?>
 						</div><!-- .entry-content -->
+
+						<div class="business-content">
+							<div><span>Summary:</span> <?php echo $description; ?></div>
+							<div><span>Phone:</span> <?php echo $phone; ?></div>
+							<div><span>Email: </span> <a href="mailto:<?php echo antispambot($email, 1); ?>"><?php echo strtolower($email); ?></a></div>
+							<div><span>Website:</span> <a href="<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a></div>
+						</div>
 
 						<div class="share">
 							<?php echo do_shortcode('[social_warfare]'); ?>

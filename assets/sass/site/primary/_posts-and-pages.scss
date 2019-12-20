@@ -2092,8 +2092,43 @@ body.page-template-page-media{
 .single-page{
 	.featured_image{
 		margin-top: 30px;
+		height: 390px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
+
+	.business-content{
+		margin-bottom: 2.5em;
+		font-size: 1.2em;
+		
+		span{
+			color: #924020;
+			font-weight: bold;
+		}
 	}
 }
+
+.event-image{
+
+	img{
+		width: 800px;
+		height: 500px;
+		margin: 0 auto;
+	}	
+	text-align: center;
+	display: block;
+}
+
+body.single{
+	.site-footer{
+		.wrapper{
+			max-width: 1350px;
+		}
+	}
+
+}
+
 
 @media screen and (max-width: 767px) {
 

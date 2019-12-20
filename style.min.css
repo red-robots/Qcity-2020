@@ -2369,7 +2369,12 @@ section.red-band{padding-right:30px}
 body.page-template-page-media .wrapper{max-width:1050px}
 body.page-template-page-media #content{margin-top:60px}
 .mobile-separator{display:none}
-.single-page .featured_image{margin-top:30px}
+.single-page .featured_image{margin-top:30px;height:390px;background-repeat:no-repeat;background-position:center center;background-size:cover}
+.single-page .business-content{margin-bottom:2.5em;font-size:1.2em}
+.single-page .business-content span{color:#924020;font-weight:bold}
+.event-image{text-align:center;display:block}
+.event-image img{width:800px;height:500px;margin:0 auto}
+body.single .site-footer .wrapper{max-width:1350px}
 @media screen and (max-width:767px){.mobile-separator{border-bottom:1px solid #ccc;margin-bottom:20px;height:5px;display:block}
 .mobile_hide{display:none}
 #mc_embed_signup{width:100% !important}
