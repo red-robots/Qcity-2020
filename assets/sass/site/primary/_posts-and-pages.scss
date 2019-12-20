@@ -2151,6 +2151,12 @@ article.story-block{
 
 @media screen and (max-width: 767px) {
 
+	.bottom .btn a, .event-butts .bottom .btn a {
+	    padding: 10px 20px;
+	    background-color: #c4a92f;
+	    color: #fff;
+	}
+
 	.single-page{
 		.featured_image{
 			height: auto;
