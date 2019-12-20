@@ -2376,7 +2376,7 @@ body.page-template-page-media #content{margin-top:60px}
 .single-page .business-content{margin-top:1.5em;font-size:1.2em}
 .single-page .business-content span{color:#924020;font-weight:bold}
 .event-image{text-align:center;display:block}
-.event-image img{width:100%;height:418px;margin:0 auto}
+.event-image img{width:100%;height:auto;margin:0 auto}
 body.single .site-footer .wrapper{max-width:1350px}
 article.story-block .desc{margin-top:10px}
 @media screen and (max-width:767px){.bottom .btn a,.event-butts .bottom .btn a{padding:10px 20px;background-color:#c4a92f;color:#fff}
