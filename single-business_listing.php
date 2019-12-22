@@ -14,6 +14,7 @@
 	$email 			= get_field('email');
 	$phone 			= get_field('phone');
 	$website 		= get_field('website');
+	$address  		= get_field('address');
 	
 	//var_dump($photo);
 ?>
@@ -24,13 +25,9 @@
 		
 		<div class="single-page">
 			
-			<div  style="margin-bottom: 20px;">
-				
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				<?php //the_excerpt(); ?>
+			<div  style="margin-bottom: 20px;">				
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>				
 			</div>
-			
-
 		</div>
 
 
@@ -43,10 +40,19 @@
 							<img src="<?php echo $photo['sizes']['photo']; ?>" alt="">						
 						</div>
 
-						<div class="business-content">							
-							<div><span>Phone:</span> <?php echo $phone; ?></div>
-							<div><span>Email: </span> <a href="mailto:<?php echo antispambot(strtolower($email), 1); ?>"><?php echo strtolower($email); ?></a></div>
-							<div><span>Website:</span> <a href="<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a></div>
+						<div class="business-content">	
+							<?php if($address): ?>
+					            <div><span >Address:</span> <?php echo esc_html($address); ?></div>
+					        <?php endif; ?>		
+					        <?php if($phone): ?>				
+								<div><span>Phone:</span> <?php echo esc_html($phone); ?></div>
+							<?php endif; ?>
+							<?php if($email): ?>
+								<div><span>Email: </span> <a href="mailto:<?php echo antispambot(strtolower($email), 1); ?>"><?php echo strtolower($email); ?></a></div>
+							<?php endif; ?>
+							<?php if($website): ?>
+								<div><span>Website:</span> <a href="<?php echo $website; ?>" target="_blank"><?php echo esc_url($website); ?></a></div>
+							<?php endif; ?>
 						</div>
 
 						<div class="entry-content">
@@ -58,8 +64,6 @@
 								) );
 							?>
 						</div><!-- .entry-content -->
-
-						
 
 						<div class="share">
 							<?php echo do_shortcode('[social_warfare]'); ?>

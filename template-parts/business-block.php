@@ -3,6 +3,7 @@ $img    = get_field('business_photo');
 $phone  = get_field('phone');
 $email  = get_field('email');
 $email  = antispambot($email);
+$address = get_field('address');
 
 if($img){
     $image = $img['url'];
@@ -33,9 +34,13 @@ if($img){
     </div> 
     </a>   
     <div class="desc" style="padding: 0 20px;">
-        <h3><?php echo get_the_title(); ?></h3>
-        <div><span class="bold">Phone:</span> <?php echo esc_html($phone); ?></div>
+        <h3><?php echo get_the_title(); ?></h3>        
+        <?php if($phone):  ?>
+            <div><span class="bold">Phone:</span> <?php echo esc_html($phone); ?></div>
+        <?php endif; ?>
+        <?php if($email):  ?>
         <div><span class="bold">Email:</span> <a href="mailto:<?php echo antispambot(strtolower($email), 1); ?>"><?php echo esc_html(strtolower($email)); ?></a></div>
+        <?php endif; ?>
         <div class="">
             <a href="<?php echo get_the_permalink(); ?>" class="bold">More Info</a>
         </div>
