@@ -68,3 +68,17 @@ require get_template_directory() . '/inc/jetpack.php';
  * AJAX Function
  */
 require get_template_directory() . '/inc/ajax.php';
+
+/*
+*   Google Map API
+*/
+
+function my_acf_google_map_api( $api ){
+    
+    $api['key'] = 'AIzaSyAeqhZre9-4JooxIFFhcgGmWQ2de4Y4AhE';
+    
+    return $api;
+    
+}
+
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
