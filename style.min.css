@@ -2379,7 +2379,12 @@ body.page-template-page-media #content{margin-top:60px}
 .event-image img{width:100%;height:auto;margin:0 auto}
 body.single .site-footer .wrapper{max-width:1350px}
 article.story-block .desc{margin-top:10px}
-@media screen and (max-width:767px){.bottom .btn a,.event-butts .bottom .btn a{padding:10px 20px;background-color:#c4a92f;color:#fff}
+.smaller-screen{padding:0}
+#sidebar-event{right:0}
+@media screen and (max-width:1249px){.smaller-screen{padding:20px}
+#sidebar-event{right:97px}
+}@media screen and (max-width:767px){.banner-button{font-size:11px}
+.bottom .btn a,.event-butts .bottom .btn a{padding:10px 20px;background-color:#c4a92f;color:#fff;font-size:11px}
 .single-page .featured_image{height:auto}
 .event-content-area{padding-bottom:0}
 .mobile-separator{border-bottom:1px solid #ccc;margin-bottom:20px;height:5px;display:block}

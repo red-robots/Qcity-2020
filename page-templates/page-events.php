@@ -19,9 +19,7 @@ get_template_part('template-parts/banner-events');
 
 			<div class="qcity-sponsored-container">
 
-				<header class="section-title ">
-					<h1 class="dark-gray">Sponsored</h1>
-				</header>
+				
 				<?php				
 					$i = 0;
 					$postID = array();
@@ -47,6 +45,9 @@ get_template_part('template-parts/banner-events');
 						)
 				));
 				if ($wp_query->have_posts()) : ?>
+					<header class="section-title ">
+						<h1 class="dark-gray">Sponsored</h1>
+					</header>
 					<section class="events">
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
 								$postID[] = get_the_ID();

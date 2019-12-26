@@ -59,7 +59,7 @@ window.googletag = window.googletag || {cmd: []};
     googletag.enableServices();
   });
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeqhZre9-4JooxIFFhcgGmWQ2de4Y4AhE"></script>
+<script src="https://maps.googleapis.com"></script>
 <script>
     var ajaxURL = "<?php echo admin_url('admin-ajax.php'); ?>";
 </script>

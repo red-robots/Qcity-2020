@@ -11,7 +11,7 @@ get_header();
 
 ?>
 
-<div class="wrapper" style="position: relative;">
+<div class="wrapper smaller-screen" style="position: relative;">
 	<header class="section-title ">
 		<h1 class="dark-gray">Events</h1>
 	</header>
