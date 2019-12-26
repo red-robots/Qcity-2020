@@ -32,6 +32,13 @@ function acstarter_scripts() {
 		true 
 	);
 
+	wp_enqueue_script( 
+		'google-api', 
+		'https://maps.googleapis.com/maps/api/js?key=AIzaSyAeqhZre9-4JooxIFFhcgGmWQ2de4Y4AhE', 
+		array(), '20180424', 
+		true 
+	);
+
 	//wp_enqueue_script( 'broadstreetads', '//cdn.broadstreetads.com/init-2.min.js', array( '' ), false, false );
 
 	$vars = array(
