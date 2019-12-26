@@ -24,9 +24,7 @@ get_template_part('template-parts/banner-church');
 
 				<?php
 				/*
-					Jobs 
-
-
+					Chhurch listing
 				*/
 					$i = 0;
 					$today = date('Ymd');

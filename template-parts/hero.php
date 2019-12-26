@@ -76,7 +76,7 @@ if ($wp_query->have_posts()) : ?>
 			$recent_query = new WP_Query( $args ); 
 
 			if( $recent_query->have_posts() ):
-		
+				$i = 0;
 				while ($recent_query->have_posts()) :  $recent_query->the_post();
 					$img 	= get_field('story_image');
 					$video 	= get_field('video_single_post');
@@ -86,7 +86,7 @@ if ($wp_query->have_posts()) : ?>
 					$postIDs[] = get_the_ID();
 
 					$text 		= get_the_excerpt();
-					$excerpt 	= ( strlen($text) > 180 ) ? substr($text, 0, 180) . ' ...' : $text;
+					$excerpt 	= ( strlen($text) > 180 ) ? substr($text, 0, 125) . ' ...' : $text;
 
 			?>
 			<article class="story-block">
@@ -114,7 +114,12 @@ if ($wp_query->have_posts()) : ?>
 				<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
 				-->
 			</article>
-		<?php endwhile; ?>
+				<?php
+					$i++;
+					if($i < 3){
+                        get_template_part( 'template-parts/separator');
+                    }
+		 endwhile; ?>
 	</div>
 	</section>
 <?php 

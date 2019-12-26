@@ -2484,6 +2484,7 @@ section.stickies-new{
 			.desc{
 				display: inline-block;
 				width: 50%;
+				margin-top: 0;
 
 				h3{
 					font-size: 20px;
@@ -2493,7 +2494,7 @@ section.stickies-new{
 				}
 
 				.excerpt{
-					font-size: 14px;
+					font-size: 1rem;
 					margin-top: 10px;
 				}
 

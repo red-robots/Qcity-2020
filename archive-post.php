@@ -54,6 +54,8 @@ get_template_part('template-parts/banner-category');
 							get_template_part( 'template-parts/story-block-category' );
 						endif;
 
+						get_template_part( 'template-parts/separator');
+
 					endwhile;
 
 					echo '</div>';

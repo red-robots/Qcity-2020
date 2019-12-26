@@ -2436,10 +2436,10 @@ section.stickies-new .right .story-block{display:block}
 section.stickies-new .right .story-block .story-home-right{display:inline-block;width:45%;margin-right:10px;height:182px;margin-bottom:0}
 section.stickies-new .right .story-block .story-home-right a{color:#424141}
 section.stickies-new .right .story-block .story-home-right a img{height:182px}
-section.stickies-new .right .story-block .desc{display:inline-block;width:50%}
+section.stickies-new .right .story-block .desc{display:inline-block;width:50%;margin-top:0}
 section.stickies-new .right .story-block .desc h3{font-size:20px}
 section.stickies-new .right .story-block .desc h3 a{color:#424141}
-section.stickies-new .right .story-block .desc .excerpt{font-size:14px;margin-top:10px}
+section.stickies-new .right .story-block .desc .excerpt{font-size:1rem;margin-top:10px}
 .newsletter-link{display:none}
 .nav-single{margin:20px;display:block;padding-bottom:20px;position:relative}
 .nav-single .nav-previous{display:inline-block;float:left;margin-left:10px}
