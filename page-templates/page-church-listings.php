@@ -24,17 +24,19 @@ get_template_part('template-parts/banner-church');
 
 				<?php
 				/*
-					Chhurch listing
+					Church listing
 				*/
 					$i = 0;
 					$today = date('Ymd');
+					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 					$wp_query = new WP_Query();
 					$wp_query->query(array(
 										'post_type'			=> 'church_listing',
 										'post_status'       => 'publish',
 										'posts_per_page' 	=> 15,
 										'order' 			=> 'ASC',
-										'orderby' 			=> 'title'
+										'orderby' 			=> 'title',
+										'paged'				=> $paged
 					));
 					if ($wp_query->have_posts()) : ?>
 						<section class="church-list">
