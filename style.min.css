@@ -2382,7 +2382,6 @@ article.story-block .desc{margin-top:10px}
 .smaller-screen{padding:0}
 #sidebar-event{right:0}
 @media screen and (max-width:1249px){.smaller-screen{padding:20px}
-#sidebar-event{right:97px}
 }@media screen and (max-width:767px){.banner-button{font-size:11px}
 .bottom .btn a,.event-butts .bottom .btn a{padding:10px 20px;background-color:#c4a92f;color:#fff;font-size:11px}
 .single-page .featured_image{height:auto}
