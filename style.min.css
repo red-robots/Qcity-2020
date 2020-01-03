@@ -2260,7 +2260,8 @@ section.home-bottom{width:100%;clear:both;margin:30px 0}
 .business_category_icon{height:80px;width:auto}
 .ads-home .ads-portion{margin-bottom:20px}
 @media screen and (max-width:1250px){.content-area{width:66%;float:left;margin:0;padding-bottom:50px;min-height:800px;margin-top:25px}
-}@media screen and (max-width:767px){section.next-story{margin-bottom:20px}
+}@media screen and (max-width:767px){.event-details{padding:0 20px}
+section.next-story{margin-bottom:20px}
 .next-story-block{padding:0 20px;margin-bottom:20px}
 .c-sponsor-block__main{margin-top:10px}
 .logo,h1.logo{width:100px;margin:0;top:10px;left:20px}
@@ -2382,7 +2383,8 @@ article.story-block .desc{margin-top:10px}
 .smaller-screen{padding:0}
 #sidebar-event{right:0}
 @media screen and (max-width:1249px){.smaller-screen{padding:20px}
-}@media screen and (max-width:767px){.banner-button{font-size:11px}
+}@media screen and (max-width:767px){.side-offer{margin-bottom:0}
+.banner-button{font-size:11px}
 .bottom .btn a,.event-butts .bottom .btn a{padding:10px 20px;background-color:#c4a92f;color:#fff;font-size:11px}
 .single-page .featured_image{height:auto}
 .event-content-area{padding-bottom:0}

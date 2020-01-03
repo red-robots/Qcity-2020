@@ -1096,6 +1096,7 @@ section.comments {
 	padding: 50px 0 30px 0;
 	clear: both;
 }
+
 // Events
 .event-details {
 	font-size: 1.2rem;
@@ -1328,6 +1329,10 @@ section.home-bottom {
 
 
 @media screen and (max-width: 767px) {
+
+	.event-details{
+		padding: 0 20px;
+	}
 
 	section.next-story{
 		margin-bottom: 20px;
@@ -2168,6 +2173,10 @@ article.story-block{
 
 
 @media screen and (max-width: 767px) {
+
+	.side-offer {	    
+	    margin-bottom: 0; 
+	}
 
 	.banner-button{
 		font-size: 11px;
