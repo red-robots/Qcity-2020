@@ -31,7 +31,7 @@ $add_business_link = get_field('add_business_link');
 		<header class="section-title ">
 			<h2 class="dark-gray">Featured Businesses</h2>
 			<div class="biz-submit">
-				<a href="/business-directory/business-directory-sign-up/">Submit your business</a>
+				<a href="<?php echo bloginfo( 'url' ); ?>/business-directory/business-directory-sign-up/">Submit your business</a>
 			</div>
 		</header>
 	</div>
@@ -93,7 +93,9 @@ $add_business_link = get_field('add_business_link');
 					<?php else: ?>
 						<div class="qcity-news-container" style="padding-bottom: 20px;">
 							<section class="sponsored">
-								<h5>No record available.</h5>
+								<a href="<?php echo bloginfo( 'url' ); ?>/business-directory/business-directory-sign-up/">
+									<h5>Be the first.</h5>
+								</a>								
 							</section>
 						</div>
 					<?php endif; ?>
