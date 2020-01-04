@@ -2248,7 +2248,7 @@ span.load-text{display:block}
 .spon-first{margin:0 10% 30px 0}
 .spon-last{margin:0 0 30px 0}
 .spon-tier-two{width:45%;float:left}
-section.home-bottom .ad{width:33%;float:right}
+section.home-bottom .ad{width:33%;float:right;padding-left:10px}
 .jobs{margin-right:10px}
 section.home-bottom{width:100%;clear:both;margin:30px 0}
 .view{width:33%}
@@ -2384,7 +2384,8 @@ article.story-block .desc{margin-top:10px}
 .smaller-screen{padding:0}
 #sidebar-event{right:0}
 @media screen and (max-width:1249px){.smaller-screen{padding:20px}
-}@media screen and (max-width:767px){.side-offer{margin-bottom:0}
+}@media screen and (max-width:767px){section.home-bottom .ad{width:100%;padding-left:0}
+.side-offer{margin-bottom:0}
 .banner-button{font-size:11px}
 .bottom .btn a,.event-butts .bottom .btn a{padding:10px 20px;background-color:#c4a92f;color:#fff;font-size:11px}
 .single-page .featured_image{height:auto}

@@ -454,6 +454,7 @@ section.home-bottom {
 		@media screen and (min-width: $tabwidth) {
 			width: 28%;
 			float: right;
+
 		}
 	}
 }
@@ -1247,6 +1248,7 @@ span.load-text{
 section.home-bottom .ad {
     width: 33%;
     float: right;
+    padding-left: 10px;
 }
 
 .jobs {
@@ -2177,6 +2179,13 @@ article.story-block{
 
 
 @media screen and (max-width: 767px) {
+
+	section.home-bottom{
+		.ad{
+			width: 100%;
+			padding-left: 0;
+		}
+	}
 
 	.side-offer {	    
 	    margin-bottom: 0; 

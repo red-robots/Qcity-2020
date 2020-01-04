@@ -53,7 +53,7 @@
 	<?php get_template_part('template-parts/business-directory-footer'); ?>
 	
 	<!--- Advertisements -->
-	<div class="ad" style="display: block">
+	<div class="ad" style="display: block;">
 		<?php  
 		 		$post_type = 'ad';
                 $args = array(
