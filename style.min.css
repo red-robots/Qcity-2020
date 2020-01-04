@@ -2229,6 +2229,7 @@ section.comments{width:100%;padding:50px 0 30px 0;clear:both}
 .clear{clear:both}
 #sidebar-event{position:relative;background-color:white}
 #sidebar-event .red{opacity:1}
+.sponsored-empty{font-size:16px}
 .qcity-sidebar-load-more{cursor:pointer}
 .qcity-sidebar-load-more:hover{background-color:#c4a92f}
 .qcity-sidebar-load-more.loading{cursor:default}

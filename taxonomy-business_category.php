@@ -94,7 +94,7 @@ $add_business_link = get_field('add_business_link');
 						<div class="qcity-news-container" style="padding-bottom: 20px;">
 							<section class="sponsored">
 								<a href="<?php echo bloginfo( 'url' ); ?>/business-directory/business-directory-sign-up/">
-									<h5>Be the first.</h5>
+									<h5 class="sponsored-empty">Be the first.</h5>
 								</a>								
 							</section>
 						</div>
