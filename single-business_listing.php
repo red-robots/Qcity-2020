@@ -42,7 +42,7 @@
 
 						<div class="business-content">	
 							<?php if($address): ?>
-					            <div><span >Address:</span> <?php echo $address['address']; ?></div>
+					            <div><span >Address:</span> <a href="https://www.google.com.ph/maps/place/<?php echo urlencode($address['address']); ?>"></a><?php echo $address['address']; ?></div>
 					        <?php endif; ?>		
 					        <?php if($phone): ?>				
 								<div><span>Phone:</span> <?php echo esc_html($phone); ?></div>
