@@ -51,7 +51,7 @@
 								<div><span>Email: </span> <a href="mailto:<?php echo antispambot(strtolower($email), 1); ?>"><?php echo strtolower($email); ?></a></div>
 							<?php endif; ?>
 							<?php if($website): ?>
-								<div><span>Website:</span> <a href="<?php echo $website; ?>" target="_blank"><?php echo esc_url($website); ?></a></div>
+								<div><a href="<?php echo $website; ?>" target="_blank"><span>View Website</span> </a></div>
 							<?php endif; ?>
 						</div>
 
