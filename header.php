@@ -133,8 +133,8 @@ window.googletag = window.googletag || {cmd: []};
 
 	<div id="content" class="site-content mobile-body" >
 
-    <?php if ( is_front_page() ) : ?>
-          <div class="ads_home_leaderboard">
-            <?php echo get_ads_script('leaderboard-ad-home'); ?>            
-          </div>
-    <?php endif; ?>
+   
+  <div class="ads_home_leaderboard">
+    <?php echo get_ads_script('leaderboard-ad-home'); ?>
+  </div>
+   
