@@ -15,8 +15,10 @@
 	//var_dump($sponsors);
 ?>
 
-<div class="wrapper" style="background-color: white">
+
 	
+<?php if($sponsors): ?>
+<div class="wrapper" style="background-color: white">		
 	<div id="primary" class="content-area" style="<?php echo ($sponsors) ? '': ' margin: 0 auto; float:none; '; ?>">
 		
 		<div class="single-page">
@@ -52,7 +54,7 @@
 						get_template_part( 'template-parts/content', get_post_format() );
 
 					endwhile; // End of the loop.
-
+					wp_reset_postdata();
 					?>
 
 				</div>
@@ -62,8 +64,57 @@
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-<?php ($sponsors) ? get_sidebar() : ''; ?>
+	<?php ($sponsors) ? get_sidebar() : ''; ?>
 </div>
+
+	<?php  else: ?>
+
+		<div id="primary" class="content-area-full">
+			<main id="main" class="site-main" role="main">
+
+				<div class="single-page">
+
+					<div class="content-single-page">
+			
+						<div  style="margin-bottom: 20px;">
+							<div class="category "><?php get_template_part('template-parts/primary-category'); ?></div>
+							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+							<?php the_excerpt(); ?>
+						</div>
+						
+
+						<?php if( $img ) { ?>
+							<div class="story-image">
+								<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
+							</div>
+						<?php } elseif( has_post_thumbnail() ){ ?>
+							<div class="story-image">
+								<?php the_post_thumbnail(); ?>
+							</div>
+						<?php } ?>
+
+					</div>
+
+					<?php
+					while ( have_posts() ) : the_post();
+
+						get_template_part( 'template-parts/content', get_post_format() );
+
+					endwhile; // End of the loop.
+					wp_reset_postdata();
+					?>
+
+					<div class="content-single-page">
+						<?php get_template_part('template-parts/next-story'); ?>
+					</div>
+
+				</div>
+
+			</main>
+		</div>
+
+	<?php endif; ?>
+
+
 <?php 
 get_footer();

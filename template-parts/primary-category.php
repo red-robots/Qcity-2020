@@ -61,9 +61,10 @@ $category = get_the_category( $id );
 
 //echo $category_display;
 
-
+/*
 echo '<!-- ';
 echo '<pre>';
 print_r($category);
 echo '</pre>';
 echo ' -->';
+*/
