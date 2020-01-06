@@ -2457,7 +2457,7 @@ section.stickies-new .right .story-block .desc .excerpt{font-size:1rem;margin-to
 .application-email,.email-friend{font-size:1.1em}
 .job-details{background-color:white}
 .border-title{margin-bottom:30px}
-.ads_home_leaderboard{display:block;text-align:center;margin:20px auto}
+.ads_home_leaderboard{display:block;text-align:center;margin:5px auto 20px}
 .brown-bar{background-color:#ededed;padding:10px;text-align:center;margin:10px 0 20px}
 .content-single-page{max-width:700px;margin:0 auto}
 @media screen and (max-width:767px){.border-title{margin-bottom:30px}
