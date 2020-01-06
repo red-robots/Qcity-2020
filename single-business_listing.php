@@ -16,7 +16,7 @@
 	$website 		= get_field('website');
 	$address  		= get_field('address');
 	
-	//var_dump($photo);
+	print_r($address);
 ?>
 
 <div class="wrapper" style="background-color: white">
@@ -42,7 +42,7 @@
 
 						<div class="business-content">	
 							<?php if($address): ?>
-					            <div><span >Address:</span> <?php print_r($address); ?></div>
+					            <div><span >Address:</span> <?php echo ($address); ?></div>
 					        <?php endif; ?>		
 					        <?php if($phone): ?>				
 								<div><span>Phone:</span> <?php echo esc_html($phone); ?></div>
