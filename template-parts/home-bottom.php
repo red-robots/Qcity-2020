@@ -54,7 +54,7 @@
 	
 	<!--- Advertisements -->
 	<div class="ad" style="display: block;">
-        <div class="desktop-version"> <!-- Business Directory Home -->
+        <div class="desktop-version business-directory-ads"> <!-- Business Directory Home -->
                 <?php echo get_ads_script('business-directory-home'); ?>                
         </div> <!-- Business Directory Home -->
 		<?php  
@@ -92,7 +92,7 @@
         <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
     </div>
 
-    <div class="mobile-version" style="margin-top: 20px"> <!-- Business Directory Home -->
+    <div class="mobile-version" style="margin-top: 20px; text-align: center"> <!-- Business Directory Home -->
                 <?php echo get_ads_script('business-directory-home'); ?>                
     </div> <!-- Business Directory Home -->
 
