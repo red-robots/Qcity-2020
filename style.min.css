@@ -2459,7 +2459,7 @@ section.stickies-new .right .story-block .desc .excerpt{font-size:1rem;margin-to
 .border-title{margin-bottom:30px}
 .ads_home_leaderboard{display:block;text-align:center;margin:20px auto}
 .brown-bar{background-color:#ededed;padding:10px;text-align:center;margin:10px 0 20px}
-.content-single-page{max-width:900px;margin:0 auto}
+.content-single-page{max-width:700px;margin:0 auto}
 @media screen and (max-width:767px){.border-title{margin-bottom:30px}
 .job-details{background-color:white;padding:20px}
 .job-details-page{padding-bottom:0}
