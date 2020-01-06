@@ -120,7 +120,7 @@ if ($wp_query->have_posts()) : ?>
                         get_template_part( 'template-parts/separator');
                     }
 
-                 if($i == 2){
+                 if($i == 1){
                  	echo '<div class="mobile-version">'. get_ads_script('right-rail') . '</div>';
                  }   
 
