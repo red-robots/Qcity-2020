@@ -162,3 +162,42 @@ function youtube_setup( $src ){
     
     return $url;
 }
+
+/*
+*   Advertisements
+*/
+
+function get_ads_script($slug)
+{
+    $ad_script = '';
+
+    $ad_post = get_page_by_path( $slug, OBJECT, 'ad' );
+
+    $args = array(       
+        'post_type'         => 'ad',
+        'post_status'       => 'publish',
+        'p'                 => $ad_post->ID,        
+    );
+
+    $query = new WP_Query( $args );
+
+    if ( $query->have_posts() ) :   
+
+         while ( $query->have_posts() ) :
+     
+            $query->the_post();
+
+            $ad_enable = get_field('enable_ad');
+            if( $ad_enable ):
+                $ad_script = get_field('ad_script');
+            endif;
+
+        endwhile;
+
+    endif;
+
+    wp_reset_postdata();
+
+    return $ad_script;
+}
+

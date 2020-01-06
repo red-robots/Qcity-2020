@@ -15,11 +15,10 @@
 	?>
 	
 	<section class="news-home">
-        <!--
-		<header class="section-title ">
-			<h2 class="dark-gray">News</h2>
-		</header>
-        -->
+
+        <div class="mobile-version"> <!-- Small Optional Ad Right -->
+                <?php echo get_ads_script('small-ad-right'); ?>
+        </div> <!-- Small Optional Ad Right -->
 
 		<section class="twocol qcity-news-container">	
 
@@ -47,9 +46,13 @@
     		?>	 	
 		 </section>
 		 <section class="ads-home">
+
+            <div class="desktop-version"> <!-- Right Rail Home -->
+                <?php echo get_ads_script('right-rail'); ?>
+            </div> <!-- Right Rail Home -->
             
 		 	<?php  
-		 		$post_type = 'ad';
+		 		/*$post_type = 'ad';
                 $args = array(
                     'posts_per_page'   => 1,
                     'orderby'          => 'rand',
@@ -77,7 +80,7 @@
                 	endwhile;
                     echo '</div>';
                 endif;
-                wp_reset_postdata();
+                wp_reset_postdata(); */
 		 	?>
             
             <!--
@@ -86,6 +89,10 @@
             <div class="desktop-version">
                 <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
             </div>
+
+            <div class="desktop-version"> <!-- Small Optional Ad Right -->
+                <?php echo get_ads_script('small-ad-right'); ?>
+            </div> <!-- Small Optional Ad Right -->
             
 		 </section>
 

@@ -2610,6 +2610,12 @@ section.stickies-new{
 		margin-bottom: 30px ;
 }
 
+.ads_home_leaderboard{
+	display: block;
+	text-align: center;
+	margin: 20px auto;
+}
+
 @media screen and (max-width: 767px) {
 	.border-title{
 		margin-bottom: 30px ;
@@ -2751,6 +2757,8 @@ section.stickies-new{
   top: 0;
   width: 100%
 }
+
+
 
 @media screen and (min-width:320px) and (max-width:640px) {
 	.site{

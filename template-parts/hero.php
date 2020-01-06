@@ -119,7 +119,13 @@ if ($wp_query->have_posts()) : ?>
 					if($i < 3){
                         get_template_part( 'template-parts/separator');
                     }
-		 endwhile; ?>
+
+                 if($i == 2){
+                 	echo '<div class="mobile-version">'. get_ads_script('right-rail') . '</div>';
+                 }   
+
+		 endwhile; 
+		 ?>
 	</div>
 	</section>
 <?php 

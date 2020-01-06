@@ -54,8 +54,11 @@
 	
 	<!--- Advertisements -->
 	<div class="ad" style="display: block;">
+        <div class="desktop-version"> <!-- Business Directory Home -->
+                <?php echo get_ads_script('business-directory-home'); ?>                
+        </div> <!-- Business Directory Home -->
 		<?php  
-		 		$post_type = 'ad';
+		 		/*$post_type = 'ad';
                 $args = array(
                     'posts_per_page'   => 1,
                     'orderby'          => 'rand',
@@ -81,12 +84,16 @@
 
                 	endwhile;
                 endif;
-                wp_reset_postdata();
+                wp_reset_postdata();*/
 		 	?>
 	</div>
 
     <div class="mobile-version hearken">
         <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
     </div>
+
+    <div class="mobile-version" style="margin-top: 20px"> <!-- Business Directory Home -->
+                <?php echo get_ads_script('business-directory-home'); ?>                
+    </div> <!-- Business Directory Home -->
 
 </section>

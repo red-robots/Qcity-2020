@@ -127,8 +127,14 @@ window.googletag = window.googletag || {cmd: []};
                 }).append('<span class="menu-counter menu-badge">'+ <?php echo get_category_counter('event'); ?> +'</span>');
             </script>
 
-        </div>
+        </div>        
 	
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content mobile-body" >
+
+    <?php if ( is_front_page() ) : ?>
+          <div class="ads_home_leaderboard">
+            <?php echo get_ads_script('leaderboard-ad-home'); ?>            
+          </div>
+    <?php endif; ?>
