@@ -94,6 +94,8 @@ wp_footer();
 	        }
 
 	    }
+
+	    $('.broadstreet-zone-container').addClass('align-center');
 	    
 	});
 </script>
