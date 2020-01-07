@@ -45,24 +45,25 @@
 // }
 
 	$wp_query = new WP_Query();
-	$wp_query->query(array(
-		'post_type'			=>'event',
-		'post_status'		=>'publish',
-		'posts_per_page' 	=> 4,
-		'meta_query' 		=> array(
-								array(
-							        'key'		=> 'event_date',
-							        'compare'	=> '>=',
-							        'value'		=> $today,
-							    ),
-		'tax_query' 		=> array(
-								array(
-									'taxonomy' 	=> 'event_category', 
-									'field' 	=> 'slug',
-									'terms' 	=> array( 'premium' ) 
-								)
-							)
-    ),
+$wp_query->query(array(
+'post_type'			=>'event',
+'post_status'		=>'publish',
+'posts_per_page' 	=> 4,
+'meta_query' 		=> array(
+	array(
+			'key'		=> 'event_date',
+			'compare'	=> '>=',
+			'value'		=> $today,
+		),
+		
+	),
+'tax_query' => array(
+	array(
+		'taxonomy' 	=> 'event_category', 
+		'field' 	=> 'slug',
+		'terms' 	=> array( 'premium' ) 
+	)
+)
 ));
 	if ($wp_query->have_posts()) : ?>
 	<section class="home-sponsored">
