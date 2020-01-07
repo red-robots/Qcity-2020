@@ -2497,7 +2497,7 @@ section.stickies-new .right .story-block .desc{display:block;width:100%}
 section.stickies-new .right .story-block .story-home-right a img{height:200px}
 }.sticky{position:fixed;top:0;width:100%}
 @media screen and (min-width:320px) and (max-width:640px){.site .site-header{position:fixed !important;display:block;width:100%;z-index:10009;top:0}
-}@media screen and (min-width:768px) and (max-width:1249px){section.home-bottom .jobs,section.home-bottom .biz-dir{margin-right:10px}
+}@media screen and (min-width:768px) and (max-width:1249px){section.home-bottom .jobs,section.home-bottom .biz-dir{margin-right:15px}
 }.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
