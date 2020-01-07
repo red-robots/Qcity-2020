@@ -49,15 +49,18 @@ $subtitle   = get_field('banner_subtitle_text');
 				<div class="banner-button find">Find a Job
 				<?php 
 				$terms = get_terms( array(
-				    'taxonomy' => 'job_cat',
-				    'hide_empty' => false,
+				    'taxonomy' 		=> 'job_cat',
+				    'hide_empty' 	=> false,
 				) );
-					if(is_array($terms)&&!empty($terms)):?>
+					if( is_array($terms) && !empty($terms) ):?>
 	                        <ul>
 	                            <?php foreach($terms as $term):?>
-	                                <li>
-	                                    <a href="<?php echo get_term_link($term->term_id);?>"><?php echo $term->name;?></a> 
-	                                </li>
+
+	                            	<?php if( have_content( $term->term_id ) ): ?>
+		                                <li>
+		                                    <a href="<?php echo get_term_link($term->term_id);?>"><?php echo $term->name;?></a> 
+		                                </li>
+	                            	<?php endif; ?>
 	                            <?php endforeach;?>
 	                        </ul>
 	                    <?php endif;?>

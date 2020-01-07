@@ -23,8 +23,7 @@ get_template_part('template-parts/banner-category');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div class="category-post">
-				
+			<div class="category-post">		
 			
 			
 				<?php if ( have_posts() ) : ?>

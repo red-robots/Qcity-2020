@@ -203,3 +203,41 @@ function get_ads_script($slug)
     return $ad_script;
 }
 
+/*
+*   Search for Jobs content
+*/
+
+function have_content( $term_id )
+{
+    $content = false;
+    $args = array(
+            'post_type'     => 'job',
+            'post_status'   => 'publish',
+            'tax_query' => array( 
+                    array(
+                        'taxonomy' => 'job_cat',
+                        'field' => 'id',
+                        'terms' => $term_id,
+                        'include_children' => false,
+                        'operator' => 'IN'
+                      )
+            )
+
+    );
+
+    $query = new WP_Query( $args );
+
+    if( $query->have_posts() ):
+
+        $content = true;
+
+    else:  
+
+        $content = false;
+
+    endif;
+    wp_reset_postdata();
+
+    return $content;
+}
+

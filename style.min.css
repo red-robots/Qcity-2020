@@ -2338,13 +2338,16 @@ section.qcity-news-container .story-block .photo img{height:275px;width:100%}
 section.stickies,section.news-home,section.home-bottom,section.footer-section{padding:0 40px;max-width:1350px;margin:0 auto;float:none}
 section.home-sponsored{padding:0 40px;border-bottom:0}
 .widget-area{margin-right:40px}
-.single-page-event{margin:0 auto;max-width:950px}
+.single-page-event,.archive_job_cat{margin:0 auto;max-width:950px}
+.archive_job_cat{margin-left:40px}
 .next-story-block{margin-bottom:10px;display:block}
 .next-story-block .photo{width:30%}
 .next-story-block .photo a img{width:275px;height:auto;float:left;display:inline-block;margin-right:20px;margin-bottom:10px;padding:5px 0}
 .next-story-block .desc{width:65%;display:inline-block;float:left;padding:5px 0}
 .next-story-block .desc .desc-text{font-size:14px}
 .business_category .photo{height:275px;width:100%;position:relative;overflow:none;background-repeat:no-repeat;background-position:center center;background-size:cover}
+.jobs_category{width:364px}
+.jobs_category .photo{height:275px;width:100%;position:relative;overflow:none;background-repeat:no-repeat;background-position:center center;background-size:cover}
 .desktop-version{display:block}
 .mobile-version{display:none}
 }.event-photo{position:relative;overflow:none;height:275px;background-position:center center;background-repeat:no-repeat;background-size:cover}
@@ -2416,12 +2419,14 @@ section.home-bottom .hearken{display:block;width:100%;clear:both}
 .biz-submit{display:none}
 .menu-counter{z-index:-12}
 .business_category .photo{height:150px;width:100%;position:relative;overflow:none;background-repeat:no-repeat;background-position:center center;background-size:cover}
+.jobs_category{width:100%}
+.jobs_category .photo{height:150px;width:100%;position:relative;overflow:none;background-repeat:no-repeat;background-position:center center;background-size:cover}
 .mainnav-wrap{width:100%;float:left;background-color:#262425;padding:35px 0 12px 0}
 .logo img,h1.logo img{width:auto;height:80px}
 .business-category-page,.featured_business,.business-category-header,.archive-content-page,.single-page{padding:0 20px}
 .bottom .banner-button,.event-butts .bottom .banner-button{margin:0;padding:10px 20px}
 .banner .bottom .btn{margin:0 5px}
-.listing-header,.single-page-event{padding:0 20px}
+.listing-header,.single-page-event,.archive_job_cat{padding:0 20px}
 .jobs-page,.events_page,.two-column-page,.church-listing-page,.category-post{padding:0 20px}
 section.stickies,section.news-home,section.home-bottom{padding:0 20px}
 section.home-sponsored{padding:0 20px;border-bottom:0}

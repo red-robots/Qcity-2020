@@ -1863,9 +1863,13 @@ section.qcity-news-container{
 		margin-right: 40px;
 	}
 
-	.single-page-event{
+	.single-page-event, .archive_job_cat{
 		margin: 0 auto;
 		max-width: 950px;
+	}
+
+	.archive_job_cat{
+		margin-left: 40px;
 	}
 
 	.next-story-block{
@@ -1900,6 +1904,22 @@ section.qcity-news-container{
 	}
 
 	.business_category {
+
+		.photo{
+			height: 275px;
+			width: 100%;
+			position: relative;
+			overflow: none;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+		}
+	}
+
+
+	.jobs_category {
+
+		width: 364px;
 
 		.photo{
 			height: 275px;
@@ -2365,6 +2385,21 @@ article.story-block{
 		}
 	}
 
+	.jobs_category {
+
+		width: 100%;
+
+		.photo{
+			height: 150px;
+			width: 100%;
+			position: relative;
+			overflow: none;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+		}
+	}
+
 	.mainnav-wrap {
 	    width: 100%;
 	    float: left;
@@ -2390,7 +2425,7 @@ article.story-block{
 	    margin: 0 5px;
 	}
 
-	.listing-header, .single-page-event{
+	.listing-header, .single-page-event, .archive_job_cat{
 		padding: 0 20px;
 	}
 
