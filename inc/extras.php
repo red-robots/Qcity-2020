@@ -188,7 +188,7 @@ function get_ads_script($slug)
             $query->the_post();
 
             $ad_enable = get_field('enable_ad');
-            if( $ad_enable ):
+            if( $ad_enable == 'Yes' ):
                 $ad_script = get_field('ad_script');
             else:
                 $ad_script = '';
