@@ -16,7 +16,7 @@
 	
 	<section class="news-home">
 
-        <div class="mobile-version mobile-ads" style="margin-bottom: 20px"> <!-- Small Optional Ad Right -->
+        <div class="mobile-version" style="margin-bottom: 20px"> <!-- Small Optional Ad Right -->
                 <?php echo get_ads_script('small-ad-right'); ?>
         </div> <!-- Small Optional Ad Right -->
 
