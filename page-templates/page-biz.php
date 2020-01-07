@@ -29,16 +29,7 @@ get_template_part('template-parts/banner-biz');
 
 			<section class="biz-cats">
 
-			<?php
-				/*$args = array(
-						'post_type' 	=> 'business_listing', 
-						'post_status'	=> 'publish',
-						'taxonomy' 		=> 'business_category', 
-						//'term' 			=> 'php', 
-						'posts_per_page' => -1
-				);
-
-				$business = new WP_Query($args);*/
+			<?php				
 
 				if( have_posts() ):
 

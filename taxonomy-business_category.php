@@ -8,8 +8,8 @@
  */
 
 get_header(); 
-//get_template_part('template-parts/banner-biz');
-$ob = get_queried_object();
+get_template_part('template-parts/banner-biz');
+
 
 $add_business = get_field('add_your_business');
 $add_business_link = get_field('add_business_link');
@@ -17,7 +17,8 @@ $add_business_link = get_field('add_business_link');
 //var_dump($ob);
 ?>
 
-<div class="wrapper" style="background-color: white">
+<div class="wrapper" >
+	<?php $ob = get_queried_object(); ?>
 	<div class="business-category-header">
 		<header class="page-header biz">		
 			<h1><?php echo $ob->name; ?></h1>
@@ -39,74 +40,80 @@ $add_business_link = get_field('add_business_link');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div class="business-category-page">
-				<?php
+			<div class="listing_initial">
 
-					$args = array(
-							'post_type' 	=> 'business_listing',
-							'post_status'	=> 'publish',
-							//'category_name' => $ob->slug,
-							'tax_query' => array( 
-											'relation' => 'AND',
-											array(
-										        'taxonomy' 			=> 'business_classification',
-										        'field' 			=> 'slug',
-										        'terms' 			=> array( 'featured' ),
-										        'include_children' 	=> true,
-										        'operator' 			=> 'IN'
-										      ),
-											array(
-										        'taxonomy' 			=> $ob->taxonomy,
-										        'field' 			=> 'id',
-										        'terms' 			=> array( $ob->term_id ),
-										        'include_children' 	=> true,
-										        'operator' 			=> 'IN'
-										      )
-							)
-					);
+				<div class="business-category-page">
+					<?php
 
-					$query = new WP_Query( $args );
+						$args = array(
+								'post_type' 	=> 'business_listing',
+								'post_status'	=> 'publish',
+								//'category_name' => $ob->slug,
+								'tax_query' => array( 
+												'relation' => 'AND',
+												array(
+											        'taxonomy' 			=> 'business_classification',
+											        'field' 			=> 'slug',
+											        'terms' 			=> array( 'featured' ),
+											        'include_children' 	=> true,
+											        'operator' 			=> 'IN'
+											      ),
+												array(
+											        'taxonomy' 			=> $ob->taxonomy,
+											        'field' 			=> 'id',
+											        'terms' 			=> array( $ob->term_id ),
+											        'include_children' 	=> true,
+											        'operator' 			=> 'IN'
+											      )
+								)
+						);
 
-					if ( $query->have_posts() ) : ?>
-						<div class="qcity-news-container">
-							<section class="sponsored">
-								<?php
-								/* Start the Loop */
-								while ( $query->have_posts() ) : $query->the_post();
+						$query = new WP_Query( $args );
 
-									get_template_part( 'template-parts/business-block' );
+						if ( $query->have_posts() ) : ?>
+							<div class="qcity-news-container">
+								<section class="sponsored">
+									<?php
+									/* Start the Loop */
+									while ( $query->have_posts() ) : $query->the_post();
 
-								endwhile;
+										get_template_part( 'template-parts/business-block' );
 
-								wp_reset_postdata(); ?>
-							
-							</section>
+									endwhile;
 
-						</div>
-						<div class="more ">	
-							 	<a class="red qcity-load-more" data-page="1" data-action="qcity_business_load_more" >		
-							 		<span class="load-text">Load More</span>
-									<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
-							 	</a>
-						</div>
+									wp_reset_postdata(); ?>
+								
+								</section>
 
-					<?php else: ?>
-						<div class="qcity-news-container" style="padding-bottom: 20px;">
-							<section class="sponsored">
-								<a href="<?php echo bloginfo( 'url' ); ?>/business-directory/business-directory-sign-up/">
-									<h5 class="sponsored-empty">Be the first.</h5>
-								</a>								
-							</section>
-						</div>
-					<?php endif; ?>
+							</div>
+							<div class="more ">	
+								 	<a class="red qcity-load-more" data-page="1" data-action="qcity_business_load_more" >		
+								 		<span class="load-text">Load More</span>
+										<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
+								 	</a>
+							</div>
 
-					<div class="mt-5" style="margin-top: 20px;">
-						<?php get_template_part('template-parts/business-directory'); ?>
-					</div>		
-					
+						<?php else: ?>
+							<div class="qcity-news-container" style="padding-bottom: 20px;">
+								<section class="sponsored">
+									<a href="<?php echo bloginfo( 'url' ); ?>/business-directory/business-directory-sign-up/">
+										<h5 class="sponsored-empty">Be the first.</h5>
+									</a>								
+								</section>
+							</div>
+						<?php endif; ?>
 
+						<div class="mt-5" style="margin-top: 20px;">
+							<?php get_template_part('template-parts/business-directory'); ?>
+						</div>		
 				
+				</div>
 
+			</div>
+
+			<div class="listing_search">
+				<div class="listing_search_result">				
+				</div>				
 			</div>
 
 		</main><!-- #main -->

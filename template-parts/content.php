@@ -61,7 +61,7 @@ $mod = the_modified_date('M j, Y', '', '', false);
 				}
 				if( ($i == 12)  ){
 					$ads_12th = get_ads_script('single-article-after-12th-paragraph');
-					if( $ads_12th && empty($em) ){
+					if( $ads_12th  ){
 						echo "</div>
 						<div class='brown-bar'>". $ads_12th . "</div>
 						<div class='content-single-page'>";

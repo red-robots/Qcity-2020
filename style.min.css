@@ -2318,7 +2318,7 @@ section.church-list .church{width:auto;position:relative;-webkit-flex-basis:47%;
 .business-directory-table tr.odd{background-color:#f5f5f5}
 .business-directory-table td{padding:5px 10px}
 .desc .bold{font-weight:bold}
-header.biz{width:100%;float:left;background-color:#924020;color:#fff;text-align:center;padding:5px 0 7px;margin:60px 0;letter-spacing:2px}
+header.biz{width:100%;float:left;background-color:#924020;color:#fff;text-align:center;padding:5px 0 7px;margin:0 0 30px;letter-spacing:2px}
 .listing_search{display:none;text-align:center}
 .listing_search span.load-icon{color:#924020;display:block}
 .church-list .church .info{text-align:left}
@@ -2467,6 +2467,7 @@ section.stickies-new .right .story-block .desc .excerpt{font-size:1rem;margin-to
 .mobile-ads{text-align:center;display:block}
 .bottom-20{margin-bottom:20px}
 .padding-20{padding-bottom:20px}
+.banner{z-index:10}
 @media screen and (max-width:767px){.border-title{margin-bottom:30px}
 .job-details{background-color:white;padding:20px}
 .job-details-page{padding-bottom:0}
