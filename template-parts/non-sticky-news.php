@@ -47,7 +47,7 @@
 		 </section>
 		 <section class="ads-home">
 
-            <div class="desktop-version"> <!-- Right Rail Home -->
+            <div class="desktop-version" style="margin-bottom: 20px"> <!-- Right Rail Home -->
                 <?php echo get_ads_script('right-rail'); ?>
             </div> <!-- Right Rail Home -->
             
@@ -86,7 +86,7 @@
             <!--
             <script async src="https://modules.wearehearken.com/wndr/embed/868.js"></script>
             -->
-            <div class="desktop-version">
+            <div class="desktop-version" style="margin-bottom: 20px">
                 <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
             </div>
 

@@ -66,16 +66,5 @@ endif;
 wp_reset_postdata();
 
 
-
-/*if( is_tax() ) {
-	$img = get_field('story_image','63060'); // Page = Qcity Biz
-	$imgMob = get_field('story_image_mobile','63060');
-} else {
-	$img = get_field('story_image');
-	$imgMob = get_field('story_image_mobile');
-}
-
-$add_business = get_field('add_your_business');
-$add_business_link = get_field('add_business_link');*/
 ?>
 
