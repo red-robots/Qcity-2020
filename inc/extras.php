@@ -190,6 +190,8 @@ function get_ads_script($slug)
             $ad_enable = get_field('enable_ad');
             if( $ad_enable ):
                 $ad_script = get_field('ad_script');
+            else:
+                $ad_script = '';
             endif;
 
         endwhile;
