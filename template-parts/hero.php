@@ -121,7 +121,7 @@ if ($wp_query->have_posts()) : ?>
                     }
 
                  if($i == 1){
-                 	echo '<div class="mobile-version bottom-20 ">'. get_ads_script('right-rail') . '</div>';
+                 	echo '<div class="mobile-version bottom-20 align-center">'. get_ads_script('right-rail') . '</div>';
                  }   
 
 		 endwhile; 
