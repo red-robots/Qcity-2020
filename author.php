@@ -41,20 +41,22 @@ $desc = get_the_author_meta('description');
 	<!-- </div> -->
 </div>
 <div class="wrapper">
-	<div id="primary" class="content-area">
-		<div class="postby">Stories by: <?php echo $name.' '.$last; ?></div>
-		<main id="main" class="site-main author-feed" role="main">
+	<div id="primary" class="content-area" >
+		<div class="single-page" style="margin: 0 auto">
+			<div class="postby">Stories by: <?php echo $name.' '.$last; ?></div>
+			<main id="main" class="site-main author-feed" role="main">
 
-			<?php
-			while ( have_posts() ) : the_post(); ?>
+				<?php
+				while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part('template-parts/story-block'); ?>
+					<?php get_template_part('template-parts/story-block'); ?>
 
-			<?php endwhile; // End of the loop.
-			pagi_posts_nav();
-			?>
+				<?php endwhile; // End of the loop.
+				pagi_posts_nav();
+				?>
 
-		</main><!-- #main -->
+			</main><!-- #main -->
+		</div>
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

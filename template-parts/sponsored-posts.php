@@ -52,14 +52,16 @@
 		'meta_query' 		=> array(
 								array(
 							        'key'		=> 'event_date',
-							        'compare'	=> '<=',
+							        'compare'	=> '>=',
 							        'value'		=> $today,
 							    ),
-							    //  array(
-							    //     'key'		=> 'end_date',
-							    //     'compare'	=> '>=',
-							    //     'value'		=> $today,
-							    // )
+		'tax_query' 		=> array(
+								array(
+									'taxonomy' 	=> 'event_category', 
+									'field' 	=> 'slug',
+									'terms' 	=> array( 'premium' ) 
+								)
+							)
     ),
 ));
 	if ($wp_query->have_posts()) : ?>
