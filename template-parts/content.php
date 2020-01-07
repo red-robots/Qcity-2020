@@ -47,10 +47,11 @@ $mod = the_modified_date('M j, Y', '', '', false);
 			$i = 0;
 			foreach($output[0] as $paragraph):
 				echo $paragraph;
+				preg_match_all('|<em>(.*?)</em>|',$paragraph, $em);
 				$i++;
-				if($i == 6){
+				if( ($i == 6)  ){
 					$ads_6th = get_ads_script('single-article-after-6th-paragraph');
-					if( $ads_6th ){
+					if( $ads_6th && empty($em) ){
 						echo "</div>
 							<div class='brown-bar'>". $ads_6th ."</div>
 							<div class='content-single-page'>
@@ -58,11 +59,11 @@ $mod = the_modified_date('M j, Y', '', '', false);
 					}
 					
 				}
-				if($i == 12){
+				if( ($i == 12)  ){
 					$ads_12th = get_ads_script('single-article-after-12th-paragraph');
-					if( $ads_12th ){
+					if( $ads_12th && empty($em) ){
 						echo "</div>
-						<div class='brown-bar'>". $ads_12th ."</div>
+						<div class='brown-bar'>". $ads_12th . "</div>
 						<div class='content-single-page'>";
 					}
 					
