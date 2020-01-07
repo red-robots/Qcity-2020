@@ -1246,13 +1246,12 @@ span.load-text{
 }
 
 section.home-bottom .ad {
-    width: 33%;
-    float: right;
-    padding-left: 10px;
+    width: 31%;
+    float: right;    
 }
 
 .jobs {
-    margin-right: 10px;
+    margin-right: 30px;
 }
 
 section.home-bottom {
@@ -1260,6 +1259,10 @@ section.home-bottom {
     clear: both;
     margin: 30px 0;
     /*float: left;*/
+
+    .biz-dir{
+    	margin-right: 30px;
+    }
 }
 
 .view{

@@ -53,7 +53,7 @@
 	<?php get_template_part('template-parts/business-directory-footer'); ?>
 	
 	<!--- Advertisements -->
-	<div class="ad" style="display: block;">
+	<div class="ad" style="display: inline-block;">
         <div class="desktop-version business-directory-ads"> <!-- Business Directory Home -->
                 <?php echo get_ads_script('business-directory-home'); ?>                
         </div> <!-- Business Directory Home -->
