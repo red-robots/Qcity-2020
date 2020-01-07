@@ -1,8 +1,6 @@
 <?php
 /*
 	Non Sticky News.
-
-
 */  
     $cat_id = get_category_by_slug( 'sponsored-post' );    
 	
@@ -47,41 +45,9 @@
 		 </section>
 		 <section class="ads-home">
 
-            <div class="desktop-version" style="margin-bottom: 20px"> <!-- Right Rail Home -->
+            <div class="desktop-version align-center" style="margin-bottom: 20px"> <!-- Right Rail Home -->
                 <?php echo get_ads_script('right-rail'); ?>
             </div> <!-- Right Rail Home -->
-            
-		 	<?php  
-		 		/*$post_type = 'ad';
-                $args = array(
-                    'posts_per_page'   => 1,
-                    'orderby'          => 'rand',
-                    //'order'            => 'DESC',
-                    'post_type'        => $post_type,
-                    'post_status'      => 'publish',
-                    //'paged'            => $paged
-                );
-                $ad_posts = new WP_Query($args);
-
-                if ( $ad_posts->have_posts() ):
-                    echo '<div class="ads-portion">';
-                	while ( $ad_posts->have_posts() ) : $ad_posts->the_post();
-
-                		$header_script = get_field('header_script');
-                		if( $header_script ){
-                			echo $header_script;
-                		}
-
-                		$ad_script = get_field('ad_script');
-                		if($ad_script){
-                			echo $ad_script;
-                		}
-
-                	endwhile;
-                    echo '</div>';
-                endif;
-                wp_reset_postdata(); */
-		 	?>
             
             <!--
             <script async src="https://modules.wearehearken.com/wndr/embed/868.js"></script>
@@ -90,7 +56,7 @@
                 <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
             </div>
 
-            <div class="desktop-version"> <!-- Small Optional Ad Right -->
+            <div class="desktop-version align-center"> <!-- Small Optional Ad Right -->
                 <?php echo get_ads_script('small-ad-right'); ?>
             </div> <!-- Small Optional Ad Right -->
             

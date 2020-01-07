@@ -54,7 +54,7 @@
 	
 	<!--- Advertisements -->
 	<div class="ad" style="display: block; text-align: center;">
-        <div class="desktop-version business-directory-ads"> <!-- Business Directory Home -->
+        <div class="desktop-version align-center"> <!-- Business Directory Home -->
                 <?php echo get_ads_script('business-directory-home'); ?>                
         </div> <!-- Business Directory Home -->
 		<?php  
