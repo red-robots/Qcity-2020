@@ -1336,11 +1336,7 @@ section.home-bottom {
 	}
 }
 
-@media screen and (min-width: 768px) and (max-width: 1249px){
-	.jobs, .biz-dir {
-	    margin-right: 10px;
-	}
-}
+
 
 
 @media screen and (max-width: 767px) {
@@ -2863,3 +2859,10 @@ section.stickies-new{
 	}
 }
 
+@media screen and (min-width: 768px) and (max-width: 1249px){
+	section.home-bottom{
+		.jobs, .biz-dir {
+		    margin-right: 10px;
+		}
+	}	
+}
