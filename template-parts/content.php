@@ -51,7 +51,7 @@ $mod = the_modified_date('M j, Y', '', '', false);
 				$i++;
 				if( ($i == 6)  ){
 					$ads_6th = get_ads_script('single-article-after-6th-paragraph');
-					if( $ads_6th && empty($em) ){
+					if( $ads_6th ){
 						echo "</div>
 							<div class='brown-bar'>". $ads_6th ."</div>
 							<div class='content-single-page'>
