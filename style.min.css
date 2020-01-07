@@ -2466,6 +2466,7 @@ section.stickies-new .right .story-block .desc .excerpt{font-size:1rem;margin-to
 .align-center{text-align:center}
 .mobile-ads{text-align:center;display:block}
 .bottom-20{margin-bottom:20px}
+.padding-20{padding-bottom:20px}
 @media screen and (max-width:767px){.border-title{margin-bottom:30px}
 .job-details{background-color:white;padding:20px}
 .job-details-page{padding-bottom:0}
