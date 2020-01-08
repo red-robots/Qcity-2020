@@ -50,13 +50,17 @@ function qcity_events_load_more(){
 
     $paged = $_POST['page'] + 1;
     $today = date('Ymd');
+    $postID = $_POST['postID'];
 
     $query = new WP_Query( array(
         'post_type'         => 'event',
         'post_status'       => 'publish',
         'paged'             => $paged,
-        'posts_per_page'    => 6,
-        //'post__not_in'  => $postIDs
+        'order'             => 'ASC',
+        'meta_key'          => 'event_date',
+        'orderby'           => 'event_date',
+        'posts_per_page'    => 9,
+        'post__not_in'      => explode(',', $postID),
         'meta_query'        => array(
                                 array(
                                     'key'       => 'event_date',

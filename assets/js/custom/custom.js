@@ -335,7 +335,7 @@ jQuery(document).ready(function ($) {
         var page    = $(this).data('page');
         var newPage = page + 1;
         var action  = $(this).data('action');
-        //var container = $(this).data('')
+        var postID = $(this).data('except')
         //var ajaxUrl = that.data('url');
 
         that.addClass('loading').find('.load-text').hide();        
@@ -348,7 +348,8 @@ jQuery(document).ready(function ($) {
             type: 'post',
             data: {
                 page: page,
-                action: action
+                action: action,
+                postID: postID
             },
             success: function(response){
 

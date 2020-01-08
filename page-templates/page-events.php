@@ -26,8 +26,11 @@ get_template_part('template-parts/banner-events');
 					$today = date('Ymd');
 					$wp_query = new WP_Query();
 					$wp_query->query(array(
-						'post_type'=>'event',
-						'post_status'=>'publish',
+						'post_type'		=>'event',
+						'post_status'	=>'publish',
+						'order' 		=> 'ASC',
+						'meta_key' 		=> 'event_date',
+						'orderby' 		=> 'event_date',
 						//'posts_per_page' => 5,
 						'meta_query' => array(
 							array(
@@ -79,8 +82,12 @@ get_template_part('template-parts/banner-events');
 								$wp_query->query(array(
 									'post_type'			=>'event',
 									'post_status'		=>'publish',
-									'posts_per_page' 	=> 18,
+									'posts_per_page' 	=> 9,
 									'post__not_in' 		=> $postID,
+									'order' 			=> 'ASC',
+									'meta_key' 			=> 'event_date',
+									'orderby' 			=> 'event_date',
+									'paged'             => 1,
 									'meta_query' 		=> array(
 															array(
 														        'key'		=> 'event_date',
@@ -102,7 +109,7 @@ get_template_part('template-parts/banner-events');
 						</div>
 
 						<div class="more ">	
-						 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" >		
+						 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" data-except="<?php echo implode(',', $postID); ?>" >		
 						 		<span class="load-text">Load More</span>
 								<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
 						 	</a>
