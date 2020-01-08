@@ -63,7 +63,8 @@ $add_business_link = get_field('add_business_link');
 											      ),
 												array(
 											        'taxonomy' 			=> $ob->taxonomy,
-											        'field' 			=> 'id',
+											        //'field' 			=> 'id',
+												'field' 			=> 'term_id',
 											        'terms' 			=> array( $ob->term_id ),
 											        'include_children' 	=> true,
 											        'operator' 			=> 'IN'
