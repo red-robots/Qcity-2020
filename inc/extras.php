@@ -241,3 +241,34 @@ function have_content( $term_id )
     return $content;
 }
 
+/*
+*   Adding Ads inside single article
+*/
+
+add_filter('the_content', 'qcity_add_incontent_ad');
+function qcity_add_incontent_ad( $content )
+{   if(is_single()){
+        $content_block = explode('<p>',$content);
+        if(!empty($content_block[5]))
+        {   
+            $ads_6th = get_ads_script('single-article-after-6th-paragraph');
+            $content_block[5] .= '</div>
+                            <div class="brown-bar">'. $ads_6th .'</div>
+                            <div class="content-single-page">';
+        }
+        if(!empty($content_block[11]))
+        {   
+            $ads_12th = get_ads_script('single-article-after-12th-paragraph');
+            $content_block[11] .= '</div>
+                            <div class="brown-bar">'. $ads_12th .'</div>
+                            <div class="content-single-page">';
+        }
+        for($i=1; $i<count($content_block); $i++)
+        {   
+            $content_block[$i] = '<p>'.$content_block[$i];
+        }
+        $content = implode('',$content_block);
+    }
+    return $content;    
+}
+

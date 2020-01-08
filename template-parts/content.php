@@ -34,41 +34,11 @@ $mod = the_modified_date('M j, Y', '', '', false);
 		<div class="content-single-page">
 		<?php
 
-			/*the_content( sprintf(
+			the_content( sprintf(
 				 //translators: %s: Name of current post.
 				 wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'acstarter' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );*/
-
-			ob_start();
-			the_content();
-			$content = ob_get_clean();
-			preg_match_all('|<p>(.*?)</p>|',$content, $output);
-			$i = 0;
-			foreach($output[0] as $paragraph):
-				echo $paragraph;
-				preg_match_all('|<em>(.*?)</em>|',$paragraph, $em);
-				$i++;
-				if( ($i == 6)  ){
-					$ads_6th = get_ads_script('single-article-after-6th-paragraph');
-					if( $ads_6th ){
-						echo "</div>
-							<div class='brown-bar'>". $ads_6th ."</div>
-							<div class='content-single-page'>
-							";
-					}
-					
-				}
-				if( ($i == 12)  ){
-					$ads_12th = get_ads_script('single-article-after-12th-paragraph');
-					if( !empty($ads_12th)  ){
-						echo "</div>
-						<div class='brown-bar'>". $ads_12th . "</div>
-						<div class='content-single-page'>";
-					}
-					
-				}
-			endforeach;
+			) );			
 			
 		?>
 		</div>
