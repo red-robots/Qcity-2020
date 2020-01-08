@@ -341,7 +341,7 @@ jQuery(document).ready(function ($) {
         that.addClass('loading').find('.load-text').hide();        
         that.find('.load-icon').show();
 
-        console.log('postID: ' + postID);
+        //console.log('postID: ' + postID);
 
         $.ajax({
             url: ajaxURL,
