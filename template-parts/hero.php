@@ -24,6 +24,8 @@ if ($wp_query->have_posts()) : ?>
 		
 		$title 		= get_the_title();
 
+		$guest_author =  get_field('author_name'); 
+
 		$title 		= (strlen($title) > 94) ? substr($title, 0, 94) . ' ...' : $title;
 		
 		//var_dump($img);
@@ -46,7 +48,7 @@ if ($wp_query->have_posts()) : ?>
 					<?php the_excerpt(); ?>
 				</div>
 				<div class="by">
-					By <?php the_author();?> | <?php echo get_the_date(); ?> 
+					By <?php echo ( $guest_author ) ? $guest_author : get_the_author(); ?> | <?php echo get_the_date(); ?> 
 				</div>
 			</div>
 			<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
@@ -81,6 +83,8 @@ if ($wp_query->have_posts()) : ?>
 					$img 	= get_field('story_image');
 					$video 	= get_field('video_single_post');
 
+					$author =  get_field('author_name');
+
 					$embed = youtube_setup($video);
 
 					$postIDs[] = get_the_ID();
@@ -106,7 +110,7 @@ if ($wp_query->have_posts()) : ?>
 					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>	
 					<div class="excerpt"><?php echo $excerpt; ?></div>
 					<div class="by">
-						By <?php the_author(); ?> | <?php echo get_the_date(); ?>
+						By <?php echo ( $author ) ? $author : get_the_author(); ?> | <?php echo get_the_date(); ?>
 					</div>
 				</div>
 				
