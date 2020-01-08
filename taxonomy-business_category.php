@@ -25,6 +25,9 @@ $add_business_link = get_field('add_business_link');
 			<?php
 				//the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="taxonomy-description">', '</div>' );
+			echo '<!-- <pre>';
+			print_r($ob);
+			echo '</pre> -->';
 			?>
 		</header><!-- .page-header -->
 	</div>
