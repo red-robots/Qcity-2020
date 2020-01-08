@@ -8,7 +8,7 @@
 
 	$height = ( is_archive() ) ? ' height: 200px' : '';
 
-	//var_dump($image);
+	$guest_author =  get_field('author_name') ;
 ?>
 
 <article class="story-block">
@@ -30,7 +30,7 @@
 		<span><?php echo get_the_excerpt(); ?></span>
 	</div>
 	<div class="by">
-		By <?php the_author(); ?> | <?php echo get_the_date(); ?>
+		By <?php echo ( $guest_author ) ? $guest_author : get_the_author(); ?> | <?php echo get_the_date(); ?>
 	</div>
 	<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
 </article>

@@ -9,10 +9,9 @@
 //$storyImage = get_field( 'story_image' );
 
 $mod = the_modified_date('M j, Y', '', '', false);
-// echo '<pre>';
-// print_r($mod);
-// echo $mod;
-// echo '</pre>';
+
+$guest_author =  get_field('author_name') ;
+
 ?>
 
 
@@ -23,7 +22,7 @@ $mod = the_modified_date('M j, Y', '', '', false);
 			<?php
 			if ( 'post' === get_post_type() ) : ?>
 				<div class="entry-meta">				
-					<div>By <?php the_author(); ?> </div>
+					<div>By <?php echo ( $guest_author ) ? $guest_author : get_the_author(); ?> </div>
 					<div><?php echo get_the_date(); if($mod){echo' | Updated '.$mod;} ?></div>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
