@@ -48,8 +48,8 @@ add_action('wp_ajax_qcity_events_load_more', 'qcity_events_load_more');
 
 function qcity_events_load_more(){
 
-    $paged = $_POST['page'] + 1;
-    $today = date('Ymd');
+    $paged  = $_POST['page'] + 1;
+    $today  = date('Ymd');
     $postID = $_POST['postID'];
 
     $query = new WP_Query( array(
