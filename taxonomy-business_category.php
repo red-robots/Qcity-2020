@@ -47,7 +47,9 @@ $add_business_link = get_field('add_business_link');
 
 				<div class="business-category-page">
 					<?php
-
+echo '<!-- <pre>';
+print_r($ob);
+echo '</pre> -->';
 						$args = array(
 								'post_type' 	=> 'business_listing',
 								'post_status'	=> 'publish',
