@@ -1,69 +1,34 @@
 <?php
 /*
 	Sponsored Row
-
-
 */
 	$i = 0;
 	$today = date('Ymd');
-	//echo $today;
-	// $args = array (
-	//     'post_type' => 'event',
-	// 	'meta_query' => array(
-	// 		array(
-	// 	        'key'		=> 'event_date',
-	// 	        'compare'	=> '>=',
-	// 	        'value'		=> $today,
-	// 	    ),
-	// 	    //  array(
-	// 	    //     'key'		=> 'end_date',
-	// 	    //     'compare'	=> '>=',
-	// 	    //     'value'		=> $today,
-	// 	    // )
-	//     ),
-	// );
-
-// get posts
-// $posts = get_posts($args);
-// if( $posts ) {
 	
-// 	foreach( $posts as $post ) {
-		
-// 		setup_postdata( $post );
-// 		//the_title();
-// 		the_field('event_date');
-// 		echo $post->title;
-// 		// do something
-// 		echo '<pre>';
-// 		print_r($post);
-// 		echo '</pre>';
 
-// 	}
+$wp_query = new WP_Query();
 
-// 	wp_reset_postdata();
-	
-// }
-
-	$wp_query = new WP_Query();
 $wp_query->query(array(
-'post_type'			=>'event',
-'post_status'		=>'publish',
-'posts_per_page' 	=> 4,
-'meta_query' 		=> array(
-	array(
+	'post_type'			=>'event',
+	'post_status'		=>'publish',
+	'posts_per_page' 	=> 4,
+	'order' 			=> 'ASC',
+	'meta_key' 			=> 'event_date',
+	'orderby' 			=> 'event_date',
+	'meta_query' 		=> array(
+		array(
 			'key'		=> 'event_date',
 			'compare'	=> '>=',
 			'value'		=> $today,
-		),
-		
+		),		
 	),
-'tax_query' => array(
-	array(
-		'taxonomy' 	=> 'event_category', 
-		'field' 	=> 'slug',
-		'terms' 	=> array( 'premium' ) 
+	'tax_query' => array(
+		array(
+			'taxonomy' 	=> 'event_category', 
+			'field' 	=> 'slug',
+			'terms' 	=> array( 'premium' ) 
+		)
 	)
-)
 ));
 	if ($wp_query->have_posts()) : ?>
 	<section class="home-sponsored">
