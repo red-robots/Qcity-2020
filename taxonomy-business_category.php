@@ -66,7 +66,7 @@ echo '</pre> -->';
 												array(
 											        'taxonomy' 			=> $ob->taxonomy,
 											        //'field' 			=> 'id',
-												'field' 			=> 'term_id',
+													'field' 			=> 'term_id',
 											        'terms' 			=> array( $ob->term_id ),
 											        'include_children' 	=> true,
 											        'operator' 			=> 'IN'
@@ -92,12 +92,15 @@ echo '</pre> -->';
 								</section>
 
 							</div>
+							
+							<!--
 							<div class="more ">	
 								 	<a class="red qcity-load-more" data-page="1" data-action="qcity_business_load_more" >		
 								 		<span class="load-text">Load More</span>
 										<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
 								 	</a>
 							</div>
+							-->
 
 						<?php else: ?>
 							<div class="qcity-news-container" style="padding-bottom: 20px;">
@@ -127,11 +130,11 @@ echo '</pre> -->';
 		'post_status'   	=> 'publish',
 		//'paged' => $paged,
 		'tax_query' => array(
-			array(
-			    'taxonomy' 			=> $ob->taxonomy,
-				'field' 			=> 'term_id',
-				'terms' 			=> array( $ob->term_id ),
-			),
+				array(
+				    'taxonomy' 			=> $ob->taxonomy,
+					'field' 			=> 'term_id',
+					'terms' 			=> array( $ob->term_id ),
+				),
 		    ),
 	));
 	if ($wp_query->have_posts()) : ?>
@@ -161,16 +164,20 @@ echo '</pre> -->';
 	    </table>
 	</div>    
 	<?php endif; wp_reset_postdata(); ?>
+
+	<!--
 	<div class="more">
-    	<?php if( is_front_page() && is_home() ): ?>
+    	<?php /*if( is_front_page() && is_home() ): ?>
 			<a href="/business-directory/" class="red">See More</a>
 		<?php else: ?>		    		
 	    	<a class="red qcity-business-directory-load-more" data-page="1" data-action="qcity_business_directory_load_more" >
 	    		<span class="load-text">Load More</span>
 				<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
 	    	</a>
-    	<?php endif; ?>
-    </div>
+    	<?php  endif; */ ?>
+    </div> 
+	-->
+
 </div>
 						</div>	
 					<!-- close biz directory mt-5 -->
