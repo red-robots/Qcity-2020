@@ -2388,6 +2388,7 @@ body.single .site-footer .wrapper{max-width:1350px}
 article.story-block .desc{margin-top:10px}
 .smaller-screen{padding:0}
 #sidebar-event{right:0}
+body.author .wrapper{max-width:1050px}
 @media screen and (max-width:1249px){.smaller-screen{padding:20px}
 article.big-post h3{font-size:28px;height:60px}
 }@media screen and (max-width:767px){section.home-bottom .ad{width:100%;padding-left:0}

@@ -46,6 +46,8 @@ $desc = get_the_author_meta('description');
 			<div class="postby">Stories by: <?php echo $name.' '.$last; ?></div>
 			<main id="main" class="site-main author-feed" role="main">
 
+				
+
 				<?php
 				while ( have_posts() ) : the_post(); ?>
 
@@ -54,6 +56,8 @@ $desc = get_the_author_meta('description');
 				<?php endwhile; // End of the loop.
 				pagi_posts_nav();
 				?>
+
+				
 
 			</main><!-- #main -->
 		</div>
