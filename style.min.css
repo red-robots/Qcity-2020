@@ -2378,8 +2378,8 @@ section.red-band{padding-right:30px}
 body.page-template-page-media .wrapper{max-width:1050px}
 body.page-template-page-media #content{margin-top:60px}
 .mobile-separator{display:none}
-.single-page .featured_image{margin-top:30px;height:390px;width:100%}
-.single-page .business-content{margin-top:1.5em;font-size:1.2em}
+.single-page .featured_image{margin-top:30px;height:390px;width:100%;display:block}
+.single-page .business-content{margin-top:1.5em;font-size:1.2em;display:block}
 .single-page .business-content span{color:#000;font-weight:bold}
 .event-image{text-align:center;display:block}
 .event-image img{width:100%;height:auto;margin:0 auto}
