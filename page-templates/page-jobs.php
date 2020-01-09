@@ -35,18 +35,18 @@ get_template_part('template-parts/banner-jobs');
 				$today = date('Ymd');
 				$wp_query = new WP_Query();
 				$wp_query->query(array(
-				'post_type'=>'job',
-				'posts_per_page' => 5,
-				// 'meta_query' => array(
-				// 	array(
-				//         'key'		=> 'event_date',
-				//         'compare'	=> '<=',
-				//         'value'		=> $today,
-				//     ),
-			 //    ),
+					'post_type'=>'job',
+					'posts_per_page' => 5,
+					// 'meta_query' => array(
+					// 	array(
+					//         'key'		=> 'event_date',
+					//         'compare'	=> '<=',
+					//         'value'		=> $today,
+					//     ),
+				 //    ),
 			));
 				if ($wp_query->have_posts()) : ?>
-				<div class="jobs-page">
+					<div class="jobs-page">
 						<div class="biz-job-wrap">
 						<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
 

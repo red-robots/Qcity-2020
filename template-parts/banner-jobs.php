@@ -1,9 +1,22 @@
 <?php 
-// if( is_archive() ) {
-// 	$img = get_field('banner_image','48778'); // Page = Jobs
-// } else {
-// 	$img = get_field('banner_image');
-// }
+
+$args = array(
+	'pagename' 		=> 'job-board',
+	'post_status'	=> 'publish',
+);
+
+$query = new WP_Query( $args );
+
+if ( $query->have_posts() ) : 
+
+    while ( $query->have_posts() ) : $query->the_post();
+
+    	$title      = get_field('banner_title_text');
+		$subtitle   = get_field('banner_subtitle_text');
+		$img 		= get_field('story_image');
+		$imgMob 	= get_field('story_image_mobile');
+
+/*
 if( is_archive() ) {
 	$img = get_field('story_image','48778'); // Page = Jobs
 	$imgMob = get_field('story_image_mobile','48778');
@@ -15,6 +28,7 @@ if( is_archive() ) {
 $title      = get_field('banner_title_text');
 $subtitle   = get_field('banner_subtitle_text');
 //var_dump($img);
+*/
 ?>
 
 <div class="banner">
@@ -72,3 +86,10 @@ $subtitle   = get_field('banner_subtitle_text');
 		</div>
 	</div>
 </div>
+
+<?php
+    endwhile;
+
+
+endif;
+wp_reset_postdata();

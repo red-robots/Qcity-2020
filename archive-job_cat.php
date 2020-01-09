@@ -8,7 +8,7 @@
  */
 
 get_header(); 
-get_template_part('template-parts/banner-category');
+get_template_part('template-parts/banner-jobs');
 ?>
 
 <div class="wrapper">
@@ -25,40 +25,21 @@ get_template_part('template-parts/banner-category');
 				</div>
 
 				<div class="category-post">
-				
-					<?php if ( have_posts() ) : ?>
-						<!-- <header class="page-header">
-							<?php
-								//the_archive_title( '<h1 class="page-title">', '</h1>' );
-								//the_archive_description( '<div class="taxonomy-description">', '</div>' );
-							?>
-						</header>.page-header -->
-						<section class="sponsored">
-						<?php
-						$i=0;
-						/* Start the Loop */
-						while ( have_posts() ) : the_post(); 
-							echo '<div class=" ">';								
-							get_template_part( 'template-parts/jobs-cat-block' );	
-							get_template_part( 'template-parts/separator');
-							echo '</div>';
-						endwhile;
-						echo '</section>';
 
-						pagi_posts_nav();
+					<?php if ($wp_query->have_posts()) : ?>
+					<div class="jobs-page">
+						<div class="biz-job-wrap">
+						<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
 
-					else :
+								include(locate_template('template-parts/jobs-block.php')) ;
 
-						get_template_part( 'template-parts/content', 'none' );
-
-					endif; ?>
+							endwhile; ?>
+						</div>
+					</div>
+				<?php endif; wp_reset_postdata(); ?>
 
 				</div>
-
-
 			</div>
-
-			
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
