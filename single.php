@@ -12,7 +12,8 @@
 	$video 	= get_field('video_single_post');
 
 	$sponsors = get_field('sponsors');	
-	//var_dump($sponsors);
+	
+	$caption = get_the_post_thumbnail_caption();
 ?>
 
 
@@ -39,6 +40,12 @@
 					<?php the_post_thumbnail(); ?>
 				</div>
 			<?php } ?>
+
+			<?php if( $caption ): ?>
+				<div class="entry-meta">
+					<?php echo $caption; ?>
+				</div>
+			<?php endif; ?>
 
 		</div>
 
@@ -91,7 +98,13 @@
 							<div class="story-image">
 								<?php the_post_thumbnail(); ?>
 							</div>
-						<?php } ?>
+						<?php }  ?>
+
+						<?php if( $caption ): ?>
+							<div class="entry-meta">
+								<div class="post-caption"><?php echo $caption; ?></div>
+							</div>
+						<?php endif; ?>
 
 					</div>
 
