@@ -164,7 +164,7 @@
 		color: #fff;
 		@include transition(all ease .4s);
 		@media screen and (min-width: $tabwidth) {
-			padding: 0% 20px;
+			padding: 0% 16px;
 		}
 		@media screen and (min-width: $deskwidth) {
 			padding: 0% 30px;
@@ -442,7 +442,10 @@ body {
   right: 20px;
   top: -4px;
   @media screen and (min-width: $tabwidth) {
-  	position: relative;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-right: 15px;
   }
   
   span {
