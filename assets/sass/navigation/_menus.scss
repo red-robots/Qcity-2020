@@ -439,6 +439,8 @@ body {
   border-radius: 4px;
   z-index: 100002;
   float: right;
+  right: 20px;
+  top: -4px;
   @media screen and (min-width: $tabwidth) {
   	position: relative;
   }
