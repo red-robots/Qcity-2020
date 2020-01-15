@@ -1,3 +1,9 @@
+p{
+	strong {
+		font-weight: bolder;
+	}
+}
+
 .sticky {
 	display: block;
 }
@@ -2860,7 +2866,6 @@ section.stickies-new{
   top: 0;
   width: 100%
 }
-
 
 
 @media screen and (min-width:320px) and (max-width:640px) {
