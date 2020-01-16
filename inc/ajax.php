@@ -221,7 +221,9 @@ function qcity_sidebar_load_more()
     } else {
         $args = array(
             'post_type'         => $qp,
-            'posts_per_page'    => 6   
+            'posts_per_page'    => 6,
+            'post_status'       => 'publish',
+            'paged'             => $paged   
         );
     }
 

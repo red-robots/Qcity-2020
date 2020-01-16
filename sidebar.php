@@ -43,15 +43,18 @@ if( (get_post_type() == 'post') && !(is_page('events')) ) {
 	$title = 'Latest Stories';
 	$qp = 'business_listing';
 	$args = array(
-			'post_type'=> $qp,
-			'posts_per_page' => 6	
+			'post_type'			=> $qp,
+			'posts_per_page' 	=> 6,
+			'paged'             => 1	
 	);
 } elseif( (get_post_type() == 'page') && ( is_page('media-gallery') )  ) {
 	$title = 'Trending';
 	$qp = 'post';
 	$args = array(
-			'post_type'=> $qp,
-			'posts_per_page' => 6	
+			'post_type'			=> $qp,
+			'posts_per_page' 	=> 6,
+			'post_status' 	  	=> 'publish',
+			'paged'             => 1
 	);
 } elseif( is_page('events') ) {
 	$title = 'Entertainment';
@@ -61,7 +64,8 @@ if( (get_post_type() == 'post') && !(is_page('events')) ) {
 		        'post_type'         => 'post',        
 		        'post__not_in'      => array( $post_id ),
 		        'post_status'       => 'publish',
-		        'posts_per_page'    => 5,		       
+		        'posts_per_page'    => 5,
+		        'paged'             => 1		       
 		    );
 } elseif( is_page('business-directory') ){
 	$title = 'Black Business';
@@ -71,7 +75,8 @@ if( (get_post_type() == 'post') && !(is_page('events')) ) {
 		        'post_type'         => 'post',        
 		        'post__not_in'      => array( $post_id ),
 		        'post_status'       => 'publish',
-		        'posts_per_page'    => 5,		       
+		        'posts_per_page'    => 5,
+		        'paged'             => 1		       
 	);
 }
 
