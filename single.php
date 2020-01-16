@@ -19,7 +19,7 @@
 
 	
 <?php if($sponsors): ?>
-<div class="wrapper" style="background-color: white">		
+<div class="wrapper cf">		
 	<div id="primary" class="content-area" style="<?php echo ($sponsors) ? '': ' margin: 0 auto; float:none; '; ?>">
 		
 		<div class="single-page">

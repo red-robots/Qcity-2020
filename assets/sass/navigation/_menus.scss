@@ -439,12 +439,15 @@ body {
   border-radius: 4px;
   z-index: 100002;
   float: right;
-  right: 20px;
+  right: 0;
   top: -4px;
   @media screen and (min-width: $tabwidth) {
     position: relative;
     top: 0;
     right: 0;
+    margin-right: 0;
+  }
+  @media screen and (min-width: $midwidth) {
     margin-right: 15px;
   }
   
@@ -593,6 +596,14 @@ nav.mobilemenu {
     }
     
     
+  }
+}
+
+@media screen and (max-width: $tabwidth - 1px) {
+  nav.mobilemenu .mobilemain ul.sub-menu {
+    a {
+      padding-left: 40px;
+    }
   }
 }
 

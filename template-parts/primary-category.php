@@ -45,9 +45,26 @@ if ($category){
 	}
 	// Display category
 	if ( !empty($category_display) ){
+
+		$finalCatName = '';
+		$catLink = '';
+		foreach($category as $cat) {
+			$catSlug = $cat->slug;
+			if($catSlug=='sponsored-post') {
+				$finalCatName = $cat->name;
+				$catLink = get_term_link($cat);
+				break;
+			}
+		}
+
+		if($finalCatName && $catLink) {
+			$category_link = $catLink;
+			$category_display = $finalCatName;
+		}
+
 	    if ( $useCatLink == true && !empty($category_link) ){
 		// echo '<span class="post-category">';
-			echo '<a href="'.$category_link.'">'.$category_display.'</a>';
+			echo '<a href="'.$category_link.'" class="catname">'.$category_display.'</a>';
 		// echo '</span>';
 	    } else {
 			echo $category_display;

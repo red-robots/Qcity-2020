@@ -1,5 +1,11 @@
-
 .clear {clear: both;}
+.cf:before, .cf:after {
+    content: " "; 
+    display: table; 
+}
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
 .wrapper-mnav {
 	width: 100%;
 	margin: 0px auto;
@@ -57,7 +63,7 @@ body.single .site-footer .wrapper {
 body.single {
 	.wrapper {
 		@media screen and (min-width: $deskwidth) {
-			max-width: 950px;
+			max-width: 990px;
 		}
 	}
 	
@@ -106,7 +112,7 @@ body.category {
 	margin: 0px auto;
 	
 	@media screen and (min-width: $tabwidth) {
-		width: 66%;
+		width: 68%;
 		float: left;
 		margin: 0;
 		padding-bottom: 50px;
@@ -457,6 +463,7 @@ section.red-band {
 	width: 100%;
 	clear: both;
 	padding: 60px 0;
+
 }
 .subscribe {
 	width: 100%;
@@ -483,11 +490,17 @@ section.news-home {
 			width: 66.555555%;
 			float: left;
 		}
+		@media screen and (max-width: 767px) {
+			width: 100%;
+		}
 	}
 	.ads-home {
 		@media screen and (min-width: $tabwidth) {
 			width: 31%;
 			float: right;
+		}
+		@media screen and (max-width: 768px) {
+			display: none;
 		}
 	}
 }
