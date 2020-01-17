@@ -2518,7 +2518,8 @@ section.stickies-new .right .story-block .story-home-right a img{height:200px}
 }@media screen and (min-width:768px) and (max-width:1249px){section.home-bottom .jobs,section.home-bottom .biz-dir{margin-right:15px}
 }body.home #main .stickies-new,body.home #main .home-sponsored,body.home #main .news-home,body.home #main .home-bottom{max-width:1270px;width:100%}
 #colorbox{z-index:99999}
-#cboxOverlay{z-index:99998}
+@media screen and (min-width:600px){#cboxTitle{width:10%}
+}#cboxOverlay{z-index:99998}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

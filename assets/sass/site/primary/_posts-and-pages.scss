@@ -2932,7 +2932,12 @@ body.home #main {
 #colorbox{
 	z-index: 99999;
 }
-
+@media screen and (min-width:600px) {
+	#cboxTitle{
+		width: 10%;
+	}
+}
 #cboxOverlay{
 	z-index: 99998;
 }
+

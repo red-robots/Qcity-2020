@@ -11,8 +11,8 @@ get_header();
 get_template_part('template-parts/banner-biz');
 
 
-$add_business = get_field('add_your_business');
-$add_business_link = get_field('add_business_link');
+//$add_business = get_field('add_your_business');
+//$add_business_link = get_field('add_business_link');
 
 //var_dump($ob);
 ?>
@@ -25,18 +25,20 @@ $add_business_link = get_field('add_business_link');
 			<?php
 				//the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="taxonomy-description">', '</div>' );
-			echo '<!-- <pre>';
-			print_r($ob);
-			echo '</pre> -->';
+			//echo '<!-- <pre>';
+			//print_r($ob);
+			//echo '</pre> -->';
 			?>
 		</header><!-- .page-header -->
 	</div>
 	<div class="featured_business">
 		<header class="section-title ">
-			<h2 class="dark-gray">Featured Businesses</h2>
+			<h2 class="dark-gray">Paid Posts</h2>
+			<!--
 			<div class="biz-submit">
 				<a href="<?php echo bloginfo( 'url' ); ?>/business-directory/business-directory-sign-up/">Submit your business</a>
 			</div>
+			-->
 		</header>
 	</div>
 	<div class="clear"></div>
@@ -47,9 +49,9 @@ $add_business_link = get_field('add_business_link');
 
 				<div class="business-category-page">
 					<?php
-echo '<!-- <pre>';
-print_r($ob);
-echo '</pre> -->';
+//echo '<!-- <pre>';
+//print_r($ob);
+//echo '</pre> -->';
 						$args = array(
 								'post_type' 	=> 'business_listing',
 								'post_status'	=> 'publish',
@@ -122,6 +124,7 @@ echo '</pre> -->';
 								/*
 									Biz Directory.
 								*/
+								$business_listing_arr = array();
 								$i = 0;
 								$wp_query = new WP_Query();
 								$wp_query->query(array(
@@ -138,45 +141,54 @@ echo '</pre> -->';
 									    ),
 								));
 								if ($wp_query->have_posts()) : ?>
-								<div class="">
-									<table class="business-directory-table">
+								
 								    <?php while ($wp_query->have_posts()) : $wp_query->the_post(); $i++; 
-									    	if( $i == 2 ) {
-									    		$cl = 'even';
-									    		$i = 0;
-									    	} else {
-									    		$cl = 'odd';
-									    	}
+									    	
 									    	$phone 		= get_field('phone');
 									    	$website 	= get_field('website');
+									    	$title 		= get_the_title();
+
+									    	$business_listing_arr[] = array(
+									    			'title' 	=> $title,
+									    			'phone'		=> $phone,
+									    			'website'	=> $website
+									    	);
 								    ?>
-										    <tr class="row <?php echo $cl; ?>">
-										    	<td><?php the_title(); ?></td>
-										    	<?php if( !(is_front_page())  ): ?>
-										    	<td><?php echo $phone; ?></td>
-										    	<?php endif; ?>
-										    	<td>
-										    		<a href="<?php echo $website ?>" target="_blank">View Website</a>
-										    	</td>
-										    </tr>
+										    
 										    
 								    <?php endwhile; ?>	
-								    </table>
-								</div>    
+								       
 								<?php endif; wp_reset_postdata(); ?>
 
-								<!--
-								<div class="more">
-							    	<?php /*if( is_front_page() && is_home() ): ?>
-										<a href="/business-directory/" class="red">See More</a>
-									<?php else: ?>		    		
-								    	<a class="red qcity-business-directory-load-more" data-page="1" data-action="qcity_business_directory_load_more" >
-								    		<span class="load-text">Load More</span>
-											<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
-								    	</a>
-							    	<?php  endif; */ ?>
-							    </div> 
-								-->
+								<?php 
+									$title = array_column($business_listing_arr, 'title');
+									array_multisort($title, SORT_ASC, $business_listing_arr);
+								 ?>
+
+								 <div class="">
+									<table class="business-directory-table">
+										<?php 
+										$i = 0;	
+										foreach( $business_listing_arr as $key => $biz_list): 
+												if( ($i % 2) == 0 ) {
+										    		$cl = 'even';
+										    		//$i = 0;
+										    	} else {
+										    		$cl = 'odd';
+										    	}
+											?>
+
+											<tr class="row <?php echo $cl; ?>">
+										    	<td><?php echo $biz_list['title']; ?></td>
+										    	<td><?php echo $biz_list['phone']; ?></td>
+										    	<td>
+										    		<a href="<?php echo $biz_list['website'] ?>" target="_blank">View Website</a>
+										    	</td>
+										    </tr>
+
+										<?php  $i++; endforeach; ?>
+									</table>
+								</div> 
 
 							</div>
 						</div>	
