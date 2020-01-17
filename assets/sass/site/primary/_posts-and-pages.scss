@@ -2928,3 +2928,11 @@ body.home #main {
 		width: 100%;
 	}
 }
+
+#colorbox{
+	z-index: 99999;
+}
+
+#cboxOverlay{
+	z-index: 99998;
+}
