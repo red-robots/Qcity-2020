@@ -22,7 +22,7 @@
 
 <section class="next-story">
 	<header class="section-title ">
-		<h2 class="dark-gray"><?php echo $title; ?></h2>
+		<h2 class="dark-gray">Related Articles</h2>
 	</header>
 	<div class="wrapper">
 		<?php 
@@ -31,8 +31,7 @@
 
 				// business_listing posts
 
-				$terms = wp_get_post_terms( get_the_ID(), 'business_category' );
-				//var_dump($terms);
+				/*$terms = wp_get_post_terms( get_the_ID(), 'business_category' );			
 
 				$args = array(
 						'post_type' 		=> 'business_listing',
@@ -49,6 +48,14 @@
 											        'operator' 			=> 'IN'
 											    )
 		 				)
+				);*/
+
+				$args = array(     
+					        'category_name'     => 'black-business',        
+					        'post_type'         => 'post',        
+					        //'post__not_in'      => array( $post_id ),
+					        'post_status'       => 'publish',
+					        'posts_per_page'    => 3,		       
 				);
 
 				$wp_query = new WP_Query($args);
