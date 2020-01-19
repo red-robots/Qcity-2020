@@ -73,20 +73,20 @@
 									<?php echo do_shortcode('[social_warfare]'); ?>
 								</div>
 								
-							</article><!-- #post-## -->							
-						</div><!-- content-single-page -->	
+							</article><!-- #post-## -->		
+
+							<?php get_template_part('template-parts/next-story'); ?>
+
+						</div><!-- content-single-page -->							
 					</div> <!-- single-page -->
 
 				</div>
 
-				<div class="listing_search">
-					<div class="listing_search_result">				
-					</div>				
-				</div>
+				
 
 			</div>
 
-		<?php get_template_part('template-parts/next-story'); ?>
+		
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
