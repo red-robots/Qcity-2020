@@ -37,7 +37,7 @@
 				$args = array(
 						'post_type' 		=> 'business_listing',
 						'post_status'		=> 'publish',
-						'posts_per_page' 	=> 1,
+						'posts_per_page' 	=> 3,
 						'orderby'          	=> 'rand',
 						//'category__in' 		=> array( $terms->term_id ),
 						'tax_query' 		=> array(
