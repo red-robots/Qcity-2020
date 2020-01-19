@@ -2388,6 +2388,7 @@ section.red-band{padding-right:30px}
 body.page-template-page-media .wrapper{max-width:1050px}
 body.page-template-page-media #content{margin-top:60px}
 .mobile-separator{display:none}
+.line-separator{border-bottom:1px solid #ccc;margin-bottom:20px;height:5px;display:block}
 .single-page .featured_image{margin-top:30px}
 .single-page .featured_image img{height:auto;width:100%}
 .single-page .business-content{margin-top:1.5em;font-size:1.2em;display:block}

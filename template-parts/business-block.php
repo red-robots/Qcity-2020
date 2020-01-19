@@ -4,6 +4,7 @@ $phone  = get_field('phone');
 $email  = get_field('email');
 $email  = antispambot($email);
 $address = get_field('address');
+$summary = get_field('description');
 
 if($img){
     $image = $img['url'];
@@ -14,11 +15,6 @@ if($img){
 }
 
  ?>
-
-
- 
-
-
 <article class="story-block business_category" style="text-align: left">
     <a href="<?php echo get_the_permalink(); ?>">
     <div class="photo" style="background-image: url('<?php echo $image; ?>');">
@@ -34,7 +30,10 @@ if($img){
     </div> 
     </a>   
     <div class="desc" style="padding: 0 20px;">
-        <h3><?php echo get_the_title(); ?></h3>        
+        <h3><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3> 
+        <?php if($summary):  ?>
+        <div><span class="bold">Summary:</span> <?php echo $summary; ?></div>     
+        <?php endif; ?>  
         <?php if($phone):  ?>
             <div><span class="bold">Phone:</span> <?php echo esc_html($phone); ?></div>
         <?php endif; ?>

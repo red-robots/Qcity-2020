@@ -11,14 +11,18 @@
 	$tags = get_the_tags();	
 	$tag = ($tags) ? $tags[0]->term_id : null;	
 
-	//echo "Tag ID: " . $tag . " | Post ID: {$post_id}";
+	if( get_post_type() == 'business_listing'):
+		$title = "Related Business";
+	else:
+		$title = "Related Articles";
+	endif;
 
 	
 ?>
 
 <section class="next-story">
 	<header class="section-title ">
-		<h2 class="dark-gray">Related Articles</h2>
+		<h2 class="dark-gray"><?php echo $title; ?></h2>
 	</header>
 	<div class="wrapper">
 		<?php 
@@ -52,7 +56,7 @@
 				if( $wp_query->have_posts() ): 
 
 					while( $wp_query->have_posts() ): $wp_query->the_post();
-						get_template_part( 'template-parts/business-block' );
+						get_template_part( 'template-parts/next-business' );
 					endwhile;
 
 				endif;

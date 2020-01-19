@@ -129,7 +129,7 @@ get_template_part('template-parts/banner-biz');
 								$wp_query = new WP_Query();
 								$wp_query->query(array(
 									'post_type'			=>'business_listing',
-									'posts_per_page' 	=> 6,
+									//'posts_per_page' 	=> 6,
 									'post_status'   	=> 'publish',
 									//'paged' => $paged,
 									'tax_query' => array(
@@ -147,11 +147,13 @@ get_template_part('template-parts/banner-biz');
 									    	$phone 		= get_field('phone');
 									    	$website 	= get_field('website');
 									    	$title 		= get_the_title();
+									    	$bob 		= get_field('black_owned_business');
 
 									    	$business_listing_arr[] = array(
 									    			'title' 	=> $title,
 									    			'phone'		=> $phone,
-									    			'website'	=> $website
+									    			'website'	=> $website,
+									    			'bob'		=> $bob
 									    	);
 								    ?>
 										    
@@ -184,6 +186,7 @@ get_template_part('template-parts/banner-biz');
 										    	<td>
 										    		<a href="<?php echo $biz_list['website'] ?>" target="_blank">View Website</a>
 										    	</td>
+										    	<td><?php echo ($biz_list['bob']) ? 'BOB' : ''; ?></td>
 										    </tr>
 
 										<?php  $i++; endforeach; ?>

@@ -35,15 +35,15 @@ if ( $query->have_posts() ) :
                         'taxonomy' => 'business_category',
                         'hide_empty' => false,
                     ) );
-                        if(is_array($terms)&&!empty($terms)):?>
+                        if( is_array($terms) && !empty($terms) ):?>
                                 <ul>
                                     <?php foreach($terms as $term):?>
                                         <li>
-                                            <a href="<?php echo get_term_link($term->term_id);?>"><?php echo $term->name;?></a> 
+                                            <a href="<?php echo get_term_link($term->term_id);?>"><?php echo strtoupper($term->name); ?></a> 
                                         </li>
                                     <?php endforeach;?>
                                 </ul>
-                            <?php endif;?>
+                            <?php endif; wp_reset_postdata();?>
                     </div>
                     <div class="search mobile_hide">
                         <form  method="get" class="biz" id="form_search">
@@ -54,6 +54,36 @@ if ( $query->have_posts() ) :
                     </div>  
                 </div><!--.row-1-->
                 <a href="<?php echo ($add_business_link) ? $add_business_link : '';  ?>"><?php echo ($add_business) ? $add_business : ''; ?></a>
+
+                <div class="bottom">
+                    <div class="btn">
+                        <a  href="<?php bloginfo('url'); ?>/business-directory/business-directory-sign-up/">Post A Business</a>
+                    </div>
+                    <div class="btn">
+                        <div class="banner-button find">Find a Business
+                        <?php 
+                        /*$terms = get_terms( array(
+                            'taxonomy' => 'business_category',
+                            'hide_empty' => false,
+                        ) );*/
+                            if( is_array($terms) && !empty($terms) ):?>
+                                    <ul>
+                                        <?php foreach($terms as $term):?>
+
+                                            <?php //if( have_content( $term->term_id ) ): ?>
+                                                <li>
+                                                    <a href="<?php echo get_term_link($term->term_id);?>"><?php echo esc_attr($term->name); ?></a> 
+                                                </li>
+                                            <?php //endif; ?>
+                                        <?php endforeach;?>
+                                    </ul>
+                                <?php endif; wp_reset_postdata(); ?>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <a href="<?php bloginfo('url'); ?>/about-business-directory/">More Info</a>
+                    </div>
+                </div>
             </div>
         </div>
 

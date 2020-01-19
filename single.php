@@ -8,12 +8,10 @@
  */
 
 	get_header(); 
-	$img 	= get_field('story_image');
-	$video 	= get_field('video_single_post');
-
-	$sponsors = get_field('sponsors');	
-	
-	$caption = get_the_post_thumbnail_caption();
+	$img 		= get_field('story_image');
+	$video 		= get_field('video_single_post');
+	$sponsors 	= get_field('sponsors');	
+	$caption 	= get_the_post_thumbnail_caption();
 ?>
 
 

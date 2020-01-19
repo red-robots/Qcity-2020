@@ -2153,6 +2153,13 @@ body.page-template-page-media{
 	display: none;
 }
 
+.line-separator{
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+	height: 5px;
+	display: block;
+}
+
 .single-page{
 	.featured_image{
 		margin-top: 30px;
