@@ -40,22 +40,11 @@ $hide_ads 		= get_field('hide_ads');
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					) );
 
-			if( !$hide_ads ):
+			
 
-				//add_filter('the_content', 'qcity_add_incontent_ad');
-				echo $content;
-				qcity_show_ads();
-				/*the_content( sprintf(
-					 //translators: %s: Name of current post.
-					 wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'acstarter' ), array( 'span' => array( 'class' => array() ) ) ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				) );*/
+			echo $content;
 
-			else:
-
-				echo $content;
-
-			endif;		
+				
 			
 		?>
 		</div>
