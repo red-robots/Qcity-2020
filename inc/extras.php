@@ -245,7 +245,11 @@ function have_content( $term_id )
 *   Adding Ads inside single article
 */
 
-//add_filter('the_content', 'qcity_add_incontent_ad');
+function qcity_show_ads(){
+    add_filter('the_content', 'qcity_add_incontent_ad');
+}
+
+
 function qcity_add_incontent_ad( $content )
 {   
     if( is_single() && (get_post_type() != 'business_listing') ){

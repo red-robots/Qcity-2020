@@ -44,7 +44,8 @@ var_dump($hide_ads);
 
 			if( !$hide_ads ):
 
-				add_filter('the_content', 'qcity_add_incontent_ad');
+				//add_filter('the_content', 'qcity_add_incontent_ad');
+				qcity_show_ads();
 
 			endif;		
 			
