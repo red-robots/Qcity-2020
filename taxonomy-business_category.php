@@ -118,7 +118,7 @@ get_template_part('template-parts/banner-biz');
 							<?php //get_template_part('template-parts/business-directory'); ?>
 							<div class="biz-dir" style="margin-top: 20px;">
 								<header class="section-title ">
-									<h2 class="dark-gray">Business Directory</h2>
+									<h2 class="dark-gray">Free Listings</h2>
 								</header>
 								<?php
 								/*
@@ -129,7 +129,7 @@ get_template_part('template-parts/banner-biz');
 								$wp_query = new WP_Query();
 								$wp_query->query(array(
 									'post_type'			=>'business_listing',
-									//'posts_per_page' 	=> 6,
+									'posts_per_page' 	=> -1,
 									'post_status'   	=> 'publish',
 									//'paged' => $paged,
 									'tax_query' => array(
