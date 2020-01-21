@@ -36,7 +36,7 @@ $hide_ads 		= get_field('hide_ads');
 		<div class="content-single-page">
 		<?php
 
-			if( $hide_ads ):
+			/*if( $hide_ads ):
 
 				add_filter('the_content', 'qcity_add_incontent_ad');
 				the_content( sprintf(
@@ -45,7 +45,7 @@ $hide_ads 		= get_field('hide_ads');
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				) );
 
-			else:
+			else:*/
 
 				the_content( sprintf(
 						 //translators: %s: Name of current post.
@@ -53,7 +53,7 @@ $hide_ads 		= get_field('hide_ads');
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				) );
 
-			endif;		
+			//endif;		
 			
 		?>
 		</div>
