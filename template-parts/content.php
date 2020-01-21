@@ -10,7 +10,8 @@
 
 $mod = the_modified_date('M j, Y', '', '', false);
 
-$guest_author =  get_field('author_name') ;
+$guest_author 	=  get_field('author_name') ;
+$hide_ads 		= get_field('hide_ads');
 
 ?>
 
@@ -34,10 +35,16 @@ $guest_author =  get_field('author_name') ;
 		<?php
 
 			the_content( sprintf(
-				 //translators: %s: Name of current post.
-				 wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'acstarter' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );			
+					 //translators: %s: Name of current post.
+					 wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'acstarter' ), array( 'span' => array( 'class' => array() ) ) ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			) );
+
+			if( !$hide_ads ):
+
+				add_filter('the_content', 'qcity_add_incontent_ad');
+
+			endif;		
 			
 		?>
 		</div>
