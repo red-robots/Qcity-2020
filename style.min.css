@@ -2498,7 +2498,7 @@ section.stickies-new .right .story-block .desc .excerpt{font-size:1rem;margin-to
 .signup .plan h3{color:#723801;height:1.1em;-webkit-box-flex:initial;-webkit-flex:initial;-ms-flex:initial;flex:initial;width:100%;margin-top:10px}
 .signup .plan ul{list-style:disc;margin:10px 0 20px 30px;-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}
 .signup .plan ul li{border-bottom:0;text-align:left}
-@media screen and (max-width:767px){.content-single-page{margin:0 30px}
+@media screen and (max-width:767px){.content-single-page{padding:0 30px}
 section.signup{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}
 section.signup .plan{max-width:767px;width:100%;margin:40px 0 0}
 .table-desktop{display:none}
