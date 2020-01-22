@@ -10338,7 +10338,7 @@ section.stickies-new {
 @media screen and (max-width: 767px) {
   .content-single-page {
     /*max-width: 700px;*/
-    margin: 0 20px; }
+    margin: 0 30px; }
   section.signup {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
