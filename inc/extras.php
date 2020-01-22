@@ -245,9 +245,6 @@ function have_content( $term_id )
 *   Adding Ads inside single article
 */
 
-function qcity_show_ads(){
-    add_filter('the_content', 'qcity_add_incontent_ad');
-}
 
 add_filter('the_content', 'qcity_add_incontent_ad');
 function qcity_add_incontent_ad( $content )
@@ -274,7 +271,71 @@ function qcity_add_incontent_ad( $content )
             $content_block[$i] = '<p>'.$content_block[$i];
         }
         $content = implode('',$content_block);
+    } elseif( is_page('business-directory-sign-up') ){
+
+        //add_filter( 'gform_pre_render', 'qcity_insert_packages' );
+
+        $content_block  = explode('<p>',$content);
+
+        //r_dump($content_block);
+
+        if( !empty($content_block[2])){
+
+            $packages = get_field('packages');
+
+            if( $packages ): 
+                    $content_block[2] .= '<section class="tiers membership-thirds pricing-grid signup">';
+                foreach( $packages as $package): 
+                        
+                        $title  = $package['package_title'];
+                        $desc   = $package['package_details'];
+
+                        if( $title ):
+                            $content_block[2] .= '<div class="third plan">
+                            <h3>'. $title .'</h3> '. $desc .'
+                            </div>
+                            ';
+                        endif;                         
+                endforeach;
+                $content_block[2] .= '</section>';     
+                ?>
+            <?php endif; ?>    
+
+        <?php }
+
+            for($i=1; $i<count($content_block); $i++)
+            {   
+                $content_block[$i] = '<p>'.$content_block[$i];
+            }
+            $content = implode('',$content_block);   
+
     }
     return $content;    
+}
+
+function qcity_insert_packages()
+{
+    $content_block = '';
+    if( is_page('business-directory-sign-up') ){
+
+        $packages = get_field('packages');
+
+        $content_block = '<section class="tiers membership-thirds pricing-grid signup">';
+
+        foreach( $packages as $package): 
+                        
+                        $title  = $package['package_title'];
+                        $desc   = $package['package_details'];
+
+                        if( $title ):
+                            $content_block .= '<div class="third plan">
+                            <h3>'. $title .'</h3> '. $desc .'
+                            </div>
+                            ';
+                        endif;                         
+        endforeach;
+        $content_block .= '</section>';
+    } // page 
+    return $content_block;
 }
 

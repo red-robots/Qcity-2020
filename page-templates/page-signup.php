@@ -29,11 +29,11 @@ $packages = get_field('packages');
 			<?php endwhile; // End of the loop.
 			?>
 
-		<?php if( $packages ): ?>
+		<?php /*if( $packages ): ?>
 			<section class="tiers membership-thirds pricing-grid signup">
 
 				<?php foreach( $packages as $package): 
-					
+
 					$title 	= $package['package_title'];
 					$desc 	= $package['package_details'];
 
@@ -47,7 +47,7 @@ $packages = get_field('packages');
 				<?php endforeach; ?>
 				
 			</section>
-		<?php endif; ?>
+		<?php endif;  */ ?>
 			
 
 		</main><!-- #main -->
