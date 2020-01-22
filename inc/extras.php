@@ -253,7 +253,7 @@ add_filter('the_content', 'qcity_add_incontent_ad');
 function qcity_add_incontent_ad( $content )
 {   
     
-    if( is_single() && (get_post_type() != 'business_listing') ){
+    if( is_single() && (get_post_type() != 'business_listing') && !HIDE_ADS ){
         $content_block  = explode('<p>',$content);
         $ads_6th        = get_ads_script('single-article-after-6th-paragraph');
         $ads_12th       = get_ads_script('single-article-after-12th-paragraph');
