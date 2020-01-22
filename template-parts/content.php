@@ -34,17 +34,13 @@ $hide_ads 		= get_field('hide_ads');
 		<div class="content-single-page">
 		<?php
 
-			$content = get_the_content( sprintf(
+			the_content( sprintf(
 						 //translators: %s: Name of current post.
 						 wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'acstarter' ), array( 'span' => array( 'class' => array() ) ) ),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					) );
 
 			
-
-			echo $content;
-
-				
 			
 		?>
 		</div>
