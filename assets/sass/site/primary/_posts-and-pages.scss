@@ -2769,7 +2769,7 @@ section.stickies-new{
 
 .signup{
 	margin-top: -50px;
-	
+
 	.plan{
 		flex-direction: column;
 
@@ -2795,6 +2795,17 @@ section.stickies-new{
 
 
 @media screen and (max-width: 767px) {
+
+	section.signup{
+		flex-direction: column;
+
+		.plan{
+			max-width: 767px;
+			width: 100%;
+			margin: 40px 0 0;
+		}
+	}
+
 	.table-desktop{
 		display: none;
 	}
