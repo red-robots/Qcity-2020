@@ -182,7 +182,7 @@ get_template_part('template-parts/banner-biz');
 
 											<tr class="row <?php echo $cl; ?>">
 										    	<td><?php echo $biz_list['title']; ?></td>
-										    	<td><?php echo $biz_list['phone']; ?></td>
+										    	<td class="table-desktop"><?php echo $biz_list['phone']; ?></td>
 										    	<td>
 										    		<a href="<?php echo $biz_list['website'] ?>" target="_blank">View Website</a>
 										    	</td>

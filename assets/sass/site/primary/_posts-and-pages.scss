@@ -2763,7 +2763,15 @@ section.stickies-new{
 	z-index: 10;
 }
 
+.table-desktop{
+	display: inline-table;
+}
+
 @media screen and (max-width: 767px) {
+	.table-desktop{
+		display: none;
+	}
+
 	.border-title{
 		margin-bottom: 30px ;
 	}
