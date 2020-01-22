@@ -252,6 +252,8 @@ function qcity_show_ads(){
 add_filter('the_content', 'qcity_add_incontent_ad');
 function qcity_add_incontent_ad( $content )
 {   
+    $hide_ads       = get_field('hide_ads');
+
     if( is_single() && (get_post_type() != 'business_listing') ){
         $content_block  = explode('<p>',$content);
         $ads_6th        = get_ads_script('single-article-after-6th-paragraph');
@@ -259,7 +261,7 @@ function qcity_add_incontent_ad( $content )
         if( !empty($content_block[5]) && $ads_6th)
         {               
             $content_block[5] .= '</div>
-                            <div class="brown-bar">'. $ads_6th .'</div>
+                            <div class="brown-bar">'. $ads_6th . var_dump($hide_ads) .'</div>
                             <div class="content-single-page">';
         }
         if( !empty($content_block[11]) && $ads_12th)
