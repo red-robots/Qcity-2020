@@ -2797,6 +2797,11 @@ section.stickies-new{
 
 @media screen and (max-width: 767px) {
 
+	.content-single-page{
+		/*max-width: 700px;*/
+		margin: 0 20px;
+	}
+
 	section.signup{
 		flex-direction: column;
 
