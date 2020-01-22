@@ -2767,6 +2767,31 @@ section.stickies-new{
 	display: inline-table;
 }
 
+.signup{
+	.plan{
+		flex-direction: column;
+
+		h3{
+			color: #723801;
+			height: 1.1em;			
+			flex: initial;
+			width: 100%;
+		}
+		ul{
+			list-style: disc;
+			margin: 10px 0 20px 30px;
+			flex: 1;
+			
+
+			li{
+				border-bottom: none;
+				text-align: left;
+			}
+		}
+	}
+}
+
+
 @media screen and (max-width: 767px) {
 	.table-desktop{
 		display: none;
