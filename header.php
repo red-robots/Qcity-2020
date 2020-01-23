@@ -135,6 +135,9 @@ window.googletag = window.googletag || {cmd: []};
 
    
   <div class="ads_home_leaderboard">
-    <?php echo get_ads_script('leaderboard-ad-home'); ?>       
+    <?php 
+        $ads_header = get_ads_script('leaderboard-ad-home');
+        echo $ads_header['ad_script'];
+     ?>       
   </div>
    

@@ -12,7 +12,7 @@ $mod = the_modified_date('M j, Y', '', '', false);
 
 $guest_author 	= get_field('author_name') ;
 $hide_ads 		= get_field('hide_ads');
-$chooseAuthor = get_field( 'choose_author' );
+$chooseAuthor 	= get_field( 'choose_author' );
 
 define('HIDE_ADS', $hide_ads);
 
