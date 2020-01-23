@@ -12,6 +12,8 @@ $mod = the_modified_date('M j, Y', '', '', false);
 
 $guest_author 	= get_field('author_name') ;
 $hide_ads 		= get_field('hide_ads');
+$chooseAuthor = get_field( 'choose_author' );
+
 define('HIDE_ADS', $hide_ads);
 
 ?>
@@ -62,43 +64,37 @@ define('HIDE_ADS', $hide_ads);
 
 		
 		<footer class="entry-footer">
-			<!-- <div class="share"></div> -->
 			
-			<div class="author-block">
-			<?php 
-				$aName = get_the_author_meta('display_name');
-				$aDesc = get_the_author_meta('description');
-
-				$chooseAuthor = get_field( 'choose_author' );
-				$size         = 'thumbnail';
-				$authorPhoto  = null;
-				
-				// echo '<pre>';
-				// print_r($aUrl);
-				// echo '</pre>';
-			?>
-				<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-					<div class="left">
-					
-						<div class="photo">
-							<?php 
-							if ( $chooseAuthor != '' ):
-								$authorID   = $chooseAuthor['ID'];
-								$authorPhoto = get_field( 'custom_picture', 'user_' . $authorID );
-							else:
-								$authorPhoto = get_field('custom_picture','user_'.get_the_author_meta('ID'));
-							endif;
-							if ( $authorPhoto ):
-								echo wp_get_attachment_image( $authorPhoto, $size );
-							endif; //  if photo  ?>
+			<?php if( $chooseAuthor ): ?>
+				<div class="author-block">
+					<?php 
+						$aName 			= get_the_author_meta('display_name');
+						$aDesc 			= get_the_author_meta('description');
+						$size         	= 'thumbnail';
+						$authorPhoto  	= null;							
+					?>
+					<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+						<div class="left">						
+							<div class="photo">
+								<?php 
+								if ( $chooseAuthor != '' ):
+									$authorID   = $chooseAuthor['ID'];
+									$authorPhoto = get_field( 'custom_picture', 'user_' . $authorID );
+								else:
+									$authorPhoto = get_field('custom_picture','user_'.get_the_author_meta('ID'));
+								endif;
+								if ( $authorPhoto ):
+									echo wp_get_attachment_image( $authorPhoto, $size );
+								endif; //  if photo  ?>
+							</div>
 						</div>
-					</div>
-					<div class="info">
-						<h3><?php echo $aName; ?></h3>
-						<?php echo $aDesc; ?>
-					</div>
-				</a>
-			</div>
+						<div class="info">
+							<h3><?php echo $aName; ?></h3>
+							<?php echo $aDesc; ?>
+						</div>
+					</a>
+				</div>
+			<?php endif; ?>
 
 			<section class="comments">
 				<?php //echo do_shortcode( '[Fancy_Facebook_Comments]' ); ?>

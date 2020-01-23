@@ -170,6 +170,7 @@ function youtube_setup( $src ){
 function get_ads_script($slug)
 {
     $ad_script = '';
+    $ads_params = array();
 
     $ad_post = get_page_by_path( $slug, OBJECT, 'ad' );
 
@@ -189,9 +190,18 @@ function get_ads_script($slug)
 
             $ad_enable = get_field('enable_ad');
             if( $ad_enable == 'Yes' ):
-                $ad_script = get_field('ad_script');
-            else:
-                $ad_script = '';
+
+                $ad_script      = get_field('ad_script');
+                $ads_label      = get_field('ads_label');
+                $ads_link_text  = get_field('ads_link_text');
+                $ads_link_url   = get_field('ads_link_url');
+
+                $ads_params = array(
+                    'ad_script'     => $ad_script,
+                    'ads_label'     => $ads_label,
+                    'ads_link_text' => $ads_link_text,
+                    'ads_link_url'  => $ads_link_url
+                );            
             endif;
 
         endwhile;
@@ -200,7 +210,7 @@ function get_ads_script($slug)
 
     wp_reset_postdata();
 
-    return $ad_script;
+    return $ads_params;
 }
 
 /*
@@ -257,13 +267,13 @@ function qcity_add_incontent_ad( $content )
         if( !empty($content_block[5]) && $ads_6th)
         {               
             $content_block[5] .= '</div>
-                            <div class="brown-bar">'. $ads_6th .'</div>
+                            <div class="brown-bar"><div class="qcity-ads-label">'. $ads_6th['ads_label'] .' <a href="'. $ads_6th['ads_link_url'] .'">'. $ads_6th['ads_link_text'] .'</a> </div>'. $ads_6th['ad_script'] .'</div>
                             <div class="content-single-page">';
         }
         if( !empty($content_block[11]) && $ads_12th)
         {               
             $content_block[11] .= '</div>
-                            <div class="brown-bar">'. $ads_12th .'</div>
+                            <div class="brown-bar"><div class="qcity-ads-label">'. $ads_12th['ads_label'] .' <a href="'. $ads_12th['ads_link_url'] .'">'. $ads_12th['ads_link_text'] .'</a> </div>'. $ads_12th['ad_script'] .'</div>
                             <div class="content-single-page">';
         }
         for($i=1; $i<count($content_block); $i++)
