@@ -2367,7 +2367,7 @@ section.events .story-block{border:1px solid #ccc}
 .subscribe p{margin-bottom:0;font-size:20px;line-height:24px}
 .subscribe a{padding:3px 5px;background-color:none;color:#c5a92e;display:inline-block;text-decoration:none}
 .subscribe a:hover{color:#f2f2f2}
-h1.entry-title{font-size:1.8rem;line-height:1.1;margin-bottom:10px}
+h1.entry-title{font-size:2rem;line-height:1.1;margin-bottom:10px}
 .story-image{width:100%;margin-bottom:20px}
 .single-page .category{margin-bottom:15px;margin-top:20px}
 .single-page .category a{border-bottom:2px solid #ffc000}
@@ -2500,7 +2500,10 @@ section.stickies-new .right .story-block .desc .excerpt{font-size:1rem;margin-to
 .signup .plan ul li{border-bottom:0;text-align:left}
 .qcity-ads-label{font-size:13px;margin-bottom:10px}
 .qcity-ads-label a,.qcity-ads-label a:hover{font-weight:bold}
-@media screen and (max-width:767px){.content-single-page{padding:0 30px}
+.entry-content h2{font-size:1.8rem}
+.single-page-excerpt{font-size:1.3rem}
+@media screen and (max-width:767px){.entry-content h2{font-size:1.6rem}
+.content-single-page{padding:0 30px}
 section.signup{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}
 section.signup .plan{max-width:767px;width:100%;margin:40px 0 0}
 .table-desktop{display:none}

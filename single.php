@@ -25,7 +25,9 @@
 			<div  style="margin-bottom: 20px;">
 				<div class="category "><?php get_template_part('template-parts/primary-category'); ?></div>
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				<?php the_excerpt(); ?>
+				<div class="single-page-excerpt">
+					<?php echo get_the_excerpt(); ?>
+				</div>				
 			</div>
 			
 
@@ -84,7 +86,9 @@
 						<div  style="margin-bottom: 20px;">
 							<div class="category "><?php get_template_part('template-parts/primary-category'); ?></div>
 							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-							<?php the_excerpt(); ?>
+							<div class="single-page-excerpt">
+							<?php echo get_the_excerpt(); ?>
+							</div>
 						</div>
 						
 

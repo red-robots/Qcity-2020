@@ -2020,7 +2020,7 @@ section.events .story-block {
 
 
 h1.entry-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 1.1;
     margin-bottom: 10px;
 }
@@ -2804,7 +2804,25 @@ section.stickies-new{
 	}
 }
 
+
+
+.entry-content{
+	h2{
+		font-size: 1.8rem;
+	}
+}
+
+.single-page-excerpt{
+	font-size: 1.3rem;
+}
+
 @media screen and (max-width: 767px) {
+
+	.entry-content{
+		h2{
+			font-size: 1.6rem;
+		}
+	}
 
 	.content-single-page{
 		/*max-width: 700px;*/
