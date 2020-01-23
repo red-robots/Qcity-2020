@@ -2413,7 +2413,7 @@ article.big-post h3{font-size:28px}
 .mobile_hide{display:none}
 #mc_embed_signup{width:100% !important}
 .mobile-view{padding:0 20px}
-.mobile-body{display:block;padding-top:100px;overflow:auto;margin-bottom:20px}
+.mobile-body{display:block;padding-top:100px;overflow:auto}
 .site .site-header .mobile-stick{position:fixed !important;display:block;width:100%;z-index:10009;top:0}
 .next-story-block{display:block}
 .next-story-block .photo{width:30%;display:inline-block;vertical-align:top;margin-right:3px;margin-top:3px}
@@ -2502,7 +2502,18 @@ section.stickies-new .right .story-block .desc .excerpt{font-size:1rem;margin-to
 .qcity-ads-label a,.qcity-ads-label a:hover{font-weight:bold}
 .entry-content h2{font-size:1.8rem}
 .single-page-excerpt{font-size:1.3rem}
-@media screen and (max-width:767px){.entry-content h2{font-size:1.6rem}
+.items-before-footer{background-color:#efefef;text-align:center;padding:30px}
+.items-before-footer .before-footer-title{text-transform:uppercase;margin-bottom:20px}
+.items-before-footer .before-footer-title h2{font-size:1.2em}
+.items-before-footer .footer-content-list{background-color:white;padding:10px 20px;text-align:left}
+.items-before-footer .footer-content-list .footer-content-list-item{margin-bottom:20px}
+.items-before-footer .footer-content-list .footer-content-list-item .footer-content-author{clear:both;text-transform:uppercase;font-size:14px;color:#999}
+.items-before-footer .footer-content-list .footer-content-list-item .footer-author{font-weight:bold}
+.items-before-footer .footer-content-list .footer-content-list-item .footer-content-date{float:right}
+.items-before-footer .flex-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;max-width:1024px;margin:0 auto}
+.items-before-footer .flex-container .flex-item{padding:10px 20px;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
+@media screen and (max-width:767px){.mobile-gap{margin-bottom:30px}
+.entry-content h2{font-size:1.6rem}
 .content-single-page{padding:0 30px}
 section.signup{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}
 section.signup .plan{max-width:767px;width:100%;margin:40px 0 0}

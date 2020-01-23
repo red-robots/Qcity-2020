@@ -110,6 +110,30 @@
 
 	<?php endif; ?>
 
+	<div class="items-before-footer">
+
+		<div class="content-area-full">
+			<?php get_template_part( 'template-parts/single-footer-bottom');	?>
+		</div>
+		<div class="clear"></div>
+
+		<!--<div class="flex-container">
+			<div class="flex-item">
+				Column 1
+			</div>
+			<div class="flex-item">
+				Column 2
+			</div>
+			<div class="flex-item">
+				Column 3
+			</div>
+		</div>-->
+
+
+	</div>
+	
+	
+
 
 <?php 
 get_footer();

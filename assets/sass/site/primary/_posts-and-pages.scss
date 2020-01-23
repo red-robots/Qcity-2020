@@ -2304,7 +2304,7 @@ body.author{
 		display: block;
 		padding-top: 100px;
 		overflow: auto;
-		margin-bottom: 20px;
+		/*margin-bottom: 20px;*/
 	}
 
 	.site{
@@ -2816,7 +2816,67 @@ section.stickies-new{
 	font-size: 1.3rem;
 }
 
+.items-before-footer{
+	background-color: #efefef;
+	text-align: center;
+	padding: 30px;
+
+
+	.before-footer-title{
+		text-transform: uppercase;
+		margin-bottom: 20px;
+
+		h2{
+			font-size: 1.2em;
+		}
+	}
+
+	.footer-content-list{
+		background-color: white;
+		padding: 10px 20px;
+		text-align: left;
+
+		.footer-content-list-item{
+			margin-bottom: 20px;
+
+			.footer-content-author{
+				clear: both;
+				text-transform: uppercase;
+				font-size: 14px;
+				color: #999;
+			}
+
+			.footer-author{
+				font-weight: bold;
+			}
+
+			.footer-content-date{
+				float: right;
+			}
+		}
+
+	}
+	
+	.flex-container{
+		display: flex;
+		flex-direction: row;
+		max-width: 1024px;
+		margin: 0 auto;
+
+		.flex-item{
+			padding: 10px 20px;
+			flex-wrap: wrap;
+		}
+	}
+}
+
 @media screen and (max-width: 767px) {
+
+	
+
+	.mobile-gap{
+		margin-bottom: 30px;
+	}
 
 	.entry-content{
 		h2{
