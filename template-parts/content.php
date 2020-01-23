@@ -96,6 +96,12 @@ define('HIDE_ADS', $hide_ads);
 				</div>
 			<?php endif; ?>
 
+			<div class="content-single-page">
+				<?php get_template_part('template-parts/next-story'); ?>
+			</div>
+
+			<?php get_template_part( 'template-parts/sponsored-paid'); ?>
+
 			<section class="comments">
 				<?php //echo do_shortcode( '[Fancy_Facebook_Comments]' ); ?>
 				<div id="disqus_thread"></div>

@@ -55,19 +55,10 @@
 
 				<div class="single-page">
 
-					<?php
-					while ( have_posts() ) : the_post();
-
-						get_template_part( 'template-parts/content', get_post_format() );
-
-					endwhile; // End of the loop.
-					wp_reset_postdata();
-					?>
+					<?php get_template_part( 'template-parts/content', get_post_format() );	?>
 
 				</div>
 			</div>
-
-		<?php get_template_part('template-parts/next-story'); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
@@ -110,18 +101,7 @@
 
 					</div>
 
-					<?php
-					while ( have_posts() ) : the_post();
-
-						get_template_part( 'template-parts/content', get_post_format() );
-
-					endwhile; // End of the loop.
-					wp_reset_postdata();
-					?>
-
-					<div class="content-single-page">
-						<?php get_template_part('template-parts/next-story'); ?>
-					</div>
+					<?php get_template_part( 'template-parts/content', get_post_format() );	?>
 
 				</div>
 
