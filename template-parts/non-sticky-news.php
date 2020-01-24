@@ -15,7 +15,7 @@
 	<section class="news-home">
 
         <div class="mobile-version" style="margin-bottom: 20px; text-align: center;"> <!-- Small Optional Ad Right -->
-                <?php echo get_ads_script('small-ad-right'); ?>
+                <?php $small_ad =  get_ads_script('small-ad-right'); echo $small_ad['ad_script']; ?>
         </div> <!-- Small Optional Ad Right -->
 
 		<section class="twocol qcity-news-container">	
@@ -46,7 +46,9 @@
 		 <section class="ads-home">
 
             <div class="desktop-version align-center" style="margin-bottom: 20px"> <!-- Right Rail Home -->
-                <?php echo get_ads_script('right-rail'); ?>
+                <?php $right_rail =  get_ads_script('right-rail'); 
+                        echo $right_rail['ad_script'];
+                ?>
             </div> <!-- Right Rail Home -->
             
             <!--
@@ -57,7 +59,9 @@
             </div>
 
             <div class="desktop-version align-center"> <!-- Small Optional Ad Right -->
-                <?php echo get_ads_script('small-ad-right'); ?>
+                <?php $ad_right = get_ads_script('small-ad-right'); 
+                        echo $ad_right['ad_script'];
+                ?>
             </div> <!-- Small Optional Ad Right -->
             
 		 </section>

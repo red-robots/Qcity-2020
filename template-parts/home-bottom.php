@@ -95,7 +95,7 @@
     </div>
 
     <div class="mobile-version" style="margin-top: 20px; text-align: center"> <!-- Business Directory Home -->
-                <?php echo get_ads_script('business-directory-home'); ?>                
+                <?php $biz_dir =  get_ads_script('business-directory-home'); echo $biz_dir['ad_script']  ?>                
     </div> <!-- Business Directory Home -->
 
 </section>
