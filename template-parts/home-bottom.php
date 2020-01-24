@@ -55,7 +55,9 @@
 	<!--- Advertisements -->
 	<div class="ad" style="display: inline-block; text-align: center;">
         <div class="desktop-version align-center"> <!-- Business Directory Home -->
-                <?php echo get_ads_script('business-directory-home'); ?>                
+                <?php $ads_bottom = get_ads_script('business-directory-home'); 
+                    echo $ads_bottom['ad_script'];
+                ?>                
         </div> <!-- Business Directory Home -->
 		<?php  
 		 		/*$post_type = 'ad';
