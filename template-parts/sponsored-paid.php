@@ -20,7 +20,7 @@
 
 ?>
 
-<aside class="c-sponsor-block c-sponsor-block--filled">
+<section class="c-sponsor-block c-sponsor-block--filled">
     <div class="c-sponsor-block__text">
         <span class="c-sponsor-block__label t-uppercase t-lsp-b has-text-gray-dark t-size-xs has-xxs-btm-marg sponsored-title"><strong>Sponsored Content</strong></span>
         <div class="c-sponsor-block__main">
@@ -41,7 +41,7 @@
         
         
     </a>
-</aside>
+</section>
 
 
 <?php
