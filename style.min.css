@@ -2513,7 +2513,7 @@ section.stickies-new .right .story-block .desc .excerpt{font-size:1rem;margin-to
 .items-before-footer .flex-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;max-width:1024px;margin:0 auto}
 .items-before-footer .flex-container .flex-item{padding:10px 20px;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
 @media screen and (max-width:767px){.single-article-bottom{padding:0 20px}
-.footer-content-list{min-height:auto}
+.footer-content-list{min-height:auto;margin-bottom:20px}
 .mobile-gap{padding:30px 0}
 .entry-content h2{font-size:1.6rem}
 .content-single-page{padding:0 20px}
