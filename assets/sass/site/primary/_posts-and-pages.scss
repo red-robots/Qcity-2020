@@ -2874,12 +2874,16 @@ section.stickies-new{
 
 @media screen and (max-width: 767px) {
 
+	.items-before-footer{
+		padding: 0 20px;
+	}
+
 	.single-article-bottom{
 		padding: 0 20px;
 	}
 
 	.footer-content-list{
-		min-height: auto;
+		min-height: auto !important;
 		margin-bottom: 20px;
 	}
 
@@ -3073,7 +3077,7 @@ section.stickies-new{
 	}
 
 	.footer-content-list{
-		min-height: auto;
+		min-height: auto !important;
 		margin-bottom: 20px;
 	}
 }
