@@ -1,6 +1,6 @@
 <section class="home-bottom">
 	
-	<div class="jobs mobile-gap">		
+	<div class="jobs">		
         <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
 	</div>
 
@@ -31,6 +31,12 @@
                 endif; 
                 wp_reset_postdata();
             ?>
+
+            <div class="more"> 
+                <a href="#" class="red " >        
+                    <span class="load-text">Read More</span>                    
+                </a>
+            </div>
         </div>
 
     </div>
@@ -61,6 +67,12 @@
                 endif; 
                 wp_reset_postdata();
             ?>
+
+            <div class="more"> 
+                <a href="#" class="red " >        
+                    <span class="load-text">Read More</span>                    
+                </a>
+            </div>
         </div>
 		
 	</div>
