@@ -24,7 +24,7 @@
                         $guest_author =  get_field('author_name');
                         $author = ( $guest_author ) ? $guest_author : get_the_author();
                         echo '<div class="footer-content-list-item">';
-                        echo '<h3>'. get_the_title() .'</h3>';
+                        echo '<h3><a href="'. get_permalink() .'">'. get_the_title() .'</a></h3>';
                         echo '<div class="footer-content-author"><span class="footer-author">'. $author .'</span> <span class="footer-content-date">'. date('M. j, Y', strtotime(get_the_date() )) .'</span></div>';
                         echo '</div>';
                     endwhile;                    
@@ -54,7 +54,7 @@
                         $guest_author =  get_field('author_name');
                         $author = ( $guest_author ) ? $guest_author : get_the_author();
                         echo '<div class="footer-content-list-item">';
-                        echo '<h3>'. get_the_title() .'</h3>';
+                        echo '<h3><a href="'. get_permalink() .'">'. get_the_title() .'</a></h3>';
                         echo '<div class="footer-content-author"><span class="footer-author">'. $author .'</span> <span class="footer-content-date">'. date('M. j, Y', strtotime(get_the_date() )) .'</span></div>';
                         echo '</div>';
                     endwhile;                    
