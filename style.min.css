@@ -2544,6 +2544,8 @@ section.stickies-new .right .story-block .desc{display:block;width:100%}
 section.stickies-new .right .story-block .story-home-right a img{height:200px}
 }.sticky{position:fixed;top:0;width:100%}
 @media screen and (min-width:320px) and (max-width:640px){.site .site-header{position:fixed !important;display:block;width:100%;z-index:10009;top:0}
+.single-article-bottom{padding:0 20px}
+.footer-content-list{min-height:auto;margin-bottom:20px}
 }@media screen and (min-width:768px) and (max-width:1249px){section.home-bottom .jobs,section.home-bottom .biz-dir{margin-right:15px}
 }body.home #main .stickies-new,body.home #main .home-sponsored,body.home #main .news-home,body.home #main .home-bottom{max-width:1270px;width:100%}
 #colorbox{z-index:99999}
