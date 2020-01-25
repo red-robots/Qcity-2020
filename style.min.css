@@ -2455,6 +2455,9 @@ section.home-bottom{margin:10px 0}
 .story-block{display:block}
 .story-block .desc{margin-top:10px}
 .story-block .story-home-right{display:block;background:0;height:unset}
+.single-article-bottom{padding:0 20px}
+.content-single-page{padding:0 20px}
+.footer-content-list-item{margin-bottom:20px}
 }.author-block .photo{border-radius:0}
 section.news-home{max-width:1350px;margin:0 auto;float:none}
 section.stickies-new{display:block;position:relative;padding:0;max-width:1350px;margin:0 auto}
