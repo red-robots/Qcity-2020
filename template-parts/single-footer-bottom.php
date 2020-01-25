@@ -1,4 +1,4 @@
-<section class="home-bottom">
+<section class="home-bottom single-article-bottom">
 	
 	<div class="jobs">		
         <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
