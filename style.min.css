@@ -2512,7 +2512,9 @@ section.stickies-new .right .story-block .desc .excerpt{font-size:1rem;margin-to
 .items-before-footer .footer-content-list .footer-content-list-item .footer-content-date{float:right}
 .items-before-footer .flex-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;max-width:1024px;margin:0 auto}
 .items-before-footer .flex-container .flex-item{padding:10px 20px;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
-@media screen and (max-width:767px){.items-before-footer{padding:0 20px}
+@media screen and (max-width:767px){.qcity-ads-label{font-size:12px;margin-bottom:10px}
+.qcity-ads-label a,.qcity-ads-label a:hover{font-weight:bold}
+.items-before-footer{padding:0 20px}
 .single-article-bottom{padding:0 20px}
 .footer-content-list{min-height:auto !important;margin-bottom:20px}
 .mobile-gap{padding:30px 0}

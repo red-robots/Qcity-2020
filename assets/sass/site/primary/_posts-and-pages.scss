@@ -2874,6 +2874,16 @@ section.stickies-new{
 
 @media screen and (max-width: 767px) {
 
+	.qcity-ads-label{
+		font-size: 12px;
+		margin-bottom: 10px;
+
+		a, a:hover{
+			/*text-decoration: none;*/
+			font-weight: bold;
+		}
+	}
+
 	.items-before-footer{
 		padding: 0 20px;
 	}
