@@ -7,7 +7,7 @@
     <!--- West End Connect -->
 	<div class="biz-dir mobile-gap" style="background-color: none">
         <header class="before-footer-title ">
-            <h2 >Knight Grant Articles</h2>
+            <h2 >West End Connect</h2>
         </header>
 
         <div class="footer-content-list">
