@@ -16,7 +16,7 @@
                         'post_type'         => 'post',
                         'posts_per_page'    => 5,
                         'post_status'       => 'publish',  
-                        'category_name'     => 'offers-invites',
+                        'category_name'     => 'west-end',
                 );
                 $trending = new WP_Query( $args );
                 if( $trending->have_posts() ):                    
@@ -27,16 +27,24 @@
                         echo '<h3><a href="'. get_permalink() .'">'. get_the_title() .'</a></h3>';
                         echo '<div class="footer-content-author"><span class="footer-author">'. $author .'</span> <span class="footer-content-date">'. date('M. j, Y', strtotime(get_the_date() )) .'</span></div>';
                         echo '</div>';
-                    endwhile;                    
+                    endwhile; ?>  
+
+                    <div class="more"> 
+                        <a href="<?php bloginfo('url'); ?>/category/west-end/" class="red " >        
+                            <span class="load-text">Read More</span>                    
+                        </a>
+                    </div>
+
+                    <?php 
+                else:    
+
+                    echo 'No posts available';
+
                 endif; 
                 wp_reset_postdata();
             ?>
 
-            <div class="more"> 
-                <a href="#" class="red " >        
-                    <span class="load-text">Read More</span>                    
-                </a>
-            </div>
+            
         </div>
 
     </div>
@@ -63,16 +71,25 @@
                         echo '<h3><a href="'. get_permalink() .'">'. get_the_title() .'</a></h3>';
                         echo '<div class="footer-content-author"><span class="footer-author">'. $author .'</span> <span class="footer-content-date">'. date('M. j, Y', strtotime(get_the_date() )) .'</span></div>';
                         echo '</div>';
-                    endwhile;                    
+                    endwhile;  
+                    ?>
+
+                    <div class="more"> 
+                        <a href="<?php bloginfo('url'); ?>/category/news/" class="red " >        
+                            <span class="load-text">Read More</span>                    
+                        </a>
+                    </div>
+
+                    <?php
+                else:
+
+                    echo 'No posts available';
+
                 endif; 
                 wp_reset_postdata();
             ?>
 
-            <div class="more"> 
-                <a href="#" class="red " >        
-                    <span class="load-text">Read More</span>                    
-                </a>
-            </div>
+            
         </div>
 		
 	</div>
