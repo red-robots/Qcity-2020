@@ -55,7 +55,8 @@
 					        'post_type'         => 'post',        
 					        //'post__not_in'      => array( $post_id ),
 					        'post_status'       => 'publish',
-					        'posts_per_page'    => 3,		       
+					        'posts_per_page'    => 3,
+					        'orderby'          	=> 'rand',		       
 				);
 
 				$wp_query = new WP_Query($args);
@@ -134,10 +135,6 @@
 				wp_reset_postdata();
 
 			endif; // get_post_type == 'business_listing'
-
-
-
-
 		?>
 		
 		
