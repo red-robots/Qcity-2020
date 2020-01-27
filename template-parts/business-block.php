@@ -32,7 +32,7 @@ if($img){
     <div class="desc" style="padding: 0 20px;">
         <h3><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3> 
         <?php if($summary):  ?>
-        <div><span class="bold">Summary:</span> <?php echo $summary; ?></div>     
+        <div><span class="italic"><?php echo $summary; ?></span> </div>     
         <?php endif; ?>  
         <?php if($phone):  ?>
             <div><span class="bold">Phone:</span> <?php echo esc_html($phone); ?></div>

@@ -83,7 +83,7 @@ if( (get_post_type() == 'post') && !(is_page('events')) ) {
 if( is_page('events') ) {
 	$text = 'Get our newsletter to keep up with events and ticket giveaways.';
 } else {
-	$text = 'Have you signed up to receive our daily news and events listings?';
+	$text = 'Have you signed up to receive our business newsletter?';
 }
 ?>
 
