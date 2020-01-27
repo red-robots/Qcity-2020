@@ -2403,7 +2403,9 @@ body.author .wrapper{max-width:1050px}
 .post-caption{font-size:1rem;color:#9f9f9f}
 @media screen and (max-width:1249px){.smaller-screen{padding:20px}
 article.big-post h3{font-size:28px}
-}@media screen and (max-width:767px){section.home-bottom .ad{width:100%;padding-left:0}
+}.listing_search{padding-left:40px;padding-right:25px}
+@media screen and (max-width:767px){.listing_search{padding-left:0;padding-right:0}
+section.home-bottom .ad{width:100%;padding-left:0}
 .side-offer{margin-bottom:0}
 .banner-button{font-size:11px}
 .bottom .btn a,.event-butts .bottom .btn a{padding:10px 20px;background-color:#c4a92f;color:#fff;font-size:11px}
