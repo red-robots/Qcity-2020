@@ -1,3 +1,10 @@
+<?php
+
+$footer_title_article_middle = get_field('footer_title_article_middle', 'option');
+$footer_title_article_right = get_field('footer_title_article_right', 'option');
+
+?>
+
 <section class="home-bottom single-article-bottom">
 	
 	<div class="jobs">		
@@ -7,7 +14,7 @@
     <!--- West End Connect -->
 	<div class="biz-dir mobile-gap" style="background-color: none">
         <header class="before-footer-title ">
-            <h2 >West Side Connect</h2>
+            <h2 ><?php echo $footer_title_article_middle; ?></h2>
         </header>
 
         <div class="footer-content-list">
@@ -52,7 +59,7 @@
 	<!--- Trending Articles -->
 	<div class="ad" >
        <header class="before-footer-title ">
-            <h2 >Trending Articles</h2>
+            <h2 ><?php echo $footer_title_article_right; ?></h2>
         </header>
 
         <div class="footer-content-list">

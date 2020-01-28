@@ -12,6 +12,9 @@ wp_reset_query();
 
 $post_id = get_the_ID();
 
+$sidebar_event_text 	= get_field('sidebar_event_text', 'option');
+$sidebar_business_text 	= get_field('sidebar_business_text', 'option');
+
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
@@ -81,9 +84,9 @@ if( (get_post_type() == 'post') && !(is_page('events')) ) {
 }
 
 if( is_page('events') ) {
-	$text = 'Get our newsletter to keep up with events and ticket giveaways.';
+	$text = $sidebar_event_text;
 } else {
-	$text = 'Have you signed up to receive our business newsletter?';
+	$text = $sidebar_business_text;
 }
 ?>
 
