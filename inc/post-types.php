@@ -30,7 +30,7 @@ function js_custom_init() {
             'menu_name' => 'Photo Galleries',
             'plural'    => 'Photo Galleries',
             'single'    => 'Photo Gallery',
-            'supports'  => array('title','editor')
+            'supports'  => array('title','editor', 'thumbnail')
         ),
         array(
             'post_type' => 'ad',
