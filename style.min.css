@@ -2405,6 +2405,7 @@ body.author .wrapper{max-width:1050px}
 article.big-post h3{font-size:28px}
 }.listing_search{padding-left:40px;padding-right:25px}
 .italic{font-style:italic}
+.author-block{margin-bottom:20px}
 @media screen and (max-width:767px){.listing_search{padding-left:0;padding-right:0}
 section.home-bottom .ad{width:100%;padding-left:0}
 .side-offer{margin-bottom:0}

@@ -8,9 +8,24 @@
 
 	$next = posts_have_sponsors($post_id, $sponsor_id);
 
-	$tags = get_the_tags();	
-	$tag = ($tags) ? $tags[0]->term_id : null;	
+	
+	$tags = get_the_tags( $post->ID );
+	$taglist = array();
+	if( $tags ){
+		foreach ($tags as $tag) {		
+			$taglist[] = array(
+					'term_id' 	=> $tag->term_id,
+					'name'		=> 	$tag->name
+			);
+		}
 
+		$tag_column = array_column($taglist, 'term_id');
+		array_multisort($tag_column, SORT_ASC, $taglist);
+
+		$tag = $taglist[0]['term_id'];
+	}
+	
+	
 	if( get_post_type() == 'business_listing'):
 		$title = "Related Business";
 	else:
@@ -20,19 +35,13 @@
 	
 ?>
 
-<section class="next-story">
-	<header class="section-title ">
+<section class="next-story" >
+	<header class="section-title " style="margin-top: 20px">
 		<h2 class="dark-gray">Related Articles</h2>
 	</header>
 	<div class="wrapper">
 		<?php 
-			$tags = get_the_tag_list();
-
-			//var_dump($tags)
-
-			//foreach ($tags as $tag) {
-			//	echo $tag->name . ' | ';
-			//}
+				
 			
 
 			if( get_post_type() == 'business_listing'):
@@ -118,7 +127,7 @@
 	        			'posts_per_page' 	=> 3,
 						'orderby'          	=> 'rand',
 						'tag_id' 			=> $tag, 
-						'category__in'      => $cat_ids,
+						//'category__in'      => $cat_ids,
 						
 					);
 				} else {
