@@ -26,6 +26,14 @@
 	</header>
 	<div class="wrapper">
 		<?php 
+			$tags = get_the_tag_list();
+
+			//var_dump($tags)
+
+			//foreach ($tags as $tag) {
+			//	echo $tag->name . ' | ';
+			//}
+			
 
 			if( get_post_type() == 'business_listing'):
 
