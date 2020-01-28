@@ -9,6 +9,7 @@
 
 get_header(); 
 
+$sidebar_event_text = get_field('sidebar_event_text', 'option');
 
 ?>
 
@@ -164,7 +165,7 @@ get_header();
 							
 							<footer class="entry-footer desktop-version">
 								<?php 
-								$text = 'Have you signed up to receive our daily news and events listings?'; 
+								$text = $sidebar_event_text; 
 								?>
 								<div class="side-offer">
 								<p><?php echo $text; ?></p>
