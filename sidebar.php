@@ -14,6 +14,7 @@ $post_id = get_the_ID();
 
 $sidebar_event_text 	= get_field('sidebar_event_text', 'option');
 $sidebar_business_text 	= get_field('sidebar_business_text', 'option');
+$sidebar_post_text 		= get_field('sidebar_post_text', 'option');
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
@@ -85,8 +86,10 @@ if( (get_post_type() == 'post') && !(is_page('events')) ) {
 
 if( is_page('events') ) {
 	$text = $sidebar_event_text;
-} else {
+} elseif( ( ( get_post_type() == 'page') &&  is_page('business-directory') ) || get_post_type() == 'business_listing'  ) {
 	$text = $sidebar_business_text;
+} else {
+	$text = $sidebar_post_text;
 }
 ?>
 
