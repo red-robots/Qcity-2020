@@ -2258,12 +2258,24 @@ body.author{
 .author-block{
 	margin-bottom: 20px;
 }
+
+.widget-area{
+		margin-right: 0;
+}
+
+.category-post{
+	margin-right: 40px;
+}
 							  /* 767px */
 @media screen and (max-width: $tabwidth - 1px) {
 
 	.listing_search{
 		padding-left: 0;
 		padding-right: 0;
+	}
+
+	.category-post{
+		margin-right: 0;
 	}
 
 	section.home-bottom{

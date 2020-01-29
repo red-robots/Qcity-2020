@@ -23,15 +23,17 @@ if( (get_post_type() == 'post') && !(is_page('events')) ) {
 	$title = 'Trending';
 	$qp = 'post';
 	$args = array(
-			'post_type'=> $qp,
-			'posts_per_page' => 6	
+			'post_type'			=> $qp,
+			'posts_per_page' 	=> 6,
+			'post_status'       => 'publish',	
 	);
 } elseif( is_page('qcity-biz') ) {
 	$title = 'Latest Business Articles';
 	$qp = 'business_listing';
 	$args = array(
-			'post_type'=> $qp,
-			'posts_per_page' => 6	
+			'post_type'			=> $qp,
+			'posts_per_page' 	=> 6,
+			'post_status'       => 'publish',	
 	);
 } elseif( is_tax() ) {
 	$title = 'Black Business';
@@ -49,7 +51,8 @@ if( (get_post_type() == 'post') && !(is_page('events')) ) {
 	$args = array(
 			'post_type'			=> $qp,
 			'posts_per_page' 	=> 6,
-			'paged'             => 1	
+			'paged'             => 1,
+			'post_status'       => 'publish',
 	);
 } elseif( (get_post_type() == 'page') && ( is_page('media-gallery') )  ) {
 	$title = 'Trending';
