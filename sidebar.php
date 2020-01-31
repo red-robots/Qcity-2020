@@ -161,12 +161,7 @@ if( is_page('events') ) {
 
 		$wp_query = new WP_Query( $args );
 		
-		// might do an if / then for offers and invites category here..
-
-		/*$wp_query->query(array(
-			'post_type'=> $qp,
-			'posts_per_page' => 6
-		));*/
+		// might do an if / then for offers and invites category here..		
 
 		if ($wp_query->have_posts()) : ?>
 			<div class="next-stories">
@@ -191,4 +186,4 @@ if( is_page('events') ) {
 	<?php //dynamic_sidebar( 'sidebar-1' ); ?>
 </div><!-- #secondary -->
 
-<?php endif;  //if( (get_post_type() != 'post') ||  is_category() ) ?>
+<?php endif;  //if( (get_post_type() != 'post') ||  is_category() ) 

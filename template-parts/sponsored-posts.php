@@ -65,19 +65,16 @@ $wp_query->query(array(
 					More Events
 				</div>
 			</div>
-			
 
 			<div class="mobile-version">
 				<div class="more">
 					<a class="red" href="<?php bloginfo('url'); ?>/events">More Events</a>
 				</div>
-			</div>	
-			
-
+			</div>		
 
 		</div>
 	</section>
 <?php 
 endif;
 wp_reset_postdata();
- ?>
+ 

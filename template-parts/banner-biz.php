@@ -94,7 +94,3 @@ if ( $query->have_posts() ) :
 
 endif;
 wp_reset_postdata();
-
-
-?>
-
