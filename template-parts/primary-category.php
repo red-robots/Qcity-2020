@@ -3,6 +3,8 @@
 $yourTaxonomy = 'category';
 // $yourTaxonomy = 'event_cat';
 
+$postId = get_the_ID();
+
 
 // SHOW YOAST PRIMARY CATEGORY, OR FIRST CATEGORY
 $category = get_the_terms( $postId, $yourTaxonomy );

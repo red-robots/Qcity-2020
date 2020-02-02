@@ -1,17 +1,18 @@
 <?php
 //Fill in your custom taxonomy here
 $yourTaxonomy = 'event_cat';
+$postId = get_the_ID();
 
 // SHOW YOAST PRIMARY CATEGORY, OR FIRST CATEGORY
 $category = get_the_terms( $postId, $yourTaxonomy );
 $useCatLink = true;
 
-echo '<!-- ';
+/*echo '<!-- ';
 echo '<pre>';
 print_r($category);
 echo '</pre>';
 echo $category[0]->slug;
-echo ' -->';
+echo ' -->'; */
 
 
 // If post has a category assigned.

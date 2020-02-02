@@ -1,5 +1,6 @@
 <?php
 	$post_id = get_the_ID();
+	$sponsor_id = 0;
 	$sponsors = get_field('sponsors');	
 	if($sponsors):
 		$sponsor = get_post($sponsors[0]->ID);

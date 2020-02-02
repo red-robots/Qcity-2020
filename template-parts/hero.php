@@ -85,7 +85,9 @@ if ($wp_query->have_posts()) : ?>
 
 					$author =  get_field('author_name');
 
-					$embed = youtube_setup($video);
+					if( $video ):
+						$embed = youtube_setup($video);
+					endif;
 
 					$postIDs[] = get_the_ID();
 

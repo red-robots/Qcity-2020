@@ -104,16 +104,22 @@ get_template_part('template-parts/banner-events');
 
 										endwhile; ?>
 									</section>
-								<?php endif; wp_reset_postdata(); ?>
+
+									<div class="more ">	
+									 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" data-except="<?php echo implode(',', $postID); ?>" >		
+									 		<span class="load-text">Load More</span>
+											<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
+									 	</a>
+									</div>
+								<?php wp_reset_postdata();
+									else:
+								 ?>
+									<div>No Events available.</div>
+								<?php endif;  ?>
 
 						</div>
 
-						<div class="more ">	
-						 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" data-except="<?php echo implode(',', $postID); ?>" >		
-						 		<span class="load-text">Load More</span>
-								<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
-						 	</a>
-						</div>
+						
 
 					</div>
 

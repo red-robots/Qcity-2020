@@ -14,7 +14,10 @@ $guest_author 	= get_field('author_name') ;
 $hide_ads 		= get_field('hide_ads');
 $chooseAuthor 	= get_field( 'choose_author' );
 
-define('HIDE_ADS', $hide_ads);
+if( !defined('HIDE_ADS') ){
+	define('HIDE_ADS', $hide_ads);
+}
+
 
 ?>
 
