@@ -2566,12 +2566,14 @@ section.stickies-new .right .story-block .story-home-right a img{height:200px}
 @media screen and (min-width:600px){#cboxTitle{width:10%}
 }#cboxOverlay{z-index:99998}
 .rp4wp-related-posts{margin-top:20px}
+.rp4wp-related-posts h3{margin-bottom:20px}
 .rp4wp-posts-list .rp4wp_component_title{font-size:1.1em;font-weight:bold;font-family:"UniversLTPro-65Bold";line-height:1.1em}
 .rp4wp-posts-list .rp4wp_component_excerpt{font-size:14px}
 .rp4wp-posts-list .rp4wp_component_title,.rp4wp-posts-list .rp4wp_component_excerpt{width:60% !important;float:left}
 .rp4wp-posts-list .rp4wp_component_image{width:210px !important;height:auto !important;float:left;margin-right:20px;margin-bottom:10px}
 .rp4wp-posts-list .rp4wp_component{padding:0 !important}
-.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+@media(min-width:768px){ul.rp4wp-posts-list .rp4wp-col-last{width:99% !important;padding-right:0 !important;padding-left:0 !important}
+}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}

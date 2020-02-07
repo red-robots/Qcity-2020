@@ -3166,6 +3166,10 @@ body.home #main {
 
 .rp4wp-related-posts{
 	margin-top: 20px;
+
+	h3{
+		margin-bottom: 20px;
+	}
 }
 .rp4wp-posts-list{
 
@@ -3198,5 +3202,12 @@ body.home #main {
 	}
 }
 
+@media (min-width: 768px) {
+	ul.rp4wp-posts-list .rp4wp-col-last {
+	    width: 99% !important;
+	    padding-right: 0 !important;
+	    padding-left: 0 !important;
+	}
+}
 
 
