@@ -3173,13 +3173,15 @@ body.home #main {
 }
 
 
-ul.rp4wp-posts-list .rp4wp-col{
-		margin-bottom: 5px !important;
-}
+
 
 @media screen and (min-width: 768px) {
 
-	.rp4wp-posts-list{
+	ul.rp4wp-posts-list{
+
+		li.rp4wp-col{
+				margin-bottom: 15px !important;
+		}
 
 		.rp4wp_component_title{
 			font-size: 1.1em;
@@ -3195,6 +3197,7 @@ ul.rp4wp-posts-list .rp4wp-col{
 		.rp4wp_component_title, .rp4wp_component_excerpt {
 			width: 65% !important;
 			float: left;
+
 		}
 
 		.rp4wp_component_image{
