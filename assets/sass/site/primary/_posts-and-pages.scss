@@ -3164,3 +3164,38 @@ body.home #main {
 	z-index: 99998;
 }
 
+.rp4wp-related-posts{
+	margin-top: 20px;
+}
+.rp4wp-posts-list{
+
+	.rp4wp_component_title{
+		font-size: 1.1em;
+		font-weight: bold;
+		font-family: "UniversLTPro-65Bold";
+		line-height: 1.1em;
+	}
+
+	.rp4wp_component_excerpt{
+		font-size: 14px;
+	}
+	
+	.rp4wp_component_title, .rp4wp_component_excerpt {
+		width: 60% !important;
+		float: left;
+	}
+
+	.rp4wp_component_image{
+		width: 210px !important;
+		float: left;
+		margin-right: 20px;
+		margin-bottom: 10px;
+	}
+
+	.rp4wp_component{
+		padding: 0 !important;
+	}
+}
+
+
+

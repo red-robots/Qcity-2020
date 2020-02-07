@@ -64,7 +64,7 @@ if( !defined('HIDE_ADS') ){
 		<div class="share">
 			<?php echo do_shortcode('[social_warfare]'); ?>
 		</div>
-
+		
 		
 		<footer class="entry-footer">
 			
