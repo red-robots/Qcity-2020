@@ -3171,38 +3171,41 @@ body.home #main {
 		margin-bottom: 20px;
 	}
 }
-.rp4wp-posts-list{
 
-	.rp4wp_component_title{
-		font-size: 1.1em;
-		font-weight: bold;
-		font-family: "UniversLTPro-65Bold";
-		line-height: 1.1em;
-	}
-
-	.rp4wp_component_excerpt{
-		font-size: 14px;
-	}
-	
-	.rp4wp_component_title, .rp4wp_component_excerpt {
-		width: 65% !important;
-		float: left;
-	}
-
-	.rp4wp_component_image{
-		width: 210px !important;
-		height: auto !important;
-		float: left;
-		margin-right: 20px;
-		margin-bottom: 10px;
-	}
-
-	.rp4wp_component{
-		padding: 0 !important;
-	}
-}
 
 @media screen and (min-width: 768px) {
+
+	.rp4wp-posts-list{
+
+		.rp4wp_component_title{
+			font-size: 1.1em;
+			font-weight: bold;
+			font-family: "UniversLTPro-65Bold";
+			line-height: 1.1em;
+		}
+
+		.rp4wp_component_excerpt{
+			font-size: 14px;
+		}
+		
+		.rp4wp_component_title, .rp4wp_component_excerpt {
+			width: 65% !important;
+			float: left;
+		}
+
+		.rp4wp_component_image{
+			width: 210px !important;
+			height: auto !important;
+			float: left;
+			margin-right: 20px;
+			margin-bottom: 10px;
+		}
+
+		.rp4wp_component{
+			padding: 0 !important;
+		}
+	}
+
 	ul.rp4wp-posts-list .rp4wp-col-last {
 	    width: 99% !important;
 	    padding-right: 0 !important;
