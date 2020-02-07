@@ -3185,7 +3185,7 @@ body.home #main {
 	}
 	
 	.rp4wp_component_title, .rp4wp_component_excerpt {
-		width: 60% !important;
+		width: 65% !important;
 		float: left;
 	}
 
@@ -3207,6 +3207,28 @@ body.home #main {
 	    width: 99% !important;
 	    padding-right: 0 !important;
 	    padding-left: 0 !important;
+	}
+}
+
+
+@media (max-width: 767px) {
+	ul.rp4wp-posts-list .rp4wp-col-last {
+	    width: 99% !important;
+	    padding-right: 0 !important;
+	    padding-left: 0 !important;
+	}
+
+	.rp4wp_component_title, .rp4wp_component_excerpt {
+		width: 100% !important;
+		float: none;
+	}
+
+	.rp4wp_component_image{
+		width: 100% !important;
+		height: auto !important;
+		float: none;
+		margin-right: 0;
+		margin-bottom: 10px;
 	}
 }
 
