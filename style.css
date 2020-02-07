@@ -10574,7 +10574,7 @@ body.home #main .stickies-new, body.home #main .home-sponsored, body.home #main 
 
 @media screen and (min-width: 768px) {
   ul.rp4wp-posts-list li.rp4wp-col {
-    margin-bottom: 15px !important; }
+    margin-bottom: 10px !important; }
   ul.rp4wp-posts-list .rp4wp_component_title {
     font-size: 1.1em;
     font-weight: bold;
