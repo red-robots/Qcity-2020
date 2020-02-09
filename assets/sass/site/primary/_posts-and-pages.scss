@@ -3215,9 +3215,12 @@ body.home #main {
 			margin-bottom: 10px;
 		}
 
-		.rp4wp_component{
-			padding: 0 !important;
+		.rp4wp-col{
+			.rp4wp_component{
+				padding: 0 0 0 !important;
+			}
 		}
+		
 	}
 
 	ul.rp4wp-posts-list .rp4wp-col-last {
@@ -3253,6 +3256,12 @@ body.home #main {
 		float: none;
 		margin-right: 0;
 		margin-bottom: 10px;
+	}
+
+	.rp4wp-col{
+		.rp4wp_component{
+			padding: 0 0 0 !important;
+		}
 	}
 }
 
