@@ -3191,12 +3191,17 @@ body.home #main {
 			line-height: 1.1em;
 		}
 
-		.rp4wp_component_excerpt{
+		.rp4wp_component_excerpt, .rp4wp_component_author{
 			font-size: 14px;
-			margin-top: 10px;
+			margin-top: 3px;
+		}
+
+		.rp4wp_component_date{
+			font-size: 14px;
+			margin-top: 0;
 		}
 		
-		.rp4wp_component_title, .rp4wp_component_excerpt {
+		.rp4wp_component_title, .rp4wp_component_excerpt, .rp4wp_component_date, .rp4wp_component_author {
 			width: 65% !important;
 			float: left;
 
@@ -3237,7 +3242,7 @@ body.home #main {
 		font-weight: bold;
 	}
 
-	.rp4wp_component_title, .rp4wp_component_excerpt {
+	.rp4wp_component_title, .rp4wp_component_excerpt, .rp4wp_component_date, .rp4wp_component_author {
 		width: 100% !important;
 		float: none;
 	}
