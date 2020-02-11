@@ -82,7 +82,7 @@ get_template_part('template-parts/banner-events');
 								$wp_query->query(array(
 									'post_type'			=>'event',
 									'post_status'		=>'publish',
-									'posts_per_page' 	=> 9,
+									'posts_per_page' 	=> 27,
 									'post__not_in' 		=> $postID,
 									'order' 			=> 'ASC',
 									'meta_key' 			=> 'event_date',
