@@ -31,7 +31,7 @@ get_template_part('template-parts/banner-events');
 						'order' 		=> 'ASC',
 						'meta_key' 		=> 'event_date',
 						'orderby' 		=> 'event_date',
-						//'posts_per_page' => 5,
+						'posts_per_page' => -1,
 						'meta_query' => array(
 							array(
 						        'key'		=> 'event_date',
