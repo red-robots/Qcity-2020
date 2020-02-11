@@ -99,9 +99,11 @@ if( !defined('HIDE_ADS') ){
 				</div>
 			<?php endif; ?>
 
+			<!--
 			<div class="content-single-page">
-				<?php get_template_part('template-parts/next-story'); ?>
+				<?php //get_template_part('template-parts/next-story'); ?>
 			</div>
+			-->
 
 			<?php get_template_part( 'template-parts/sponsored-paid'); ?>
 
