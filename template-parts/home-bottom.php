@@ -27,11 +27,8 @@
 			    $jobTitle = get_field("job_title");
 				$companyName = get_field("company_name");
 			    ?>
-			    	<div class="job">
-			    		<div class="img">
-			    			<img src="<?php echo $img['url']; ?>"  alt="<?php echo $img['alt']; ?>">
-			    		</div>
-			    		<div class="info">
+			    	<div class="job">			    		
+			    		<div class="home-job-info">
 			    			<h3><?php the_title(); ?></h3>
 			    			<h4><?php echo $companyName; ?></h4>
 			    			<div class="date"><?php echo get_the_date(); ?></div>

@@ -2124,7 +2124,8 @@ section.home-bottom .ad{width:100%;float:left}
 @media screen and (min-width:768px){section.home-bottom .ad{width:28%;float:right}
 }.biz-dir,.jobs{width:100%;float:left}
 @media screen and (min-width:768px){.biz-dir,.jobs{width:33%;float:left}
-}.biz-dir .biz-job-wrap,.jobs .biz-job-wrap{width:100%;margin-bottom:15px;float:left}
+}.biz-dir .biz-job-wrap,.jobs .biz-job-wrap{width:100%;margin-bottom:20px;float:left}
+.biz-dir .biz-job-wrap .job,.jobs .biz-job-wrap .job{padding:15px 0 15px}
 .jobs{margin-right:30px}
 .jobs .job,.jobs-page .job{width:100%;float:left;border-bottom:1px solid #262425;padding:10px 0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
 .jobs .job .img,.jobs-page .job .img{width:15%;float:left;height:80px}
@@ -2568,6 +2569,10 @@ section.stickies-new .right .story-block .story-home-right a img{height:200px}
 }#cboxOverlay{z-index:99998}
 .rp4wp-related-posts{margin-top:20px}
 .rp4wp-related-posts h3{margin-bottom:20px}
+.home-job-info{text-align:left}
+.home-job-info h3{font-size:16px;padding:2px 0}
+.home-job-info h4{font-weight:normal;font-size:14px;padding:2px 0}
+.home-job-info .date{font-size:12px}
 @media screen and (min-width:768px){ul.rp4wp-posts-list li.rp4wp-col{margin-bottom:10px !important;padding-left:0 !important}
 ul.rp4wp-posts-list .rp4wp_component_title{font-size:1.1em;font-weight:bold;font-family:"UniversLTPro-65Bold";line-height:1.1em}
 ul.rp4wp-posts-list .rp4wp_component_excerpt,ul.rp4wp-posts-list .rp4wp_component_author{font-size:14px;margin-top:3px}

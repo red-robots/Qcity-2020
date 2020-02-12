@@ -465,6 +465,8 @@ section.home-bottom {
 	}
 }
 
+
+
 .biz-dir, .jobs {
 	width: 100%;
 	float: left;
@@ -475,8 +477,12 @@ section.home-bottom {
 	}
 	.biz-job-wrap {
 		width: 100%;
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 		float: left;
+
+		.job{
+			padding: 15px 0 15px;
+		}
 	}
 }
 .jobs {
@@ -3184,6 +3190,24 @@ body.home #main {
 }
 
 
+.home-job-info{
+	text-align: left;
+
+	h3{
+		font-size: 16px;
+    	padding: 2px 0;
+	}
+
+	h4{
+		font-weight: normal;
+    	font-size: 14px;
+    	padding: 2px 0;
+	}
+
+	.date{
+		font-size: 12px;
+	}
+}
 
 
 @media screen and (min-width: 768px) {
