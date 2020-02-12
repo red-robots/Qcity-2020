@@ -72,7 +72,7 @@ if ($wp_query->have_posts()) : ?>
 				'posts_per_page' 	=> 3,
 				'post_status'  		=> 'publish',
 				'post__not_in' 		=> $postIDs,
-				'category__not_in' 	=> $catID ,
+				'category__not_in' 	=> array( $catID ),
 			);
 
 			$recent_query = new WP_Query( $args ); 
@@ -92,7 +92,7 @@ if ($wp_query->have_posts()) : ?>
 					$postIDs[] = get_the_ID();
 
 					$text 		= get_the_excerpt();
-					$excerpt 	= ( strlen($text) > 180 ) ? substr($text, 0, 125) . ' ...' : $text;
+					$excerpt 	= ( strlen($text) > 100 ) ? substr($text, 0, 100) . ' ...' : $text;
 
 			?>
 			<article class="story-block">

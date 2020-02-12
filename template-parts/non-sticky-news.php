@@ -5,10 +5,11 @@
     $cat_id = get_category_by_slug( 'sponsored-post' );    
 	
 	$wp_query = new WP_Query( array(
-		'post_type'		     =>'post',
-		'post_status' 	       => 'publish',		
-		'post__not_in' 	      => $postIDs,
-        'category__not_in'    => array( $cat_id->term_id ),
+		'post_type'		        =>'post',
+		'post_status' 	        => 'publish',		
+		'post__not_in' 	        => $postIDs,
+        'category__not_in'      => array( $cat_id->term_id ),
+        'posts_per_page'        => 6,        
 	));
 	?>
 	
@@ -68,7 +69,7 @@
 
 
          <div class="more"> 
-            <a class="red qcity-load-more" data-page="2" data-action="qcity_load_more" >        
+            <a class="red qcity-load-more" data-page="1" data-action="qcity_load_more" data-except="<?php echo $postIDs; ?>" >        
                 <span class="load-text">Load More</span>
                 <span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
             </a>
