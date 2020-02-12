@@ -101,6 +101,10 @@ wp_footer();
 
 <script>
 	$(document).ready(function($){
+
+        $('.broadstreet-zone-container').addClass('align-center');
+
+        
 		if ($(window).width() < 767) {
 
 	        // When the user scrolls the page, execute myFunction
@@ -124,7 +128,7 @@ wp_footer();
 
 	    }
 
-	    $('.broadstreet-zone-container').addClass('align-center');
+	    
 	    
 	});
 </script>

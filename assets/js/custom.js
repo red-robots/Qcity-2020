@@ -132,7 +132,12 @@ jQuery(document).ready(function ($) {
 	------------------------------------*/
 
     
+    var $img_width = $('section.c-sponsor-block').width();
 
+    if( $img_width < 700) {
+        $('.c-sponsor-block__image').css('height', '170px');
+        console.log('Sponsor paid image is 160 px ...' + $img_width);
+    }
     
     
 	/*(function(){
@@ -546,60 +551,7 @@ jQuery(document).ready(function ($) {
             }
         });
     });
-
-
-        /*
-        *   Sidebar stick
-        */
-
-        if ($(window).width() > 767) {
-
-            var length = $("#primary").height();
-            var footer_height = $('.site-footer').offset().top;
-            var height = $('#sidebar-event').height();
-
-            var right_margin = ($(window).width() < 1250) ? '0': '97px';
-
-            //console.log('Sidebar: ' + height);
-            var next_top = (length + 104 + 20) - height;
-            
-            //console.log('Next top: ' + next_top);
-            $(window).scroll(function () {
-                var scroll = $(this).scrollTop();
-
-                if(scroll <= 100) {
-                    $("#sidebar-event").css({
-                        'position': 'relative',
-                        'top': '0',
-                        'margin-right' : '40px',
-                        'right' : '0'
-                    });
-               } else if(scroll >= length  - 330) {
-                    $("#sidebar-event").css({
-                        'position': 'absolute',
-                        //'bottom': '0',
-                        'top': next_top + 'px',
-                        'margin-right' : '40px',
-                        'right' : '2px'
-                    }); 
-                } else {
-                    $("#sidebar-event").css({
-                        'position': 'fixed',
-                        'top': '105px',
-                        'margin-right' : '40px',
-                        'right' : right_margin
-                    });
-                }
-            });
-
-        } else{
-            $("#sidebar-event").css({
-                        'position': 'relative',
-                       // 'top': '0',
-                        //'margin-right' : '40px',
-                       'right' : '0'
-            });
-        }
+        
 
 
 	/*

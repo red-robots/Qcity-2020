@@ -2297,7 +2297,6 @@ article.big-post h3{font-size:20px;z-index:1;line-height:1.1;margin-bottom:10px}
 }.l-display-block{display:block}
 .c-sponsor-block__image-wrap{-ms-grid-row:1;-ms-grid-column:1;grid-area:image-wrap}
 .l-width-full{width:100%}
-.c-sponsor-block__image{height:180px}
 .has-xxs-btm-marg{margin-bottom:.7rem}
 .has-text-sponsor{color:#36c}
 @media(min-width:40.625em){.c-sponsor-block__sponsor{font-size:.85rem;margin-top:35px}
@@ -2337,7 +2336,8 @@ section.qcity-news-container .story-block .photo{width:100%;float:left;position:
 section.qcity-news-container .story-block .photo img{height:275px;width:100%}
 .second-row .story-block .photo{width:100%;float:left;position:relative;line-height:0;margin-bottom:10px;overflow:none}
 .second-row .story-block .photo img{height:275px;width:100%}
-@media screen and (min-width:768px){.logo,h1.logo{width:100px;margin:0;top:10px;left:20px}
+@media screen and (min-width:768px){.c-sponsor-block__image{height:200px}
+.logo,h1.logo{width:100px;margin:0;top:10px;left:20px}
 .content-area-event{margin:0 auto;max-width:950px}
 .business-category-page,.featured_business,.business-category-header,.events_page{padding:0 40px}
 .listing-header{padding:0 20px 0 40px}
@@ -2408,7 +2408,8 @@ article.big-post h3{font-size:28px}
 .author-block{margin-bottom:20px}
 .widget-area{margin-right:0}
 .category-post{margin-right:40px}
-@media screen and (max-width:767px){.listing_search{padding-left:0;padding-right:0}
+@media screen and (max-width:767px){.c-sponsor-block__image img{height:160px;width:auto}
+.listing_search{padding-left:0;padding-right:0}
 .category-post{margin-right:0}
 section.home-bottom .ad{width:100%;padding-left:0}
 .side-offer{margin-bottom:0}

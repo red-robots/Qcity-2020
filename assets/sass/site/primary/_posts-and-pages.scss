@@ -1525,9 +1525,7 @@ section.home-bottom {
     width: 100%;
 }
 
-.c-sponsor-block__image {
-    height: 180px;
-}
+
 
 .has-xxs-btm-marg {
     margin-bottom: .7rem;
@@ -1819,6 +1817,12 @@ section.qcity-news-container{
 
 
 @media screen and (min-width: 768px) {
+
+	.c-sponsor-block__image {
+	    height: 200px;    
+	}
+	
+
 	.logo, h1.logo {
 	    width: 100px;
 	    margin: 0;
@@ -2268,6 +2272,13 @@ body.author{
 }
 							  /* 767px */
 @media screen and (max-width: $tabwidth - 1px) {
+
+	.c-sponsor-block__image {
+	    img{
+	    	height: 160px; 
+	    	width: auto;   
+	    }
+	}
 
 	.listing_search{
 		padding-left: 0;
