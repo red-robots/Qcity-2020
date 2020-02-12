@@ -2127,7 +2127,7 @@ section.home-bottom .ad{width:100%;float:left}
 }.biz-dir .biz-job-wrap,.jobs .biz-job-wrap{width:100%;margin-bottom:20px;float:left}
 .jobs{margin-right:30px}
 .jobs .job,.jobs-page .job{width:100%;float:left;border-bottom:1px solid #262425;padding:10px 0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
-.jobs .job .img,.jobs-page .job .img{width:auto;float:left;height:80px}
+.jobs .job .img,.jobs-page .job .img{width:15%;float:left;height:80px}
 .jobs .job .img img,.jobs-page .job .img img{width:auto;height:80px}
 .jobs .job .info,.jobs-page .job .info{width:50%;float:left;text-align:center}
 .jobs .job .info h3,.jobs-page .job .info h3{font-size:16px;padding:2px 0}
