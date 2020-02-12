@@ -15,32 +15,7 @@ function qcity_load_more(){
     $perpage    = 6;
     $cat_id     = get_category_by_slug( 'sponsored-post' );
 
-    $offset     =  $base_post;  
-    /*if( $paged == 2){
-
-        $args = array(
-            'post_type'             => 'post',
-            'post_status'           => 'publish',
-            'paged'                 => $paged,
-            'post__not_in'          => $postIDs,
-            'category__not_in'      => array( $cat_id->term_id ),
-            'posts_per_page'        => $perpage,
-            'offset'                => ( $paged) + $perpage + 2 ,
-        );
-
-    }  else {
-
-        $args = array(
-            'post_type'             => 'post',
-            'post_status'           => 'publish',
-            'paged'                 => $paged,
-            'post__not_in'          => $postIDs,
-            'category__not_in'      => array( $cat_id->term_id ),
-            'posts_per_page'        => $perpage,
-            //'offset'                => ( $paged) + $perpage,
-        );
-
-    }*/
+    $offset     =  $base_post;    
 
     $args = array(
             'post_type'             => 'post',
