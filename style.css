@@ -8467,7 +8467,7 @@ section.home-bottom {
       float: left; } }
   .biz-dir .biz-job-wrap, .jobs .biz-job-wrap {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     float: left; }
 
 .jobs {
@@ -9504,7 +9504,7 @@ section.home-bottom {
   width: 100%; }
 
 .c-sponsor-block__image {
-  height: 200px; }
+  height: 180px; }
 
 .has-xxs-btm-marg {
   margin-bottom: .7rem; }
