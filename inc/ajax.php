@@ -58,7 +58,7 @@ function qcity_load_more(){
             'post__not_in'          => $postIDs,
             'category__not_in'      => array( $cat_id->term_id ),
             'posts_per_page'        => $perpage,
-            'offset'                => ($perpage * $paged) - 1,
+            'offset'                => ($perpage * $paged),
         );
 
     $query = new WP_Query( $args );    
