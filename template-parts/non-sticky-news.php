@@ -9,7 +9,8 @@
 		'post_status' 	        => 'publish',		
 		'post__not_in' 	        => $postIDs,
         'category__not_in'      => array( $cat_id->term_id ),
-        'posts_per_page'        => 6,        
+        'posts_per_page'        => 6,    
+        'paged'                 => 1,    
 	));
 	?>
 	
@@ -23,6 +24,7 @@
 
     		<?php 
             $i = 0;
+           
                 if ( $wp_query->have_posts() ) : 	
                     $total = $wp_query->found_posts;	
     				 while ( $wp_query->have_posts() ) :  $wp_query->the_post();
@@ -38,6 +40,8 @@
                         if($i != 2){
                             get_template_part( 'template-parts/separator');
                         }
+
+
     		    	
     			 	endwhile; 
     			endif;
@@ -69,7 +73,7 @@
 
 
          <div class="more"> 
-            <a class="red qcity-load-more" data-page="1" data-action="qcity_load_more" data-except="<?php echo $postIDs; ?>" >        
+            <a class="red qcity-load-more" data-page="1" data-action="qcity_load_more" data-basepoint="10" >        
                 <span class="load-text">Load More</span>
                 <span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
             </a>

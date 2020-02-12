@@ -340,7 +340,9 @@ jQuery(document).ready(function ($) {
         var page    = $(this).data('page');
         var newPage = page + 1;
         var action  = $(this).data('action');
-        var postID = $(this).data('except')
+        var basepoint = $(this).data('basepoint');
+        var newBasepoint = basepoint + 6;
+        //var postID = $(this).data('except')
         //var ajaxUrl = that.data('url');
 
         that.addClass('loading').find('.load-text').hide();        
@@ -354,7 +356,7 @@ jQuery(document).ready(function ($) {
             data: {
                 page: page,
                 action: action,
-                postID: postID
+                basepoint: basepoint
             },
             success: function(response){
 
@@ -366,6 +368,7 @@ jQuery(document).ready(function ($) {
                 } else {
 
                     that.data('page', newPage);
+                    that.data('basepoint', newBasepoint);
                     $('.qcity-news-container').slideDown(2000).append(response);
 
                     setTimeout(function(){

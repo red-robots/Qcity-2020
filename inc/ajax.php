@@ -9,10 +9,13 @@ add_action('wp_ajax_qcity_load_more', 'qcity_load_more');
 
 function qcity_load_more(){
 
+    $base_post = $_POST['basepoint'];
+
     $paged      = $_POST['page'] + 1;
     $perpage    = 6;
     $cat_id     = get_category_by_slug( 'sponsored-post' );
 
+    $offset     =  $base_post;  
     /*if( $paged == 2){
 
         $args = array(
@@ -21,11 +24,11 @@ function qcity_load_more(){
             'paged'                 => $paged,
             'post__not_in'          => $postIDs,
             'category__not_in'      => array( $cat_id->term_id ),
-            'posts_per_page'        => 6,
-            'offset'                => 11,
+            'posts_per_page'        => $perpage,
+            'offset'                => ( $paged) + $perpage + 2 ,
         );
 
-    }  elseif(  $paged == 3 )  {
+    }  else {
 
         $args = array(
             'post_type'             => 'post',
@@ -33,20 +36,8 @@ function qcity_load_more(){
             'paged'                 => $paged,
             'post__not_in'          => $postIDs,
             'category__not_in'      => array( $cat_id->term_id ),
-            'posts_per_page'        => 6,
-            'offset'                => 5,
-        );
-
-    } elseif( $paged > 3) {
-
-        $args = array(
-            'post_type'             => 'post',
-            'post_status'           => 'publish',
-            'paged'                 => $paged,
-            'post__not_in'          => $postIDs,
-            'category__not_in'      => array( $cat_id->term_id ),
-            'posts_per_page'        => 6,
-            //'offset'                => -1,
+            'posts_per_page'        => $perpage,
+            //'offset'                => ( $paged) + $perpage,
         );
 
     }*/
@@ -58,7 +49,7 @@ function qcity_load_more(){
             'post__not_in'          => $postIDs,
             'category__not_in'      => array( $cat_id->term_id ),
             'posts_per_page'        => $perpage,
-            'offset'                => ($perpage * $paged),
+            'offset'                => $offset ,
         );
 
     $query = new WP_Query( $args );    
@@ -69,11 +60,13 @@ function qcity_load_more(){
 
             include( locate_template('template-parts/story-block.php', false, false) );   
 
-            get_template_part( 'template-parts/separator');         
+            get_template_part( 'template-parts/separator');  
+
+            $base_post++;       
 
         endwhile;
 
-
+        wp_reset_postdata();
 
     else:    
 
@@ -81,7 +74,7 @@ function qcity_load_more(){
 
     endif;
 
-    wp_reset_postdata();
+    
 
     die();
 }
