@@ -145,7 +145,7 @@ get_template_part('template-parts/banner-events');
 
 						<?php if( $query->have_posts()  ): ?>
 							<div class="more ">	
-							 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" data-except="<?php echo implode(',', $postID); ?>" data-basepoint="27">		
+							 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" data-except="<?php echo implode(',', $postID); ?>" data-basepoint="27" data-perpage="9" >		
 							 		<span class="load-text">Load More</span>
 									<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
 							 	</a>

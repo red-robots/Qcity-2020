@@ -338,12 +338,12 @@ jQuery(document).ready(function ($) {
 
         var that    = $(this);
         var page    = $(this).data('page');
+        var perPage = $(this).data('perpage');
         var newPage = page + 1;
         var action  = $(this).data('action');
         var basepoint = $(this).data('basepoint');
-        var newBasepoint = basepoint + 6;
-        var postID = $(this).data('except')
-        //var ajaxUrl = that.data('url');
+        var newBasepoint = basepoint + perPage;
+        var postID = $(this).data('except')        
 
         that.addClass('loading').find('.load-text').hide();        
         that.find('.load-icon').show();
@@ -357,7 +357,8 @@ jQuery(document).ready(function ($) {
                 page: page,
                 action: action,
                 basepoint: basepoint,
-                postID: postID
+                postID: postID,
+                perPage: perPage
             },
             success: function(response){
 

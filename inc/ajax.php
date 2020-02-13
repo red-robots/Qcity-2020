@@ -66,7 +66,7 @@ function qcity_events_load_more(){
     $paged      = $_POST['page'] + 1;
     $today      = date('Ymd');
     $postID     = $_POST['postID'];
-    $perpage    = 6;
+    $perpage    = $_POST['perPage'];
     $base_post  = $_POST['basepoint'];
     $offset     =  $base_post;
 
