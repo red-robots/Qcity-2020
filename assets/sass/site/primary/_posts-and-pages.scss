@@ -833,11 +833,12 @@ section.events {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		align-items: stretch;
-		justify-content: space-between;
+		align-items: flex-start;
+		/*justify-content: space-between;*/
 	}
 	.story-block {
 		padding-bottom: 0;
+		margin-right: 19px;
 
 		.photo{
 			height: 200px;
@@ -880,6 +881,10 @@ section.events {
 			font-size: 20px;
 
 		}
+	}
+
+	.story-block:nth-child(3n+3){
+		margin-right: 0;
 	}
 }
 
