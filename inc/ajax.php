@@ -63,9 +63,12 @@ add_action('wp_ajax_qcity_events_load_more', 'qcity_events_load_more');
 
 function qcity_events_load_more(){
 
-    $paged  = $_POST['page'] + 1;
-    $today  = date('Ymd');
-    $postID = $_POST['postID'];
+    $paged      = $_POST['page'] + 1;
+    $today      = date('Ymd');
+    $postID     = $_POST['postID'];
+    $perpage    = 6;
+    $base_post  = $_POST['basepoint'];
+    $offset     =  $base_post;
 
     $query = new WP_Query( array(
         'post_type'         => 'event',
@@ -74,8 +77,9 @@ function qcity_events_load_more(){
         'order'             => 'ASC',
         'meta_key'          => 'event_date',
         'orderby'           => 'event_date',
-        'posts_per_page'    => 9,
+        'posts_per_page'    => $perpage,
         'post__not_in'      => explode(',', $postID),
+        'offset'            => $offset ,
         'meta_query'        => array(
                                 'relation' => 'OR',
                                 array(
