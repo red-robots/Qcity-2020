@@ -117,7 +117,7 @@ get_template_part('template-parts/banner-events');
 														    ),
 								    ),							   
 								));
-								if ( $query->have_posts()) : ?>
+								if ( $query->have_posts() ) : ?>
 									
 									<section class="events">
 										<?php while ($query->have_posts()) : $query->the_post(); 
@@ -136,21 +136,21 @@ get_template_part('template-parts/banner-events');
 											}
 
 										endwhile; ?>
-									</section>
-
-									<?php //if( $query->post_count > 27 ): ?>
-									<div class="more ">	
-									 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" data-except="<?php echo implode(',', $postID); ?>" data-basepoint="27">		
-									 		<span class="load-text">Load More</span>
-											<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
-									 	</a>
-									</div>
-									<?php //endif; ?>
+									</section>									
 								<?php else: ?>
 									<div>No Events available.</div>
 								<?php endif; wp_reset_postdata(); ?>
 
 						</div>
+
+						<?php if( $query->have_posts() && $query->post_count > 27 ): ?>
+							<div class="more ">	
+							 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" data-except="<?php echo implode(',', $postID); ?>" data-basepoint="27">		
+							 		<span class="load-text">Load More</span>
+									<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
+							 	</a>
+							</div>
+						<?php endif; ?>
 
 						
 
