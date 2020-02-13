@@ -342,7 +342,7 @@ jQuery(document).ready(function ($) {
         var action  = $(this).data('action');
         var basepoint = $(this).data('basepoint');
         var newBasepoint = basepoint + 6;
-        //var postID = $(this).data('except')
+        var postID = $(this).data('except')
         //var ajaxUrl = that.data('url');
 
         that.addClass('loading').find('.load-text').hide();        
@@ -356,7 +356,8 @@ jQuery(document).ready(function ($) {
             data: {
                 page: page,
                 action: action,
-                basepoint: basepoint
+                basepoint: basepoint,
+                postID: postID
             },
             success: function(response){
 
