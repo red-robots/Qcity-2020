@@ -138,7 +138,7 @@ get_template_part('template-parts/banner-events');
 										endwhile; ?>
 									</section>
 
-									<?php if( count($events) > 27 ): ?>
+									<?php if( $query->post_count > 27 ): ?>
 									<div class="more ">	
 									 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" data-except="<?php echo implode(',', $postID); ?>" >		
 									 		<span class="load-text">Load More</span>
