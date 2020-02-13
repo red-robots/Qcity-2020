@@ -138,14 +138,14 @@ get_template_part('template-parts/banner-events');
 										endwhile; ?>
 									</section>
 
-									<?php if( $query->post_count > 27 ): ?>
+									<?php //if( $query->post_count > 27 ): ?>
 									<div class="more ">	
 									 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" data-except="<?php echo implode(',', $postID); ?>" >		
 									 		<span class="load-text">Load More</span>
 											<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
 									 	</a>
 									</div>
-									<?php endif; ?>
+									<?php //endif; ?>
 								<?php else: ?>
 									<div>No Events available.</div>
 								<?php endif; wp_reset_postdata(); ?>
