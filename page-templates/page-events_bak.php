@@ -12,34 +12,26 @@
 get_header(); 
 get_template_part('template-parts/banner-events');
 ?>
-<!--
-<div class="wrapper">
-	<div class="listing-header">
-		<div class="content-area-title">
-			<header class="section-title ">
-				<h2 class="dark-gray">Sponsored</h2>
-			</header>
-		</div>
-	</div>
-</div>
--->
 
-<div class="wrapper">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main " role="main">
+<div class="">
 
-			<div class="events_page">
-				<div class="listing_initial">
+	<div class="single-page-event">
 
-			
+			<div class="qcity-sponsored-container">
+
+				
 				<?php				
-					/*$i = 0;
+					$i = 0;
+					$postID = array();
 					$today = date('Ymd');
 					$wp_query = new WP_Query();
 					$wp_query->query(array(
-						'post_type'=>'event',
-						'post_status'=>'publish',
-						//'posts_per_page' => 5,
+						'post_type'		=>'event',
+						'post_status'	=>'publish',
+						'order' 		=> 'ASC',
+						'meta_key' 		=> 'event_date',
+						'orderby' 		=> 'event_date',
+						'posts_per_page' => -1,
 						'meta_query' => array(
 							array(
 						        'key'		=> 'event_date',
@@ -56,88 +48,95 @@ get_template_part('template-parts/banner-events');
 						)
 				));
 				if ($wp_query->have_posts()) : ?>
+					<header class="section-title ">
+						<h1 class="dark-gray">Sponsored</h1>
+					</header>
 					<section class="events">
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
-
-							//if( ($date_start <= $now) && ($date_stop >=  $now) || ($date_start >= $now) ) {
+								$postID[] = get_the_ID();
 								include( locate_template('template-parts/sponsored-block.php') );
-							//} 
-
 						endwhile; ?>
 					</section>
-				<?php endif; wp_reset_postdata(); */ ?>
-			
-
-		
-
-			<div class="mt-4 pt-5">
-
-				<header class="section-title ">
-					<h2 class="dark-gray">More Happenings</h2>
-				</header>
-
-				<div class="qcity-news-container">
-
-				<?php
-				/*
-					The Rest of the Events 
-				*/
-					$i = 0;
-					$today = date('Ymd');
-					$wp_query = new WP_Query();
-					$wp_query->query(array(
-						'post_type'			=>'event',
-						'post_status'		=>'publish',
-						'posts_per_page' 	=> 18,
-						'meta_query' 		=> array(
-												array(
-											        'key'		=> 'event_date',
-											        'compare'	=> '>=',
-											        'value'		=> $today,
-											    ),
-					    ),
-					    /*'tax_query' => array(
-							array(
-								'taxonomy' => 'event_category', // your custom taxonomy
-								'field' => 'slug',
-								'terms' => array( '' ) // the terms (categories) you created
-							)
-						)*/
-				));
-					if ($wp_query->have_posts()) : ?>
-						<section class="events">
-						<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
-							
-								include( locate_template('template-parts/sponsored-block.php') );
-
-							endwhile; ?>
-						</section>
-					<?php endif; wp_reset_postdata(); ?>
-
-					</div>
-
-					<div class="more ">	
-					 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" >		
-					 		<span class="load-text">Load More</span>
-							<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
-					 	</a>
-					</div>
-				</div>
-
-			</div>	
-
-			<div class="listing_search">
-					<div class="listing_search_result">				
-					</div>				
+				<?php endif; wp_reset_postdata();  ?>
 			</div>
 
-		</div>
-		
-			
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		<header class="section-title qcity-more-happen">
+			<h1 class="dark-gray">More Happenings</h1>
+		</header>
 
-	<?php // get_sidebar(); ?>
+		<div id="primary" class="content-area-event">
+			<main id="main" class="site-main" role="main">
+				<div class="page-event-list">
+
+					<div class="listing_initial">
+
+						<div class="qcity-news-container">
+
+							<?php
+							/*
+								The Rest of the Events 
+							*/
+								$i = 0;
+								$today = date('Ymd');
+								$wp_query = new WP_Query();
+								$wp_query->query(array(
+									'post_type'			=>'event',
+									'post_status'		=>'publish',
+									'posts_per_page' 	=> 27,
+									'post__not_in' 		=> $postID,
+									'order' 			=> 'ASC',
+									'meta_key' 			=> 'event_date',
+									'orderby' 			=> 'event_date',
+									'paged'             => 1,
+									'meta_query' 		=> array(
+															array(
+														        'key'		=> 'event_date',
+														        'compare'	=> '>=',
+														        'value'		=> $today,
+														    ),
+								    ),								   
+								));
+								if ($wp_query->have_posts()) : ?>
+									<section class="events">
+									<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
+										
+											include( locate_template('template-parts/sponsored-block.php') );
+
+										endwhile; ?>
+									</section>
+
+									<div class="more ">	
+									 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" data-except="<?php echo implode(',', $postID); ?>" >		
+									 		<span class="load-text">Load More</span>
+											<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
+									 	</a>
+									</div>
+								<?php wp_reset_postdata();
+									else:
+								 ?>
+									<div>No Events available.</div>
+								<?php endif;  ?>
+
+						</div>
+
+						
+
+					</div>
+
+					<div class="listing_search" style="margin-bottom: 20px">
+							<div class="listing_search_result">				
+							</div>				
+					</div>
+
+				</div>
+
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
+
+	</div>
+
 </div>
-<?php 
-get_footer();
+
+
+<?php get_footer();

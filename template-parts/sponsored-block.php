@@ -5,14 +5,7 @@ $category 	= get_field('choose_categories');
 $venue 		= get_field('name_of_venue');
 
 $img 		= get_field('event_image');
-$date 		= get_field("event_date", false, false);
-$date 		= new DateTime($date);
-$enddate 	= get_field("end_date", false, false);
-$enddate 	= ( !empty($enddate) ) ? new DateTime($enddate) : $date;
 
-$date_start 	= strtotime($date->format('Y-m-d'));
-$date_stop 		= strtotime($enddate->format('Y-m-d'));
-$now 			= strtotime(date('Y-m-d'));
 
 if( $img ){
 	$image = $img['url'];
@@ -36,17 +29,5 @@ if( $img ){
 		<div class="event-desc-text brown"><?php echo $date->format('l'); ?>, <?php echo $date->format('F j, Y'); ?></div>
 		<div class="event-desc-text"><?php echo $venue; ?></div>
 	</div>
-	
-	<!--
-	<div class="description">
-		<div class="date">
-			<div><?php //echo $date->format('l'); ?></div>
-			<?php //echo $date->format('F j, Y'); ?>	
-		</div>
-		<div class="location">
-			<?php //echo $venue; ?>
-		</div>
-	</div>
-	-->
 	<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
 </article>

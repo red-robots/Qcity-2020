@@ -32,13 +32,13 @@ get_template_part('template-parts/banner-events');
 						'meta_key' 		=> 'event_date',
 						'orderby' 		=> 'event_date',
 						'posts_per_page' => -1,
-						'meta_query' => array(
+						/*'meta_query' => array(
 							array(
 						        'key'		=> 'event_date',
 						        'compare'	=> '>=',
 						        'value'		=> $today,
 						    ),
-					    ),
+					    ),*/
 					    'tax_query' => array(
 							array(
 								'taxonomy' 	=> 'event_category', 
@@ -53,8 +53,22 @@ get_template_part('template-parts/banner-events');
 					</header>
 					<section class="events">
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
-								$postID[] = get_the_ID();
-								include( locate_template('template-parts/sponsored-block.php') );
+
+								$date 		= get_field("event_date", false, false);
+								$date 		= new DateTime($date);
+								$enddate 	= get_field("end_date", false, false);
+								$enddate 	= ( !empty($enddate) ) ? new DateTime($enddate) : $date;
+
+								$date_start 	= strtotime($date->format('Y-m-d'));
+								$date_stop 		= strtotime($enddate->format('Y-m-d'));
+								$now 			= strtotime(date('Y-m-d'));
+
+								if( $date_stop > $now ){									
+
+									$postID[] = get_the_ID();
+									include( locate_template('template-parts/sponsored-block.php') );
+								}
+								
 						endwhile; ?>
 					</section>
 				<?php endif; wp_reset_postdata();  ?>
@@ -77,9 +91,10 @@ get_template_part('template-parts/banner-events');
 								The Rest of the Events 
 							*/
 								$i = 0;
+								$events = array();
 								$today = date('Ymd');
-								$wp_query = new WP_Query();
-								$wp_query->query(array(
+								$query = new WP_Query();
+								$query->query(array(
 									'post_type'			=>'event',
 									'post_status'		=>'publish',
 									'posts_per_page' 	=> 27,
@@ -89,33 +104,51 @@ get_template_part('template-parts/banner-events');
 									'orderby' 			=> 'event_date',
 									'paged'             => 1,
 									'meta_query' 		=> array(
+															'relation' => 'OR',
 															array(
 														        'key'		=> 'event_date',
 														        'compare'	=> '>=',
 														        'value'		=> $today,
 														    ),
-								    ),								   
+														    array(
+														        'key'		=> 'end_date',
+														        'compare'	=> '>=',
+														        'value'		=> $today,
+														    ),
+								    ),							   
 								));
-								if ($wp_query->have_posts()) : ?>
+								if ( $query->have_posts()) : ?>
+									
 									<section class="events">
-									<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
+										<?php while ($query->have_posts()) : $query->the_post(); 
+
+											$date 		= get_field("event_date", false, false);
+											$date 		= new DateTime($date);
+											$enddate 	= get_field("end_date", false, false);
+											$enddate 	= ( !empty($enddate) ) ? new DateTime($enddate) : $date;
+
+											$date_start 	= strtotime($date->format('Y-m-d'));
+											$date_stop 		= strtotime($enddate->format('Y-m-d'));
+											$now 			= strtotime(date('Y-m-d'));							
 										
-											include( locate_template('template-parts/sponsored-block.php') );
+											if( $date_stop > $now ){									
+												include( locate_template('template-parts/sponsored-block.php') );
+											}
 
 										endwhile; ?>
 									</section>
 
+									<?php if( count($events) > 27 ): ?>
 									<div class="more ">	
 									 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" data-except="<?php echo implode(',', $postID); ?>" >		
 									 		<span class="load-text">Load More</span>
 											<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
 									 	</a>
 									</div>
-								<?php wp_reset_postdata();
-									else:
-								 ?>
+									<?php endif; ?>
+								<?php else: ?>
 									<div>No Events available.</div>
-								<?php endif;  ?>
+								<?php endif; wp_reset_postdata(); ?>
 
 						</div>
 

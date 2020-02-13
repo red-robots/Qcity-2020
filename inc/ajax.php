@@ -77,8 +77,14 @@ function qcity_events_load_more(){
         'posts_per_page'    => 9,
         'post__not_in'      => explode(',', $postID),
         'meta_query'        => array(
+                                'relation' => 'OR',
                                 array(
                                     'key'       => 'event_date',
+                                    'compare'   => '>=',
+                                    'value'     => $today,
+                                ),
+                                array(
+                                    'key'       => 'end_date',
                                     'compare'   => '>=',
                                     'value'     => $today,
                                 ),
