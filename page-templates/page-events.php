@@ -143,7 +143,7 @@ get_template_part('template-parts/banner-events');
 
 						</div>
 
-						<?php if( $query->have_posts() && $query->post_count > 27 ): ?>
+						<?php if( $query->have_posts()  ): ?>
 							<div class="more ">	
 							 	<a class="red qcity-load-more" data-page="1" data-action="qcity_events_load_more" data-except="<?php echo implode(',', $postID); ?>" data-basepoint="27">		
 							 		<span class="load-text">Load More</span>
