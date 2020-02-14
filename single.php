@@ -43,7 +43,7 @@
 
 			<?php if( $caption ): ?>
 				<div class="entry-meta">
-					<?php echo $caption; ?>
+					<div class="post-caption"><?php echo $caption; ?></div>
 				</div>
 			<?php endif; ?>
 
