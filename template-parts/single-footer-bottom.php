@@ -7,7 +7,7 @@ $footer_title_article_right = get_field('footer_title_article_right', 'option');
 
 <section class="home-bottom single-article-bottom">
 	
-	<div class="jobs">		
+	<div class="jobs desktop-version">		
         <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
 	</div>
 
@@ -54,6 +54,11 @@ $footer_title_article_right = get_field('footer_title_article_right', 'option');
             
         </div>
 
+    </div>
+
+
+    <div class="jobs mobile-version">      
+        <script async src="https://modules.wearehearken.com/qcitymetro/embed/4551.js"></script>
     </div>
 	
 	<!--- Trending Articles -->
