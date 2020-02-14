@@ -349,3 +349,4 @@ function qcity_insert_packages()
     return $content_block;
 }
 
+add_filter( 'rp4wp_append_content', '__return_false' );

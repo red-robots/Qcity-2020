@@ -61,9 +61,14 @@ if( !defined('HIDE_ADS') ){
 			 ); ?>
 		</div>
 
+
+
 		<div class="share">
 			<?php echo do_shortcode('[social_warfare]'); ?>
 		</div>
+
+
+		<?php rp4wp_children(); ?>
 		
 		
 		<footer class="entry-footer">
