@@ -278,7 +278,7 @@ function qcity_sidebar_load_more()
 */
 
 add_action('wp_ajax_nopriv_qcity_church_search', 'qcity_church_search');
-add_action('wp_ajax_qcity_qcity_church_search', 'qcity_church_search');
+add_action('wp_ajax_qcity_church_search', 'qcity_church_search');
 
 function qcity_church_search()
 {
