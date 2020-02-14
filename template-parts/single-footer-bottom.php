@@ -36,11 +36,13 @@ $footer_title_article_right = get_field('footer_title_article_right', 'option');
                         echo '</div>';
                     endwhile; ?>  
 
-                    <div class="more"> 
+                    <div class="more footer-more"> 
                         <a href="<?php bloginfo('url'); ?>/category/west-end/" class="red " >        
                             <span class="load-text">Read More</span>                    
                         </a>
                     </div>
+
+                    <div class="clearfix"></div>
 
                     <?php 
                 else:    
@@ -86,11 +88,12 @@ $footer_title_article_right = get_field('footer_title_article_right', 'option');
                     endwhile;  
                     ?>
 
-                    <div class="more"> 
+                    <div class="more footer-more"> 
                         <a href="<?php bloginfo('url'); ?>/category/news/" class="red " >        
                             <span class="load-text">Read More</span>                    
                         </a>
                     </div>
+                    <div class="clearfix"></div>
 
                     <?php
                 else:

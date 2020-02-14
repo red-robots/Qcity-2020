@@ -2872,7 +2872,13 @@ section.stickies-new{
 	}
 }
 
+.clearfix{
+	clear: both !important;
+}
 
+.footer-more{
+	margin: 20px 0;
+}
 
 .entry-content{
 	h2{
@@ -2904,9 +2910,12 @@ section.stickies-new{
 		padding: 10px 20px;
 		text-align: left;
 		min-height: 500px;
+		display: block;
+		position: relative;
 
 		.footer-content-list-item{
 			margin-bottom: 20px;
+			clear: both;
 
 			.footer-content-author{
 				clear: both;
@@ -2962,6 +2971,8 @@ section.stickies-new{
 	.footer-content-list{
 		min-height: auto !important;
 		margin-bottom: 20px;
+		display: block;
+		position: relative;
 	}
 
 	.mobile-gap{
