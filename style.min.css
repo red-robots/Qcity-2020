@@ -2584,7 +2584,9 @@ ul.rp4wp-posts-list .rp4wp_component_image{width:210px !important;height:auto !i
 ul.rp4wp-posts-list .rp4wp-col .rp4wp_component{padding:0 0 0 !important}
 ul.rp4wp-posts-list .rp4wp-col-last{width:99% !important;padding-right:0 !important;padding-left:0 !important}
 }@media screen and (max-width:767px){ul.rp4wp-posts-list .rp4wp-col-last{width:99% !important;padding-right:0 !important;padding-left:0 !important}
-.rp4wp_component_title{font-size:1.1em;font-weight:bold}
+.rp4wp_component_title{font-size:1.1em;font-weight:bold;font-family:"UniversLTPro-65Bold";line-height:1.1em}
+.rp4wp_component_excerpt,.rp4wp_component_author{font-size:14px;margin-top:3px}
+.rp4wp_component_date{font-size:14px;margin-top:0}
 .rp4wp_component_title,.rp4wp_component_excerpt,.rp4wp_component_date,.rp4wp_component_author{width:100% !important;float:none}
 .rp4wp_component_image{width:100% !important;height:auto !important;float:none;margin-right:0;margin-bottom:10px}
 .rp4wp-col .rp4wp_component{padding:0 0 0 !important}

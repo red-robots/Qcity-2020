@@ -3286,6 +3286,18 @@ body.home #main {
 	.rp4wp_component_title{
 		font-size: 1.1em;
 		font-weight: bold;
+		font-family: "UniversLTPro-65Bold";
+		line-height: 1.1em;
+	}
+
+	.rp4wp_component_excerpt, .rp4wp_component_author{
+		font-size: 14px;
+		margin-top: 3px;
+	}
+
+	.rp4wp_component_date{
+		font-size: 14px;
+		margin-top: 0;
 	}
 
 	.rp4wp_component_title, .rp4wp_component_excerpt, .rp4wp_component_date, .rp4wp_component_author {
