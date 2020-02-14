@@ -68,7 +68,7 @@ if( !defined('HIDE_ADS') ){
 		</div>
 
 
-		<?php rp4wp_children(); ?>
+		
 		
 		
 		<footer class="entry-footer">
@@ -104,11 +104,7 @@ if( !defined('HIDE_ADS') ){
 				</div>
 			<?php endif; ?>
 
-			<!--
-			<div class="content-single-page">
-				<?php //get_template_part('template-parts/next-story'); ?>
-			</div>
-			-->
+			<?php rp4wp_children(); ?>
 
 			<?php get_template_part( 'template-parts/sponsored-paid'); ?>
 
