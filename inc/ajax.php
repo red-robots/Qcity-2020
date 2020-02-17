@@ -307,7 +307,7 @@ function qcity_church_search()
         if( $type == 'church_listing' ){
             echo '<section class="church-list">';
         } elseif( $type == 'event' ){
-            echo '<section class="events">';
+            echo '<section class="events" style="margin-bottom: 30px">';
         } elseif( $type == 'business_listing' ){
             echo '<section class="sponsored">';
         } elseif( $type == 'job' ){

@@ -160,7 +160,7 @@ get_template_part('template-parts/banner-events');
 
 				</div>
 
-				<div class="listing_search" style="margin-bottom: 40px; padding: 0">
+				<div class="listing_search" style="margin-bottom: 20px; padding: 0 0 40px;">
 							<div class="listing_search_result">				
 							</div>				
 				</div>
