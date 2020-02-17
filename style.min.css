@@ -2362,7 +2362,7 @@ section.home-sponsored{padding:0;border-bottom:0}
 .desktop-version{display:block}
 .mobile-version{display:none}
 }.event-photo{position:relative;overflow:none;height:275px;background-position:center center;background-repeat:no-repeat;background-size:cover}
-section.events .story-block{border:1px solid #ccc}
+section.events .story-block{border:1px solid #ccc;-webkit-align-self:stretch;-ms-flex-item-align:stretch;align-self:stretch}
 .page-event-list{margin-bottom:20px}
 .event-desc{padding:5px 10px}
 .event-desc-text{font-size:14px}
