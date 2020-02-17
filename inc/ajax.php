@@ -125,7 +125,7 @@ function qcity_events_load_more(){
 */
 
 add_action('wp_ajax_nopriv_qcity_business_load_more', 'qcity_business_load_more');
-add_action('wp_ajax_qcity_qcity_business_load_more', 'qcity_business_load_more');
+add_action('wp_ajax_qcity_business_load_more', 'qcity_business_load_more');
 
 function qcity_business_load_more(){
     $paged = $_POST['page'] + 1;

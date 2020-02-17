@@ -11,6 +11,17 @@ get_header();
 
 $sidebar_event_text = get_field('sidebar_event_text', 'option');
 
+$img        = get_field('event_image');
+
+if( $img ){
+    $image = $img['url'];
+} elseif ( has_post_thumbnail() ) {
+    $image = get_the_post_thumbnail('thirds');
+    //var_dump($image);
+} else {
+    $image = get_template_directory_uri() . '/images/default.png';
+}
+
 ?>
 
 <style>
@@ -90,13 +101,13 @@ $sidebar_event_text = get_field('sidebar_event_text', 'option');
 
 					
 				        <div class="single-page1">
-							<?php if( has_post_thumbnail() ){ ?>
+							<?php //if( has_post_thumbnail() ){ ?>
 								<div class="story-image">
 									<div class="event-image">
-										<?php the_post_thumbnail(); ?>
+										<img src="<?php echo $image; ?>" alt="">
 									</div>			
 								</div>
-							<?php } ?>
+							<?php //} ?>
 
 						<?php
 						while ( have_posts() ) : the_post(); 

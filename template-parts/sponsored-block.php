@@ -4,7 +4,7 @@ $img 		= get_field('event_image');
 $category 	= get_field('choose_categories');
 $venue 		= get_field('name_of_venue');
 
-$img 		= get_field('event_image');
+//$img 		= get_field('event_image');
 
 
 if( $img ){
