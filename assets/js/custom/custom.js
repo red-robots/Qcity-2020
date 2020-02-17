@@ -520,7 +520,7 @@ jQuery(document).ready(function ($) {
             var post_type = $('.post_type').val();
 
             //console.log('Action: ' + action);
-
+            $('.qcity-sponsored-container').hide();
             $('.listing_initial').hide();
             $('.listing_search').show();
             $('.listing_search_result').html('<a class="red"><span class="load-icon"><i class="fas fa-sync-alt spin"></i></span></a>');
