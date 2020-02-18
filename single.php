@@ -11,7 +11,10 @@
 	$img 		= get_field('story_image');
 	$video 		= get_field('video_single_post');
 	$sponsors 	= get_field('sponsors');	
-	$caption 	= get_the_post_thumbnail_caption();
+	$caption 	= ( $img ) ? $img['caption'] : '';
+	//$caption 	= get_the_post_thumbnail_caption();
+
+	//var_dump($img);
 ?>
 
 
@@ -35,11 +38,11 @@
 				<div class="story-image">
 					<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 				</div>
-			<?php } elseif( has_post_thumbnail() ){ ?>
+			<?php } /*elseif( has_post_thumbnail() ){ ?>
 				<div class="story-image">
 					<?php the_post_thumbnail(); ?>
 				</div>
-			<?php } ?>
+			<?php } */ ?>
 
 			<?php if( $caption ): ?>
 				<div class="entry-meta">
@@ -87,11 +90,11 @@
 							<div class="story-image">
 								<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 							</div>
-						<?php } elseif( has_post_thumbnail() ){ ?>
+						<?php } /*elseif( has_post_thumbnail() ){ ?>
 							<div class="story-image">
 								<?php the_post_thumbnail(); ?>
 							</div>
-						<?php }  ?>
+						<?php }*/  ?>
 
 						<?php if( $caption ): ?>
 							<div class="entry-meta">
