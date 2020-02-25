@@ -10,12 +10,6 @@ $postId = get_the_ID();
 $category = get_the_terms( $postId, $yourTaxonomy );
 $useCatLink = true;
 
-// echo '<!-- ';
-// echo '<pre>';
-// print_r($category);
-// echo '</pre>';
-// echo $category[0]->slug;
-// echo ' -->';
 
 
 // If post has a category assigned.
@@ -25,9 +19,16 @@ if ($category){
 	if ( class_exists('WPSEO_Primary_Term') )
 	{
 		// Show the post's 'Primary' category, if this Yoast feature is available, & one is set
-		$wpseo_primary_term = new WPSEO_Primary_Term( 'event_cat', get_the_id() );
+		if( get_post_type() == 'event' ){
+			$wpseo_primary_term = new WPSEO_Primary_Term( 'event_cat', get_the_id() );
+		} else {
+			$wpseo_primary_term = new WPSEO_Primary_Term( 'category', get_the_id() );
+		}
 		$wpseo_primary_term = $wpseo_primary_term->get_primary_term();
 		$term = get_term( $wpseo_primary_term );
+
+		//print_r($term);	
+
 		if (is_wp_error($term)) { 
 			// Default to first category (not Yoast) if an error is returned
 			$category_display = $category[0]->name;
@@ -52,7 +53,7 @@ if ($category){
 		$catLink = '';
 		foreach($category as $cat) {
 			$catSlug = $cat->slug;
-			if($catSlug=='sponsored-post') {
+			if( $catSlug == 'sponsored-post') {
 				$finalCatName = $cat->name;
 				$catLink = get_term_link($cat);
 				break;

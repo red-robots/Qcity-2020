@@ -18,15 +18,12 @@ if ($wp_query->have_posts()) : ?>
 
 	<?php while ($wp_query->have_posts()) :  $wp_query->the_post(); $i++;
 		// collect id's to not repeat below
-		$postIDs[] 	= get_the_ID();
-		$date 		= get_the_date();
-		$img 		= get_field('story_image');
-		
-		$title 		= get_the_title();
-
-		$guest_author =  get_field('author_name'); 
-
-		$title 		= (strlen($title) > 94) ? substr($title, 0, 94) . ' ...' : $title;
+		$postIDs[] 		= get_the_ID();
+		$date 			= get_the_date();
+		$img 			= get_field('story_image');		
+		$title 			= get_the_title();
+		$guest_author 	=  get_field('author_name'); 
+		$title 			= (strlen($title) > 94) ? substr($title, 0, 94) . ' ...' : $title;
 		
 		//var_dump($img);
 		
@@ -55,15 +52,18 @@ if ($wp_query->have_posts()) : ?>
 		</article>		
 	</div>
 	<?php endwhile;
+	wp_reset_postdata();
 
-	endif;  wp_reset_postdata(); ?>
+	endif;   ?>
 
 	
 
 	<div class="right">
 		<?php
+
+			add_filter('post_limits', 'returnlimit');
 			
-			$slug 	= 'offers-invites';
+			$slug 	= 'sponsored-post';
 			$cat 	= get_category_by_slug($slug); 
 			$catID 	= $cat->term_id;
 
@@ -73,11 +73,20 @@ if ($wp_query->have_posts()) : ?>
 				'post_status'  		=> 'publish',
 				'post__not_in' 		=> $postIDs,
 				'category__not_in' 	=> array( $catID ),
+				'orderby' 			=> 'date', 
+			    'order' 			=> 'DESC', 
+			    'nopaging' 			=> true,		
 			);
+
+			
 
 			$recent_query = new WP_Query( $args ); 
 
+			remove_filter('post_limits', 'returnlimit');
+
 			if( $recent_query->have_posts() ):
+
+				//print_r( $recent_query->post_count );
 				$i = 0;
 				while ($recent_query->have_posts()) :  $recent_query->the_post();
 					$img 	= get_field('story_image');
@@ -132,9 +141,9 @@ if ($wp_query->have_posts()) : ?>
                  }   
 
 		 endwhile; 
+		 wp_reset_postdata();
 		 ?>
 	</div>
 	</section>
 <?php 
 endif;
-wp_reset_postdata();

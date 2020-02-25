@@ -350,3 +350,8 @@ function qcity_insert_packages()
 }
 
 add_filter( 'rp4wp_append_content', '__return_false' );
+
+
+function returnlimit( $limit ) {
+    return "LIMIT 3";
+}

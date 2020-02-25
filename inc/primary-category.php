@@ -1,10 +1,12 @@
 <?php
 //Fill in your custom taxonomy here
 $yourTaxonomy = 'category';
+$postId = get_the_ID();
 
 // SHOW YOAST PRIMARY CATEGORY, OR FIRST CATEGORY
 $category = get_the_terms( $postId, $yourTaxonomy );
 $useCatLink = false;
+
 // If post has a category assigned.
 if ($category){
 	$category_display = '';
@@ -30,6 +32,8 @@ if ($category){
 		// Default, display the first category in WP's list of assigned categories
 		$category_display = $category[0]->name;
 		$category_link = get_term_link( $category[0]->term_id );
+
+		
 	}
 	// Display category
 	if ( !empty($category_display) ){
@@ -44,14 +48,3 @@ if ($category){
 	
 }
 
-$category = get_the_category( $id );
-// echo $category[0]->cat_name; 
-
-//echo $category_display;
-
-
-echo '<!-- ';
-echo '<pre>';
-print_r($category);
-echo '</pre>';
-echo ' -->';
