@@ -63,7 +63,7 @@ get_template_part('template-parts/banner-events');
 								$date_stop 		= strtotime($enddate->format('Y-m-d'));
 								$now 			= strtotime(date('Y-m-d'));
 
-								if( $date_stop > $now ){									
+								if( $date_stop >= $now ){									
 
 									$postID[] = get_the_ID();
 									include( locate_template('template-parts/sponsored-block.php') );
