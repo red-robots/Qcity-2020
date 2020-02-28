@@ -2,6 +2,10 @@
 /*
 	Hero's - Only sticky posts here.
 */
+	$slug 	= 'sponsored-post';
+	$cat 	= get_category_by_slug($slug); 
+	$catID 	= $cat->term_id;
+
 $i = 0;
 $postIDs = array();
 $wp_query = new WP_Query();
@@ -10,7 +14,8 @@ $wp_query->query(array(
 	'posts_per_page' 		=> 1,
 	'post_status'  			=> 'publish',
 	'post__in' 				=> get_option('sticky_posts'),
-	'ignore_sticky_posts' 	=> 1
+	'ignore_sticky_posts' 	=> 1,
+	'category__not_in' 		=> array( $catID ),
 ));
 if ($wp_query->have_posts()) : ?>
 <section class="stickies-new">
@@ -61,11 +66,8 @@ if ($wp_query->have_posts()) : ?>
 	<div class="right">
 		<?php
 
-			add_filter('post_limits', 'returnlimit');
+			add_filter('post_limits', 'returnlimit');	
 			
-			$slug 	= 'sponsored-post';
-			$cat 	= get_category_by_slug($slug); 
-			$catID 	= $cat->term_id;
 
 			$args = array(
 				'post_type'			=>'post',

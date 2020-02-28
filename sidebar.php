@@ -119,8 +119,7 @@ if( is_page('events') ) {
 	$link = get_field("sponsorship_policy_link",39809);
 	$link_text = get_field("sponsorship_policy_text",39809);
 
-	if( $sponsors ):
-	?>
+	if( $sponsors ): ?>
 		<div class="sponsored-by">
 			<div class="sponsor-sidebar-wrapper">
 			<h2>Sponsored By:</h2>
@@ -142,11 +141,11 @@ if( is_page('events') ) {
 				<a href="<?php echo $link;?>" target="_blank"><?php echo $link_text;?></a>
 			<?php endif;?>
 			</div><!--.sponsor-sidebar-wrapper-->
-		</div><!--.sponsor-sidebar-->
+		</div><!--sponsored-by-->
 	<?php endif; ?>
 
 
-	<?php  if( (get_post_type() != 'post') ||  is_category() ): ?>
+	<?php  if( ( (get_post_type() != 'post') ||  is_category() )  && ! $sponsors ): ?>
 	
 	<div class="side-offer">
 		<p><?php echo $text; ?></p>
@@ -171,8 +170,7 @@ if( is_page('events') ) {
 
 						get_template_part( 'template-parts/sidebar-block');
 						
-					endwhile; ?>
-
+					endwhile; wp_reset_postdata();  ?>
 				</div>
 				<div class="more">
 					<a class="gray qcity-sidebar-load-more" data-page="1" data-action="qcity_sidebar_load_more" data-qp="<?php echo $qp; ?>" data-postid="<?php echo $post_id; ?>">
@@ -180,10 +178,13 @@ if( is_page('events') ) {
 						<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
 					</a>
 				</div>	
-			<?php endif; wp_reset_postdata(); ?>
+			<?php endif; ?>
 			</div>
 
 	<?php //dynamic_sidebar( 'sidebar-1' ); ?>
+
+	<?php endif;  //if( (get_post_type() != 'post') ||  is_category() && ! $sponsors )  ?>
+
 </div><!-- #secondary -->
 
-<?php endif;  //if( (get_post_type() != 'post') ||  is_category() ) 
+
