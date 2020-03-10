@@ -7,10 +7,11 @@
 ?>
 <style>
     .custom_divider{
-        width: 100%;        
+        width: 25%;        
         border-bottom: 1px solid #ccc;
         margin-bottom: 15px;        
         display: block;
+        margin: 0 auto;
     }
 </style>
 <hr class="custom_divider">
