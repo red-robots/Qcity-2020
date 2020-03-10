@@ -13,6 +13,8 @@
 	$sponsors 	= get_field('sponsors');	
 	$caption 	= ( $img ) ? $img['caption'] : '';
 	//$caption 	= get_the_post_thumbnail_caption();
+	
+
 
 	//var_dump($img);
 ?>

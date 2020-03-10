@@ -162,6 +162,29 @@ function acc_gut_newsletter_block() {
   }
 }
 
+
+add_action('acf/init', 'acc_gut_custom_line_block');
+function acc_gut_custom_line_block() {
+  
+  // check function exists
+  if( function_exists('acf_register_block') ) {
+    
+    // register a testimonial block
+    acf_register_block(array(
+      'name'        => 'custom-line',
+      'title'       => __('Qcity Custom Line'),
+      'description'   => __('Qcity Custom Line'),
+      'render_callback' => 'acf_gut_callback',
+      'category'      => 'layout',
+      'icon'        => 'welcome-widgets-menus',
+      'keywords'      => array( 'custom-line' ),
+      'mode'              => 'preview',
+    ));
+  }
+}
+
+
+
 function acf_gut_callback( $block ) {
   
   // convert name ("acf/adblock") into path friendly slug ("adblock")
