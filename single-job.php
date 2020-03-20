@@ -145,37 +145,37 @@ get_header();
 	</div><!-- #primary -->
 	
 
-	<div class="widget-area job-details">
-    	<?php //get_template_part('ads/right-small'); 
-		$popular_posts_title = get_field("popular_posts_title", 48778);
-		if($popular_posts_title):?>
-			<div class="border-title">
-				<h2><?php echo $popular_posts_title;?></h2>
-			</div><!-- border title -->
-		<?php endif;
-		$popular_posts = get_field("popular_posts", 48778);
-		$args = array(
-			'post__in'=>$popular_posts
-		);
-		$query = new WP_Query($args);
-		if($query->have_posts()):?>
-			<?php get_template_part('template-parts/story-block'); ?>
-			<?php wp_reset_postdata();
-		endif;?>
-		<div class="brew-sidebar">
-			<div class="border-title">
-				<h2>Morning Brew</h2>
-			</div><!-- border title -->
-			<div class="brew-wrapper">
-				<?php $copy = get_field("morning_brew_copy",48778);
-				if($copy):?>
-					<div class="copy">
-						<?php echo $copy;?>
-					</div><!--.copy-->
-				<?php endif;?>
-				<a class="button" href="<?php echo get_permalink(21613);?>">Signup</a>
-			</div><!--.wrapper-->
-		</div><!--.brew-sidebar-->
+	<div class="widget-area job-post">
+    	<?php
+    		$title = 'Black Business';
+			$qp = 'black-business';
+			$args = array(     
+				        'category_name'     => 'black-business',        
+				        'post_type'         => 'post',        
+				        'post__not_in'      => array( $post_id ),
+				        'post_status'       => 'publish',
+				        'posts_per_page'    => 5,		       
+			);
+    	
+		$wp_query = new WP_Query( $args );	
+
+		if ($wp_query->have_posts()) : ?>
+			<div class="next-stories">
+				<h3><?php echo $title; ?></h3>
+				<div class="sidebar-container">
+					<?php while ($wp_query->have_posts()) : $wp_query->the_post();
+
+						get_template_part( 'template-parts/sidebar-black-biz-block');
+						
+					endwhile; wp_reset_postdata();  ?>
+				</div>
+				<div class="more">
+					<a class="gray qcity-sidebar-load-more" data-page="1" data-action="qcity_sidebar_load_more" data-qp="<?php echo $qp; ?>" data-postid="<?php echo $post_id; ?>">
+						<span class="load-text">Load More</span>
+						<span class="load-icon"><i class="fas fa-sync-alt spin"></i></span>
+					</a>
+				</div>	
+		<?php endif; ?>
 	</div>
 
 </div>

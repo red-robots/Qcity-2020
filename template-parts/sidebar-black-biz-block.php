@@ -1,12 +1,15 @@
 <?php
-$img        = get_field('event_image');
+$img        = get_field('story_image');
 if( $img ){
-    $image = $img['url'];
+   $image = $img['url'];
 } elseif ( has_post_thumbnail() ) {
     $image = get_the_post_thumbnail_url();    
 } else {
     $image = get_template_directory_uri() . '/images/default.png';
 }
+   
+//var_dump($image);
+
 ?>
 
 <article class="small">

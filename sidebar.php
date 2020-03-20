@@ -168,7 +168,14 @@ if( is_page('events') ) {
 				<div class="sidebar-container">
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post();
 
-						get_template_part( 'template-parts/sidebar-block');
+						if( is_tax() ){
+							get_template_part( 'template-parts/sidebar-black-biz-block');
+						} else {
+							get_template_part( 'template-parts/sidebar-block');
+						}
+						
+
+						
 						
 					endwhile; wp_reset_postdata();  ?>
 				</div>

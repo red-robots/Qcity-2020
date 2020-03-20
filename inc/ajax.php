@@ -258,7 +258,13 @@ function qcity_sidebar_load_more()
 
         while( $query->have_posts() ): $query->the_post();
 
-            get_template_part( 'template-parts/sidebar-block');
+            if( $qp == 'black-business' ){
+                get_template_part( 'template-parts/sidebar-black-biz-block');
+            } else {
+                get_template_part( 'template-parts/sidebar-block');
+            }
+
+            
 
         endwhile;
 
