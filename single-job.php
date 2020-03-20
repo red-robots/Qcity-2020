@@ -145,7 +145,7 @@ get_header();
 	</div><!-- #primary -->
 	
 
-	<div class="widget-area job-post">
+	<div class="widget-area job-post" style="padding-top: 22px;">
     	<?php
     		$title = 'Black Business';
 			$qp = 'black-business';
