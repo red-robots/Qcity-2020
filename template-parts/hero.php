@@ -66,8 +66,8 @@ if ($wp_query->have_posts()) : ?>
 	<div class="right">
 		<?php
 
-			add_filter('post_limits', 'returnlimit');	
-			
+			//add_filter('post_limits', 'returnlimit');	
+			$list_posts = array();
 
 			$args = array(
 				'post_type'			=>'post',
@@ -77,15 +77,46 @@ if ($wp_query->have_posts()) : ?>
 				'category__not_in' 	=> array( $catID ),
 				'orderby' 			=> 'date', 
 			    'order' 			=> 'DESC', 
-			    'nopaging' 			=> true,		
+			    //'nopaging' 			=> true,
+			    'meta_query' => array(
+							        array(
+							            'key' 		=> '_qcity_meta_key',
+							            'value' 	=> '1',
+							            'compare' 	=> '=',
+							        )
+							    )		
 			);
 
+			$right_posts = new WP_Query( $args ); 
+
+			if ( $right_posts->post_count  < 3 ){
+
+				$remaining = 3 - $right_posts->post_count;
+				$postIDs[] = get_posts_ids($right_posts);
+								
+				$args2 = array(
+					'post_type'			=>'post',
+					'posts_per_page' 	=> $remaining,
+					'post_status'  		=> 'publish',
+					'post__not_in' 		=> $postIDs,
+					'category__not_in' 	=> array( $catID ),
+					'orderby' 			=> 'date', 
+				    'order' 			=> 'DESC',				    	
+				);
+
+				$remaining_posts = new WP_Query( $args2 ); 	
+			} 
+
+			$recent_query = new WP_Query();
+
+			if ( $right_posts->post_count  < 3 ){
+				$recent_query->posts = array_merge( $right_posts->posts, $remaining_posts->posts );
+			} else {
+				$recent_query->posts = $right_posts->posts;
+			}
+
+			$recent_query->post_count = count( $recent_query->posts );			
 			
-
-			$recent_query = new WP_Query( $args ); 
-
-			remove_filter('post_limits', 'returnlimit');
-
 			if( $recent_query->have_posts() ):
 
 				//print_r( $recent_query->post_count );
@@ -93,59 +124,57 @@ if ($wp_query->have_posts()) : ?>
 				while ($recent_query->have_posts()) :  $recent_query->the_post();
 					$img 	= get_field('story_image');
 					$video 	= get_field('video_single_post');
-
 					$author =  get_field('author_name');
 
 					if( $video ):
 						$embed = youtube_setup($video);
 					endif;
 
-					$postIDs[] = get_the_ID();
-
+					$postIDs[] 	= get_the_ID();
 					$text 		= get_the_excerpt();
 					$excerpt 	= ( strlen($text) > 100 ) ? substr($text, 0, 100) . ' ...' : $text;
 
 			?>
-			<article class="story-block">
-				<div class="photo story-home-right">
-					<?php if( $video ): ?>	
-						<iframe class="video-homepage"  src="<?php echo $embed; ?>"></iframe>
-					<?php elseif( has_post_thumbnail() ): ?>	
-						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-					<?php else: ?>	
-						<a href="<?php the_permalink(); ?>">
-							<img src="<?php echo get_template_directory_uri() . '/images/default.png'; ?>" alt="">
-						</a>
-					<?php endif; ?>					
-				</div>
-							
-				<div class="desc">
-					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>	
-					<div class="excerpt"><?php echo $excerpt; ?></div>
-					<div class="by">
-						By <?php echo ( $author ) ? $author : get_the_author(); ?> | <?php echo get_the_date(); ?>
-					</div>
-				</div>
-				
-				<!--
-				<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
-				-->
-			</article>
-				<?php
-					$i++;
-					if($i < 3){
-                        get_template_part( 'template-parts/separator');
-                    }
+					<article class="story-block">
+						<div class="photo story-home-right">
+							<?php if( $video ): ?>	
+								<iframe class="video-homepage"  src="<?php echo $embed; ?>"></iframe>
+							<?php elseif( has_post_thumbnail() ): ?>	
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+							<?php else: ?>	
+								<a href="<?php the_permalink(); ?>">
+									<img src="<?php echo get_template_directory_uri() . '/images/default.png'; ?>" alt="">
+								</a>
+							<?php endif; ?>					
+						</div>
+									
+						<div class="desc">
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>	
+							<div class="excerpt"><?php echo $excerpt; ?></div>
+							<div class="by">
+								By <?php echo ( $author ) ? $author : get_the_author(); ?> | <?php echo get_the_date(); ?>
+							</div>
+						</div>
+						
+						<!--
+						<div class="article-link"><a href="<?php the_permalink(); ?>"></a></div>
+						-->
+					</article>
+					<?php
+						$i++;
+						if($i < 3){
+	                        get_template_part( 'template-parts/separator');
+	                    }
 
-                 if($i == 1){
-                 	$ads_right_hero = get_ads_script('right-rail');
-                 	echo '<div class="mobile-version bottom-20 align-center">'. $ads_right_hero['ad_script'] . '</div>';
-                 }   
+	                 if($i == 1){
+	                 	$ads_right_hero = get_ads_script('right-rail');
+	                 	echo '<div class="mobile-version bottom-20 align-center">'. $ads_right_hero['ad_script'] . '</div>';
+	                 }   
 
-		 endwhile; 
-		 wp_reset_postdata();
-		 ?>
-	</div>
-	</section>
-<?php 
-endif;
+			 		endwhile; 
+			 		wp_reset_postdata();
+				 ?>
+			</div>
+			</section>
+		<?php 
+		endif;

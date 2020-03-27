@@ -355,3 +355,54 @@ add_filter( 'rp4wp_append_content', '__return_false' );
 function returnlimit( $limit ) {
     return "LIMIT 3";
 }
+
+
+function qcity_add_sticky_custom_box()
+{
+       
+        add_meta_box(
+            'qcity_sticky_box_id',           
+            'Stick On Right Side',  
+            'qcity_custom_box_html',  
+            'post',                  
+            'side', 'high'
+        );   
+}
+add_action('add_meta_boxes', 'qcity_add_sticky_custom_box', 2);
+
+function qcity_custom_box_html( $post )
+{
+    $value = get_post_meta( $post->ID, '_qcity_meta_key', true );
+    if (get_post_type( $post->ID ) != 'post') {
+        return;
+    }
+    
+    ?>
+    <label for="qcity_custom_stick_right">
+    <input type="checkbox" id="qcity_custom_stick_right" name="qcity_custom_stick_right" value="1" <?php  echo (( $value == 1 ) ) ? ' checked ' : ''; ?>> Stick on right side
+    </label>    
+    <?php
+}
+
+function qcity_save_postdata($post_id)
+{
+    //if (array_key_exists('qcity_custom_stick_right', $_POST)) {        
+         update_post_meta(
+            $post_id,
+            '_qcity_meta_key',
+            $_POST['qcity_custom_stick_right']
+        );
+
+    //}
+
+}
+add_action('save_post', 'qcity_save_postdata');
+
+function get_posts_ids($right_posts)
+{
+    $ids = array();
+    foreach($right_posts as $post){
+        $ids[] = $post->ID;
+    }
+    return $ids;
+}
