@@ -358,8 +358,7 @@ function returnlimit( $limit ) {
 
 
 function qcity_add_sticky_custom_box()
-{
-       
+{       
         add_meta_box(
             'qcity_sticky_box_id',           
             'Stick On Right Side',  
@@ -398,6 +397,7 @@ function qcity_save_postdata($post_id)
 }
 add_action('save_post', 'qcity_save_postdata');
 
+
 function get_posts_ids($right_posts)
 {
     $ids = array();
@@ -406,3 +406,5 @@ function get_posts_ids($right_posts)
     }
     return $ids;
 }
+
+

@@ -61,6 +61,11 @@ add_image_size('small',250,9999 );
 // }
 // add_filter('the_content', 'insert_ad_block');
 
+function stick_right_js()
+{
+    wp_enqueue_script( 'stick-right-post-js', get_template_directory_uri() . '/js/stick-right.js', array( 'wp-edit-post', 'wp-plugins', 'wp-i18n', 'wp-element' ), '1.0' );
+}
+//add_action( 'admin_enqueue_scripts', 'stick_right_js' );
 
 /*-------------------------------------
   
