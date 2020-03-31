@@ -80,7 +80,8 @@ if ($wp_query->have_posts()) : ?>
 			    //'nopaging' 			=> true,
 			    'meta_query' => array(
 							        array(
-							            'key' 		=> '_qcity_meta_key',
+							            //'key' 		=> '_qcity_meta_key',
+							            'key'		=> 'custom_meta_post_visibility',
 							            'value' 	=> '1',
 							            'compare' 	=> '=',
 							        )
