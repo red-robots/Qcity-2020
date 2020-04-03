@@ -28,7 +28,7 @@ if ($wp_query->have_posts()) : ?>
 		$img 			= get_field('story_image');		
 		$title 			= get_the_title();
 		$guest_author 	=  get_field('author_name'); 
-		$title 			= (strlen($title) > 94) ? substr($title, 0, 94) . ' ...' : $title;
+		//$title 			= (strlen($title) > 94) ? substr($title, 0, 94) . ' ...' : $title;
 		
 		//var_dump($img);
 		
