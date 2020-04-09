@@ -2371,7 +2371,7 @@ section.events .story-block{border:1px solid #ccc;-webkit-align-self:stretch;-ms
 .subscribe a{padding:3px 5px;background-color:none;color:#c5a92e;display:inline-block;text-decoration:none}
 .subscribe a:hover{color:#f2f2f2}
 h1.entry-title{font-size:2rem;line-height:1.1;margin-bottom:10px}
-.story-image{width:100%;margin-bottom:20px}
+.story-image{width:100%;margin-bottom:0}
 .single-page .category{margin-bottom:15px;margin-top:20px}
 .single-page .category a{border-bottom:2px solid #ffc000}
 .wrapper{padding-left:30px;padding-right:30px}
