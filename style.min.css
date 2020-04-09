@@ -2396,7 +2396,7 @@ body.page-template-page-media #content{margin-top:60px}
 .single-page .featured_image img{height:auto;width:100%}
 .single-page .business-content{margin-top:1.5em;font-size:1.2em;display:block}
 .single-page .business-content span{color:#000;font-weight:bold}
-.event-image{text-align:center;display:block}
+.event-image{text-align:center;display:block;margin-bottom:20px}
 .event-image img{width:100%;height:auto;margin:0 auto}
 body.single .site-footer .wrapper{max-width:1350px}
 article.story-block .desc{margin-top:10px}
