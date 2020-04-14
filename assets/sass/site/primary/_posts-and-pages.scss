@@ -3053,7 +3053,8 @@ section.stickies-new{
 		    left: 50%;
 		    top: 33px;
 		    width: 200px;
-		    margin: 0 0 0 -35px;
+		    margin-left: -100px;
+		    text-align: center;
 		    .news-letter-btn{
 		    	background-color: #924020;
 		    	color: white;
