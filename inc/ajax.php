@@ -288,8 +288,8 @@ add_action('wp_ajax_qcity_church_search', 'qcity_church_search');
 
 function qcity_church_search()
 {
-    $value  = $_GET['search_keyword'];
-    $type   = $_GET['post_type'];
+    $value  = sanitize_text_field($_GET['search_keyword']);
+    $type   = sanitize_text_field($_GET['post_type']);
 
     if( empty($value) ){
         return;

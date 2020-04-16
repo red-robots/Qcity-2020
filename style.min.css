@@ -2594,7 +2594,19 @@ ul.rp4wp-posts-list .rp4wp-col-last{width:99% !important;padding-right:0 !import
 .rp4wp_component_title,.rp4wp_component_excerpt,.rp4wp_component_date,.rp4wp_component_author{width:100% !important;float:none}
 .rp4wp_component_image{width:100% !important;height:auto !important;float:none;margin-right:0;margin-bottom:10px}
 .rp4wp-col .rp4wp_component{padding:0 0 0 !important}
-}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+}.qcity_search_holder{padding:10px 0;position:relative}
+.qcity_search_holder .qcity_search_class{width:100%;padding:5px 40px 5px 10px}
+.qcity_search_holder .qcity_search_icon{position:absolute;right:8px;top:12px}
+.qcity_search_holder .qcity_search_icon span{width:30px;height:30px;display:block;color:#aaa;padding:5px 25px 10px 5px}
+.qcity_search_holder .qcity_search_icon span svg{width:22px;height:22px}
+.search_results{padding:0 0 30px}
+.search_results_item{margin:10px 0 20px}
+.search_results_item p{margin-top:0;margin-bottom:0}
+.pagination-search a{padding:.75rem;border-radius:3px;cursor:pointer;background-color:black;-webkit-transition:.3s ease all;transition:.3s ease all;color:white}
+.pagination-search span{padding:.75rem;border-radius:3px;cursor:pointer;-webkit-transition:.3s ease all;transition:.3s ease all;color:white}
+.pagination-search .current{background-color:#c4a92f;color:white}
+.color-golden{color:#c4a92f}
+.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}

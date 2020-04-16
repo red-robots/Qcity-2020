@@ -556,8 +556,24 @@ jQuery(document).ready(function ($) {
             }
         });
     });
-        
 
+    // Adding search function in burger
+    $('#menu-burger-submenu').append('<li><div class="qcity_search_holder"><input type="text" class="qcity_search_class" name="qcity_search" id="qcity_search" placeholder="Search"><div class="qcity_search_icon"><span ><i class="fas fa-search"></i></span></div></div></li>');
+        
+    $('.qcity_search_icon').on('click', function(){
+        var search_word = $('#qcity_search').val();
+        console.log('Search clicked! Looking for ' + search_word);
+        if( search_word != '' ){
+            window.location.href = '/?s=' + search_word + '&pg=1&perpage=20';
+        }
+        
+    });
+
+    $('#qcity_search').keypress(function(e){
+        if( e.which == 13 ){            
+            $('.qcity_search_icon').click();
+        }
+    });
 
 	/*
 	*

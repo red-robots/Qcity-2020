@@ -106,6 +106,7 @@ window.googletag = window.googletag || {cmd: []};
 							  <span></span>
 							</div>
 							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class'=>'desktop-version' ) ); ?>
+              <?php //get_search_form(); ?>
 						</div>
 					</nav><!-- #site-navigation -->
 				</div>

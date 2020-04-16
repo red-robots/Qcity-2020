@@ -9,120 +9,112 @@
  */
 
 get_header(); 
-$value = '';
 
-if( $_GET['search_text'] && !empty($_GET['search_text']) ){
-	$value = trim($_GET['search_text']);
-}
-
-if( $_GET['type'] && !empty($_GET['type']) ){
-	$type = $_GET['type'];
-}
-
-if( $type == 'business_listing' ) {
-	$title = 'Featured Businesses';
-} elseif(  $type == 'church_listing' ) {
-	$title = 'All Churches';
-} elseif( $type == 'event' ) {
-	$title = 'All Events';
-}else {
-	$title = 'All Posts';
-}
-
-
+$search_text 	= (isset( $_GET['s'] ) && !empty( $_GET['s'] ) ) ? sanitize_text_field($_GET['s']) : '';
+$paged 			= (int) ( isset($_GET['pg']) && $_GET['pg'] ) ? $_GET['pg'] : 1;
+$perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perpage'] : 10;
 ?>
 
-<div class="wrapper" style="margin-top: 25px;">
-	<div class="content-area-title">
-		<header class="section-title ">
-			<h2 class="dark-gray"><?php echo $title; ?> | Searching: <?php echo $value; ?></h2>
+<div class="wrapper">
+	<div class="content-area-single">		
+		<header class="entry-header toppage">
+			<h1 class="entry-title">Searching for: <span class="color-golden"><?php echo $search_text; ?></span></h1>	
 		</header>
 	</div>
 </div>
+
+	
 <div class="wrapper">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
+	<div id="primary" class="content-area-single">
 		<?php
+			
+			$entries 	= isset( $entries ) ? $entries : array();
+			$lists 		= isset($lists) ? $lists : array();
 
-			$args = array(
-		        'post_type'         => $type, 
-		        //'post_status'       => 'publish',
-		        //'order'             => 'ASC',
-		        //'orderby'           => 'title',
-		        'posts_per_page'    => 15,
-		        's'                 => $value        
-		    );
+			if( empty( $entries ) ):
 
-			$query = new WP_Query( $args );
+				$args = array(
+					'post_type' 		=> 'post',
+					'post_status'       => 'publish',
+			        'order'             => 'ASC',
+			        'orderby'           => 'title',
+			        'posts_per_page'    => -1,
+					's' 				=> $search_text,
+					//'paged' 			=> get_query_var('pg')
+				);
+				$query = get_posts( $args );
 
-			//var_dump($query);
+				foreach ($query as $post) :		
+					$entries[] = array(
+								'ID' => $post->ID,
+								'post_title' => $post->post_title,
+								'content' => substr( sanitize_text_field($post->post_content), 0, 100),
+								'url' => $post->guid
 
-		if ( $query->have_posts() ) : ?>
+					);	
+				endforeach;	
+				wp_reset_postdata();
 
-			<header class="page-header" style="margin-bottom: 10px">
-				<h3 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'acstarter' ), '<span>' . $value . '</span>' ); ?></h3>
-			</header>
+			endif;	// if( empty( $entries ) )
 
-			<?php
-				if( $type == 'business_listing' ) {
-					echo '<div class="qcity-news-container">
-								<section class="sponsored">';
-				} elseif( $type == 'church_listing' ) {
-					echo '<section class="church-list">';
-				} elseif( $type == 'event' ) {
-					echo '<section class="events">';
-				} else {
-					echo '<section class="qcity-news-container">';
+						
+
+			if( ! empty(  $entries ) ):		
+
+				if( count($entries) > 0 ){
+					echo '<p>Found: <strong>' . count( $entries ) . '</strong></p>'; 
+					$end = ($paged * $perpage) - 1;
+			        $start = ($paged==1) ? 0 : ($end - $perpage) + 1;
+			        
+			        for($x=$start; $x<=$end; $x++) {
+			            if( isset($entries[$x]) ) {
+			                $lists[$x] = $entries[$x];
+			            }
+			        }
 				}
 
-			?>
-
-			<?php
-			
-			while ( $query->have_posts() ) : $query->the_post();
-
-				if( $type == 'business_listing' ) {
-
-					include(locate_template('template-parts/business-block.php')) ;
-
-				} elseif( $type == 'church_listing' ) {
-
-					include(locate_template('template-parts/church.php')) ;
-
-				} elseif( $type == 'event' ) {
-					include( locate_template('template-parts/sponsored-block.php') );
-				} else {
-					get_template_part( 'template-parts/content', 'search' );
+				echo '<div class="search_results">';
+				if( count($lists) > 0 ){
+					foreach( $lists as $post ){
+						//var_dump($post);
+					 ?>
+						<div class="search_results_item">
+							<h3><?php echo $post['post_title']; ?></h3>
+							<p><?php echo $post['content']; ?> ...</p>
+						</div>
+				<?php	}
 				}
-				
 
-			endwhile;
+				$total = ($query) ? count($query) : 0;
 
-			pagi_posts_nav();
-
-
-			if( $type == 'business_listing' ) {
-				echo '</section></div>';
-			} elseif( $type == 'church_listing' ) {
-				echo '</section>';
-			} elseif( $type == 'event' ) {
-				echo '</section>';
-			} else {
-				echo '</section>';
-			}
+				if( $total > 1 ) { ?>
+					<div id="pagination" class="pagination pagination-search navigation" data-pageurl="">
+			            <?php if ($total <= $perpage ) { ?>
+			                <span aria-current="page" class="page-numbers current">1</span>
+			            <?php } else { ?>
+			                <?php
+			                echo paginate_links( array(
+			                    'base' => @add_query_arg('pg','%#%'),
+			                    'format' => '',
+			                    'current' => $paged,
+			                    'total' => ceil($total / $perpage),
+			                    'prev_text' => __( '&laquo;'),
+			                    'next_text' => __( '&raquo;'),
+			                    'type' => 'plain'
+			                ) );
+			                ?>
+			            <?php } ?>
+			        </div>
+			
+			<?php	} // more than per page				?>
+			
+		<?php
+			endif; 
 
 			
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; wp_reset_query();  ?>
-
-		</main>
-	</div>
+		?>
+	</div>	
 </div>
+
 <?php
-get_sidebar();
 get_footer(); 

@@ -3341,4 +3341,75 @@ body.home #main {
 	}
 }
 
+.qcity_search_holder{
+	padding: 10px 0;
+	position: relative;
 
+	.qcity_search_class{
+		width: 100%;
+		padding: 5px 40px 5px 10px;
+	}
+
+	.qcity_search_icon{
+
+		span{
+			width: 30px;
+			height: 30px;
+			display: block;
+			color: #aaa;
+			padding: 5px 25px 10px 5px;
+
+			svg{
+				width: 22px;
+				height: 22px;
+			}
+		}
+		position: absolute;
+		right: 8px;
+		top: 12px;
+		
+	}
+}
+
+.search_results{
+	padding: 0 0 30px;
+
+	&_item{
+		margin: 10px 0 20px;
+
+		p{
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+.pagination-search{
+	a{
+		padding: 0.75rem;
+		border-radius: 3px;
+		cursor: pointer;
+		background-color: black;
+		transition: 0.3s ease all;
+		color: white;
+	}
+
+	span{
+		padding: 0.75rem;
+		border-radius: 3px;
+		cursor: pointer;		
+		transition: 0.3s ease all;
+		color: white;
+	}
+
+	.current{
+		background-color: #c4a92f;
+		color: white;
+	}
+	
+}
+
+.color-golden{
+	color: #c4a92f;
+}
