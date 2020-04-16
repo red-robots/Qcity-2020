@@ -2606,6 +2606,7 @@ ul.rp4wp-posts-list .rp4wp-col-last{width:99% !important;padding-right:0 !import
 .pagination-search span{padding:.75rem;border-radius:3px;cursor:pointer;-webkit-transition:.3s ease all;transition:.3s ease all;color:white}
 .pagination-search .current{background-color:#c4a92f;color:white}
 .color-golden{color:#c4a92f}
+.search{width:100%}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

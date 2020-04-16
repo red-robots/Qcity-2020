@@ -10,10 +10,15 @@
 
 get_header(); 
 
+
 $search_text 	= (isset( $_GET['s'] ) && !empty( $_GET['s'] ) ) ? sanitize_text_field($_GET['s']) : '';
 $paged 			= (int) ( isset($_GET['pg']) && $_GET['pg'] ) ? $_GET['pg'] : 1;
 $perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perpage'] : 10;
 ?>
+
+
+
+<?php   ?>
 
 <div class="wrapper">
 	<div class="content-area-single">		
@@ -58,7 +63,7 @@ $perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perp
 			endif;	// if( empty( $entries ) )
 
 						
-
+			echo '<div class="search_results">';
 			if( ! empty(  $entries ) ):		
 
 				if( count($entries) > 0 ){
@@ -73,7 +78,7 @@ $perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perp
 			        }
 				}
 
-				echo '<div class="search_results">';
+				
 				if( count($lists) > 0 ){
 					foreach( $lists as $post ){
 						//var_dump($post);
@@ -107,14 +112,18 @@ $perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perp
 			        </div>
 			
 			<?php	} // more than per page				?>
-			
+
 		<?php
 			endif; 
 
 			
 		?>
+		</div>
 	</div>	
 </div>
 
+</div>
+
 <?php
+
 get_footer(); 

@@ -13,7 +13,7 @@ $instagram = get_field('instagram_link', 'option');
 $twitter = get_field('twitter_link', 'option');
 ?>
 
-	</div><!-- #content -->
+    </div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="wrapper">
@@ -61,6 +61,8 @@ $twitter = get_field('twitter_link', 'option');
 		<div class="site-footer-overlay"></div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+
+
 
 <?php 
 
