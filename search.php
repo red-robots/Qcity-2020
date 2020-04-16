@@ -84,7 +84,7 @@ $perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perp
 						//var_dump($post);
 					 ?>
 						<div class="search_results_item">
-							<h3><?php echo $post['post_title']; ?></h3>
+							<h3><a href="<?php echo esc_url($post['url']); ?>"><?php echo $post['post_title']; ?></a></h3>
 							<p><?php echo $post['content']; ?> ...</p>
 						</div>
 				<?php	}
