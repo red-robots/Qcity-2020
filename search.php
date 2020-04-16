@@ -66,7 +66,7 @@ $perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perp
 			echo '<div class="search_results">';
 			if( ! empty(  $entries ) ):		
 
-				if( count($entries) > 0 ){
+				if( count($entries) > 0 ):
 					echo '<p>Found: <strong>' . count( $entries ) . '</strong></p>'; 
 					$end = ($paged * $perpage) - 1;
 			        $start = ($paged==1) ? 0 : ($end - $perpage) + 1;
@@ -76,23 +76,22 @@ $perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perp
 			                $lists[$x] = $entries[$x];
 			            }
 			        }
-				}
+				endif; // if( count($entries) > 0 ):
 
 				
-				if( count($lists) > 0 ){
-					foreach( $lists as $post ){
-						//var_dump($post);
+				if( count($lists) > 0 ):
+					foreach( $lists as $post ):						
 					 ?>
 						<div class="search_results_item">
 							<h3><a href="<?php echo esc_url($post['url']); ?>"><?php echo $post['post_title']; ?></a></h3>
 							<p><?php echo $post['content']; ?> ...</p>
 						</div>
-				<?php	}
-				}
+				<?php	endforeach; // foreach( $lists as $post ):
+				endif; //  if( count($lists) > 0 ):
 
 				$total = ($query) ? count($query) : 0;
 
-				if( $total > 1 ) { ?>
+				if( $total > 1 ) : ?>
 					<div id="pagination" class="pagination pagination-search navigation" data-pageurl="">
 			            <?php if ($total <= $perpage ) { ?>
 			                <span aria-current="page" class="page-numbers current">1</span>
@@ -111,7 +110,7 @@ $perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perp
 			            <?php } ?>
 			        </div>
 			
-			<?php	} // more than per page				?>
+			<?php	endif; // if( $total > 1 ) :				?>
 
 		<?php
 			endif; 

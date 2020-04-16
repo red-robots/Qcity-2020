@@ -2603,6 +2603,7 @@ ul.rp4wp-posts-list .rp4wp-col-last{width:99% !important;padding-right:0 !import
 .search_results_item{margin:10px 0 20px}
 .search_results_item p{margin-top:0;margin-bottom:0}
 .pagination-search a{padding:.75rem;border-radius:3px;cursor:pointer;background-color:black;-webkit-transition:.3s ease all;transition:.3s ease all;color:white}
+.pagination-search .dots{color:black}
 .pagination-search span{padding:.75rem;border-radius:3px;cursor:pointer;-webkit-transition:.3s ease all;transition:.3s ease all;color:white}
 .pagination-search .current{background-color:#c4a92f;color:white}
 .color-golden{color:#c4a92f}
