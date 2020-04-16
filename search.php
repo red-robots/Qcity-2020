@@ -41,8 +41,8 @@ $perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perp
 				$args = array(
 					'post_type' 		=> 'post',
 					'post_status'       => 'publish',
-			        'order'             => 'ASC',
-			        'orderby'           => 'title',
+			        'order'             => 'DESC',
+			        'orderby'           => 'date',
 			        'posts_per_page'    => -1,
 					's' 				=> $search_text,
 					//'paged' 			=> get_query_var('pg')
@@ -53,8 +53,9 @@ $perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perp
 					$entries[] = array(
 								'ID' => $post->ID,
 								'post_title' => $post->post_title,
-								'content' => substr( sanitize_text_field($post->post_content), 0, 100),
-								'url' => $post->guid
+								'content' => substr( sanitize_text_field($post->post_content), 0, 170),
+								'url' => $post->guid,
+								'date' => $post->post_date
 
 					);	
 				endforeach;	
@@ -83,8 +84,9 @@ $perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perp
 					foreach( $lists as $post ):						
 					 ?>
 						<div class="search_results_item">
-							<h3><a href="<?php echo esc_url($post['url']); ?>"><?php echo $post['post_title']; ?></a></h3>
-							<p><?php echo $post['content']; ?> ...</p>
+							<h3><a href="<?php echo esc_url($post['url']); ?>"><?php echo $post['post_title']; ?></a> </h3>
+							<small><?php  echo date('F j, Y', strtotime($post['date']) ); ?></small>
+							<p><?php echo esc_attr( $post['content'] ); ?> [...]</p>
 						</div>
 				<?php	endforeach; // foreach( $lists as $post ):
 				endif; //  if( count($lists) > 0 ):
@@ -94,7 +96,7 @@ $perpage 		= (int) ( isset($_GET['perpage']) && $_GET['perpage'] ) ? $_GET['perp
 				if( $total > 1 ) : ?>
 					<div id="pagination" class="pagination pagination-search navigation" data-pageurl="">
 			            <?php if ($total <= $perpage ) { ?>
-			                <span aria-current="page" class="page-numbers current">1</span>
+			            <?php echo ''; ?>    
 			            <?php } else { ?>
 			                <?php
 			                echo paginate_links( array(
