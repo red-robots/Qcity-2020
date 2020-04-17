@@ -24,7 +24,7 @@ if( is_archive() ) {
 		<div class="row-2">
 			
 			
-			<div class="search">
+			<div class="search search_form_banner">
 				<form  method="get" class="biz" id="form_search">
 				    <input class="searchfield" type="text" name="search_text" id="search"  />
 				    <input type="hidden" class="post_type" name="type" value="event">

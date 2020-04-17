@@ -45,7 +45,7 @@ if ( $query->have_posts() ) :
                                 </ul>
                             <?php endif; wp_reset_postdata();?>
                     </div>
-                    <div class="search mobile_hide">
+                    <div class="search mobile_hide search_form_banner">
                         <form  method="get" class="biz" id="form_search">
                             <input class="searchfield" type="text" name="search_text" id="search"  />
                             <input type="hidden" class="post_type" name="type" value="business_listing">

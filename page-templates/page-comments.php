@@ -29,9 +29,9 @@ get_header(); ?>
                           <div class="commentform-element">                            
                             <textarea id="comment" class="input-fields" placeholder="Message" name="comment" cols="40" rows="6"></textarea>
                           </div>
-                          <input name="submit" class="form-submit-button"  type="submit" id="submit-comment" value="Post comment">
-                          <input type="hidden" name="comment_post_ID" value="22" id="comment_post_ID">
-                        <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                            <input name="submit" class="form-submit-button"  type="submit" id="submit-comment" value="Post comment">
+                            <input type="hidden" name="comment_post_ID" value="22" id="comment_post_ID">
+                            <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                         </form>
              </div>
             <?php
