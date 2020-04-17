@@ -16,6 +16,9 @@ $ads_button_link        = $ads['ads_button_link'];
     <div class="info">
         <h2><?php echo __( $ads_title ); ?></h2>
         <p><?php echo sanitize_text_field($ads_description); ?></p>
+        <?php if( $ads_price ): ?>
+        <p>Price: <strong><?php echo __( $ads_price ); ?></strong></p>
+        <?php endif; ?>
 		
     </div><!-- featured event content -->
     <div class="btn"><a class="yellow full" target="_blank" href="<?php echo esc_url( $ads_button_link ); ?>"><?php echo __( $ads_button_text ); ?></a></div>
