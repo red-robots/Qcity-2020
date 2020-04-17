@@ -20,6 +20,10 @@ $tier_1_link = get_field("tier_1_btn_link");
 $tier_2_link = get_field("tier_2_btn_link");
 $tier_3_link = get_field("tier_3_btn_link");
 $mail = get_field("mailing_address");
+
+$member_list_title = get_field('member_list_title');
+$members = get_field('members');
+
 ?>
 <div class="wrapper">
 	<div class="content-area-single">
@@ -74,6 +78,17 @@ $mail = get_field("mailing_address");
 			</section>
 			<section class="mailing-address entry-content" >
 					<?php echo $mail; ?>
+			</section>
+
+			<section class="member_lists">
+				<h2><?php echo __( $member_list_title ); ?></h2>
+				<div class="members">					
+					<ul>
+						<?php foreach($members as $member): ?>
+							<li><?php echo __( $member['member_name'] ); ?></li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
 			</section>
 
 		</main><!-- #main -->
