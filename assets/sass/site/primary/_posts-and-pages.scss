@@ -3553,40 +3553,92 @@ body.home #main {
 
 }
 
+@media screen and (min-width: 768px) {
 
-.comments-section{
-	display: block;
-	position: relative;
-	margin: 10px 0 30px;
-	padding-bottom: 20px;
-	border-bottom: 3px solid rgba(0, 0, 0, 0.2);
-
-	.comments-block{
-		display: none;
-	}
-
-	.comments-trigger{
+	.comments-section{
 		display: block;
-		padding-bottom: 13px;
+		position: relative;
+		margin: 10px 0 30px;
+		padding-bottom: 20px;
+		border-bottom: 3px solid rgba(0, 0, 0, 0.2);
 
-		.logo-holder{
-			display: inline-block;
-			float: left;
-			margin-right: 15px;
-			img{
-				height: 70px;
-				width: auto;
-			}
+		.comments-block{
+			display: none;
 		}
 
-		.text-holder{
-			display: inline-block;
+		.comments-trigger{
+			display: block;
+			padding-bottom: 13px;
+
+			.logo-holder{
+				display: inline-block;
+				float: left;
+				margin-right: 15px;
+				img{
+					height: 70px;
+					width: auto;
+				}
+			}
+
+			.text-holder{
+				display: inline-block;
 
 
-			.click_class{
-				cursor: pointer;
-				font-weight: bold;
+				.click_class{
+					cursor: pointer;
+					font-weight: bold;
+				}
 			}
 		}
 	}
+
+
+} // desktop version
+
+
+@media screen and (max-width: 767px) {
+
+	.comments-section{
+		display: block;
+		position: relative;
+		margin: 10px 0 30px;
+		padding-bottom: 20px;
+		border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+
+		.comments-block{
+			display: none;
+		}
+		
+		.comments-trigger{
+			display: block;
+			padding-bottom: 0;
+
+			.logo-holder{
+				/*display: inline-block;*/
+				float: none;
+				margin-right: 0;
+				text-align: center;
+				img{
+					height: 70px;
+					width: auto;
+					margin: 0 auto;
+				}
+			}
+
+			.text-holder{
+				/*display: inline-block;*/
+				text-align: center;
+
+				.click_class{
+					cursor: pointer;
+					font-weight: bold;
+				}
+			}
+		}
+
+
+	} // comments-section
+
+	
+
 }
