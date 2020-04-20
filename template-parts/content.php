@@ -62,15 +62,29 @@ if( !defined('HIDE_ADS') ){
 			 ); ?>
 		</div>
 
+	
+
+		<?php if ( comments_open() || get_comments_number() ) : ?>
 		
+
 		<div class="comments-section">
-			<?php 
-				// If comments are open or we have at least one comment, load up the comment template.
-				/*if ( comments_open() || get_comments_number() ) :
-				    comments_template();
-				endif;*/
-			?>
+			<div class="comments-trigger">
+				<div class="logo-holder">
+					<img src="<?php bloginfo('template_url'); ?>/images/qc-logo.png" alt="">
+				</div>
+				<div class="text-holder">
+					<p>Have a comment you want to share with QCity?  <span class="click_class" >Click here</span></p>
+				</div>
+			</div>
+
+			<div class="comments-block">
+				<?php 
+					// If comments are open or we have at least one comment, load up the comment template.
+					comments_template();				
+				?>
+			</div>			
 		</div>
+		<?php endif; ?>
 
 
 
@@ -79,7 +93,7 @@ if( !defined('HIDE_ADS') ){
 		</div>
 
 
-		
+
 		
 		
 		<footer class="entry-footer">

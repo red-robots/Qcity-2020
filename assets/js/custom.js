@@ -575,6 +575,16 @@ jQuery(document).ready(function ($) {
         }
     });
 
+
+    /*
+    *   Comments Section
+    */
+
+    $('.click_class').on('click', function(){
+        $('.comments-trigger').hide();
+        $('.comments-block').show();
+    });
+
 	/*
 	*
 	*	Wow Animation
