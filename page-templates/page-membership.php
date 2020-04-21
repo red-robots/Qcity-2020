@@ -82,6 +82,7 @@ $members = get_field('members');
 
 			<section class="member_lists">
 				<h2><?php echo __( $member_list_title ); ?></h2>
+                <?php if( $members ): ?>
 				<div class="members">					
 					<ul>
 						<?php foreach($members as $member): ?>
@@ -89,6 +90,7 @@ $members = get_field('members');
 						<?php endforeach; ?>
 					</ul>
 				</div>
+                <?php endif; ?>
 			</section>
 
 		</main><!-- #main -->

@@ -21,7 +21,7 @@ get_template_part('template-parts/banner-advertise');
 
 			<div class="advertise-listing-page">
 				<div class="listing_initial">
-
+					<?php if( $advertisements ): ?>
 					<section class="advertise-list">
 						<?php
 							foreach( $advertisements as $ads ):
@@ -29,7 +29,7 @@ get_template_part('template-parts/banner-advertise');
 							endforeach;
 						?>
 					</section>
-
+					<?php endif; ?>
 				</div>
 
 				<div class="listing_search">
