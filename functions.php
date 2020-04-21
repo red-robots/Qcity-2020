@@ -83,4 +83,11 @@ function my_acf_google_map_api( $api ){
 
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
+/*
+*   Custom Comment Form
+*/
+require get_template_directory() . '/inc/custom-comment.php';
+
+
+
 

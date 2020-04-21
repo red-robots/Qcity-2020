@@ -17,7 +17,7 @@ $ads_button_link        = $ads['ads_button_link'];
         <h2><?php echo __( $ads_title ); ?></h2>
         <p><?php echo sanitize_text_field($ads_description); ?></p>
         <?php if( $ads_price ): ?>
-        <p>Price: <strong><?php echo __( $ads_price ); ?></strong></p>
+        <p>Price: <strong> $ <?php echo __( $ads_price ); ?></strong></p>
         <?php endif; ?>
 		
     </div><!-- featured event content -->

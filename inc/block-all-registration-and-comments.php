@@ -52,7 +52,7 @@ function remove_any_new_comments( $comment_ID, $comment_approved ) {
         )
     );
 }
-add_action( 'comment_post', 'remove_any_new_comments', 10, 2 );
+//add_action( 'comment_post', 'remove_any_new_comments', 10, 2 );
 // Disable support for comments and trackbacks in post types
 function df_disable_comments_post_types_support() {
     $post_types = get_post_types();
