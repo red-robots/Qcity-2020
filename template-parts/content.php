@@ -55,16 +55,7 @@ if( !defined('HIDE_ADS') ){
 
 	<div class="content-single-page">
 
-		<div class="tags">	
-			 <?php echo get_the_tag_list(
-			 	'<span class="title">This Story is Tagged: </span> ',
-			 	', '
-			 ); ?>
-		</div>
-
-	
-
-		<?php /*if ( comments_open() || get_comments_number() ) : ?>
+		<?php if ( comments_open() || get_comments_number() ) : ?>
 
 		<div class="comments-section">
 			<div class="comments-trigger">
@@ -83,7 +74,19 @@ if( !defined('HIDE_ADS') ){
 				?>
 			</div>			
 		</div>
-		<?php endif;  */?>
+		<?php endif;  ?>
+
+
+		<div class="tags">	
+			 <?php echo get_the_tag_list(
+			 	'<span class="title">This Story is Tagged: </span> ',
+			 	', '
+			 ); ?>
+		</div>
+
+	
+
+		
 
 
 
@@ -132,7 +135,7 @@ if( !defined('HIDE_ADS') ){
 
 			<?php get_template_part( 'template-parts/sponsored-paid'); ?>
 
-			<?php  ?>
+			<?php /* ?>
 			<section class="comments">
 				<?php //echo do_shortcode( '[Fancy_Facebook_Comments]' ); ?>
 				<div id="disqus_thread"></div>
@@ -158,7 +161,7 @@ if( !defined('HIDE_ADS') ){
 				</script>
 				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 			</section>
-			<?php  ?>
+			<?php  */ ?>
 		</footer><!-- .entry-footer -->
 
 	</div>
