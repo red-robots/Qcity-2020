@@ -64,8 +64,7 @@ if( !defined('HIDE_ADS') ){
 
 	
 
-		<?php if ( comments_open() || get_comments_number() ) : ?>
-		
+		<?php /*if ( comments_open() || get_comments_number() ) : ?>
 
 		<div class="comments-section">
 			<div class="comments-trigger">
@@ -84,7 +83,7 @@ if( !defined('HIDE_ADS') ){
 				?>
 			</div>			
 		</div>
-		<?php endif; ?>
+		<?php endif;  */?>
 
 
 
@@ -133,7 +132,7 @@ if( !defined('HIDE_ADS') ){
 
 			<?php get_template_part( 'template-parts/sponsored-paid'); ?>
 
-			<?php /* ?>
+			<?php  ?>
 			<section class="comments">
 				<?php //echo do_shortcode( '[Fancy_Facebook_Comments]' ); ?>
 				<div id="disqus_thread"></div>
@@ -159,7 +158,7 @@ if( !defined('HIDE_ADS') ){
 				</script>
 				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 			</section>
-			<?php */ ?>
+			<?php  ?>
 		</footer><!-- .entry-footer -->
 
 	</div>
