@@ -53,7 +53,7 @@ function save_comment_meta_data( $comment_id ) {
     add_comment_meta( $comment_id, 'city', $city );
 
     //$email_recipient = 'mailbag@qcitymetro.com';
-    $email_recipient = 'hermiebarit@gmail.com';
+    $email_recipient = 'cathy@bellaworksweb.com';
     $comment = get_comment( $comment_id );
     $postid = $comment->comment_post_ID;
     
