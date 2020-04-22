@@ -53,7 +53,7 @@ function save_comment_meta_data( $comment_id ) {
     add_comment_meta( $comment_id, 'city', $city );
 
     //$email_recipient = 'mailbag@qcitymetro.com';
-    $email_recipient = 'cathy@bellaworksweb.com';
+    $email_recipient = 'hermiebarit@gmail.com';
     $comment = get_comment( $comment_id );
     $postid = $comment->comment_post_ID;
     
@@ -64,8 +64,10 @@ function save_comment_meta_data( $comment_id ) {
         $message .= '<p>City: '. $city .'</p>';
         $message .= '<p>Daytime Phone: '. $phone .'</p>';
 
+        $headers = 'From: QCity Metro<'. $email_recipient .'>;' . "\r\n";
+
         add_filter( 'wp_mail_content_type', create_function( '', 'return "text/html";' ) );
-        wp_mail( $email_recipient, 'New Comment from ' . $comment->comment_author, $message );
+        wp_mail( $email_recipient, 'New Comment from ' . $comment->comment_author, $message, $headers );
    
 }
 add_filter('comment_post','save_comment_meta_data');
