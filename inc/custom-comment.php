@@ -53,26 +53,25 @@ function save_comment_meta_data( $comment_id ) {
     add_comment_meta( $comment_id, 'city', $city );
 
     //$email_recipient = 'mailbag@qcitymetro.com';
-    $email_recipient = 'cathy@bellaworksweb.com';
-    //$email_recipient = 'hermiebarit@gmail.com';
+    //$email_recipient = 'cathy@bellaworksweb.com';
+    $email_recipient = 'hermiebarit@gmail.com';
     $comment = get_comment( $comment_id );
     $postid = $comment->comment_post_ID;
-    
+    if( $email_recipient ):
         $message = 'New comment on <a href="' . get_permalink( $postid ) . '">' .  get_the_title( $postid ) . '</a>';
         $message .= '<p>Name: '. $comment->comment_author .'</p>';
         $message .= '<p>Email: '. $comment->comment_author_email .'</p>';
         $message .= '<p>Website: '. $comment->comment_author_url .'</p>';
-        $message .= '<p>City: '. $city .'</p>';
-        $message .= '<p>Daytime Phone: '. $phone .'</p>';
-
-        //$headers = 'From: QCity Metro<'. $email_recipient .'>;' . "\r\n";
-        $headers = array(
-            'From: QCity Metro<mailbag@qcitymetro.com>;'            
-        );
-
+        if( $city ){
+            $message .= '<p>City: '. $city .'</p>';
+        }
+        if( $phone ){
+            $message .= '<p>Daytime Phone: '. $phone .'</p>';
+        }
+          
         add_filter( 'wp_mail_content_type', create_function( '', 'return "text/html";' ) );
         wp_mail( $email_recipient, 'New Comment from ' . $comment->comment_author, $message );
-   
+    endif;
 }
 add_filter('comment_post','save_comment_meta_data');
 
