@@ -66,17 +66,17 @@ function save_comment_meta_data( $comment_id ) {
         $message .= '<p>Daytime Phone: '. $phone .'</p>';
 
         //$headers = 'From: QCity Metro<'. $email_recipient .'>;' . "\r\n";
-        /*$headers = array(
-            'From: QCity Metro<'. $email_recipient .'>;'            
-        );*/
+        $headers = array(
+            'From: QCity Metro<mailbag@qcitymetro.com>;'            
+        );
 
         add_filter( 'wp_mail_content_type', create_function( '', 'return "text/html";' ) );
-        wp_mail( $email_recipient, 'New Comment from ' . $comment->comment_author, $message );
+        wp_mail( $email_recipient, 'New Comment from ' . $comment->comment_author, $message, $headers );
    
 }
 add_filter('comment_post','save_comment_meta_data');
 
-add_filter('wp_mail_from','qcity_wp_mail_from');
+/*add_filter('wp_mail_from','qcity_wp_mail_from');
 function qcity_wp_mail_from( $content_type ) {
   return 'From: QCity Metro <mailbag@qcitymetro.com>';
-}
+}*/
