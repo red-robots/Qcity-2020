@@ -58,8 +58,14 @@ function save_comment_meta_data( $comment_id ) {
     $postid = $comment->comment_post_ID;
     
         $message = 'New comment on <a href="' . get_permalink( $postid ) . '">' .  get_the_title( $postid ) . '</a>';
+        $message .= '<p>Name: '. $comment->comment_author .'</p>';
+        $message .= '<p>Email: '. $comment->comment_author_email .'</p>';
+        $message .= '<p>Website: '. $comment->comment_author_url .'</p>';
+        $message .= '<p>City: '. $city .'</p>';
+        $message .= '<p>Daytime Phone: '. $phone .'</p>';
+
         add_filter( 'wp_mail_content_type', create_function( '', 'return "text/html";' ) );
-        wp_mail( $email_recipient, 'New Comment', $message );
+        wp_mail( $email_recipient, 'New Comment from ' . $comment->comment_author, $message );
    
 }
 add_filter('comment_post','save_comment_meta_data');
