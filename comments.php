@@ -18,6 +18,8 @@
 if ( post_password_required() ) {
 	return;
 }
+
+$single_post_below_form = get_field('single_post_below_form', 'option');
 ?>
 
 <div id="comments" class="comments-area">
@@ -79,9 +81,12 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
+	$args = array(
+		'comment_notes_before' => __( $single_post_below_form , 'acstarter')		
+	);
 	
 
-	comment_form();
+	comment_form( $args );
 	?>
 
 </div><!-- #comments -->

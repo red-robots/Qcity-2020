@@ -13,6 +13,7 @@ $mod = the_modified_date('M j, Y', '', '', false);
 $guest_author 	= get_field('author_name') ;
 $hide_ads 		= get_field('hide_ads');
 $chooseAuthor 	= get_field( 'choose_author' );
+$single_post_comment_text = get_field('single_post_comment_text', 'option');
 
 
 if( !defined('HIDE_ADS') ){
@@ -63,7 +64,7 @@ if( !defined('HIDE_ADS') ){
 					<img src="<?php bloginfo('template_url'); ?>/images/qc-logo.png" alt="">
 				</div>
 				<div class="text-holder">
-					<p>Have a comment you want to share with QCity?  <span class="click_class" >Click here</span></p>
+					<p><?php echo $single_post_comment_text; ?>  <span class="click_class" >Click here</span></p>
 				</div>
 			</div>
 
