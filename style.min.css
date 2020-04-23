@@ -2054,7 +2054,7 @@ form.email-form{margin-bottom:50px}
 .is-style-qbuttonblack a{background-color:#262425;color:#c4a92f}
 .is-style-qbuttonblack a:hover{background-color:#c4a92f;color:#262425}
 p{margin-top:1em;margin-bottom:1em}
-p strong{font-weight:bolder}
+p strong{font-weight:bolder;-webkit-font-weight:bolder;-moz-font-weight:bolder;-o-font-weight:bolder}
 .sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}
