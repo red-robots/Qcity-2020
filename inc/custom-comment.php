@@ -68,6 +68,7 @@ function save_comment_meta_data( $comment_id ) {
         if( $phone ){
             $message .= '<p>Daytime Phone: '. $phone .'</p>';
         }
+        $message .= '<p>Content: '. $comment->comment_content .'</p>';
           
         add_filter( 'wp_mail_content_type', create_function( '', 'return "text/html";' ) );
         wp_mail( $email_recipient, 'New Comment from ' . $comment->comment_author, $message );
