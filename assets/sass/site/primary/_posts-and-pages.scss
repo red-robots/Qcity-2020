@@ -3589,6 +3589,7 @@ body.home #main {
 				.click_class{
 					cursor: pointer;
 					font-weight: bold;
+					text-decoration: underline;
 				}
 			}
 		}
@@ -3634,6 +3635,7 @@ body.home #main {
 				.click_class{
 					cursor: pointer;
 					font-weight: bold;
+					text-decoration: underline;
 				}
 			}
 		}
@@ -3779,4 +3781,12 @@ li.comment {
 
 .comment-form-phone, .comment-form-email{
 	float: right;
+}
+
+
+@media screen and (max-width: 767px) {
+	.comment-form-email, .comment-form-url, .comment-form-city, .comment-form-phone, .comment-form-author{
+		width: 100%;
+		display: block;
+	}
 }

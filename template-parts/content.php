@@ -77,13 +77,14 @@ if( !defined('HIDE_ADS') ){
 		</div>
 		<?php endif;  ?>
 
-
+		<?php if( has_tag() ): ?>
 		<div class="tags">	
 			 <?php echo get_the_tag_list(
 			 	'<span class="title">This Story is Tagged: </span> ',
 			 	', '
 			 ); ?>
 		</div>
+		<?php endif; ?>
 
 	
 

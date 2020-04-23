@@ -2631,14 +2631,14 @@ ul.rp4wp-posts-list .rp4wp-col-last{width:99% !important;padding-right:0 !import
 .comments-section .comments-trigger .logo-holder{display:inline-block;float:left;margin-right:15px}
 .comments-section .comments-trigger .logo-holder img{height:70px;width:auto}
 .comments-section .comments-trigger .text-holder{display:inline-block}
-.comments-section .comments-trigger .text-holder .click_class{cursor:pointer;font-weight:bold}
+.comments-section .comments-trigger .text-holder .click_class{cursor:pointer;font-weight:bold;text-decoration:underline}
 }@media screen and (max-width:767px){.comments-section{display:block;position:relative;margin:10px 0 0;padding-bottom:20px;border-bottom:3px solid rgba(0,0,0,0.2)}
 .comments-section .comments-block{display:none}
 .comments-section .comments-trigger{display:block;padding-bottom:0}
 .comments-section .comments-trigger .logo-holder{float:none;margin-right:0;text-align:center}
 .comments-section .comments-trigger .logo-holder img{height:70px;width:auto;margin:0 auto}
 .comments-section .comments-trigger .text-holder{text-align:center}
-.comments-section .comments-trigger .text-holder .click_class{cursor:pointer;font-weight:bold}
+.comments-section .comments-trigger .text-holder .click_class{cursor:pointer;font-weight:bold;text-decoration:underline}
 }.comment-respond,.entry-pings,.entry-comments{color:#444;padding:20px 45px 40px 45px;border:1px solid #ccc;overflow:hidden;background:#fff;-webkit-box-shadow:0 0 8px rgba(0,0,0,0.3);box-shadow:0 0 8px rgba(0,0,0,0.3);border-left:4px solid #444}
 .entry-comments h3{font-size:30px;margin-bottom:30px}
 .comment-respond h3,.entry-pings h3{font-size:20px;margin-bottom:30px}
@@ -2664,7 +2664,8 @@ li.comment{background-color:#fff;border-right:0}
 .comment-form-email,.comment-form-url,.comment-form-city,.comment-form-phone,.comment-form-author{width:48%;display:block}
 .comment-form-city,.comment-form-author{float:left}
 .comment-form-phone,.comment-form-email{float:right}
-.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+@media screen and (max-width:767px){.comment-form-email,.comment-form-url,.comment-form-city,.comment-form-phone,.comment-form-author{width:100%;display:block}
+}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}
