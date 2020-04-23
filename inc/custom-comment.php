@@ -17,8 +17,8 @@ function qcity_comment_form_default_fields( $fields ) {
                     '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' /></p>',
         'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email', 'textdomain'  ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
                     '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' /></p>',
-        'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website', 'textdomain'  ) . '</label> ' .
-                    '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></p>',
+        /*'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website', 'textdomain'  ) . '</label> ' .
+                    '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></p>',*/
         'city'  => '<p class="comment-form-city"><label for="city">' . __( 'City' ) . '</label> ' .
         '<input id="city" name="city" type="text" size="30" value="" /></p>',
         'phone' => '<p class="comment-form-phone"><label for="city">' . __( 'Daytime Phone' ) . ' </label> ' .
@@ -52,16 +52,16 @@ function save_comment_meta_data( $comment_id ) {
         $city = wp_filter_nohtml_kses($_POST['city']);
     add_comment_meta( $comment_id, 'city', $city );
 
-    $email_recipient = 'mailbag@qcitymetro.com';
+    //$email_recipient = 'mailbag@qcitymetro.com';
     //$email_recipient = 'cathy@bellaworksweb.com';
-    //$email_recipient = 'hermiebarit@gmail.com';
+    $email_recipient = 'hermiebarit@gmail.com';
     $comment = get_comment( $comment_id );
     $postid = $comment->comment_post_ID;
     if( $email_recipient ):
         $message = 'New comment on <a href="' . get_permalink( $postid ) . '">' .  get_the_title( $postid ) . '</a>';
         $message .= '<p>Name: '. $comment->comment_author .'</p>';
         $message .= '<p>Email: '. $comment->comment_author_email .'</p>';
-        $message .= '<p>Website: '. $comment->comment_author_url .'</p>';
+        //$message .= '<p>Website: '. $comment->comment_author_url .'</p>';
         if( $city ){
             $message .= '<p>City: '. $city .'</p>';
         }

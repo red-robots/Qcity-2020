@@ -81,8 +81,11 @@ $single_post_below_form = get_field('single_post_below_form', 'option');
 	<?php
 	endif;
 
+	$comment_before = '<p class="comment-before">'. trim($single_post_below_form) .'</p>';
+
 	$args = array(
-		'comment_notes_before' => __( $single_post_below_form , 'acstarter')		
+		'comment_notes_before' => __( $comment_before , 'acstarter'),
+		//'comment_notes_after' => __( 'Phones and Emails will not be published.', 'acstarter')		
 	);
 	
 

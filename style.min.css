@@ -2661,10 +2661,9 @@ li.comment{background-color:#fff;border-right:0}
 .comment-reply-link{cursor:pointer;background-color:#444;border:0;border-radius:3px;color:#fff;font-size:12px;font-weight:300;letter-spacing:1px;padding:4px 10px 4px;text-transform:uppercase;width:auto}
 .comment-reply-link:hover{color:#fff}
 .comment-notes{display:none}
-.comment-form-author #author{width:100%}
-.comment-form-email,.comment-form-url,.comment-form-city,.comment-form-phone{width:48%}
-.comment-form-email,.comment-form-city{float:left}
-.comment-form-phone,.comment-form-url{float:right}
+.comment-form-email,.comment-form-url,.comment-form-city,.comment-form-phone,.comment-form-author{width:48%;display:block}
+.comment-form-city,.comment-form-author{float:left}
+.comment-form-phone,.comment-form-email{float:right}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

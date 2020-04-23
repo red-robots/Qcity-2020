@@ -3760,20 +3760,21 @@ li.comment {
     display:none;   
 }
 
-.comment-form-author{
+/*.comment-form-author{
 	#author{
 		width: 100%;
 	}
-}
+}*/
 
-.comment-form-email, .comment-form-url, .comment-form-city, .comment-form-phone{
+.comment-form-email, .comment-form-url, .comment-form-city, .comment-form-phone, .comment-form-author{
 	width: 48%;
+	display: block;
 }
 
-.comment-form-email, .comment-form-city {
+.comment-form-city, .comment-form-author {
 	float: left;
 }
 
-.comment-form-phone, .comment-form-url{
+.comment-form-phone, .comment-form-email{
 	float: right;
 }
