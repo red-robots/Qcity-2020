@@ -2054,7 +2054,7 @@ form.email-form{margin-bottom:50px}
 .is-style-qbuttonblack a{background-color:#262425;color:#c4a92f}
 .is-style-qbuttonblack a:hover{background-color:#c4a92f;color:#262425}
 p{margin-top:1em;margin-bottom:1em}
-p strong{font-weight:bolder;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+p strong{font-weight:bolder;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-shadow:#424141 0 1px 0;-webkit-text-size-adjust:auto;-moz-text-size-adjust:auto;-ms-text-size-adjust:auto;text-size-adjust:auto}
 .sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}
