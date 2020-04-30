@@ -1135,22 +1135,27 @@ section.advertise-list	{
 
 
 .pricing-grid {
+	width: 100%;
 	display: flex;
-	// max-width: 750px;
-	margin: 0 auto;
-  	// background-color: #eee;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+
 	.plan {
-		flex: 1;
+		width: auto;
 		background-color: rgba(255,255,255, 0.9);
 		@include shadow();
-		margin: 50px 10px;
+		margin: 5px 10px 30px;
 		padding: 10px;
 		text-align: center;
 		border-radius: 4px;
 		display: flex;
 		flex-wrap: wrap;
 		flex-basis: 30%;
-		border: 3px solid $color-gray;
+		flex-direction: row;
+		border: 3px solid $color-gray;	
+
 		h2 {
 			font-size: 20px;
 		}
@@ -1175,6 +1180,34 @@ section.advertise-list	{
 		}
 	}
 }
+
+@media screen and (max-width: 767px){
+	.pricing-grid {
+		.plan {
+		    width: 100%;
+		    position: relative;
+		    -webkit-flex-basis: 100%;
+		    -ms-flex-preferred-size: 100%;
+		    flex-basis: 100%;
+		    /*flex-direction: column;*/
+		    background-color: #fff;
+		    color: #58595b;
+		    padding: 20px 20px 30px 20px;
+		    margin-bottom: 20px;
+		    font-size: 14px;
+		    -webkit-box-shadow: 5px 8px 16px -7px rgba(0, 0, 0, 0.43);
+		    box-shadow: 5px 8px 16px -7px rgba(0, 0, 0, 0.43);
+		    border: 3px solid #eeeeee;
+		}
+	}
+}
+
+
+
+
+
+
+
 section.comments {
 	width: 100%;
 	padding: 50px 0 30px 0;

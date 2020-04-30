@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * Template Name: Membership
  */
@@ -42,13 +42,14 @@ $members = get_field('members');
 			<?php
 			while ( have_posts() ) : the_post(); ?>
 				<div class="entry-content">
+					<?php the_content(); ?>
 					<?php echo $description; ?>
 				</div><!-- entry-content -->
 			<?php endwhile; // End of the loop.
 			?>
 
 			<section class="tiers membership-thirds pricing-grid">
-				<div class="third plan">
+				<div class=" plan">
 					<?php echo $tier_1_desc; ?>
 					<div class="btn ">
 						<a class="yellow " href="<?php echo $tier_1_link; ?>">
@@ -57,7 +58,7 @@ $members = get_field('members');
 					</div>	
 					
 				</div>
-				<div class="third plan">
+				<div class=" plan">
 					<?php echo $tier_2_desc; ?>
 					<div class="btn ">
 						<a class="red" href="<?php echo $tier_2_link; ?>">
@@ -66,7 +67,7 @@ $members = get_field('members');
 					</div>	
 					
 				</div>
-				<div class="third plan">
+				<div class=" plan">
 					<?php echo $tier_3_desc; ?>
 					<div class="btn">
 						<a class="red" href="<?php echo $tier_3_link; ?>">
