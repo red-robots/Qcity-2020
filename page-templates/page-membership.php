@@ -49,7 +49,7 @@ $members = get_field('members');
 			?>
 
 			<section class="tiers membership-thirds pricing-grid">
-				<div class=" plan">
+				<div class="third plan">
 					<?php echo $tier_1_desc; ?>
 					<div class="btn ">
 						<a class="yellow " href="<?php echo $tier_1_link; ?>">
@@ -58,7 +58,7 @@ $members = get_field('members');
 					</div>	
 					
 				</div>
-				<div class=" plan">
+				<div class="third plan">
 					<?php echo $tier_2_desc; ?>
 					<div class="btn ">
 						<a class="red" href="<?php echo $tier_2_link; ?>">
@@ -67,7 +67,7 @@ $members = get_field('members');
 					</div>	
 					
 				</div>
-				<div class=" plan">
+				<div class="third plan">
 					<?php echo $tier_3_desc; ?>
 					<div class="btn">
 						<a class="red" href="<?php echo $tier_3_link; ?>">
@@ -77,6 +77,13 @@ $members = get_field('members');
 					
 				</div>
 			</section>
+
+			<section class="gravityform">
+				<div class="gravityform_form">
+					<?php echo do_shortcode('[gravityform id="45" title="false"]');  ?>
+				</div>				
+			</section>
+
 			<section class="mailing-address entry-content" >
 					<?php echo $mail; ?>
 			</section>

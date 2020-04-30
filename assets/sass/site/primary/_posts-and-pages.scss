@@ -3825,3 +3825,41 @@ li.comment {
 		display: block;
 	}
 }
+
+span.pay_amount{
+	cursor: pointer;
+	color: #924020;
+	font-weight: bold;
+}
+
+section.gravityform{
+	display: none;
+}
+
+@media only screen and (min-width: 641px){
+
+	.payment_email, .payment_phone{
+		width: 50%;
+		float: left;
+
+		.ginput_container_email, .ginput_container_phone{
+			input[type="text"]{
+				width: 100% !important;
+			}
+		}
+	}
+
+	.payment_event{
+		width: 100%;
+
+		.ginput_container_text{
+			input[type="text"]{
+				width: 100% !important;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 640px){
+
+}

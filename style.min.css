@@ -2666,6 +2666,12 @@ li.comment{background-color:#fff;border-right:0}
 .comment-form-city,.comment-form-author{float:left}
 .comment-form-phone,.comment-form-email{float:right}
 @media screen and (max-width:767px){.comment-form-email,.comment-form-url,.comment-form-city,.comment-form-phone,.comment-form-author{width:100%;display:block}
+}span.pay_amount{cursor:pointer;color:#924020;font-weight:bold}
+section.gravityform{display:none}
+@media only screen and (min-width:641px){.payment_email,.payment_phone{width:50%;float:left}
+.payment_email .ginput_container_email input[type="text"],.payment_email .ginput_container_phone input[type="text"],.payment_phone .ginput_container_email input[type="text"],.payment_phone .ginput_container_phone input[type="text"]{width:100% !important}
+.payment_event{width:100%}
+.payment_event .ginput_container_text input[type="text"]{width:100% !important}
 }.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

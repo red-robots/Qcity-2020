@@ -585,6 +585,14 @@ jQuery(document).ready(function ($) {
         $('.comments-block').show();
     });
 
+    /*
+    *   Stripe Payment Section
+    */
+
+    $('span.pay_amount').on('click', function(){
+        $('section.gravityform').show();
+    });
+
 	/*
 	*
 	*	Wow Animation
