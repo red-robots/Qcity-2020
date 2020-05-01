@@ -80,7 +80,7 @@ $members = get_field('members');
 
 			<section class="gravityform">
 				<div class="gravityform_form">
-					<?php echo do_shortcode('[gravityform id="45" title="false"]');  ?>
+					<?php echo do_shortcode('[gravityform id="30" title="false"]');  ?>
 				</div>				
 			</section>
 
