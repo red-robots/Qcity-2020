@@ -1,4 +1,18 @@
 // Rem output with px fallback
+
+$xs: 600px;
+$tab: 820px;
+$mid: 960px;
+$desk: 1300px;
+$xl: 1200px;
+
+@mixin xs { @media (min-width: $xs) { @content; } }
+@mixin tab { @media (min-width: $tab) { @content; } }
+@mixin mid { @media (min-width: $mid) { @content; } }
+@mixin desk {  @media (min-width: $desk) { @content; } }
+@mixin xl {  @media (min-width: $xl) { @content; } }
+
+
 @mixin font-size($sizeValue: 1) {
 	font-size: ($sizeValue * 16) * 1px;
 	font-size: $sizeValue * 1rem;
